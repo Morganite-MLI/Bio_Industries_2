@@ -11,7 +11,6 @@ function thxbob.lib.item.get_type(name)
     "fluid",
     "gun",
     "item",
-    "mining-tool",
     "module",
     "tool",
     "item-with-entity-data"
