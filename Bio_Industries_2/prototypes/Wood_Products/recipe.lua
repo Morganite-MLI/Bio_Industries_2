@@ -21,10 +21,10 @@ data:extend({
     normal = {
       enabled = false,
       ingredients = {
-        {"wood", 5},
-        {"small-electric-pole", 2},
+        {type="item", name="wood", amount=5},
+        {type="item", name="small-electric-pole", amount=2},
       },
-      result = "bi-wooden-pole-big",
+      results = {{type="item", name="bi-wooden-pole-big", amount=1}},
       main_product = "",
       allow_as_intermediate = false,    -- Added for 0.18.34/1.1.4
       always_show_made_in = false,      -- Added for 0.18.34/1.1.4
@@ -33,10 +33,10 @@ data:extend({
     expensive = {
       enabled = false,
       ingredients = {
-        {"wood", 10},
-        {"small-electric-pole", 4},
+        {type="item", name="wood", amount=10},
+        {type="item", name="small-electric-pole", amount=4},
       },
-      result = "bi-wooden-pole-big",
+      results = {{type="item", name="bi-wooden-pole-big", amount=1}},
       main_product = "",
       allow_as_intermediate = false,    -- Added for 0.18.34/1.1.4
       always_show_made_in = false,      -- Added for 0.18.34/1.1.4
@@ -71,11 +71,11 @@ data:extend({
     normal = {
       enabled = false,
       ingredients = {
-        {"wood", 5},
-        {"concrete", 100},
-        {"bi-wooden-pole-big", 6},
+        {type="item", name="wood", amount=5},
+        {type="item", name="concrete", amount=100},
+        {type="item", name="bi-wooden-pole-big", amount=6},
       },
-      result = "bi-wooden-pole-huge",
+      results = {{type="item", name="bi-wooden-pole-huge", amount=1}},
       main_product = "",
       allow_as_intermediate = false,    -- Added for 0.18.34/1.1.4
       always_show_made_in = false,      -- Added for 0.18.34/1.1.4
@@ -84,11 +84,11 @@ data:extend({
     expensive = {
       enabled = false,
       ingredients = {
-        {"wood", 10},
-        {"concrete", 150},
-        {"bi-wooden-pole-big", 10},
+        {type="item", name="wood", amount=10},
+        {type="item", name="concrete", amount=150},
+        {type="item", name="bi-wooden-pole-big", amount=10},
       },
-      result = "bi-wooden-pole-huge",
+      results = {{type="item", name="bi-wooden-pole-huge", amount=1}},
       main_product = "",
       allow_as_intermediate = false,    -- Added for 0.18.34/1.1.4
       always_show_made_in = false,      -- Added for 0.18.34/1.1.4
@@ -123,9 +123,9 @@ data:extend({
     normal = {
       enabled = true,
       ingredients = {
-        {"wood", 2},
+        {type="item", name="wood", amount=2},
       },
-      result = "bi-wooden-fence",
+      results = {{type="item", name="bi-wooden-fence", amount=1}},
       main_product = "",
       allow_as_intermediate = false,    -- Added for 0.18.34/1.1.4
       always_show_made_in = false,      -- Added for 0.18.34/1.1.4
@@ -134,9 +134,9 @@ data:extend({
     expensive = {
       enabled = true,
       ingredients = {
-        {"wood", 4},
+        {type="item", name="wood", amount=4},
       },
-      result = "bi-wooden-fence",
+      results = {{type="item", name="bi-wooden-fence", amount=1}},
       main_product = "",
       allow_as_intermediate = false,    -- Added for 0.18.34/1.1.4
       always_show_made_in = false,      -- Added for 0.18.34/1.1.4
@@ -170,13 +170,12 @@ data:extend({
     normal = {
       enabled = false,
       ingredients = {
-        {"wood", 6},
-        {"stone", 1},
-        {"steel-plate", 1},
-        {"iron-stick", 1},
+        {type="item", name="wood", amount=6},
+        {type="item", name="stone", amount=1},
+        {type="item", name="steel-plate", amount=1},
+        {type="item", name="iron-stick", amount=1},
       },
-      result = "bi-rail-wood",
-      result_count = 2,
+      results = {{type="item", name="bi-rail-wood", amount=2}},
       main_product = "",
       requester_paste_multiplier = 4,
       allow_as_intermediate = false,    -- Added for 0.18.34/1.1.4
@@ -186,13 +185,12 @@ data:extend({
     expensive = {
       enabled = false,
       ingredients = {
-        {"wood", 6},
-        {"stone", 1},
-        {"steel-plate", 1},
-        {"iron-stick", 1},
+        {type="item", name="wood", amount=6},
+        {type="item", name="stone", amount=1},
+        {type="item", name="steel-plate", amount=1},
+        {type="item", name="iron-stick", amount=1},
       },
-      result = "bi-rail-wood",
-      result_count = 1,
+      results = {{type="item", name="bi-rail-wood", amount=1}},
       main_product = "",
       requester_paste_multiplier = 4,
       allow_as_intermediate = false,    -- Added for 0.18.34/1.1.4
@@ -226,11 +224,10 @@ data:extend({
     normal = {
       enabled = false,
       ingredients = {
-        {"bi-rail-wood", 3},
-        {"stone-brick", 10},
+        {type="item", name="bi-rail-wood", amount=3},
+        {type="item", name="stone-brick", amount=10},
       },
-      result = "rail",
-      result_count = 2,
+      results = {{type="item", name="rail", amount=2}},
       main_product = "",
       requester_paste_multiplier = 4,
       allow_as_intermediate = false,    -- Added for 0.18.34/1.1.4
@@ -240,11 +237,10 @@ data:extend({
     expensive = {
       enabled = false,
       ingredients = {
-        {"bi-rail-wood", 2},
-        {"stone-brick", 10},
+        {type="item", name="bi-rail-wood", amount=2},
+        {type="item", name="stone-brick", amount=10},
       },
-      result = "rail",
-      result_count = 1,
+      results = {{type="item", name="rail", amount=1}},
       main_product = "",
       requester_paste_multiplier = 4,
       allow_as_intermediate = false,    -- Added for 0.18.34/1.1.4
@@ -278,12 +274,11 @@ data:extend({
     normal = {
       enabled = false,
       ingredients = {
-        {"bi-rail-wood", 1},
-        {"steel-plate", 1},
-        {"wood", 32}
+        {type="item", name="bi-rail-wood", amount=1},
+        {type="item", name="steel-plate", amount=1},
+        {type="item", name="wood", amount=32}
       },
-      result = "bi-rail-wood-bridge",
-      result_count = 2,
+      results = {{type="item", name="bi-rail-wood-bridge", amount=2}},
       main_product = "",
       requester_paste_multiplier = 4,
       allow_as_intermediate = false,    -- Added for 0.18.34/1.1.4
@@ -293,12 +288,11 @@ data:extend({
     expensive = {
       enabled = false,
       ingredients = {
-        {"bi-rail-wood", 1},
-        {"steel-plate", 1},
-        {"wood", 32}
+        {type="item", name="bi-rail-wood", amount=1},
+        {type="item", name="steel-plate", amount=1},
+        {type="item", name="wood", amount=32}
       },
-      result = "bi-rail-wood-bridge",
-      result_count = 1,
+      results = {{type="item", name="bi-rail-wood-bridge", amount=1}},
       main_product = "",
       requester_paste_multiplier = 4,
       allow_as_intermediate = false,    -- Added for 0.18.34/1.1.4
@@ -334,11 +328,10 @@ data:extend({
     normal = {
       enabled = false,
       ingredients = {
-        {"rail", 2},
-        {"copper-cable", 4},
+        {type="item", name="rail", amount=2},
+        {type="item", name="copper-cable", amount=4},
       },
-      result = "bi-rail-power",
-      result_count = 2,
+      results = {{type="item", name="bi-rail-power", amount=2}},
       main_product = "",
       requester_paste_multiplier = 4,
       allow_as_intermediate = false,    -- Added for 0.18.34/1.1.4
@@ -348,11 +341,10 @@ data:extend({
     expensive = {
       enabled = false,
       ingredients = {
-        {"rail", 1},
-        {"copper-cable", 4},
+        {type="item", name="rail", amount=1},
+        {type="item", name="copper-cable", amount=4},
       },
-      result = "bi-rail-power",
-      result_count = 1,
+      results = {{type="item", name="bi-rail-power", amount=1}},
       main_product = "",
       requester_paste_multiplier = 4,
       allow_as_intermediate = false,    -- Added for 0.18.34/1.1.4
@@ -386,11 +378,10 @@ data:extend({
       energy_required = 1,
       enabled = true,
       ingredients = {
-        {"copper-plate", 1},
-        {"wood", 8}
+        {type="item", name="copper-plate", amount=1},
+        {type="item", name="wood", amount=8}
       },
-      result = "bi-wood-pipe",
-      result_count = 4,
+      results = {{type="item", name="bi-wood-pipe", amount=4}},
       main_product = "",
       requester_paste_multiplier = 15,
       allow_as_intermediate = false,    -- Added for 0.18.34/1.1.4
@@ -401,11 +392,10 @@ data:extend({
       energy_required = 2,
       enabled = true,
       ingredients = {
-        {"copper-plate", 1},
-        {"wood", 12}
+        {type="item", name="copper-plate", amount=1},
+        {type="item", name="wood", amount=12}
       },
-      result = "bi-wood-pipe",
-      result_count = 4,
+      results = {{type="item", name="bi-wood-pipe", amount=4}},
       main_product = "",
       requester_paste_multiplier = 15,
       allow_as_intermediate = false,    -- Added for 0.18.34/1.1.4
@@ -442,11 +432,10 @@ data:extend({
       energy_required = 2,
       enabled = true,
       ingredients = {
-        {"copper-plate", 4},
-        {"bi-wood-pipe", 5}
+        {type="item", name="copper-plate", amount=4},
+        {type="item", name="bi-wood-pipe", amount=5}
       },
-      result = "bi-wood-pipe-to-ground",
-      result_count = 2,
+      results = {{type="item", name="bi-wood-pipe-to-ground", amount=2}},
       main_product = "",
       allow_as_intermediate = false,    -- Added for 0.18.34/1.1.4
       always_show_made_in = false,      -- Added for 0.18.34/1.1.4
@@ -456,11 +445,10 @@ data:extend({
       energy_required = 4,
       enabled = true,
       ingredients = {
-        {"copper-plate", 5},
-        {"bi-wood-pipe", 6}
+        {type="item", name="copper-plate", amount=5},
+        {type="item", name="bi-wood-pipe", amount=6}
       },
-      result = "bi-wood-pipe-to-ground",
-      result_count = 2,
+      results = {{type="item", name="bi-wood-pipe-to-ground", amount=2}},
       main_product = "",
       allow_as_intermediate = false,    -- Added for 0.18.34/1.1.4
       always_show_made_in = false,      -- Added for 0.18.34/1.1.4
@@ -493,10 +481,10 @@ data:extend({
     normal = {
       enabled = false,
       ingredients = {
-        {"copper-cable", 2},
-        {"medium-electric-pole", 1},
+        {type="item", name="copper-cable", amount=2},
+        {type="item", name="medium-electric-pole", amount=1},
       },
-      result = "bi-power-to-rail-pole",
+      results = {{type="item", name="bi-power-to-rail-pole", amount=1}},
       main_product = "",
       allow_as_intermediate = false,    -- Added for 0.18.34/1.1.4
       always_show_made_in = false,      -- Added for 0.18.34/1.1.4
@@ -505,10 +493,10 @@ data:extend({
     expensive = {
       enabled = false,
       ingredients = {
-        {"copper-cable", 4},
-        {"medium-electric-pole", 1},
+        {type="item", name="copper-cable", amount=4},
+        {type="item", name="medium-electric-pole", amount=1},
       },
-      result = "bi-power-to-rail-pole",
+      results = {{type="item", name="bi-power-to-rail-pole", amount=1}},
       main_product = "",
       allow_as_intermediate = false,    -- Added for 0.18.34/1.1.4
       always_show_made_in = false,      -- Added for 0.18.34/1.1.4
@@ -541,9 +529,9 @@ data:extend({
       --~ energy_required = 2,
       --~ enabled = false,
       --~ ingredients = {
-        --~ {"copper-plate", 16},
-        --~ {"resin", 24},
-        --~ {"wooden-chest", 8}
+        --~ {type="item", name="copper-plate", amount=16},
+        --~ {type="item", name="resin", amount=24},
+        --~ {type="item", name="wooden-chest", amount=8}
       --~ },
       --~ result = "bi-wooden-chest-large",
       --~ result_count = 1,
@@ -557,9 +545,9 @@ data:extend({
       --~ energy_required = 4,
       --~ enabled = false,
       --~ ingredients = {
-        --~ {"copper-plate", 24},
-        --~ {"resin", 32},
-        --~ {"wooden-chest", 8}
+        --~ {type="item", name="copper-plate", amount=24},
+        --~ {type="item", name="resin", amount=32},
+        --~ {type="item", name="wooden-chest", amount=8}
       --~ },
       --~ result = "bi-wooden-chest-large",
       --~ result_count = 1,
@@ -596,9 +584,9 @@ data:extend({
       --~ energy_required = 2,
       --~ enabled = false,
       --~ ingredients = {
-        --~ {"iron-stick", 32},
-        --~ {"stone-brick", 32},
-        --~ {"bi-wooden-chest-large", 16}
+        --~ {type="item", name="iron-stick", amount=32},
+        --~ {type="item", name="stone-brick", amount=32},
+        --~ {type="item", name="bi-wooden-chest-large", amount=16}
       --~ },
       --~ result = "bi-wooden-chest-huge",
       --~ result_count = 1,
@@ -612,9 +600,9 @@ data:extend({
       --~ energy_required = 4,
       --~ enabled = false,
       --~ ingredients = {
-        --~ {"iron-stick", 48},
-        --~ {"stone-brick", 48},
-        --~ {"bi-wooden-chest-large", 16}
+        --~ {type="item", name="iron-stick", amount=48},
+        --~ {type="item", name="stone-brick", amount=48},
+        --~ {type="item", name="bi-wooden-chest-large", amount=16}
       --~ },
       --~ result = "bi-wooden-chest-huge",
       --~ result_count = 1,
@@ -651,9 +639,9 @@ data:extend({
       --~ energy_required = 4,
       --~ enabled = false,
       --~ ingredients = {
-        --~ {"steel-plate", 32},
-        --~ {"concrete", 32},
-        --~ {"bi-wooden-chest-huge", 16}
+        --~ {type="item", name="steel-plate", amount=32},
+        --~ {type="item", name="concrete", amount=32},
+        --~ {type="item", name="bi-wooden-chest-huge", amount=16}
       --~ },
       --~ result = "bi-wooden-chest-giga",
       --~ result_count = 1,
@@ -667,9 +655,9 @@ data:extend({
       --~ energy_required = 6,
       --~ enabled = false,
       --~ ingredients = {
-        --~ {"steel-plate", 48},
-        --~ {"concrete", 48},
-        --~ {"bi-wooden-chest-huge", 16}
+        --~ {type="item", name="steel-plate", amount=48},
+        --~ {type="item", name="concrete", amount=48},
+        --~ {type="item", name="bi-wooden-chest-huge", amount=16}
       --~ },
       --~ main_product = "",
       --~ result = "bi-wooden-chest-giga",

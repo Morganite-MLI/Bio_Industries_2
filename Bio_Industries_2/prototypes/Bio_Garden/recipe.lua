@@ -22,11 +22,11 @@ data:extend({
     enabled = false,
     energy_required = 10,
     ingredients = {
-      {"stone-wall", 12},
-      {"stone-crushed", 50},
-      {"seedling", 50}
+      {type="item", name="stone-wall", amount=12},
+      {type="item", name="stone-crushed", amount=50},
+      {type="item", name="seedling", amount=50}
     },
-    result = "bi-bio-garden",
+    results = {{type="item", name="bi-bio-garden", amount=1}},
     main_product = "",
     subgroup = "bio-bio-gardens-fluid",
     order = "a[bi]",

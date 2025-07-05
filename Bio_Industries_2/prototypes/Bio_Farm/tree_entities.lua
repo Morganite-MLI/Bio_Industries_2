@@ -105,6 +105,7 @@ for id, prototype in pairs(data.raw.tree) do
       --~ end
       tree.minable.results = {
         {
+          type = "item",
           name = (i < TREE_LEVELS) and "seedling" or "wood",
           probability = i/TREE_LEVELS,
           amount = 1,

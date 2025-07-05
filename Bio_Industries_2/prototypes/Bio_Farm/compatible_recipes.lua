@@ -20,8 +20,7 @@ data:extend({
     order = "a[bi]-a-g[bi-coke-coal]-2",
     energy_required = 4,
     ingredients = {},
-    result = "pellet-coke",
-    result_count = 1,
+    results = {{type="item", name="pellet-coke", amount=1}},
     always_show_made_in = true,
     allow_decomposition = false,
     allow_as_intermediate = false,
@@ -125,8 +124,7 @@ if not data.raw.item["resin"] then
       ingredients = {
          {type = "item", name = "wood", amount = 1}
       },
-      result = "resin",
-      result_count = 1,
+      results = {{type="item", name="resin", amount=1}},
       main_procuct = "",
       -- This is a custom property for use by "Krastorio 2" (it will change
       -- ingredients/results; used for wood/wood pulp)
@@ -418,9 +416,8 @@ BioInd.writeDebug("Generating recipe for sand from crushed stone!")
       subgroup = "bio-bio-farm-raw",
       order = "a[bi]-a-z[bi-9-sand]",
       energy_required = 1,
-      ingredients = {{"stone-crushed", 2}},
-      result = "sand",
-      result_count = 5,
+      ingredients = {{type="item", name="stone-crushed", amount=2}},
+      results = {{type="item", name="sand", amount=5}},
       main_product = "",
       enabled = false,
       --~ always_show_made_in = true,

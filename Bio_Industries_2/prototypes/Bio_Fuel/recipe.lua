@@ -25,12 +25,11 @@ data:extend({
       enabled = false,
       energy_required = 20,
       ingredients = {
-        {"assembling-machine-1", 1},
-        {"steel-plate", 5},
-        {"electronic-circuit", 5},
+        {type="item", name="assembling-machine-1", amount=1},
+        {type="item", name="steel-plate", amount=5},
+        {type="item", name="electronic-circuit", amount=5},
       },
-      result = "bi-bio-reactor",
-      result_count = 1,
+      results = {{type="item", name="bi-bio-reactor", amount=1}},
       main_product = "",
       allow_as_intermediate = false,    -- Added for 0.18.34/1.1.4
       always_show_made_in = false,      -- Added for 0.18.34/1.1.4
@@ -40,12 +39,11 @@ data:extend({
       enabled = false,
       energy_required = 30,
       ingredients = {
-        {"assembling-machine-1", 2},
-        {"steel-plate", 5},
-        {"electronic-circuit", 5},
+        {type="item", name="assembling-machine-1", amount=2},
+        {type="item", name="steel-plate", amount=5},
+        {type="item", name="electronic-circuit", amount=5},
       },
-      result = "bi-bio-reactor",
-      result_count = 1,
+      results = {{type="item", name="bi-bio-reactor", amount=1}},
       main_product = "",
       allow_as_intermediate = false,    -- Added for 0.18.34/1.1.4
       always_show_made_in = false,      -- Added for 0.18.34/1.1.4
@@ -146,12 +144,11 @@ if BI.Settings.BI_Bio_Fuel then
         enabled = false,
         energy_required = 10,
         ingredients = {
-          {"boiler", 1},
-          {"steel-plate", 5},
-          {"concrete", 5},
+          {type="item", name="boiler", amount=1},
+          {type="item", name="steel-plate", amount=5},
+          {type="item", name="concrete", amount=5},
         },
-        result = "bi-bio-boiler",
-        result_count = 1,
+        results = {{type="item", name="bi-bio-boiler", amount=1}},
         main_product = "",
         allow_as_intermediate = false,  -- Added for 0.18.34/1.1.4
         always_show_made_in = false,    -- Added for 0.18.34/1.1.4
@@ -161,12 +158,11 @@ if BI.Settings.BI_Bio_Fuel then
         enabled = false,
         energy_required = 15,
         ingredients = {
-          {"boiler", 2},
-          {"steel-plate", 5},
-          {"concrete", 5},
+          {type="item", name="boiler", amount=2},
+          {type="item", name="steel-plate", amount=5},
+          {type="item", name="concrete", amount=5},
         },
-        result = "bi-bio-boiler",
-        result_count = 1,
+        results = {{type="item", name="bi-bio-boiler", amount=1}},
         main_product = "",
         allow_as_intermediate = false,  -- Added for 0.18.34/1.1.4
         always_show_made_in = false,    -- Added for 0.18.34/1.1.4

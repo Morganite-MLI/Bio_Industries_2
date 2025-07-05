@@ -53,7 +53,7 @@ data:extend({
     minable = {
       mining_particle = "wooden-particle",
       mining_time = 0.25,
-      result = "seedling",
+      results = {{type="item", name="seedling", amount=1}},
       count = 1
     },
     corpse = nil,
@@ -95,7 +95,7 @@ data:extend({
     minable = {
       mining_particle = "wooden-particle",
       mining_time = 0.25,
-      result = "seedling",
+      results = {{type="item", name="seedling", amount=1}},
       count = 1
     },
     corpse = nil,
@@ -136,7 +136,7 @@ data:extend({
     minable = {
       mining_particle = "wooden-particle",
       mining_time = 0.25,
-      result = "seedling",
+      results = {{type="item", name="seedling", amount=1}},
       count = 1
     },
     corpse = nil,

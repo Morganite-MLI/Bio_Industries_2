@@ -41,8 +41,8 @@ log("Enabling disassemble recipes!")
         {type = "item", name = "burner-mining-drill", amount = 1},
       },
       results = {
-        {"stone", 4},
-        {"iron-plate", 4}
+        {type="item", name="stone", amount=4},
+        {type="item", name="iron-plate", amount=4}
       },
       main_product = "",
     },
@@ -71,7 +71,7 @@ log("Enabling disassemble recipes!")
         {type = "item", name = "burner-inserter", amount = 1},
       },
       results = {
-        {"iron-plate", 2},
+        {type="item", name="iron-plate", amount=2},
       },
       main_product = "",
     },
@@ -100,9 +100,9 @@ log("Enabling disassemble recipes!")
         {type = "item", name = "long-handed-inserter", amount = 1},
       },
       results = {
-        {"iron-gear-wheel", 1},
-        {"iron-plate", 1},
-        {"electronic-circuit", 1},
+        {type="item", name="iron-gear-wheel", amount=1},
+        {type="item", name="iron-plate", amount=1},
+        {type="item", name="electronic-circuit", amount=1},
       },
       main_product = "",
     },
@@ -131,7 +131,7 @@ log("Enabling disassemble recipes!")
         {type = "item", name = "stone-furnace", amount = 1},
       },
       results = {
-        {"stone", 3},
+        {type="item", name="stone", amount=3},
       },
       main_product = "",
     },
@@ -160,8 +160,8 @@ log("Enabling disassemble recipes!")
         {type = "item", name = "steel-furnace", amount = 1},
       },
       results = {
-        {"steel-plate", 4},
-        {"stone-brick", 4}
+        {type="item", name="steel-plate", amount=4},
+        {type="item", name="stone-brick", amount=4}
       },
       main_product = "",
     },
@@ -182,9 +182,9 @@ if SET and not KRAS then
       enabled = false,
       energy_required = 21,
       ingredients = {
-        {"electric-furnace", 1},
-        {"productivity-module", 1},
-        {"bi-rail-wood", 40}
+        {type="item", name="electric-furnace", amount=1},
+        {type="item", name="productivity-module", amount=1},
+        {type="item", name="bi-rail-wood", amount=40}
       },
       result_count = 3,
       result = "production-science-pack"

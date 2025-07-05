@@ -21,10 +21,9 @@ data:extend({
       enabled = true,
       energy_required = 4,
       ingredients = {
-        {"wood", 10},
+        {type="item", name="wood", amount=10},
       },
-      result = "bi-dart-magazine-basic",
-      result_count = 10,
+      results = {{type="item", name="bi-dart-magazine-basic", amount=10}},
       main_product = "",
       allow_as_intermediate = false,    -- Added for 0.18.34/1.1.4
       always_show_made_in = false,      -- Added for 0.18.34/1.1.4
@@ -34,10 +33,9 @@ data:extend({
       enabled = true,
       energy_required = 6,
       ingredients = {
-        {"wood", 10},
+        {type="item", name="wood", amount=10},
       },
-      result = "bi-dart-magazine-basic",
-      result_count = 8,
+      results = {{type="item", name="bi-dart-magazine-basic", amount=8}},
       main_product = "",
       allow_as_intermediate = false,    -- Added for 0.18.34/1.1.4
       always_show_made_in = false,      -- Added for 0.18.34/1.1.4
@@ -73,11 +71,10 @@ data:extend({
       enabled = false,
       energy_required = 5,
       ingredients = {
-        {"bi-dart-magazine-basic", 10},
-        {"copper-plate", 5},
+        {type="item", name="bi-dart-magazine-basic", amount=10},
+        {type="item", name="copper-plate", amount=5},
       },
-      result = "bi-dart-magazine-standard",
-      result_count = 10,
+      results = {{type="item", name="bi-dart-magazine-standard", amount=10}},
       main_product = "",
       allow_as_intermediate = false,    -- Added for 0.18.34/1.1.4
       always_show_made_in = false,      -- Added for 0.18.34/1.1.4
@@ -87,11 +84,10 @@ data:extend({
       enabled = false,
       energy_required = 8,
       ingredients = {
-        {"bi-dart-magazine-basic", 8},
-        {"copper-plate", 5},
+        {type="item", name="bi-dart-magazine-basic", amount=8},
+        {type="item", name="copper-plate", amount=5},
       },
-      result = "bi-dart-magazine-standard",
-      result_count = 8,
+      results = {{type="item", name="bi-dart-magazine-standard", amount=8}},
       main_product = "",
       allow_as_intermediate = false,    -- Added for 0.18.34/1.1.4
       always_show_made_in = false,      -- Added for 0.18.34/1.1.4
@@ -124,11 +120,10 @@ data:extend({
       enabled = false,
       energy_required = 6,
       ingredients = {
-        {"bi-dart-magazine-standard", 10},
-        {"plastic-bar", 5},
+        {type="item", name="bi-dart-magazine-standard", amount=10},
+        {type="item", name="plastic-bar", amount=5},
       },
-      result = "bi-dart-magazine-enhanced",
-      result_count = 10,
+      results = {{type="item", name="bi-dart-magazine-enhanced", amount=10}},
       main_product = "",
       allow_as_intermediate = false,    -- Added for 0.18.34/1.1.4
       always_show_made_in = false,      -- Added for 0.18.34/1.1.4
@@ -138,11 +133,10 @@ data:extend({
       enabled = false,
       energy_required = 9,
       ingredients = {
-        {"bi-dart-magazine-standard", 8},
-        {"plastic-bar", 5},
+        {type="item", name="bi-dart-magazine-standard", amount=8},
+        {type="item", name="plastic-bar", amount=5},
       },
-      result = "bi-dart-magazine-enhanced",
-      result_count = 8,
+      results = {{type="item", name="bi-dart-magazine-enhanced", amount=8}},
       main_product = "",
       allow_as_intermediate = false,    -- Added for 0.18.34/1.1.4
       always_show_made_in = false,      -- Added for 0.18.34/1.1.4
@@ -175,11 +169,10 @@ data:extend({
       enabled = false,
       energy_required = 8,
       ingredients = {
-        {"bi-dart-magazine-enhanced", 10},
-        {"poison-capsule", 5},
+        {type="item", name="bi-dart-magazine-enhanced", amount=10},
+        {type="item", name="poison-capsule", amount=5},
       },
-      result = "bi-dart-magazine-poison",
-      result_count = 10,
+      results = {{type="item", name="bi-dart-magazine-poison", amount=10}},
       main_product = "",
       allow_as_intermediate = false,    -- Added for 0.18.34/1.1.4
       always_show_made_in = false,      -- Added for 0.18.34/1.1.4
@@ -189,11 +182,10 @@ data:extend({
       enabled = false,
       energy_required = 12,
       ingredients = {
-        {"bi-dart-magazine-enhanced", 8},
-        {"poison-capsule", 5},
+        {type="item", name="bi-dart-magazine-enhanced", amount=8},
+        {type="item", name="poison-capsule", amount=5},
       },
-      result = "bi-dart-magazine-poison",
-      result_count = 8,
+      results = {{type="item", name="bi-dart-magazine-poison", amount=8}},
       main_product = "",
       allow_as_intermediate = false,    -- Added for 0.18.34/1.1.4
       always_show_made_in = false,      -- Added for 0.18.34/1.1.4
@@ -226,11 +218,10 @@ data:extend({
       enabled = true,
       energy_required = 8,
       ingredients = {
-        {"iron-gear-wheel", 5},
-        {"wood", 20},
+        {type="item", name="iron-gear-wheel", amount=5},
+        {type="item", name="wood", amount=20},
       },
-      result = "bi-dart-turret",
-      result_count = 1,
+      results = {{type="item", name="bi-dart-turret", amount=1}},
       main_product = "",
       allow_as_intermediate = false,    -- Added for 0.18.34/1.1.4
       always_show_made_in = false,      -- Added for 0.18.34/1.1.4
@@ -240,11 +231,10 @@ data:extend({
       enabled = true,
       energy_required = 16,
       ingredients = {
-        {"iron-gear-wheel", 10},
-        {"wood", 25},
+        {type="item", name="iron-gear-wheel", amount=10},
+        {type="item", name="wood", amount=25},
       },
-      result = "bi-dart-turret",
-      result_count = 1,
+      results = {{type="item", name="bi-dart-turret", amount=1}},
       main_product = "",
       allow_as_intermediate = false,    -- Added for 0.18.34/1.1.4
       always_show_made_in = false,      -- Added for 0.18.34/1.1.4
@@ -280,11 +270,10 @@ data:extend({
       enabled = true,
       energy_required = 8,
       ingredients = {
-        {"copper-plate", 5},
-        {"wood", 15},
+        {type="item", name="copper-plate", amount=5},
+        {type="item", name="wood", amount=15},
       },
-      result = "bi-dart-rifle",
-      result_count = 1,
+      results = {{type="item", name="bi-dart-rifle", amount=1}},
       main_product = "",
       allow_as_intermediate = false,    -- Added for 0.18.34/1.1.4
       always_show_made_in = false,      -- Added for 0.18.34/1.1.4
@@ -294,11 +283,10 @@ data:extend({
       enabled = true,
       energy_required = 16,
       ingredients = {
-        {"copper-plate", 10},
-        {"wood", 25},
+        {type="item", name="copper-plate", amount=10},
+        {type="item", name="wood", amount=25},
       },
-      result = "bi-dart-rifle",
-      result_count = 1,
+      results = {{type="item", name="bi-dart-rifle", amount=1}},
       main_product = "",
       allow_as_intermediate = false,    -- Added for 0.18.34/1.1.4
       always_show_made_in = false,      -- Added for 0.18.34/1.1.4

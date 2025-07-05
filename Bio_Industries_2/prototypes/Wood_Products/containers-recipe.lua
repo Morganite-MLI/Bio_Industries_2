@@ -26,12 +26,11 @@ data:extend({
       energy_required = 2,
       enabled = false,
       ingredients = {
-        {"copper-plate", 16},
-        {"resin", 24},
-        {"wooden-chest", 8}
+        {type="item", name="copper-plate", amount=16},
+        {type="item", name="resin", amount=24},
+        {type="item", name="wooden-chest", amount=8}
       },
-      result = "bi-wooden-chest-large",
-      result_count = 1,
+      results = {{type="item", name="bi-wooden-chest-large", amount=1}},
       main_product = "",
       requester_paste_multiplier = 4,
       allow_as_intermediate = false,    -- Added for 0.18.34/1.1.4
@@ -42,12 +41,11 @@ data:extend({
       energy_required = 4,
       enabled = false,
       ingredients = {
-        {"copper-plate", 24},
-        {"resin", 32},
-        {"wooden-chest", 8}
+        {type="item", name="copper-plate", amount=24},
+        {type="item", name="resin", amount=32},
+        {type="item", name="wooden-chest", amount=8}
       },
-      result = "bi-wooden-chest-large",
-      result_count = 1,
+      results = {{type="item", name="bi-wooden-chest-large", amount=1}},
       main_product = "",
       requester_paste_multiplier = 4,
       allow_as_intermediate = false,    -- Added for 0.18.34/1.1.4
@@ -81,12 +79,11 @@ data:extend({
       energy_required = 2,
       enabled = false,
       ingredients = {
-        {"iron-stick", 32},
-        {"stone-brick", 32},
-        {"bi-wooden-chest-large", 16}
+        {type="item", name="iron-stick", amount=32},
+        {type="item", name="stone-brick", amount=32},
+        {type="item", name="bi-wooden-chest-large", amount=16}
       },
-      result = "bi-wooden-chest-huge",
-      result_count = 1,
+      results = {{type="item", name="bi-wooden-chest-huge", amount=1}},
       main_product = "",
       requester_paste_multiplier = 4,
       allow_as_intermediate = false,    -- Added for 0.18.34/1.1.4
@@ -97,12 +94,11 @@ data:extend({
       energy_required = 4,
       enabled = false,
       ingredients = {
-        {"iron-stick", 48},
-        {"stone-brick", 48},
-        {"bi-wooden-chest-large", 16}
+        {type="item", name="iron-stick", amount=48},
+        {type="item", name="stone-brick", amount=48},
+        {type="item", name="bi-wooden-chest-large", amount=16}
       },
-      result = "bi-wooden-chest-huge",
-      result_count = 1,
+      results = {{type="item", name="bi-wooden-chest-huge", amount=1}},
       main_product = "",
       requester_paste_multiplier = 4,
       allow_as_intermediate = false,    -- Added for 0.18.34/1.1.4
@@ -136,12 +132,11 @@ data:extend({
       energy_required = 4,
       enabled = false,
       ingredients = {
-        {"steel-plate", 32},
-        {"concrete", 32},
-        {"bi-wooden-chest-huge", 16}
+        {type="item", name="steel-plate", amount=32},
+        {type="item", name="concrete", amount=32},
+        {type="item", name="bi-wooden-chest-huge", amount=16}
       },
-      result = "bi-wooden-chest-giga",
-      result_count = 1,
+      results = {{type="item", name="bi-wooden-chest-giga", amount=1}},
       main_product = "",
       requester_paste_multiplier = 4,
       allow_as_intermediate = false,    -- Added for 0.18.34/1.1.4
@@ -152,13 +147,12 @@ data:extend({
       energy_required = 6,
       enabled = false,
       ingredients = {
-        {"steel-plate", 48},
-        {"concrete", 48},
-        {"bi-wooden-chest-huge", 16}
+        {type="item", name="steel-plate", amount=48},
+        {type="item", name="concrete", amount=48},
+        {type="item", name="bi-wooden-chest-huge", amount=16}
       },
       main_product = "",
-      result = "bi-wooden-chest-giga",
-      result_count = 1,
+      results = {{type="item", name="bi-wooden-chest-giga", amount=1}},
       main_product = "",
       requester_paste_multiplier = 4,
       allow_as_intermediate = false,    -- Added for 0.18.34/1.1.4
