@@ -20,7 +20,6 @@ local no_sound = {
 -- Some common properties that should be used by all hidden entity types          --
 ------------------------------------------------------------------------------------
 BI.hidden_entities.flags = {
-  "hidden",
   "hide-alt-info",
   "no-copy-paste",
   "not-blueprintable",
@@ -137,6 +136,8 @@ BI.set_common_properties = function(h_entity)
   h_entity.collision_mask = BI.hidden_entities.collision_mask
   h_entity.collision_box = BI.hidden_entities.collision_box
   h_entity.selection_box = BI.hidden_entities.selection_box
+
+  h_entity.hidden = true
 end
 
 
