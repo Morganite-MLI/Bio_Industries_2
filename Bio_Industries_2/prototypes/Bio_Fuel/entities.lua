@@ -168,7 +168,7 @@ if BI.Settings.BI_Bio_Fuel then
       energy_consumption = "3.6MW",
       energy_source = {
         type = "burner",
-        fuel_category = "chemical",
+        fuel_categories = { "chemical" },
         effectivity = 1,
         fuel_inventory_size = 2,
         emissions_per_minute = { pollution = 15 },
