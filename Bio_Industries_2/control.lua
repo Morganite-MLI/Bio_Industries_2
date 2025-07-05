@@ -14,8 +14,8 @@ end
 -- let's just declare the variable here and fill it later.
 local AlienBiomes
 
---~ local Event = require('__stdlib__/stdlib/event/event').set_protected_mode(true)
-local Event = require('__stdlib__/stdlib/event/event').set_protected_mode(false)
+--~ local Event = require('__kry_stdlib__/stdlib/event/event').set_protected_mode(true)
+local Event = require('__kry_stdlib__/stdlib/event/event').set_protected_mode(false)
 require ("util")
 require ("libs/util_ext")
 require ("control_tree")

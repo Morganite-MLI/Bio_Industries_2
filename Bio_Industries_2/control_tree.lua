@@ -1,7 +1,7 @@
 --~ local BioInd = require("__"..script.mod_name.."__.common")(script.mod_name)
 
 -- All tree Growing stuff
-local Event = require('__stdlib__/stdlib/event/event').set_protected_mode(true)
+local Event = require('__kry_stdlib__/stdlib/event/event').set_protected_mode(true)
 
 local terrains = require("libs/trees-and-terrains")
 

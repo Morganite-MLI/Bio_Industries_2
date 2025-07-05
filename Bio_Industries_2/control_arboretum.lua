@@ -4,8 +4,8 @@ BioInd.writeDebug("Entered control_arboretum.lua")
 
 ---Arboretum Stuff
 
---~ local Event = require('__stdlib__/stdlib/event/event').set_protected_mode(true)
-local Event = require('__stdlib__/stdlib/event/event').set_protected_mode(false)
+--~ local Event = require('__kry_stdlib__/stdlib/event/event').set_protected_mode(true)
+local Event = require('__kry_stdlib__/stdlib/event/event').set_protected_mode(false)
 
 -- If a recipe with NORMAL FERTILIZER is used, don't fertilize tiles set have "true"
 -- set! (Fertile tiles set to true in this table can't be made more fertile with
