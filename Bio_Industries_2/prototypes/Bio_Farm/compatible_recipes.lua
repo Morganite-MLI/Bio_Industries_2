@@ -1,4 +1,4 @@
-local BioInd = require('common')('Bio_Industries')
+local BioInd = require('common')('Bio_Industries_2')
 
 local ICONPATH = BioInd.modRoot .. "/graphics/icons/"
 local ICONPATHMIPS = BioInd.modRoot .. "/graphics/icons/mips/"
@@ -128,7 +128,7 @@ if not data.raw.item["resin"] then
       main_procuct = "",
       -- This is a custom property for use by "Krastorio 2" (it will change
       -- ingredients/results; used for wood/wood pulp)
-      mod = "Bio_Industries",
+      mod = "Bio_Industries_2",
     },
   })
   -- Order in table reflects order in display (Tech tree), so we remove the last
@@ -369,7 +369,7 @@ if data.raw.item["wooden-board"] and mods["bobelectronics"] then
       },
       -- This is a custom property for use by "Krastorio 2" (it will change
       -- ingredients/results; used for wood/wood pulp)
-      mod = "Bio_Industries",
+      mod = "Bio_Industries_2",
     },
   })
   thxbob.lib.tech.add_recipe_unlock("electronics", "bi-press-wood")

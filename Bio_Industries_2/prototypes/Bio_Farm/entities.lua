@@ -1,4 +1,4 @@
-local BioInd = require('common')('Bio_Industries')
+local BioInd = require('common')('Bio_Industries_2')
 
 --~ local ICONPATH = BioInd.modRoot .. "/graphics/entities/biofarm/"
 local ICONPATH = BioInd.modRoot .. "/graphics/icons/"
@@ -515,7 +515,7 @@ data:extend({
     },
     allowed_effects = {"consumption", "speed", "pollution"},
     animation = {
-      filename = "__Bio_Industries__/graphics/entities/cokery/cokery_sheet.png",
+      filename = "__Bio_Industries_2__/graphics/entities/cokery/cokery_sheet.png",
       frame_count = 28,
       line_length = 7,
       width = 256,
@@ -561,7 +561,7 @@ data:extend({
     collision_box = {{-0.8, -0.8}, {0.8, 0.8}},
     selection_box = {{-1.0, -1.0}, {1.0, 1.0}},
     animation = {
-      filename = "__Bio_Industries__/graphics/entities/stone-crusher/stone_crusher_anim.png",
+      filename = "__Bio_Industries_2__/graphics/entities/stone-crusher/stone_crusher_anim.png",
       priority = "high",
       width = 65,
       height = 78,
@@ -570,7 +570,7 @@ data:extend({
       shift = {0.0, -0.1}
     },
     working_visualisations = {
-      filename = "__Bio_Industries__/graphics/entities/stone-crusher/stone-crusher-anim.png",
+      filename = "__Bio_Industries_2__/graphics/entities/stone-crusher/stone-crusher-anim.png",
       priority = "high",
       width = 65,
       height = 78,

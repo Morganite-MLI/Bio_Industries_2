@@ -4,7 +4,7 @@
 -- read!
 --------------------------------------------------------------------
 
---~ local BioInd = require('common')('Bio_Industries')
+--~ local BioInd = require('common')('Bio_Industries_2')
 
 local settings_changed = {}
 
@@ -32,7 +32,7 @@ log("Entered function settings_changed.musk_floor!")
     force = BioInd.MuskForceName
   -- Singleplayer mode: use force of first player
   elseif not game.is_multiplayer() then
-    -- Apparently, this crashed for someone (https://mods.factorio.com/mod/Bio_Industries/discussion/649d41b778d997d29385b8cf).
+    -- Apparently, this crashed for someone (https://mods.factorio.com/mod/Bio_Industries_2/discussion/649d41b778d997d29385b8cf).
     -- Could it be that a game that was originally a multiplayer game has been saved and reused
     -- as singleplayer game, but there was no player 1? Let's go over all players and break after
     -- the first hit, so we make sure we'll get the single player whatever its index!

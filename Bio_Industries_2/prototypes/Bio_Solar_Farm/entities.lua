@@ -1,8 +1,8 @@
-local BioInd = require('common')('Bio_Industries')
+local BioInd = require('common')('Bio_Industries_2')
 require ("util")
 
 local ICONPATH = BioInd.modRoot .. "/graphics/icons/"
-local ENTITYPATH = "__Bio_Industries__/graphics/entities/bio_solar_farm/"
+local ENTITYPATH = "__Bio_Industries_2__/graphics/entities/bio_solar_farm/"
 
 --~ local BIGICONS = BioInd.check_base_version("0.18.0")
 
@@ -410,7 +410,7 @@ data:extend({
     fire_glow_flicker_enabled = false,
     fire_glow = {
       north = {
-          filename = "__Bio_Industries__/graphics/entities/small-lamp/light-on-patch.png",
+          filename = "__Bio_Industries_2__/graphics/entities/small-lamp/light-on-patch.png",
           priority = "extra-high",
           frame_count = 1,
           width = 62,
@@ -420,7 +420,7 @@ data:extend({
           blend_mode = "additive",
       },
       east = {
-          filename = "__Bio_Industries__/graphics/entities/small-lamp/light-on-patch.png",
+          filename = "__Bio_Industries_2__/graphics/entities/small-lamp/light-on-patch.png",
           priority = "extra-high",
           frame_count = 1,
           width = 62,
@@ -429,7 +429,7 @@ data:extend({
           blend_mode = "additive",
       },
       south = {
-          filename = "__Bio_Industries__/graphics/entities/small-lamp/light-on-patch.png",
+          filename = "__Bio_Industries_2__/graphics/entities/small-lamp/light-on-patch.png",
           priority = "extra-high",
           frame_count = 1,
           width = 62,
@@ -438,7 +438,7 @@ data:extend({
           blend_mode = "additive",
       },
       west = {
-          filename = "__Bio_Industries__/graphics/entities/small-lamp/light-on-patch.png",
+          filename = "__Bio_Industries_2__/graphics/entities/small-lamp/light-on-patch.png",
           priority = "extra-high",
           frame_count = 1,
           width = 62,

@@ -1,4 +1,4 @@
-local BioInd = require('common')('Bio_Industries')
+local BioInd = require('common')('Bio_Industries_2')
 
 local ICONPATH = BioInd.modRoot .. "/graphics/icons/"
 
@@ -203,7 +203,7 @@ return
 {
   layers = {
     {
-      filename = "__Bio_Industries__/graphics/entities/bio_turret/bio_turret.png",
+      filename = "__Bio_Industries_2__/graphics/entities/bio_turret/bio_turret.png",
       priority = "medium",
       scale = 0.5,
       width = 224,
@@ -274,7 +274,7 @@ data:extend({
       }, ]]
       range = 20,
       sound = {
-        filename = "__Bio_Industries__/sound/dart-turret.ogg",
+        filename = "__Bio_Industries_2__/sound/dart-turret.ogg",
         volume = 0.85
       },
     },
@@ -309,7 +309,7 @@ data:extend({
       projectile_creation_distance = 1.125,
       range = 17,
       sound = {
-        filename = "__Bio_Industries__/sound/dart-turret.ogg",
+        filename = "__Bio_Industries_2__/sound/dart-turret.ogg",
         volume = 0.65
       },
     },

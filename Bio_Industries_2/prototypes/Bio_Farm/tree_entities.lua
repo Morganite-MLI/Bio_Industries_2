@@ -1,4 +1,4 @@
-local BioInd = require('common')('Bio_Industries')
+local BioInd = require('common')('Bio_Industries_2')
 
 --[[
 
@@ -127,7 +127,7 @@ for id, prototype in pairs(data.raw.tree) do
           local max = 2
           if i <= max then
             variation.trunk.layers = {{
-              filename = "__Bio_Industries__/graphics/icons/Seedling_a.png",
+              filename = "__Bio_Industries_2__/graphics/icons/Seedling_a.png",
               priority = "extra-high",
               width = 64,
               height = 64,

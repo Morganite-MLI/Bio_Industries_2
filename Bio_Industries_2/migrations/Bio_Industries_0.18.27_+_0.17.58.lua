@@ -1,4 +1,4 @@
---~ local BioInd = require('__Bio_Industries__/common')('Bio_Industries')
+--~ local BioInd = require('__Bio_Industries_2__/common')('Bio_Industries_2')
 ------------------------------------------------------------------------------------
 -- For some reason, the recipe for bi-biomass-2 was more advanced than the recipe
 -- for bi-biomass-3. This worked because we changed their order whereever they've

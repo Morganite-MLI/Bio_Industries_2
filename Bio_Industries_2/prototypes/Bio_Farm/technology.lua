@@ -1,4 +1,4 @@
-local BioInd = require('common')('Bio_Industries')
+local BioInd = require('common')('Bio_Industries_2')
 local coal_processing = require("prototypes.Bio_Farm.coal_processing")
 
 local ICONPATH = BioInd.modRoot .. "/graphics/technology/"

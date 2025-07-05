@@ -1,7 +1,7 @@
 ------------------------------------------------------------------------------------
 --   Create fluid fertilizers, recipes, and unlocks if the setting requires it!   --
 ------------------------------------------------------------------------------------
-local BioInd = require('common')('Bio_Industries')
+local BioInd = require('common')('Bio_Industries_2')
 local ICONPATH = BioInd.modRoot .. "/graphics/icons/"
 
 --~ BioInd.show("fluid_fertilizer.lua -- BI.Settings.BI_Easy_Bio_Gardens", BI.Settings.BI_Easy_Bio_Gardens)

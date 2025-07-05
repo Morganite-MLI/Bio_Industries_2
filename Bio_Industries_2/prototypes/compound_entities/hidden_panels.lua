@@ -1,5 +1,5 @@
 -- Add functions that are also used in other files (debugging output etc.)
-local BioInd = require('common')('Bio_Industries')
+local BioInd = require('common')('Bio_Industries_2')
 BioInd.writeDebug("Entered prototypes.hidden_panels.lua of \"%s\".", {BioInd.modName})
 
 local ICONPATH = BioInd.modRoot .. "/graphics/icons/"

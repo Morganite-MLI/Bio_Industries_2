@@ -1,4 +1,4 @@
-local BioInd = require('common')('Bio_Industries')
+local BioInd = require('common')('Bio_Industries_2')
 
 local ICONPATH = BioInd.modRoot .. "/graphics/entities/bio_cannon/projectiles/"
 
@@ -297,7 +297,7 @@ if BI.Settings.Bio_Cannon then
       },
       sound = {
       {
-        filename = "__Bio_Industries__/sound/boom.ogg",
+        filename = "__Bio_Industries_2__/sound/boom.ogg",
         volume = 4.0
       },
       },

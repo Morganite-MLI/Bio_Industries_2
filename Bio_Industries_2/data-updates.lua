@@ -1,4 +1,4 @@
-local BioInd = require('common')('Bio_Industries')
+local BioInd = require('common')('Bio_Industries_2')
 
 for var, name in pairs({
   Bio_Cannon = "BI_Bio_Cannon",
@@ -18,7 +18,7 @@ end
 
 --~ BioInd.show("data.raw.recipe[\"bi-sulfur\"]", data.raw.recipe["bi-sulfur"])
 BioInd.show("BI.Settings.BI_Easy_Bio_Gardens", BI.Settings.BI_Easy_Bio_Gardens)
-local ICONPATH = "__Bio_Industries__/graphics/icons/"
+local ICONPATH = "__Bio_Industries_2__/graphics/icons/"
 
 ----Update the Wood Pipe Images
 require("prototypes.Wood_Products.pipes")
@@ -810,7 +810,7 @@ BioInd.writeDebug("Removed technology " .. "bi-tech-coal-processing-" .. i)
   end
 end
 
--- Moved here from data-final-fixes.lua for 0.18.34/1.1.4! (Fixes https://mods.factorio.com/mod/Bio_Industries/discussion/5ff517c391699300236170a2)
+-- Moved here from data-final-fixes.lua for 0.18.34/1.1.4! (Fixes https://mods.factorio.com/mod/Bio_Industries_2/discussion/5ff517c391699300236170a2)
 -- "Transport drones" ruins rails by removing object-layer from the collision mask. That
 -- causes problems for our "Wooden rail bridges" as they will also pass through cliffs.
 require("prototypes.Wood_Products.rail_updates")

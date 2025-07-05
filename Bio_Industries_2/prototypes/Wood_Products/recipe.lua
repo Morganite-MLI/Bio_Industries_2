@@ -1,4 +1,4 @@
-local BioInd = require('common')('Bio_Industries')
+local BioInd = require('common')('Bio_Industries_2')
 
 local ICONPATH = BioInd.modRoot .. "/graphics/icons/"
 
@@ -51,7 +51,7 @@ data:extend({
     order = "a[energy]-b[small-electric-pole]",
     -- This is a custom property for use by "Krastorio 2" (it will change
     -- ingredients/results; used for wood/wood pulp)
-    mod = "Bio_Industries",
+    mod = "Bio_Industries_2",
   },
 
   --- Huge Wooden Pole
@@ -103,7 +103,7 @@ data:extend({
     order = "a[energy]-d[big-electric-pole]",
     -- This is a custom property for use by "Krastorio 2" (it will change
     -- ingredients/results; used for wood/wood pulp)
-    mod = "Bio_Industries",
+    mod = "Bio_Industries_2",
   },
 
   --- Wooden Fence
@@ -150,7 +150,7 @@ data:extend({
     subgroup = "defensive-structure",
     -- This is a custom property for use by "Krastorio 2" (it will change
     -- ingredients/results; used for wood/wood pulp)
-    mod = "Bio_Industries",
+    mod = "Bio_Industries_2",
   },
 
   --- Wooden Rail
@@ -411,7 +411,7 @@ data:extend({
     order = "a[pipe]-1a[pipe]",
     -- This is a custom property for use by "Krastorio 2" (it will change
     -- ingredients/results; used for wood/wood pulp)
-    mod = "Bio_Industries",
+    mod = "Bio_Industries_2",
   },
 
   -- Wood Pipe to Ground

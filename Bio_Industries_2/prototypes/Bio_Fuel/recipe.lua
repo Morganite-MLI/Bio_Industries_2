@@ -1,4 +1,4 @@
-local BioInd = require('common')('Bio_Industries')
+local BioInd = require('common')('Bio_Industries_2')
 
 local ICONPATH = BioInd.modRoot .. "/graphics/icons/"
 --~ local new_battery_icon = BioInd.check_base_version("0.18.47")
@@ -244,7 +244,7 @@ if BI.Settings.BI_Bio_Fuel then
       --~ order = "b[cellulose-2]",
       -- This is a custom property for use by "Krastorio 2" (it will change
       -- ingredients/results; used for wood/wood pulp)
-      mod = "Bio_Industries",
+      mod = "Bio_Industries_2",
     },
 
     -- PLASTIC 1 --
@@ -286,7 +286,7 @@ if BI.Settings.BI_Bio_Fuel then
       --~ order = "b[bi-plastic-1]",
       -- This is a custom property for use by "Krastorio 2" (it will change
       -- ingredients/results; used for wood/wood pulp)
-      mod = "Bio_Industries",
+      mod = "Bio_Industries_2",
     },
 
     -- PLASTIC 2 --

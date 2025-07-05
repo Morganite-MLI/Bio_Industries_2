@@ -1,4 +1,4 @@
-local BioInd = require('common')('Bio_Industries')
+local BioInd = require('common')('Bio_Industries_2')
 
 local ICONPATH = BioInd.modRoot .. "/graphics/icons/"
 
@@ -35,7 +35,7 @@ data:extend({
     order = "a[bi]-ssw-a1[bi-seed-1]",
     -- This is a custom property for use by "Krastorio 2" (it will change
     -- ingredients/results; used for wood/wood pulp)
-    mod = "Bio_Industries",
+    mod = "Bio_Industries_2",
   },
 
 
@@ -69,7 +69,7 @@ data:extend({
     order = "a[bi]-ssw-a1[bi-seed-2]",
     -- This is a custom property for use by "Krastorio 2" (it will change
     -- ingredients/results; used for wood/wood pulp)
-    mod = "Bio_Industries",
+    mod = "Bio_Industries_2",
   },
 
 
@@ -103,7 +103,7 @@ data:extend({
     order = "a[bi]-ssw-a1[bi-seed-3]",
     -- This is a custom property for use by "Krastorio 2" (it will change
     -- ingredients/results; used for wood/wood pulp)
-    mod = "Bio_Industries",
+    mod = "Bio_Industries_2",
   },
 
 
@@ -137,7 +137,7 @@ data:extend({
     order = "a[bi]-ssw-a1[bi-seed-4]",
     -- This is a custom property for use by "Krastorio 2" (it will change
     -- ingredients/results; used for wood/wood pulp)
-    mod = "Bio_Industries",
+    mod = "Bio_Industries_2",
   },
 
 
@@ -170,7 +170,7 @@ data:extend({
     order = "b[bi]-ssw-b1[bi-Seedling_Mk1]",
     -- This is a custom property for use by "Krastorio 2" (it will change
     -- ingredients/results; used for wood/wood pulp)
-    mod = "Bio_Industries",
+    mod = "Bio_Industries_2",
   },
 
 
@@ -204,7 +204,7 @@ data:extend({
     order = "b[bi]-ssw-b1[bi-Seedling_Mk2]",
     -- This is a custom property for use by "Krastorio 2" (it will change
     -- ingredients/results; used for wood/wood pulp)
-    mod = "Bio_Industries",
+    mod = "Bio_Industries_2",
   },
 
 
@@ -237,7 +237,7 @@ data:extend({
     order = "b[bi]-ssw-b1[bi-Seedling_Mk3]",
     -- This is a custom property for use by "Krastorio 2" (it will change
     -- ingredients/results; used for wood/wood pulp)
-    mod = "Bio_Industries",
+    mod = "Bio_Industries_2",
   },
 
 
@@ -271,7 +271,7 @@ data:extend({
     order = "b[bi]-ssw-b1[bi-Seedling_Mk4]",
     -- This is a custom property for use by "Krastorio 2" (it will change
     -- ingredients/results; used for wood/wood pulp)
-    mod = "Bio_Industries",
+    mod = "Bio_Industries_2",
   },
 
 
@@ -305,7 +305,7 @@ data:extend({
     order = "c[bi]-ssw-c1[raw-wood1]",
     -- This is a custom property for use by "Krastorio 2" (it will change
     -- ingredients/results; used for wood/wood pulp)
-    mod = "Bio_Industries",
+    mod = "Bio_Industries_2",
   },
 
 
@@ -340,7 +340,7 @@ data:extend({
     order = "c[bi]-ssw-c1[raw-wood2]",
     -- This is a custom property for use by "Krastorio 2" (it will change
     -- ingredients/results; used for wood/wood pulp)
-    mod = "Bio_Industries",
+    mod = "Bio_Industries_2",
   },
 
 
@@ -375,7 +375,7 @@ data:extend({
     order = "c[bi]-ssw-c1[raw-wood3]",
     -- This is a custom property for use by "Krastorio 2" (it will change
     -- ingredients/results; used for wood/wood pulp)
-    mod = "Bio_Industries",
+    mod = "Bio_Industries_2",
   },
 
 
@@ -410,7 +410,7 @@ data:extend({
     order = "c[bi]-ssw-c1[raw-wood4]",
     -- This is a custom property for use by "Krastorio 2" (it will change
     -- ingredients/results; used for wood/wood pulp)
-    mod = "Bio_Industries",
+    mod = "Bio_Industries_2",
   },
 
 
@@ -546,7 +546,7 @@ data:extend({
     allow_decomposition = false,        -- Added for 0.18.34/1.1.4
     -- This is a custom property for use by "Krastorio 2" (it will change
     -- ingredients/results; used for wood/wood pulp)
-    mod = "Bio_Industries",
+    mod = "Bio_Industries_2",
   },
 
 
@@ -579,7 +579,7 @@ data:extend({
     allow_decomposition = false,        -- Added for 0.18.34/1.1.4
     -- This is a custom property for use by "Krastorio 2" (it will change
     -- ingredients/results; used for wood/wood pulp)
-    mod = "Bio_Industries",
+    mod = "Bio_Industries_2",
   },
 
 
@@ -615,7 +615,7 @@ data:extend({
     allow_decomposition = false,        -- Added for 0.18.34/1.1.4
     -- This is a custom property for use by "Krastorio 2" (it will change
     -- ingredients/results; used for wood/wood pulp)
-    mod = "Bio_Industries",
+    mod = "Bio_Industries_2",
   },
 
 
@@ -649,7 +649,7 @@ data:extend({
     allow_decomposition = true,         -- Changed for 0.18.34/1.1.4
     -- This is a custom property for use by "Krastorio 2" (it will change
     -- ingredients/results; used for wood/wood pulp)
-    mod = "Bio_Industries",
+    mod = "Bio_Industries_2",
   },
 
 
@@ -682,7 +682,7 @@ data:extend({
 
     -- This is a custom property for use by "Krastorio 2" (it will change
     -- ingredients/results; used for wood/wood pulp)
-    mod = "Bio_Industries",
+    mod = "Bio_Industries_2",
   },
 
 
@@ -715,7 +715,7 @@ data:extend({
     main_product = "",
     -- This is a custom property for use by "Krastorio 2" (it will change
     -- ingredients/results; used for wood/wood pulp)
-    mod = "Bio_Industries",
+    mod = "Bio_Industries_2",
   },
 
 
@@ -744,7 +744,7 @@ data:extend({
     allow_as_intermediate = false,
     -- This is a custom property for use by "Krastorio 2" (it will change
     -- ingredients/results; used for wood/wood pulp)
-    mod = "Bio_Industries",
+    mod = "Bio_Industries_2",
   },
 
 
@@ -773,7 +773,7 @@ data:extend({
     allow_as_intermediate = false,
     -- This is a custom property for use by "Krastorio 2" (it will change
     -- ingredients/results; used for wood/wood pulp)
-    mod = "Bio_Industries",
+    mod = "Bio_Industries_2",
   },
 
 
@@ -905,7 +905,7 @@ data:extend({
     --~ localised_name = {"item-name.pellet-coke"},
     --~ localised_description = {"item-description.pellet-coke"},
     icon = ICONPATH .. "pellet_coke_solid.png",
-    --icon = "__Bio_Industries__/graphics/icons/pellet_coke_c.png",
+    --icon = "__Bio_Industries_2__/graphics/icons/pellet_coke_c.png",
     icon_size = 64,
     icons = {
       {
@@ -1372,7 +1372,7 @@ data:extend({
     order = "b[bi-fertilizer]-b[bi-adv-fertilizer-2]",
     -- This is a custom property for use by "Krastorio 2" (it will change
     -- ingredients/results; used for wood/wood pulp)
-    mod = "Bio_Industries",
+    mod = "Bio_Industries_2",
   },
 
 

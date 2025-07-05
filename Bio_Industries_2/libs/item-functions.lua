@@ -1,4 +1,4 @@
-local BioInd = require('common')('Bio_Industries')
+local BioInd = require('common')('Bio_Industries_2')
 
 if not thxbob.lib.item then thxbob.lib.item = {} end
 

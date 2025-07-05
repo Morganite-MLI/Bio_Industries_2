@@ -1,4 +1,4 @@
---~ local BioInd = require('common')('Bio_Industries')
+--~ local BioInd = require('common')('Bio_Industries_2')
 
 --~ if not mods["Natural_Evolution_Buildings"] and BI.Settings.Bio_Cannon then
 

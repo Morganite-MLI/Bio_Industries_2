@@ -1,5 +1,5 @@
-local BioInd = require('common')('Bio_Industries')
-local ICONPATH = "__Bio_Industries__/graphics/icons/"
+local BioInd = require('common')('Bio_Industries_2')
+local ICONPATH = "__Bio_Industries_2__/graphics/icons/"
 
 -- If OwnlyMe's or Tral'a "Robot Tree Farm" mods are active, they will create variatons
 -- of our variations of tree prototypes. Remove them!
@@ -376,7 +376,7 @@ if mods["Krastorio2"] then
   }
   for _, recipe in pairs(data.raw.recipe) do
     BioInd.writeDebug("Recipe has \"mod\" property: %s", {recipe.mod and true or false})
-    if recipe.mod == "Bio_Industries" then
+    if recipe.mod == "Bio_Industries_2" then
       krastorio.recipes.multiplyIngredients(recipe.name, update, 4)
       krastorio.recipes.multiplyProducts(recipe.name, update, 4)
       BioInd.writeDebug("Changed ingredients for %s: %s", {recipe and recipe.name or "nil", recipe and recipe.ingredients or "nil"})

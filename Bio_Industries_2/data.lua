@@ -1,4 +1,4 @@
-local BioInd = require('common')('Bio_Industries')
+local BioInd = require('common')('Bio_Industries_2')
 
 if not BI then BI = {} end
 if not BI.Settings then BI.Settings = {} end

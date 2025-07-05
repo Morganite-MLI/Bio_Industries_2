@@ -1,4 +1,4 @@
---~ local BioInd = require('common')('Bio_Industries')
+--~ local BioInd = require('common')('Bio_Industries_2')
 
 data:extend(
   {
@@ -8,11 +8,11 @@ data:extend(
       name = "bio-industries",
       order = "vaa-a",
       inventory_order = "v-a",
-      icon = "__Bio_Industries__/graphics/technology/BioIndustries_64.png",
+      icon = "__Bio_Industries_2__/graphics/technology/BioIndustries_64.png",
       icon_size = 64,
       icons = {
           {
-              icon = "__Bio_Industries__/graphics/technology/BioIndustries_64.png",
+              icon = "__Bio_Industries_2__/graphics/technology/BioIndustries_64.png",
               icon_size = 64,
           }
       },

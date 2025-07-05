@@ -1,4 +1,4 @@
---~ local BioInd = require('__Bio_Industries__/common')('Bio_Industries')
+--~ local BioInd = require('__Bio_Industries_2__/common')('Bio_Industries_2')
 
 --~ game.reload_script()
 

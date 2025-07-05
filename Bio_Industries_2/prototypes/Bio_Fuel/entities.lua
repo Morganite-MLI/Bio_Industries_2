@@ -1,4 +1,4 @@
-local BioInd = require('common')('Bio_Industries')
+local BioInd = require('common')('Bio_Industries_2')
 
 local ICONPATH = BioInd.modRoot .. "/graphics/icons/"
 local ENTITYPATH = "__base__/graphics/entity/boiler/"
@@ -77,7 +77,7 @@ data:extend({
     collision_box = {{-1.2, -1.2}, {1.2, 1.2}},
     selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
     animation = {
-      filename = "__Bio_Industries__/graphics/entities/bioreactor/bioreactor.png",
+      filename = "__Bio_Industries_2__/graphics/entities/bioreactor/bioreactor.png",
       priority = "high",
       width = 128,
       height = 150,

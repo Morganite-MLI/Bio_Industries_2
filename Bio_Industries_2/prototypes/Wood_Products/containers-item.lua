@@ -2,7 +2,7 @@ if not BI.Settings.BI_Bigger_Wooden_Chests then
   return
 end
 
-local BioInd = require('common')('Bio_Industries')
+local BioInd = require('common')('Bio_Industries_2')
 local ICONPATH = BioInd.modRoot .. "/graphics/icons/"
 
 

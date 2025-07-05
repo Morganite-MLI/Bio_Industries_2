@@ -1,4 +1,4 @@
-local BioInd = require('common')('Bio_Industries')
+local BioInd = require('common')('Bio_Industries_2')
 
 local ICONPATH = BioInd.modRoot .. "/graphics/icons/"
 
@@ -50,7 +50,7 @@ data:extend({
     order = "[bio-ammo]-a-[darts]-1",
     -- This is a custom property for use by "Krastorio 2" (it will change
     -- ingredients/results; used for wood/wood pulp)
-    mod = "Bio_Industries",
+    mod = "Bio_Industries_2",
   },
 
   --- Standard Dart Ammo
@@ -249,7 +249,7 @@ data:extend({
     order = "b[turret]-e[bi-dart-turret]",
     -- This is a custom property for use by "Krastorio 2" (it will change
     -- ingredients/results; used for wood/wood pulp)
-    mod = "Bio_Industries",
+    mod = "Bio_Industries_2",
   },
 
   --- Dart Rifle
@@ -303,5 +303,5 @@ data:extend({
   },
   -- This is a custom property for use by "Krastorio 2" (it will change
   -- ingredients/results; used for wood/wood pulp)
-        mod = "Bio_Industries",
+        mod = "Bio_Industries_2",
 })

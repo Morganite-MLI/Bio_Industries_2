@@ -1,4 +1,4 @@
-local BioInd = require('common')('Bio_Industries')
+local BioInd = require('common')('Bio_Industries_2')
 
 local ICONPATH = BioInd.modRoot .. "/graphics/icons/"
 
@@ -37,7 +37,7 @@ data:extend({
       off_when_no_fluid_recipe = true
     },
     animation = {
-      filename = "__Bio_Industries__/graphics/entities/biogarden/bio_garden_x.png",
+      filename = "__Bio_Industries_2__/graphics/entities/biogarden/bio_garden_x.png",
       width = 160,
       height = 160,
       frame_count = 12,
@@ -48,7 +48,7 @@ data:extend({
     open_sound = { filename = "__base__/sound/machine-open.ogg", volume = 0.85 },
     close_sound = { filename = "__base__/sound/machine-close.ogg", volume = 0.75 },
     working_sound = {
-      sound = { { filename = "__Bio_Industries__/sound/rainforest_ambience.ogg", volume = 0.8 } },
+      sound = { { filename = "__Bio_Industries_2__/sound/rainforest_ambience.ogg", volume = 0.8 } },
       idle_sound = { filename = "__base__/sound/idle1.ogg", volume = 0.6 },
       apparent_volume = 1.5,
     },
