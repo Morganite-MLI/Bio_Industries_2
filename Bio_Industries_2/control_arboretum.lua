@@ -49,7 +49,7 @@ end
 -- Check that all ingredients are available!
 local function check_ingredients(arboretum)
   local recipe = arboretum.get_recipe()
-  local need = recipe and global.bi_arboretum_recipe_table[recipe.name]
+  local need = recipe and storage.bi_arboretum_recipe_table[recipe.name]
 
   local function check(need, have)
     for name, amount in pairs(need or {}) do
@@ -111,7 +111,7 @@ function Get_Arboretum_Recipe(ArboretumTable, event)
 
   -- 'AlienBiomes' is a bool value -- we don't want to read it again if it's false,
   -- but only if it hasn't been set yet!
-  AB = global.compatible.AlienBiomes
+  AB = storage.compatible.AlienBiomes
   --~ terrain_name_g1 = terrain_name_g1 or (AB and "vegetation-green-grass-1" or "grass-1")
   --~ terrain_name_g3 = terrain_name_g3 or (AB and "vegetation-green-grass-3" or "grass-3")
   terrain_name_g1 = terrain_name_g1 or (AB and "vegetation-green-grass-1" or "grass-1")

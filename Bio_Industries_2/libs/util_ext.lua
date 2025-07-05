@@ -73,15 +73,15 @@ function ungroup(index_id, group_id)
 end
 -------------------------------------------------------------------
 function _init_group(index_id)
-  if not global.group then
-    global.group = {}
+  if not storage.group then
+    storage.group = {}
   end
-  if not global.group.default then
-    global.group.default = {}
+  if not storage.group.default then
+    storage.group.default = {}
   end
-  if index_id and not global.group[index_id] then
+  if index_id and not storage.group[index_id] then
     -- don't care if they name their group "default"
-    global.group[index_id] = {}
+    storage.group[index_id] = {}
   end
 end
 
@@ -90,8 +90,8 @@ function _new_group(index_id)
   local group_id_r = nil
 
   while group_id_r == nil do
-   local group_id_x = "gid-" .. (group_id_n + #global.group[index_id])
-    if global.group[index_id][group_id_x] then
+   local group_id_x = "gid-" .. (group_id_n + #storage.group[index_id])
+    if storage.group[index_id][group_id_x] then
       -- collision
       group_id_n = group_id_n + 1
     else
@@ -103,22 +103,22 @@ function _new_group(index_id)
 end
 
 function _addto_group(index_id, group_id, member_id)
-  if global.group[index_id] then
-    if not global.group[index_id][group_id] then
-      global.group[index_id][group_id] = {}
+  if storage.group[index_id] then
+    if not storage.group[index_id][group_id] then
+      storage.group[index_id][group_id] = {}
     end
   end
 
-  table.insert(global.group[index_id][group_id], member_id)
+  table.insert(storage.group[index_id][group_id], member_id)
 end
 
 function _get_group(index_id, group_id)
-  return global.group[index_id][group_id]
+  return storage.group[index_id][group_id]
 end
 
 function _of_group(index_id, member_id)
   --full scan
-  for kx, vx in pairs(global.group[index_id]) do
+  for kx, vx in pairs(storage.group[index_id]) do
     for ky, vy in pairs(vx) do
       if member_id == vy then
         return vx
@@ -129,7 +129,7 @@ function _of_group(index_id, member_id)
 end
 
 function _clear_group(index_id, group_id)
-  global.group[index_id][group_id] = nil
+  storage.group[index_id][group_id] = nil
 end
 -------------------------------------------------------------------
 

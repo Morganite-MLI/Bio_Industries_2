@@ -317,7 +317,7 @@ BioInd.show("seedbomb", seedbomb)
     surface = surface,
     seed_bomb = seedbomb
   }
-  plant_tree(global.bi.tree_growing, tree_data, false)
+  plant_tree(storage.bi.tree_growing, tree_data, false)
 end
 
 function seed_planted(event)
@@ -449,8 +449,8 @@ BioInd.show(growth_chance.." <= ("..fertility.." + 5)", growth_chance <= (fertil
 BioInd.show("grow_time", grow_time)
 
         local stage_1_tree_name = "bio-tree-"..tree_name.."-1"
-        if not (game.item_prototypes[stage_1_tree_name] or
-                game.entity_prototypes[stage_1_tree_name]) then
+        if not (prototypes.item[stage_1_tree_name] or
+                prototypes.entity[stage_1_tree_name]) then
           stage_1_tree_name = tree_name
         end
 BioInd.writeDebug("stage_1_tree_name: %s", {stage_1_tree_name})
@@ -462,7 +462,7 @@ BioInd.writeDebug("stage_1_tree_name: %s", {stage_1_tree_name})
           time = event.tick + grow_time,
           surface = surface
         }
-        plant_tree(global.bi.tree_growing_stage_1, tree_data, true)
+        plant_tree(storage.bi.tree_growing_stage_1, tree_data, true)
       end
     end
   end
@@ -587,8 +587,8 @@ BioInd.writeDebug("Entered function Grow_tree_stage(%s, %s)", {stage_table, stag
       local fertility, key = f.fertility, f.key
 
       local next_stage_tree_name = "bio-tree-"..final_tree.."-"..next_stage
-      if not (game.item_prototypes[next_stage_tree_name] or
-                game.entity_prototypes[next_stage_tree_name]) then
+      if not (prototypes.item[next_stage_tree_name] or
+                prototypes.entity[next_stage_tree_name]) then
         next_stage_tree_name = final_tree
         BioInd.writeDebug("Next stage %g: Prototype did not exist", {next_stage})
       else
@@ -622,7 +622,7 @@ BioInd.writeDebug("Entered function Grow_tree_stage(%s, %s)", {stage_table, stag
             time = time_planted + grow_time,
             surface = surface
           }
-          plant_tree(global.bi["tree_growing_stage_"..next_stage], tree_data, true)
+          plant_tree(storage.bi["tree_growing_stage_"..next_stage], tree_data, true)
         end
       end
 
@@ -636,32 +636,32 @@ end
 ---- Growing Tree
 --Event.register(-12, function(event)
 Event.register(defines.events.on_tick, function(event)
-  if global.bi.tree_growing_stage_1 == nil then
+  if storage.bi.tree_growing_stage_1 == nil then
     for i = 1, 4 do
-      global.bi["tree_growing_stage_"..i] = global.bi["tree_growing_stage_"..i] or {}
+      storage.bi["tree_growing_stage_"..i] = storage.bi["tree_growing_stage_"..i] or {}
     end
   end
 
   local tick = event.tick
 
-  if global.bi.tree_growing[tick] then
-    for t, tree_data in pairs(global.bi.tree_growing[tick]) do
+  if storage.bi.tree_growing[tick] then
+    for t, tree_data in pairs(storage.bi.tree_growing[tick]) do
       BioInd.writeDebug("Trying to move tree %s to first grow stage!", {t})
       Grow_tree_first_stage(tree_data, event)
     end
-    BioInd.writeDebug("Removing global.bi.tree_growing[%s]!", {tick})
-    global.bi.tree_growing[tick] = nil
+    BioInd.writeDebug("Removing storage.bi.tree_growing[%s]!", {tick})
+    storage.bi.tree_growing[tick] = nil
   end
 
   local stage_table
   for stage = 1, 4 do
-    stage_table = global.bi["tree_growing_stage_"..stage]
+    stage_table = storage.bi["tree_growing_stage_"..stage]
     if stage_table[tick] then
       for t, tree_data in pairs(stage_table[tick]) do
         BioInd.writeDebug("Moving tree %s to next grow stage!", {t})
         Grow_tree_stage(tree_data, stage)
       end
-      BioInd.writeDebug("Removing global.bi.tree_growing_stage_%s[%s]!",
+      BioInd.writeDebug("Removing storage.bi.tree_growing_stage_%s[%s]!",
                         {stage, tick})
       stage_table[tick] = nil
     end

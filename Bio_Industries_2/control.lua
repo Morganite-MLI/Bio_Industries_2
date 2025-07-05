@@ -48,7 +48,7 @@ end
 local function get_bi_trees()
   local list = {}
 
-  local trees = game.get_filtered_entity_prototypes({{filter = "type", type = "tree"}})
+  local trees = prototypes.get_entity_filtered({{filter = "type", type = "tree"}})
   for tree_name, tree in pairs(trees) do
     if tree_name:match("^bio%-tree%-.+%-%d$") then
 BioInd.show("Found matching tree", tree_name)
@@ -70,7 +70,7 @@ local tile_patterns = {
 local function get_fixed_tiles()
   local list = {}
 
-  for tile_name, tile in pairs(game.tile_prototypes) do
+  for tile_name, tile in pairs(prototypes.tile) do
     for p, pattern in ipairs(tile_patterns) do
       if tile_name:match(pattern) then
 BioInd.show("Found matching tile", tile_name)
@@ -89,7 +89,7 @@ end
 local function get_arboretum_recipes()
   local list = {}
 
-  local recipes = game.recipe_prototypes
+  local recipes = prototypes.recipe
   local name
 
   for i = 1, 5 do
@@ -119,40 +119,40 @@ BioInd.writeDebug("Entered init!")
     game.check_prototype_translations()
   end
 
-  global = global or {}
+  storage = storage or {}
 
   --------------------------------------------------------------------
   -- Settings
   --------------------------------------------------------------------
   -- Global table for storing the last state of certain mod settings
-  global.mod_settings = global.mod_settings or {}
+  storage.mod_settings = storage.mod_settings or {}
   if BioInd.get_startup_setting("BI_Easy_Bio_Gardens") then
-    global.mod_settings.garden_pole_connectors = BioInd.get_garden_pole_connectors()
+    storage.mod_settings.garden_pole_connectors = BioInd.get_garden_pole_connectors()
   else
-    global.mod_settings.garden_pole_connectors = nil
+    storage.mod_settings.garden_pole_connectors = nil
   end
 
   -- Global table for storing the data of compound entities. They may change between
   -- saves (e.g. Bio gardens only need hidden poles when the "Easy gardens" setting
   -- is active).
-  --~ global.compound_entities = global.compound_entities or BioInd.compound_entities
-  global.compound_entities = BioInd.rebuild_compound_entity_list()
+  --~ storage.compound_entities = storage.compound_entities or BioInd.compound_entities
+  storage.compound_entities = BioInd.rebuild_compound_entity_list()
 
 
   --------------------------------------------------------------------
   -- Tree stuff!
   --------------------------------------------------------------------
-  global.bi = global.bi or {}
-  global.bi.tree_growing = global.bi.tree_growing or {}
+  storage.bi = storage.bi or {}
+  storage.bi.tree_growing = storage.bi.tree_growing or {}
   for i = 1, 4 do
-    global.bi["tree_growing_stage_" .. i] = global.bi["tree_growing_stage_" .. i] or {}
+    storage.bi["tree_growing_stage_" .. i] = storage.bi["tree_growing_stage_" .. i] or {}
   end
 
   -- List of tree prototypes created by BI
-  global.bi.trees = get_bi_trees()
+  storage.bi.trees = get_bi_trees()
 
   -- List of tile prototypes that can't be fertilized
-  global.bi.barren_tiles = get_fixed_tiles()
+  storage.bi.barren_tiles = get_fixed_tiles()
 
   --------------------------------------------------------------------
   -- Compound entities
@@ -160,7 +160,7 @@ BioInd.writeDebug("Entered init!")
   -- Check what global tables we need for compound entities
   local compound_entity_tables = {}
   --~ for compound, compound_data in pairs(BioInd.compound_entities) do
-  for compound, compound_data in pairs(global.compound_entities) do
+  for compound, compound_data in pairs(storage.compound_entities) do
     -- BioInd.compound_entities contains entries that point to the same table
     -- (e.g. straight/curved rails, or overlay entities), so we just overwrite
     -- them to remove duplicates
@@ -172,37 +172,37 @@ BioInd.show("Need to check these tables in global", compound_entity_tables)
   local result
   for compound_tab, compound_name in pairs(compound_entity_tables) do
     -- Init table
-    global[compound_tab] = global[compound_tab] or {}
-    BioInd.writeDebug("Initialized global[%s] (%s entities stored)",
-                      {compound_name, table_size(global[compound_tab])})
+    storage[compound_tab] = storage[compound_tab] or {}
+    BioInd.writeDebug("Initialized storage[%s] (%s entities stored)",
+                      {compound_name, table_size(storage[compound_tab])})
     -- If this compound entity requires additional tables in global, initialize
     -- them now!
-    local related_tables = global.compound_entities[compound_name].add_global_tables
+    local related_tables = storage.compound_entities[compound_name].add_global_tables
     if related_tables then
       for t, tab in ipairs(related_tables or {}) do
-        global[tab] = global[tab] or {}
-        BioInd.writeDebug("Initialized global[%s] (%s values)", {tab, table_size(global[tab])})
+        storage[tab] = storage[tab] or {}
+        BioInd.writeDebug("Initialized storage[%s] (%s values)", {tab, table_size(storage[tab])})
       end
     end
     -- If this compound entity requires additional values in global, initialize
     -- them now!
-    local related_vars = global.compound_entities[compound_name].add_global_values
+    local related_vars = storage.compound_entities[compound_name].add_global_values
     if related_vars then
       for var_name, value in pairs(related_vars or {}) do
-        global[var_name] = global[var_name] or value
-        BioInd.writeDebug("Set global[%s] to %s", {var_name, global[var_name]})
+        storage[var_name] = storage[var_name] or value
+        BioInd.writeDebug("Set storage[%s] to %s", {var_name, storage[var_name]})
       end
     end
 
     -- Clean up global tables (We can skip this for empty tables!)
-    if next(global[compound_tab]) then
+    if next(storage[compound_tab]) then
       -- Remove invalid entities
       result = BioInd.clean_global_compounds_table(compound_name)
-      BioInd.writeDebug("Removed %s invalid entries from global[%s]!",
+      BioInd.writeDebug("Removed %s invalid entries from storage[%s]!",
                         {result, compound_tab})
       -- Restore missing hidden entities
       result = BioInd.restore_missing_entities(compound_name)
-      BioInd.writeDebug("Checked %s compound entities and restored %s missing hidden entries for global[\"%s\"]!",
+      BioInd.writeDebug("Checked %s compound entities and restored %s missing hidden entries for storage[\"%s\"]!",
                         {result.checked, result.restored, compound_tab})
     end
   end
@@ -215,9 +215,9 @@ BioInd.show("Need to check these tables in global", compound_entity_tables)
   --------------------------------------------------------------------
   -- Musk floor
   --------------------------------------------------------------------
-  global.bi_musk_floor_table = global.bi_musk_floor_table or {}
-  global.bi_musk_floor_table.tiles = global.bi_musk_floor_table.tiles or {}
-  global.bi_musk_floor_table.forces = global.bi_musk_floor_table.forces or {}
+  storage.bi_musk_floor_table = storage.bi_musk_floor_table or {}
+  storage.bi_musk_floor_table.tiles = storage.bi_musk_floor_table.tiles or {}
+  storage.bi_musk_floor_table.forces = storage.bi_musk_floor_table.forces or {}
 
 
 
@@ -225,17 +225,17 @@ BioInd.show("Need to check these tables in global", compound_entity_tables)
   -- Arboretum
   --------------------------------------------------------------------
   -- Global table for arboretum radars
-  global.bi_arboretum_radar_table = global.bi_arboretum_radar_table or {}
+  storage.bi_arboretum_radar_table = storage.bi_arboretum_radar_table or {}
 
   -- Global table of ingredients for terraformer recipes
-  global.bi_arboretum_recipe_table = get_arboretum_recipes()
+  storage.bi_arboretum_recipe_table = get_arboretum_recipes()
 
 
   --------------------------------------------------------------------
   -- Compatibility with other mods
   --------------------------------------------------------------------
-  global.compatible = global.compatible or {}
-  global.compatible.AlienBiomes = BioInd.AB_tiles()
+  storage.compatible = storage.compatible or {}
+  storage.compatible.AlienBiomes = BioInd.AB_tiles()
 
 
   -- enable researched recipes
@@ -279,11 +279,11 @@ BioInd.writeDebug("On Configuration changed: %s", {ConfigurationChangedData})
   -- need to make sure that the lists of growing trees don't contain removed tree
   -- prototypes! (This fix is needed when "Alien Biomes" has been removed; it should
   -- work with all other mods that create trees as well.)
-  local trees = global.bi.trees
+  local trees = storage.bi.trees
   local tab
   -- Growing stages
   for i = 1, 4 do
-    tab = global.bi["tree_growing_stage_" .. i]
+    tab = storage.bi["tree_growing_stage_" .. i]
 BioInd.writeDebug("Number of trees in growing stage %s: %s", {i, table_size(tab)})
     --~ for t, tree in pairs(tab) do
       --~ if not trees[tree.tree_name] then
@@ -352,7 +352,7 @@ Event.register(defines.events.on_trigger_created_entity, function(event)
     --~ seed_planted_trigger(event)
     BioInd.writeDebug("Seed Bomb Activated - Standard")
     local currTile = surface.get_tile(position).name
-    if global.bi.barren_tiles[currTile] then
+    if storage.bi.barren_tiles[currTile] then
       BioInd.writeDebug("Can't fertilize %s!", {currTile})
     else
       BioInd.writeDebug("Using fertilizer!")
@@ -369,7 +369,7 @@ Event.register(defines.events.on_trigger_created_entity, function(event)
     --~ seed_planted_trigger(event)
     BioInd.writeDebug("Seed Bomb Activated - Advanced")
     local currTile = surface.get_tile(position).name
-    if global.bi.barren_tiles[currTile] then
+    if storage.bi.barren_tiles[currTile] then
       BioInd.writeDebug("Can't fertilize %s!", {currTile})
     else
       BioInd.writeDebug("Using fertilizer!")
@@ -406,7 +406,7 @@ local function On_Built(event)
 
   BioInd.show("Built entity", BioInd.print_name_id(entity))
 
-  local base_entry = global.compound_entities[entity.name]
+  local base_entry = storage.compound_entities[entity.name]
   local base = base_entry and entity
 
   -- We've found a compound entity!
@@ -448,7 +448,7 @@ BioInd.show("base_entry.optional", base_entry.optional)
 BioInd.writeDebug("Second pass -- creating hidden entities!")
 BioInd.show("base_entry", base_entry)
 
-BioInd.writeDebug("global[%s]: %s", {base_entry.tab, global[base_entry.tab]})
+BioInd.writeDebug("storage[%s]: %s", {base_entry.tab, storage[base_entry.tab]})
 BioInd.show("base.name", base.name)
 BioInd.show("base.unit_number", base.unit_number)
 BioInd.show("hidden_entities", hidden_entities)
@@ -456,9 +456,9 @@ BioInd.show("hidden_entities", hidden_entities)
       -- We must call create_entities even if there are no hidden entities (e.g. if
       -- the "Easy Gardens" setting is disabled and no hidden poles are required)
       -- because the compound entity gets registered there!
-      BioInd.create_entities(global[base_entry.tab], base, hidden_entities)
+      BioInd.create_entities(storage[base_entry.tab], base, hidden_entities)
       BioInd.writeDebug("Stored %s in table: %s",
-                        {BioInd.print_name_id(base), global[base_entry.tab][base.unit_number]})
+                        {BioInd.print_name_id(base), storage[base_entry.tab][base.unit_number]})
     end
 
   -- The built entity isn't one of our compound entities.
@@ -480,9 +480,9 @@ BioInd.show("Base entity", BioInd.print_name_id(base))
     -- Arboretum radar -- we need to add it to the table!
     if entity.type == "radar" and
       entity.name == entities["bi-arboretum-area"].hidden[h_key].name and base then
-      global.bi_arboretum_radar_table[entity.unit_number] = base.unit_number
+      storage.bi_arboretum_radar_table[entity.unit_number] = base.unit_number
       entity.backer_name = ""
-      BioInd.writeDebug("Added %s to global.bi_arboretum_radar_table", {BioInd.print_name_id(entity)})
+      BioInd.writeDebug("Added %s to storage.bi_arboretum_radar_table", {BioInd.print_name_id(entity)})
 
     -- Electric poles -- we need to take care that they don't hook up to hidden poles!
     elseif entity.type == "electric-pole" then
@@ -562,15 +562,15 @@ BioInd.writeDebug("Entered function On_Pre_Remove(%s)", {event})
   end
 
   --~ local compound_entity = BioInd.compound_entities[entity.name]
-  local compound_entity = global.compound_entities[entity.name]
-  local base_entry = compound_entity and global[compound_entity.tab][entity.unit_number]
+  local compound_entity = storage.compound_entities[entity.name]
+  local base_entry = compound_entity and storage[compound_entity.tab][entity.unit_number]
 BioInd.show("entity.name", entity.name)
 BioInd.show("entity.unit_number", entity.unit_number)
 
 BioInd.show("compound_entity", compound_entity)
 BioInd.show("base_entry", base_entry)
 BioInd.show("compound_entity.tab", compound_entity and compound_entity.tab or "nil")
-BioInd.writeDebug("global[%s]: %s", {compound_entity and compound_entity.tab or "nil", compound_entity and global[compound_entity.tab] or "nil"})
+BioInd.writeDebug("storage[%s]: %s", {compound_entity and compound_entity.tab or "nil", compound_entity and storage[compound_entity.tab] or "nil"})
 
   -- Found a compound entity from our list!
   if base_entry then
@@ -579,8 +579,8 @@ BioInd.writeDebug("Found compound entity %s",
 
     -- Arboretum: Need to separately remove the entry from the radar table
     if entity.name == "bi-arboretum" and base_entry.radar and base_entry.radar.valid then
-      global.bi_arboretum_radar_table[base_entry.radar.unit_number] = nil
-BioInd.show("Removed arboretum radar! Table", global.bi_arboretum_radar_table)
+      storage.bi_arboretum_radar_table[base_entry.radar.unit_number] = nil
+BioInd.show("Removed arboretum radar! Table", storage.bi_arboretum_radar_table)
     end
 
     -- Power rails: Connections must be explicitely removed, otherwise the poles
@@ -603,7 +603,7 @@ BioInd.writeDebug("Removing hidden entity %s", {BioInd.print_name_id(base_entry[
       BioInd.remove_entity(base_entry[hidden])
       base_entry[hidden] = nil
     end
-    global[compound_entity.tab][entity.unit_number] = nil
+    storage[compound_entity.tab][entity.unit_number] = nil
 
   -- Rail-to-power: Connections must be explicitely removed, otherwise the poles
   -- from the different rail tracks hooked up to this connector will automatically
@@ -616,16 +616,16 @@ BioInd.writeDebug("Removing hidden entity %s", {BioInd.print_name_id(base_entry[
   -- Removed seedling
   elseif entity.name == "seedling" then
     BioInd.writeDebug("Seedling has been removed")
-    remove_plants(entity.position, global.bi.tree_growing)
+    remove_plants(entity.position, storage.bi.tree_growing)
 
   -- Removed tree
-  elseif entity.type == "tree" and global.bi.trees[entity.name] then
+  elseif entity.type == "tree" and storage.bi.trees[entity.name] then
     BioInd.show("Removed tree", entity.name)
 
     local tree_stage = entity.name:match('^.+%-(%d)$')
 BioInd.writeDebug("Removed tree %s (grow stage: %s)", {entity.name, tree_stage or nil})
     if tree_stage then
-      remove_plants(entity.position, global.bi["tree_growing_stage_" .. tree_stage])
+      remove_plants(entity.position, storage.bi["tree_growing_stage_" .. tree_stage])
     else
       error(string.format("Tree %s does not have a valid tree_stage: %s", entity.name, tree_stage or "nil"))
     end
@@ -649,11 +649,11 @@ local function On_Damage(event)
 
   -- Base was damaged: Find the radar associated with it!
   if entity.name == arb then
-    associated = global.bi_arboretum_table[entity.unit_number].radar
+    associated = storage.bi_arboretum_table[entity.unit_number].radar
   -- Radar was damaged: Find the base entity!
-  elseif entity.name == global.compound_entities[arb].hidden.radar.name then
-    local base_id = global.bi_arboretum_radar_table[entity.unit_number]
-    associated = global.bi_arboretum_table[base_id].base
+  elseif entity.name == storage.compound_entities[arb].hidden.radar.name then
+    local base_id = storage.bi_arboretum_radar_table[entity.unit_number]
+    associated = storage.bi_arboretum_table[base_id].base
   end
 
   if associated and associated.valid then
@@ -679,10 +679,10 @@ BioInd.writeDebug("Entered function %s(%s)", {f_name, event})
 
   if
       -- Table checks
-      global.compound_entities[entity.name] or
-      global.bi.trees[entity.name] or
+      storage.compound_entities[entity.name] or
+      storage.bi.trees[entity.name] or
       -- Entity checks
-      entity.name == global.compound_entities["bi-arboretum"].hidden.radar.name or
+      entity.name == storage.compound_entities["bi-arboretum"].hidden.radar.name or
       entity.name == "bi-power-to-rail-pole" or
       entity.name == "seedling" then
 
@@ -704,9 +704,9 @@ local function On_Sector_Scanned(event)
   BioInd.writeDebug("Entered function %s(%s)", {f_name, event})
 
   ---- Each time a Arboretum-Radar scans a sector  ----
-  local arboretum = global.bi_arboretum_radar_table[event.radar.unit_number]
+  local arboretum = storage.bi_arboretum_radar_table[event.radar.unit_number]
   if arboretum then
-    Get_Arboretum_Recipe(global.bi_arboretum_table[arboretum], event)
+    Get_Arboretum_Recipe(storage.bi_arboretum_table[arboretum], event)
   end
 end
 
@@ -740,21 +740,21 @@ BioInd.show("Removing", o.name)
       end
 
       -- Remove tile from global tables
-      local force_name = global.bi_musk_floor_table.tiles and
-                          global.bi_musk_floor_table.tiles[x] and
-                          global.bi_musk_floor_table.tiles[x][y]
+      local force_name = storage.bi_musk_floor_table.tiles and
+                          storage.bi_musk_floor_table.tiles[x] and
+                          storage.bi_musk_floor_table.tiles[x][y]
       if force_name then
 BioInd.writeDebug("Removing Musk floor tile from tables!")
-        global.bi_musk_floor_table.tiles[x][y] = nil
-        if not next(global.bi_musk_floor_table.tiles[x]) then
-          global.bi_musk_floor_table.tiles[x] = nil
+        storage.bi_musk_floor_table.tiles[x][y] = nil
+        if not next(storage.bi_musk_floor_table.tiles[x]) then
+          storage.bi_musk_floor_table.tiles[x] = nil
         end
 
-        if global.bi_musk_floor_table.forces[force_name] and
-            global.bi_musk_floor_table.forces[force_name][x] then
-          global.bi_musk_floor_table.forces[force_name][x][y] = nil
-          if not next(global.bi_musk_floor_table.forces[force_name][x]) then
-            global.bi_musk_floor_table.forces[force_name][x] = nil
+        if storage.bi_musk_floor_table.forces[force_name] and
+            storage.bi_musk_floor_table.forces[force_name][x] then
+          storage.bi_musk_floor_table.forces[force_name][x][y] = nil
+          if not next(storage.bi_musk_floor_table.forces[force_name][x]) then
+            storage.bi_musk_floor_table.forces[force_name][x] = nil
           end
         end
       end
@@ -783,12 +783,12 @@ local function place_musk_floor(force, position, surface)
   end
 
   -- Add to global tables!
-  global.bi_musk_floor_table.tiles[x] = global.bi_musk_floor_table.tiles[x] or {}
-  global.bi_musk_floor_table.tiles[x][y] = force
+  storage.bi_musk_floor_table.tiles[x] = storage.bi_musk_floor_table.tiles[x] or {}
+  storage.bi_musk_floor_table.tiles[x][y] = force
 
-  global.bi_musk_floor_table.forces[force] = global.bi_musk_floor_table.forces[force] or {}
-  global.bi_musk_floor_table.forces[force][x] = global.bi_musk_floor_table.forces[force][x] or {}
-  global.bi_musk_floor_table.forces[force][x][y] = true
+  storage.bi_musk_floor_table.forces[force] = storage.bi_musk_floor_table.forces[force] or {}
+  storage.bi_musk_floor_table.forces[force][x] = storage.bi_musk_floor_table.forces[force][x] or {}
+  storage.bi_musk_floor_table.forces[force][x][y] = true
 end
 
 --------------------------------------------------------------------
@@ -849,12 +849,12 @@ BioInd.show("index", index)
 BioInd.show("t.old_tile.name", t.old_tile.name)
 
       -- We want to restore removed tiles if nothing is supposed to grow on them!
-      if global.bi.barren_tiles[t.old_tile.name] then
+      if storage.bi.barren_tiles[t.old_tile.name] then
 BioInd.writeDebug("%s was used on forbidden ground (%s)!", {item.name, t.old_tile.name})
         restore_tiles[#restore_tiles + 1] = {name = t.old_tile.name, position = t.position}
 
         -- Is that tile minable?
-        products = global.bi.barren_tiles[t.old_tile.name]
+        products = storage.bi.barren_tiles[t.old_tile.name]
         if type(products) == "table" then
           --~ for p, product in ipairs(products) do
             --~ if player then
@@ -897,10 +897,10 @@ BioInd.show("restore_tiles", restore_tiles)
     local removed_tiles = {}
     for index, t in pairs(old_tiles or {tile}) do
       position = BioInd.normalize_position(t.position)
-      test = global.bi_musk_floor_table and
-              global.bi_musk_floor_table.tiles and
-              global.bi_musk_floor_table.tiles[position.x] and
-              global.bi_musk_floor_table.tiles[position.x][position.y]
+      test = storage.bi_musk_floor_table and
+              storage.bi_musk_floor_table.tiles and
+              storage.bi_musk_floor_table.tiles[position.x] and
+              storage.bi_musk_floor_table.tiles[position.x][position.y]
       if test then
         removed_tiles[#removed_tiles + 1] = {
           old_tile = {name = "bi-solar-mat"},
@@ -937,8 +937,8 @@ local function Tile_Changed(event)
   for t, tile in ipairs(event.tiles) do
 BioInd.show("t", t)
     pos = BioInd.normalize_position(tile.position)
-    tile_force = global.bi_musk_floor_table.tiles[pos.x] and
-                  global.bi_musk_floor_table.tiles[pos.x][pos.y]
+    tile_force = storage.bi_musk_floor_table.tiles[pos.x] and
+                  storage.bi_musk_floor_table.tiles[pos.x][pos.y]
                   --~ -- Fall back to MuskForceName if it is available
                  --~ UseMuskForce and MuskForceName or
                  --~ -- Fall back to "neutral"
@@ -1059,8 +1059,8 @@ Event.register(defines.events.on_entity_damaged, On_Damage, function(event)
   -- Ignore damage without effect (invulnerable/resistant entities)
   if event.final_damage_amount ~= 0 and
       -- Terraformer/Terraformer radar was damaged
-      (global.bi_arboretum_table[entity.unit_number] or
-       global.bi_arboretum_radar_table[entity.unit_number]) then
+      (storage.bi_arboretum_table[entity.unit_number] or
+       storage.bi_arboretum_radar_table[entity.unit_number]) then
     return true
   end
 end)
@@ -1087,7 +1087,7 @@ setmetatable(_ENV, {
       .. serpent.line{key = key or '<nil>', value = value or '<nil>'} .. '\n')
     end,
   __index = function (self, key) --locked_global_read
-    if not (key == "game" or key == "mods") then
+    if not (key == "game" or key == "mods" or key == "storage") then
       error('\n\n[ER Global Lock] Forbidden global *read*:\n'
         .. serpent.line{key = key or '<nil>'} .. '\n')
     end

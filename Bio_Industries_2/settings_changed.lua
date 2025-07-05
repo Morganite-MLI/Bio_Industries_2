@@ -99,10 +99,10 @@ settings_changed.bio_garden = function()
 
   -- Has this setting been changed since the last time the game was run?
   local current = BioInd.get_startup_setting("BI_Easy_Bio_Gardens")
-BioInd.show("Last state of BI_Easy_Bio_Gardens", global.mod_settings.BI_Easy_Bio_Gardens)
+BioInd.show("Last state of BI_Easy_Bio_Gardens", storage.mod_settings.BI_Easy_Bio_Gardens)
 BioInd.show("Current state of BI_Easy_Bio_Gardens", current)
 
-  if global.mod_settings.BI_Easy_Bio_Gardens ~= current then
+  if storage.mod_settings.BI_Easy_Bio_Gardens ~= current then
 BioInd.writeDebug("Setting has been changed!")
     local pole, neighbours
     -- This is the unmodified table!
@@ -110,7 +110,7 @@ BioInd.writeDebug("Setting has been changed!")
     local hidden_entities = compound_entity.hidden
 
     -- Check that all gardens are still valid
-    for g, garden in pairs(global[compound_entity.tab]) do
+    for g, garden in pairs(storage[compound_entity.tab]) do
       -- Base entity doesn't exist -- remove hidden entities!''
       if not (garden.base and garden.base.valid) then
         -- Remove all hidden entities!
@@ -122,7 +122,7 @@ BioInd.writeDebug("Removing hidden entity %s %s", {
           BioInd.remove_entity(garden[hidden])
           garden[hidden] = nil
         end
-        global[compound_entity.tab][garden.entity.unit_number] = nil
+        storage[compound_entity.tab][garden.entity.unit_number] = nil
       end
     end
 
@@ -148,12 +148,12 @@ BioInd.writeDebug("Removing hidden entity %s %s", {
     -- Setting is on, so we need to create the hidden poles
     if current then
       BioInd.writeDebug("Need to create hidden poles for %s Bio Gardens!",
-                        {table_size(global.bi_bio_garden_table) })
+                        {table_size(storage.bi_bio_garden_table) })
 
       -- Restore the list of hidden entities
-      global.compound_entities["bi-bio-garden"] = BioInd.compound_entities["bi-bio-garden"]
+      storage.compound_entities["bi-bio-garden"] = BioInd.compound_entities["bi-bio-garden"]
       local base
-      for g, garden in pairs(global.bi_bio_garden_table or {}) do
+      for g, garden in pairs(storage.bi_bio_garden_table or {}) do
         -- Make sure the base entity exists!
         base = garden.base
         pole = base and garden[pole_type]
@@ -168,7 +168,7 @@ BioInd.show("pole", pole)
         elseif base then
           -- Create hidden poles
           pole = BioInd.create_entities(
-            global[compound_entity.tab],
+            storage[compound_entity.tab],
             base,
             {pole = hidden_entities[pole_type].name}
             --~ base.position
@@ -176,11 +176,11 @@ BioInd.show("pole", pole)
 
           -- Add the new pole to the table
           if pole then
-            global[compound_entity.tab][base.unit_number][pole_type] = pole
+            storage[compound_entity.tab][base.unit_number][pole_type] = pole
             BioInd.writeDebug("Stored %s %g in table: %s", {
               base.name,
               base.unit_number,
-              global[compound_entity.tab][base.unit_number]
+              storage[compound_entity.tab][base.unit_number]
             })
           end
         end
@@ -189,10 +189,10 @@ BioInd.show("pole", pole)
     -- Setting is off -- disconnect and remove hidden poles!
     else
       BioInd.writeDebug("%s Bio Gardens found -- try to disconnect hidden poles!",
-                        {table_size(global.bi_bio_garden_table) })
+                        {table_size(storage.bi_bio_garden_table) })
       -- Find hidden poles of registered gardens
-BioInd.show("global.bi_bio_garden_table", global.bi_bio_garden_table)
-      for g, garden in pairs(global.bi_bio_garden_table or {}) do
+BioInd.show("storage.bi_bio_garden_table", storage.bi_bio_garden_table)
+      for g, garden in pairs(storage.bi_bio_garden_table or {}) do
         if garden[pole_type] then
           -- Pole really exists: destroy the entity
           if garden[pole_type].valid then
@@ -212,8 +212,8 @@ BioInd.show("global.bi_bio_garden_table", global.bi_bio_garden_table)
 
       -- We don't want to create hidden poles if the setting is off,
       -- so remove the pole from hidden entities!
-      global.compound_entities["bi-bio-garden"].hidden[pole_type] = nil
-BioInd.show("global.compound_entities", global.compound_entities)
+      storage.compound_entities["bi-bio-garden"].hidden[pole_type] = nil
+BioInd.show("storage.compound_entities", storage.compound_entities)
     end
 
     -- Remove any hidden poles that are not associated with a garden
@@ -224,8 +224,8 @@ BioInd.show("global.compound_entities", global.compound_entities)
     end
 
     -- Update setting!
-    global.mod_settings.BI_Easy_Bio_Gardens = current
-    BioInd.show("Updated setting to", global.mod_settings.BI_Easy_Bio_Gardens)
+    storage.mod_settings.BI_Easy_Bio_Gardens = current
+    BioInd.show("Updated setting to", storage.mod_settings.BI_Easy_Bio_Gardens)
   else
     BioInd.writeDebug("Nothing to do!")
   end

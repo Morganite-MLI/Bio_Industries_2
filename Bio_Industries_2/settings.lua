@@ -169,20 +169,20 @@ end
 --~ data:extend({list})
 --[[
 Types of settings:
-        • startup - game must be restarted if changed (such a setting may affect prototypes' changes)
-        • runtime-global - per-world setting
-        • runtime-per-user - per-user setting
+        ï¿½ startup - game must be restarted if changed (such a setting may affect prototypes' changes)
+        ï¿½ runtime-global - per-world setting
+        ï¿½ runtime-per-user - per-user setting
 
 Types of values:
-        • bool-setting
-        • double-setting
-        • int-setting
-        • string-setting
+        ï¿½ bool-setting
+        ï¿½ double-setting
+        ï¿½ int-setting
+        ï¿½ string-setting
 
 Files being processed by the game:
-        • settings.lua
-        • settings-updates.lua
-        • settings-final-fixes.lua
+        ï¿½ settings.lua
+        ï¿½ settings-updates.lua
+        ï¿½ settings-final-fixes.lua
 
 Using in DATA.lua:
 data:extend({
@@ -230,7 +230,7 @@ Using in CONTROL.lua and in other code for reading:
                 event.player_index
                 event.setting
         GET: settings.startup["setting-name"].value - current value of startup setting; can be used in DATA.lua
-        GET: settings.global["setting-name"].value - current value of per-world setting
+        GET: settings.storage["setting-name"].value - current value of per-world setting
         GET: set = settings.get_player_settings(LuaPlayer) - current values for per-player settings; then use set["setting-name"].value
         GET: settings.player - default values
 ]]

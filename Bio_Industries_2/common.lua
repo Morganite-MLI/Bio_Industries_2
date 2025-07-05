@@ -119,7 +119,7 @@ return function(mod_name)
   --~ log("Entered function get_tree_ignore_list!")
     local ignore = {}
     local trees = game and
-                    game.get_filtered_entity_prototypes({{filter = "type", type = "tree"}}) or
+                    prototypes.get_entity_filtered({{filter = "type", type = "tree"}}) or
                     data.raw.tree
     for tree_name, tree in pairs(trees) do
 --~ log("tree_name: " .. tree_name)
@@ -281,7 +281,7 @@ return function(mod_name)
     local ret = false
 
     if game then
-      local AB = game.item_prototypes["fertilizer"].place_as_tile_result.result.name
+      local AB = prototypes.item["fertilizer"].place_as_tile_result.result.name
       -- In data stage, place_as_tile is only changed to Alien Biomes tiles if
       -- both "vegetation-green-grass-1" and "vegetation-green-grass-3" exist. Therefore,
       -- we only need to check for one tile in the control stage.
@@ -316,7 +316,7 @@ return function(mod_name)
 common.show("base_name", c_name)
 common.show("data", c_data)
       -- Is the base entity in the game?
-      if c_data.base and c_data.base.name and game.entity_prototypes[c_data.base.name] then
+      if c_data.base and c_data.base.name and prototypes.entity[c_data.base.name] then
         -- Make a copy of the compound-entity data
         common.writeDebug("%s exists -- copying data", {c_name})
         ret[c_name] = util.table.deepcopy(c_data)
@@ -326,7 +326,7 @@ common.show("data", c_data)
           --~ h_type = common.HE_map[h_key]
 common.writeDebug("h_key: %s\th_data: %s", {h_key, h_data})
           -- Remove hidden entity if it doesn't exist
-          if not game.entity_prototypes[h_data.name] then
+          if not prototypes.entity[h_data.name] then
             common.writeDebug("Removing %s (%s) from list of hidden entities!", {h_data.name, h_key})
             ret[c_name].hidden[h_key] = nil
           end
@@ -338,7 +338,7 @@ common.writeDebug("h_key: %s\th_data: %s", {h_key, h_data})
         if tab then
           -- Remove main table from global
           common.writeDebug("Removing %s (%s obsolete entries)", {tab, #tab})
-          global[tab] = nil
+          storage[tab] = nil
         end
 
         -- If this compound entity requires additional tables in global, initialize
@@ -346,8 +346,8 @@ common.writeDebug("h_key: %s\th_data: %s", {h_key, h_data})
         local related_tables = c_data.add_global_tables
         if related_tables then
           for t, tab in ipairs(related_tables or {}) do
-            common.writeDebug("Removing global[%s] (%s values)", {tab, table_size(global[tab])})
-            global[tab] = nil
+            common.writeDebug("Removing storage[%s] (%s values)", {tab, table_size(storage[tab])})
+            storage[tab] = nil
           end
         end
 
@@ -355,9 +355,9 @@ common.writeDebug("h_key: %s\th_data: %s", {h_key, h_data})
         local related_vars = c_data.add_global_values
         if related_vars then
           for var_name, value in pairs(related_vars or {}) do
-            common.writeDebug("Removing global[%s] (was: %s)",
-                              {var_name, var_name and global[var_name] or "nil"})
-            global[var_name] = nil
+            common.writeDebug("Removing storage[%s] (was: %s)",
+                              {var_name, var_name and storage[var_name] or "nil"})
+            storage[var_name] = nil
           end
         end
       end
@@ -370,18 +370,18 @@ common.writeDebug("h_key: %s\th_data: %s", {h_key, h_data})
   common.add_optional_data = function(base)
     local f_name = "add_optional_data"
 common.writeDebug("Entered function %s(%s)", {f_name, common.print_name_id(base)})
-    if not (base and base.valid and global.compound_entities[base.name]) then
+    if not (base and base.valid and storage.compound_entities[base.name]) then
       common.arg_err(base, "base of a compound entity")
     end
 
     -- Add optional values to global table
-    local data = global.compound_entities[base.name]
+    local data = storage.compound_entities[base.name]
 common.show("data", data)
     local tab = data.tab
 common.show("tab", tab)
-common.show("global[tab]", global[tab] or "nil")
+common.show("storage[tab]", storage[tab] or "nil")
 
-    local entry = global[tab][base.unit_number]
+    local entry = storage[tab][base.unit_number]
 
     for k, v in pairs(data.optional or {}) do
       if entry[k] then
@@ -399,15 +399,15 @@ common.show("global[tab]", global[tab] or "nil")
   common.clean_global_compounds_table = function(entity_name)
     local f_name = "clean_table"
 common.writeDebug("Entered function %s(%s)", {f_name, entity_name or "nil"})
-common.writeDebug("Entries in common.compound_entities[%s]: %s", {entity_name, table_size(global.compound_entities[entity_name])})
+common.writeDebug("Entries in common.compound_entities[%s]: %s", {entity_name, table_size(storage.compound_entities[entity_name])})
 
-    --~ local entity_table = global[common.compound_entities[entity_name].tab]
+    --~ local entity_table = storage[common.compound_entities[entity_name].tab]
     --~ local hidden_entities = common.compound_entities[entity_name].hidden
-    local entity_table = global.compound_entities[entity_name]
+    local entity_table = storage.compound_entities[entity_name]
 common.show("entity_table", entity_table and entity_table.tab)
-    entity_table = entity_table and entity_table.tab and global[entity_table.tab]
+    entity_table = entity_table and entity_table.tab and storage[entity_table.tab]
 common.writeDebug("entity_table: %s", {entity_table}, "line")
-    local hidden_entities = global.compound_entities[entity_name].hidden
+    local hidden_entities = storage.compound_entities[entity_name].hidden
 common.show("hidden_entities", hidden_entities)
     local removed = 0
     -- Scan the whole table
@@ -438,11 +438,11 @@ common.show("Pruned list size", table_size(entity_table))
   common.restore_missing_entities = function(entity_name)
     local f_name = "restore_missing_entities"
 common.writeDebug("Entered function %s(%s)", {f_name, entity_name or "nil"})
---~ common.writeDebug("global.compound_entities[%s]: %s", {entity_name, global.compound_entities[entity_name]})
-common.writeDebug("global.compound_entities[%s]: %s entries", {entity_name, table_size(global.compound_entities[entity_name])})
+--~ common.writeDebug("storage.compound_entities[%s]: %s", {entity_name, storage.compound_entities[entity_name]})
+common.writeDebug("storage.compound_entities[%s]: %s entries", {entity_name, table_size(storage.compound_entities[entity_name])})
 
-    local check = global.compound_entities[entity_name]
-    local entity_table = check and global[check.tab] or {}
+    local check = storage.compound_entities[entity_name]
+    local entity_table = check and storage[check.tab] or {}
     local hidden_entities = check and check.hidden or {}
 
     local checked = 0
@@ -485,12 +485,12 @@ common.writeDebug("Restored %s entities", {restored})
 
     local cnt = 0
     local h_cnt = 0
-    local data = global.compound_entities[compound_name]
+    local data = storage.compound_entities[compound_name]
     if not data then
       common.arg_err(compound_name, "name of a compound entity")
     end
 
-    local g_tab = global[data.tab]
+    local g_tab = storage[data.tab]
     local found, h_found ,created
 
     -- Scan all surfaces
@@ -553,7 +553,7 @@ common.writeDebug("Restored %s entities", {restored})
     common.writeDebug("Entered function %s()", {f_name})
 
     local cnt = 0
-    for compound_entity, c in pairs(global.compound_entities) do
+    for compound_entity, c in pairs(storage.compound_entities) do
       cnt = cnt + common.register_in_compound_entity_tab(compound_entity)
     end
     --~ common.writeDebug("Registered %s compound entities", {cnt})
@@ -647,7 +647,7 @@ common.show("new", {x = base_pos.x + offset.x, y = base_pos.y + offset.y})
     for key, tab in pairs(hidden_entities) do
 common.writeDebug("key: %s\tname: %s", {key, tab})
 --~ data = common.compound_entities[base_entity.name].hidden[key]
-      data = global.compound_entities[base_entity.name].hidden[key]
+      data = storage.compound_entities[base_entity.name].hidden[key]
 --~ common.show("common.compound_entities[base_entity.name].hidden",
             --~ common.compound_entities[base_entity.name].hidden)
 common.show("data", data)
@@ -671,7 +671,7 @@ common.show("data", data)
     end
 
     -- Add optional values to global table
-    --~ local optional = global.compound_entities[base_entity.name].optional
+    --~ local optional = storage.compound_entities[base_entity.name].optional
     --~ for k, v in pairs(optional or {}) do
       --~ g_table[base_entity.unit_number][k] = v
     --~ end
@@ -688,7 +688,7 @@ common.show("data", data)
     if common.get_startup_setting("BI_Easy_Bio_Gardens") then
 common.writeDebug("\"Easy gardens\": Compiling list of poles they can connect to!" )
       ret = {}
-      local poles = game.get_filtered_entity_prototypes({
+      local poles = prototypes.get_entity_filtered({
         {filter = "type", type = "electric-pole"},
         {filter = "name", name = {
             -- Poles named here will be ignored!
@@ -713,23 +713,23 @@ common.writeDebug("\"Easy gardens\": Not active -- nothing to do!" )
   -- added to the table yet if the pole has just been built. In this
   -- case, we pass on the new pole explicitly!)
   common.connect_garden_pole = function(base, new_pole)
-    local compound_entity = global.compound_entities["bi-bio-garden"]
+    local compound_entity = storage.compound_entities["bi-bio-garden"]
     --~ local pole_type = "electric-pole"
-    --~ local pole = global[compound_entity.tab][base.unit_number] and
-                  --~ global[compound_entity.tab][base.unit_number][pole_type] or
+    --~ local pole = storage[compound_entity.tab][base.unit_number] and
+                  --~ storage[compound_entity.tab][base.unit_number][pole_type] or
                   --~ new_pole
-    local pole = global[compound_entity.tab][base.unit_number] and
-                  global[compound_entity.tab][base.unit_number].pole or
+    local pole = storage[compound_entity.tab][base.unit_number] and
+                  storage[compound_entity.tab][base.unit_number].pole or
                   new_pole
 
     --~ if pole and pole.valid then
-      --~ local wire_reach = game.entity_prototypes[compound_entity.hidden[pole_type]] and
-                          --~ game.entity_prototypes[compound_entity.hidden[pole_type]].max_wire_distance
+      --~ local wire_reach = prototypes.entity[compound_entity.hidden[pole_type]] and
+                          --~ prototypes.entity[compound_entity.hidden[pole_type]].max_wire_distance
     if pole and pole.valid and  compound_entity.hidden and
                                 compound_entity.hidden.pole and
                                 compound_entity.hidden.pole.name then
-      local wire_reach = game.entity_prototypes[compound_entity.hidden.pole.name] and
-                          game.entity_prototypes[compound_entity.hidden.pole.name].max_wire_distance
+      local wire_reach = prototypes.entity[compound_entity.hidden.pole.name] and
+                          prototypes.entity[compound_entity.hidden.pole.name].max_wire_distance
       if not wire_reach then
         error("Prototype for hidden pole of Bio gardens doesn't exist!")
       end
@@ -758,14 +758,14 @@ common.writeDebug("Connected pole %g to %s %g: %s",
       --~ -- Connect hidden poles to other poles that may be in reach.
       --~ common.garden_pole_connectors = common.garden_pole_connectors and next() or
                                       --~ common.get_garden_pole_connectors()
---~ common.show("Poles hidden bio-garden poles may connect to", global.mod_settings.garden_pole_connectors)
+--~ common.show("Poles hidden bio-garden poles may connect to", storage.mod_settings.garden_pole_connectors)
 
       -- Look for other poles around this one
       neighbours = pole.surface.find_entities_filtered({
         position = pole.position,
         radius = wire_reach,
         type = "electric-pole",
-        name = global.mod_settings.garden_pole_connectors,
+        name = storage.mod_settings.garden_pole_connectors,
       })
 common.writeDebug("Pole %g has %s neighbours", {pole.unit_number, #neighbours})
       for n, neighbour in pairs(neighbours or{}) do
@@ -785,7 +785,7 @@ common.writeDebug("Connected pole %g to neighbour %s (%g): %s",
   common.connect_power_rail = function(base, new_pole)
     --~ local pole_type = "electric-pole"
 
-    local pole = global.bi_power_rail_table[base.unit_number].pole or new_pole
+    local pole = storage.bi_power_rail_table[base.unit_number].pole or new_pole
     if pole and pole.valid then
       -- Remove all copper wires from new pole
       pole.disconnect_neighbour()
@@ -806,7 +806,7 @@ common.writeDebug("Rail %s of %s (%s): %s (%s)", {direction, base.name, base.uni
 
           -- Only make a connection if found rail is a powered rail
           -- (We'll know it's the right type if we find it in our table!)
-          neighbour = neighbour and neighbour.valid and global.bi_power_rail_table[neighbour.unit_number]
+          neighbour = neighbour and neighbour.valid and storage.bi_power_rail_table[neighbour.unit_number]
           if neighbour and neighbour.pole and neighbour.pole.valid then
             pole.connect_neighbour(neighbour.pole)
             common.writeDebug("Connected poles!")
