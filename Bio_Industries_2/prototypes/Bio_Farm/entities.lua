@@ -184,7 +184,7 @@ data:extend({
         pipe_covers = pipecoverspictures(),
         base_area = 10,
         base_level = -1,
-        pipe_connections = {{ type = "input", position = {-1, -5} }}
+        pipe_connections = {{ flow_direction = "input", direction = defines.direction.north, position = {-1, -5} }}
       },
       {
         production_type = "input",
@@ -192,7 +192,7 @@ data:extend({
         pipe_covers = pipecoverspictures(),
         base_area = 10,
         base_level = -1,
-        pipe_connections = {{ type = "input", position = {1, -5} }}
+        pipe_connections = {{ flow_direction = "input", direction = defines.direction.north, position = {1, -5} }}
       },
       off_when_no_fluid_recipe = true
     },
@@ -468,7 +468,7 @@ data:extend({
         pipe_covers = pipecoverspictures(),
         base_area = 10,
         base_level = -1,
-        pipe_connections = {{ type = "input", position = {0, -2} }}
+        pipe_connections = {{ flow_direction = "input", direction = defines.direction.north, position = {0, -2} }}
       },
     },
     module_specification = {
@@ -1052,7 +1052,7 @@ data:extend({
         pipe_covers = pipecoverspictures(),
         base_area = 10,
         base_level = -1,
-        pipe_connections = {{ type = "input", position = {-1, -5} }}
+        pipe_connections = {{ flow_direction = "input", direction = defines.direction.north, position = {-1, -5} }}
       },
       {
         production_type = "input",
@@ -1060,7 +1060,7 @@ data:extend({
         pipe_covers = pipecoverspictures(),
         base_area = 10,
         base_level = -1,
-        pipe_connections = {{ type = "input", position = {1, -5} }}
+        pipe_connections = {{ flow_direction = "input", direction = defines.direction.north, position = {1, -5} }}
       },
       off_when_no_fluid_recipe = true
     },

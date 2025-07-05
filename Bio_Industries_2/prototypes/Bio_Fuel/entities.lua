@@ -52,7 +52,7 @@ data:extend({
         pipe_covers = pipecoverspicturesBioreactor(),
         base_area = 10,
         base_level = -1,
-        pipe_connections = {{ type = "input", position = {0, -2} }}
+        pipe_connections = {{ flow_direction = "input", direction = defines.direction.north, position = {0, -2} }}
       },
       {
         production_type = "input",
@@ -60,7 +60,7 @@ data:extend({
         pipe_covers = pipecoverspicturesBioreactor(),
         base_area = 10,
         base_level = -1,
-        pipe_connections = {{ type = "input", position = {2, 0} }}
+        pipe_connections = {{ flow_direction = "input", direction = defines.direction.north, position = {2, 0} }}
       },
       {
         production_type = "input",
@@ -68,7 +68,7 @@ data:extend({
         pipe_covers = pipecoverspicturesBioreactor(),
         base_area = 10,
         base_level = -1,
-        pipe_connections = {{ type = "input", position = {0, 2} }}
+        pipe_connections = {{ flow_direction = "input", direction = defines.direction.north, position = {0, 2} }}
       },
       {
         production_type = "output",
@@ -76,7 +76,7 @@ data:extend({
         pipe_covers = pipecoverspicturesBioreactor(),
         base_area = 10,
         base_level = 1,
-        pipe_connections = {{ type = "output", position = {-2, -1} }}
+        pipe_connections = {{ flow_direction = "output", direction = defines.direction.north, position = {-2, -1} }}
       },
       {
         production_type = "output",
@@ -84,7 +84,7 @@ data:extend({
         pipe_covers = pipecoverspicturesBioreactor(),
         base_area = 10,
         base_level = 1,
-        pipe_connections = {{ type = "output", position = {-2, 1} }}
+        pipe_connections = {{ flow_direction = "output", direction = defines.direction.north, position = {-2, 1} }}
       },
       off_when_no_fluid_recipe = false
     },
@@ -163,8 +163,8 @@ if BI.Settings.BI_Bio_Fuel then
         base_level = -1,
         pipe_covers = pipecoverspictures(),
         pipe_connections = {
-          {type = "input-output", position = {-2, 0.5}},
-          {type = "input-output", position = {2, 0.5}}
+          {flow_direction = "input-output", direction = defines.direction.north, position = {-2, 0.5}},
+          {flow_direction = "input-output", direction = defines.direction.north, position = {2, 0.5}}
         },
         production_type = "input-output",
         filter = "water"
@@ -175,7 +175,7 @@ if BI.Settings.BI_Bio_Fuel then
         base_level = 1,
         pipe_covers = pipecoverspictures(),
         pipe_connections = {
-          {type = "output", position = {0, -1.5}}
+          {flow_direction = "output", direction = defines.direction.north, position = {0, -1.5}}
         },
         production_type = "output",
         filter = "steam"

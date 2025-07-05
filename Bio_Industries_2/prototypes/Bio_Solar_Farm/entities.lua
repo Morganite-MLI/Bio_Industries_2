@@ -572,8 +572,8 @@ data:extend({
       base_level = -1,
       pipe_covers = pipecoverspictures(),
       pipe_connections = {
-        {type = "input-output", position = {5, 0}},
-                {type = "input-output", position = {-5, 0}},
+        {flow_direction = "input-output", direction = defines.direction.north, position = {5, 0}},
+                {flow_direction = "input-output", direction = defines.direction.north, position = {-5, 0}},
       },
       production_type = "input-output",
       filter = "water"
@@ -584,8 +584,8 @@ data:extend({
       base_level = 1,
       pipe_covers = pipecoverspictures(),
       pipe_connections = {
-       {type = "input-output", position = {0, 5}},
-           {type = "input-output", position = {0, -5}},
+       {flow_direction = "input-output", direction = defines.direction.north, position = {0, 5}},
+           {flow_direction = "input-output", direction = defines.direction.north, position = {0, -5}},
       },
       production_type = "output",
       filter = "steam"
