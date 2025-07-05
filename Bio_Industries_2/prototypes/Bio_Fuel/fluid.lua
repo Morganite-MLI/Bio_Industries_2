@@ -16,7 +16,7 @@ data:extend({
     },
     default_temperature = 25,
     max_temperature = 100,
-    heat_capacity = "1KJ",
+    heat_capacity = "1kJ",
     base_color = {r = 1.00, g = 0.35, b = 0.35},
     flow_color = {r = 1.00, g = 0.35, b = 0.35},
     pressure_to_speed_ratio = 0.4,

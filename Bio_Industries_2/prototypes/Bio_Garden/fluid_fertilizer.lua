@@ -50,7 +50,7 @@ data:extend({
     },
     default_temperature = 25,
     max_temperature = 100,
-    heat_capacity = "1KJ",
+    heat_capacity = "1kJ",
     --~ base_color = {r = 0.478, g = 0.341, b = 0.118},
     -- 19cf44
     --~ base_color = {r = 0.098, g = 0.811, b = 0.269},
@@ -78,7 +78,7 @@ data:extend({
     },
     default_temperature = 25,
     max_temperature = 100,
-    heat_capacity = "1KJ",
+    heat_capacity = "1kJ",
     --00ff12
     --~ base_color = {r = 0.465, g = 0.306, b = 0.272},
     --~ base_color = {r = 0, g = 1, b = 0.071},
