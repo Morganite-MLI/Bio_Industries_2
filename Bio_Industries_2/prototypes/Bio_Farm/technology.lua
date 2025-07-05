@@ -58,7 +58,7 @@ data:extend({
         recipe = "bi-wood-from-pulp"
       },
     },
-    prerequisites = {"optics"},
+    --prerequisites = {"optics"}, -- TODO: Find correct prerequisite
     unit = {
       count = 25,
       ingredients = {
