@@ -11,32 +11,16 @@ BioInd.writeDebug("Creating bigger wooden chests!")
 local ICONPATH = BioInd.modRoot .. "/graphics/icons/"
 local WOODPATH = BioInd.modRoot .. "/graphics/entities/wood_products/"
 
-local ENTITYPATH = "__base__/graphics/entity/"
-local PIPEPATH = ENTITYPATH .. "pipe/"
-
 local SNDPATH = "__base__/sound/"
---~ local BIGICONS = BioInd.check_base_version("0.18.0")
 
-
-require("prototypes.Wood_Products.demo-remnants-wood")
-
--- demo-sounds has been removed in Factorio 1.1, so we need to check the game version!
-local sound_def = BioInd.check_version("base", "<", "1.1.0") and
-                    require("__base__.prototypes.entity.demo-sounds") or
-                    require("__base__.prototypes.entity.sounds")
 local sounds = {}
-sounds.car_wood_impact = sound_def.car_wood_impact(0.8)
-sounds.generic_impact = sound_def.generic_impact
-for _, sound in ipairs(sounds.generic_impact) do
-  sound.volume = 0.65
-end
 sounds.open_sound = { filename = "__base__/sound/wooden-chest-open.ogg" }
 sounds.close_sound = { filename = SNDPATH .. "wooden-chest-close.ogg" }
 
 sounds.walking_sound = {}
 for i = 1, 11 do
   sounds.walking_sound[i] = {
-    filename = SNDPATH .. "walking/concrete-" .. (i < 10 and "0" or "")  .. i ..".ogg",
+    filename = SNDPATH .. "walking/concrete-" .. i ..".ogg",
     volume = 1.2
   }
 end
@@ -78,8 +62,7 @@ data:extend({
     inventory_size = 128, -- 64
     open_sound = { filename = "__base__/sound/wooden-chest-open.ogg" },
     close_sound = { filename = "__base__/sound/wooden-chest-close.ogg" },
-    --~ vehicle_impact_sound =  { filename = "__base__/sound/car-wood-impact.ogg", volume = 1.0 },
-    vehicle_impact_sound = sounds.car_wood_impact,
+    impact_category = "wood",
     picture = {
       filename = WOODPATH .. "large_wooden_chest.png",
       priority = "extra-high",
@@ -122,7 +105,7 @@ data:extend({
     open_sound = { filename = "__base__/sound/wooden-chest-open.ogg" },
     close_sound = { filename = "__base__/sound/wooden-chest-close.ogg" },
     --~ vehicle_impact_sound =  { filename = "__base__/sound/car-wood-impact.ogg", volume = 1.0 },
-    vehicle_impact_sound = sounds.car_wood_impact,
+    impact_category = "wood",
     picture = {
       filename = WOODPATH .. "huge_wooden_chest.png",
       priority = "extra-high",
@@ -165,7 +148,7 @@ data:extend({
     open_sound = { filename = "__base__/sound/wooden-chest-open.ogg" },
     close_sound = { filename = "__base__/sound/wooden-chest-close.ogg" },
     --~ vehicle_impact_sound =  { filename = "__base__/sound/car-wood-impact.ogg", volume = 1.0 },
-    vehicle_impact_sound = sounds.car_wood_impact,
+    impact_category = "wood",
     picture = {
       filename = WOODPATH .. "giga_wooden_chest.png",
       priority = "extra-high",

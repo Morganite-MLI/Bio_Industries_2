@@ -10,21 +10,11 @@ local ENTITYPATH = "__Bio_Industries__/graphics/entities/bio_solar_farm/"
 if BI.Settings.BI_Solar_Additions then
 
 
--- demo-sounds has been removed in Factorio 1.1, so we need to check the game version!
-local sound_def = BioInd.check_version("base", "<", "1.1.0") and
-                    require("__base__.prototypes.entity.demo-sounds") or
-                    require("__base__.prototypes.entity.sounds")
 local sounds = {}
-sounds.car_wood_impact = sound_def.car_wood_impact(1)
-sounds.generic_impact = sound_def.generic_impact
-for _, sound in ipairs(sounds.generic_impact) do
-  sound.volume = 0.65
-end
-
 sounds.walking_sound = {}
 for i = 1, 11 do
   sounds.walking_sound[i] = {
-    filename = "__base__/sound/walking/concrete-" .. (i < 10 and "0" or "")  .. i ..".ogg",
+    filename = "__base__/sound/walking/concrete-" .. i ..".ogg",
     volume = 1.2
   }
 end
@@ -133,7 +123,6 @@ data:extend({
     },
     discharge_cooldown = 60,
     discharge_light = {intensity = 0.7, size = 7, color = {r = 1.0, g = 1.0, b = 1.0}},
-    vehicle_impact_sound = sounds.generic_impact,
     working_sound = {
       sound = {
         filename = "__base__/sound/accumulator-working.ogg",
@@ -206,7 +195,6 @@ data:extend({
       direction_count = 1,
       scale = 0.5,
     },
-    vehicle_impact_sound = sounds.generic_impact,
     working_sound = {
       sound = { filename = "__base__/sound/substation.ogg" },
       apparent_volume = 1.8,

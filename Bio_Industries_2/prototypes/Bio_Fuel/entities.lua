@@ -6,20 +6,6 @@ local ENTITYPATH = "__base__/graphics/entity/boiler/"
 require ("util")
 require ("prototypes.Bio_Fuel.pipeConnectors")
 
---~ if BI.Settings.BI_Bio_Fuel then
-
--- demo-sounds has been removed in Factorio 1.1, so we need to check the game version!
-local sound_def = BioInd.check_version("base", "<", "1.1.0") and
-                    require("__base__.prototypes.entity.demo-sounds") or
-                    require("__base__.prototypes.entity.sounds")
-local sounds = {}
-sounds.generic_impact = sound_def.generic_impact
-for _, sound in ipairs(sounds.generic_impact) do
-  sound.volume = 0.65
-end
-
-
-
 bio_boiler_tint = {r = 0.5, g = 0.5, b = 0.1, a = 0.7}
 
 -- Changed for 0.18.29: We always want to make advanced fertilizer, so we need to
@@ -138,7 +124,6 @@ if BI.Settings.BI_Bio_Fuel then
       minable = {hardness = 0.2, mining_time = 0.5, result = "bi-bio-boiler"},
       max_health = 300,
       corpse = "small-remnants",
-      vehicle_impact_sound = sounds.generic_impact,
       mode = "output-to-separate-pipe",
       resistances = {
         {

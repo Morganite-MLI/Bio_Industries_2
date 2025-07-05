@@ -2,17 +2,6 @@ local BioInd = require('common')('Bio_Industries')
 
 local ICONPATH = BioInd.modRoot .. "/graphics/icons/"
 
--- demo-sounds has been removed in Factorio 1.1, so we need to check the game version!
-local sound_def = BioInd.check_version("base", "<", "1.1.0") and
-                    require("__base__.prototypes.entity.demo-sounds") or
-                    require("__base__.prototypes.entity.sounds")
-local sounds = {}
-sounds.car_wood_impact = sound_def.car_wood_impact(0.8)
-sounds.generic_impact = sound_def.generic_impact
-for _, sound in ipairs(sounds.generic_impact) do
-  sound.volume = 0.65
-end
-
 data:extend({
   --- Basic Dart
   {
@@ -265,7 +254,7 @@ data:extend({
     folding_animation = turret_pic{direction_count = 8, line_length = 1, run_mode = "backward"},
 
     -- darkfrei: wood impact sound for woods!
-    vehicle_impact_sound = sounds.car_wood_impact,
+    impact_category = "wood",
     attack_parameters = {
       type = "projectile",
       ammo_category = "Bio_Turret_Ammo",

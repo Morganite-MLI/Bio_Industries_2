@@ -9,18 +9,6 @@ local ENTITYPATH = BioInd.modRoot .. "/graphics/entities/biofarm/"
 require ("prototypes.Bio_Farm.pipeConnectors")
 require ("util")
 
--- demo-sounds has been removed in Factorio 1.1, so we need to check the game version!
-local sound_def = BioInd.check_version("base", "<", "1.1.0") and
-                    require("__base__.prototypes.entity.demo-sounds") or
-                    require("__base__.prototypes.entity.sounds")
-local sounds = {}
-sounds.car_wood_impact = sound_def.car_wood_impact(0.8)
-sounds.generic_impact = sound_def.generic_impact
-  for _, sound in ipairs(sounds.generic_impact) do
-    sound.volume = 0.65
-  end
-
-
 inv_extension2 = {
   filename = ENTITYPATH .. "Bio_Farm_Idle_alt.png",
   priority = "high",
@@ -64,7 +52,7 @@ data:extend({
     collision_box = {{-0.1, -0.1}, {0.1, 0.1}},
     selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
     subgroup = "trees",
-    vehicle_impact_sound = sounds.car_wood_impact,
+    impact_category = "wood",
     picture = {
       filename = ICONPATH .. "Seedling_b.png",
       priority = "extra-high",
@@ -106,7 +94,7 @@ data:extend({
     collision_box = {{-0.1, -0.1}, {0.1, 0.1}},
     selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
     subgroup = "trees",
-    vehicle_impact_sound = sounds.car_wood_impact,
+    impact_category = "wood",
     picture = {
       filename = ICONPATH .. "Seedling_b.png",
       priority = "extra-high",
@@ -147,7 +135,7 @@ data:extend({
     collision_box = {{-0.1, -0.1}, {0.1, 0.1}},
     selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
     subgroup = "trees",
-    vehicle_impact_sound = sounds.car_wood_impact,
+    impact_category = "wood",
     picture = {
       filename = ICONPATH .. "Seedling_b.png",
       priority = "extra-high",
@@ -231,7 +219,6 @@ data:extend({
     ingredient_count = 3,
     open_sound = { filename = "__base__/sound/machine-open.ogg", volume = 0.85 },
     close_sound = { filename = "__base__/sound/machine-close.ogg", volume = 0.75 },
-    vehicle_impact_sound = sounds.generic_impact,
     module_specification = {
       module_slots = 3
     },
@@ -497,8 +484,7 @@ data:extend({
       }
     },
     open_sound = { filename = "__base__/sound/machine-open.ogg", volume = 0.85 },
-    close_sound = { filename = "__base__/sound/machine-close.ogg", volume = 0.75 },
-    vehicle_impact_sound = sounds.generic_impact,
+    close_sound = { filename = "__base__/sound/machine-close.ogg", volume = 0.75 }
   },
 
   -- COKERY
@@ -1028,7 +1014,6 @@ data:extend({
     ingredient_count = 3,
     open_sound = { filename = "__base__/sound/machine-open.ogg", volume = 0.85 },
     close_sound = { filename = "__base__/sound/machine-close.ogg", volume = 0.75 },
-    vehicle_impact_sound = sounds.generic_impact,
     module_specification = {},
   },
 })
@@ -1042,7 +1027,7 @@ data:extend({
 local my_seedling = util.table.deepcopy(data.raw.tree["tree-01"])
 my_seedling.name = "seedling"
 --~ my_seedling.vehicle_impact_sound = { filename = "__base__/sound/car-wood-impact.ogg", volume = 0.8 }
-my_seedling.vehicle_impact_sound = vehicle_impact_sound = sounds.car_wood_impact
+my_seedling.vehicle_impact_sound = impact_category = "wood"
 my_seedling.flags = {"placeable-neutral", "placeable-player", "playeminabler-creation", "breaths-air"}
 my_seedling.minable = {mining_particle = "wooden-particle", mining_time = 0.25, result = "seedling", count = 1}
 my_seedling.corpse = nil
