@@ -143,20 +143,6 @@ ret.compound_entities = {
       },
     }
   },
-  ["bi-straight-rail-power"] = {
-    tab = "bi_power_rail_table",
-    base = {
-      name = "bi-straight-rail-power",
-      type = "straight-rail",
-    },
-    hidden = {
-      pole = {
-        name = "bi-rail-power-hidden-pole",
-        localize_entity = "bi-rail-power"
-        -- type = ret.HE_map.pole,
-      },
-    }
-  },
   -- Built from blueprint
   ["bi-arboretum"] = {
     tab = "bi_arboretum_table",
@@ -260,8 +246,6 @@ ret.get_HE_list = function(get_complete_list)
 
   -- Some entities share almost the same data, so we can copy them
   local make_copies = {
-    -- Rails
-    ["bi-straight-rail-power"] = { name = "bi-curved-rail-power", type = "curved-rail" },
     -- Overlay entities
     ["bi-arboretum"] = { name = "bi-arboretum-area", type = ret.HE_map.ammo_turret },
     ["bi-bio-cannon"] = { name = "bi-bio-cannon-area", type = ret.HE_map.ammo_turret },

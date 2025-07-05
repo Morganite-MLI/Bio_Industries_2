@@ -16,93 +16,11 @@ for var, name in pairs({
 end
 
 
---~ BioInd.show("data.raw.recipe[\"bi-sulfur\"]", data.raw.recipe["bi-sulfur"])
 BioInd.show("BI.Settings.BI_Easy_Bio_Gardens", BI.Settings.BI_Easy_Bio_Gardens)
 local ICONPATH = "__Bio_Industries_2__/graphics/icons/"
 
 ----Update the Wood Pipe Images
 require("prototypes.Wood_Products.pipes")
-
---- Update the images of Wooden rail bridges and their remnants
-require("prototypes.Wood_Products.wooden_rail_bridge_update")
-
---~ --- Bridge Rail Remnants
---~ require("prototypes.Wood_Products.update_bridge_rails_remnants")
-require("prototypes.Wood_Products.tint_rails_remnants_function")
-
--- Concrete Rail
----- Update Standard Rails to use and look like concrete
-set_tint_to_rails(
-  {
-    data.raw["straight-rail"]["straight-rail"],
-    data.raw["curved-rail"]["curved-rail"]
-  },
-  {r = 183/255, g = 183/255, b = 183/255, a = 1}
-) -- concrete
-
-set_tint_to_remnants(
-  {
-    data.raw["rail-remnants"]["straight-rail-remnants"],
-    data.raw["rail-remnants"]["curved-rail-remnants"]
-  },
-  {r = 183/255, g = 183/255, b = 183/255, a = 1}
-) -- concrete
-
--- Wood Rail
-set_tint_to_rails(
-  {
-    data.raw["straight-rail"]["bi-straight-rail-wood"],
-    data.raw["curved-rail"]["bi-curved-rail-wood"]
-  },
-  {r = 183/255, g = 125/255, b = 62/255, a = 1}
-) -- wood
-
-set_tint_to_remnants(
-  {
-    data.raw["rail-remnants"]["straight-rail-remnants-wood"],
-    data.raw["rail-remnants"]["curved-rail-remnants-wood"]
-  },
-  {r = 183/255, g = 125/255, b = 62/255, a = 1}
-) -- wood
-
---- Power Rail
-set_tint_to_rails(
-  {
-    data.raw["straight-rail"]["straight-rail"],
-    data.raw["curved-rail"]["curved-rail"]
-  },
-  {r = 150/255, g = 150/255, b = 150/255, a = 1}
-) -- mix
-
--- vanilla rail icon & images update
-data.raw["straight-rail"]["straight-rail"].icon = ICONPATH .. "straight-rail-concrete.png"
-data.raw["straight-rail"]["straight-rail"].icon_size = 64
-data.raw["straight-rail"]["straight-rail"].icon_mipmaps = 4
-data.raw["curved-rail"]["curved-rail"].icon = ICONPATH .. "curved-rail-concrete.png"
-data.raw["curved-rail"]["curved-rail"].icon_size = 64
-data.raw["curved-rail"]["curved-rail"].icon_mipmaps = 4
-data.raw["rail-planner"]["rail"].icon = ICONPATH .. "rail-concrete.png"
-data.raw["rail-planner"]["rail"].icon_size = 64
-data.raw["rail-planner"]["rail"].icon_mipmaps = 4
-
---- Wood Rail added to Tech
-thxbob.lib.tech.add_recipe_unlock("railway", "bi-rail-wood")
-
-
---- If Bob, move Vanilla Rail to Rail 2, also add Power Rail.
-if data.raw.technology["bob-railway-2"] then
-  thxbob.lib.tech.remove_recipe_unlock ("railway", "rail")
-  thxbob.lib.tech.add_recipe_unlock("bob-railway-2", "rail")
-  thxbob.lib.tech.add_recipe_unlock("bob-railway-2", "bi-rail-wood-to-concrete")
-  thxbob.lib.tech.add_recipe_unlock("bob-railway-2", "bi-rail-wood-bridge")
-  thxbob.lib.tech.add_recipe_unlock("bob-railway-2", "bi-rail-power")
-  thxbob.lib.tech.add_recipe_unlock("bob-railway-2", "bi-power-to-rail-pole")
-else
-  thxbob.lib.tech.add_recipe_unlock("railway", "bi-rail-wood-to-concrete")
-  thxbob.lib.tech.add_recipe_unlock("rail-signals", "bi-rail-wood-bridge")
-  thxbob.lib.tech.add_recipe_unlock("rail-signals", "bi-rail-power")
-  thxbob.lib.tech.add_recipe_unlock("rail-signals", "bi-power-to-rail-pole")
-end
 
 -- Damage Bonus to Ammo
 -- Don't duplicate what NE does
@@ -810,14 +728,8 @@ BioInd.writeDebug("Removed technology " .. "bi-tech-coal-processing-" .. i)
   end
 end
 
--- Moved here from data-final-fixes.lua for 0.18.34/1.1.4! (Fixes https://mods.factorio.com/mod/Bio_Industries_2/discussion/5ff517c391699300236170a2)
--- "Transport drones" ruins rails by removing object-layer from the collision mask. That
--- causes problems for our "Wooden rail bridges" as they will also pass through cliffs.
-require("prototypes.Wood_Products.rail_updates")
-
 -- Compatibility with Industrial Revolution
 require("prototypes.Industrial_Revolution")
-
 
 
 ------------------------------------------------------------------------------------

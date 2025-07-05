@@ -18,29 +18,6 @@ BioInd.writeDebug("Removed %g tree prototypes. Number of trees to ignore now: %g
 
 BI.Settings.BI_Game_Tweaks_Emissions_Multiplier = settings.startup["BI_Game_Tweaks_Emissions_Multiplier"].value
 
-
--- Moved to data-updates.lua for 0.18.34/1.1.4!
---~ ---- Game Tweaks ---- Recipes
---~ if BI.Settings.BI_Game_Tweaks_Recipe then
-  --~ --- Concrete Recipe Tweak
-  --~ thxbob.lib.recipe.remove_ingredient("concrete", "iron-ore")
-  --~ thxbob.lib.recipe.add_new_ingredient("concrete", {type = "item", name = "iron-stick", amount = 2})
-
-  --~ --- Stone Wall
-  --~ thxbob.lib.recipe.add_new_ingredient("stone-wall", {type = "item", name = "iron-stick", amount = 1})
-
-  --~ --- Rail (Remove Stone and Add Crushed Stone)
-  --~ if data.raw.item["stone-crushed"] then
-    --~ thxbob.lib.recipe.remove_ingredient("rail", "stone")
-    --~ thxbob.lib.recipe.add_new_ingredient("rail", {type = "item", name = "stone-crushed", amount = 6})
-    --~ thxbob.lib.recipe.remove_ingredient("bi-rail-wood", "stone")
-    --~ thxbob.lib.recipe.add_new_ingredient("bi-rail-wood", {type = "item", name = "stone-crushed", amount = 6})
-  --~ end
-
-  --~ -- vanilla rail recipe update
-  --~ thxbob.lib.recipe.add_new_ingredient("rail", {type = "item", name = "concrete", amount = 6})
---~ end
-
 ---- Game Tweaks ---- Tree
 if BI.Settings.BI_Game_Tweaks_Tree then
 

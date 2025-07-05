@@ -70,72 +70,6 @@ data:extend({
     stack_size = 50
   },
 
-  --- Wood Rail Planner
-  {
-    type = "rail-planner",
-    name = "bi-rail-wood",
-    localised_name = {"entity-name.bi-rail-wood"},
-    localised_description = {"entity-description.bi-rail-wood"},
-    icon = ICONPATH .. "rail-wood.png",
-    icon_size = 64,
-    icons = {
-      {
-        icon = ICONPATH .. "rail-wood.png",
-        icon_size = 64,
-      }
-    },
-    subgroup = "transport",
-    order = "a[train-system]-a[rail]",
-    place_result = "bi-straight-rail-wood",
-    stack_size = 100,
-    straight_rail = "bi-straight-rail-wood",
-    curved_rail = "bi-curved-rail-wood"
-  },
-
-  --- Wooden Bridge Rail
-  {
-    type = "rail-planner",
-    name = "bi-rail-wood-bridge",
-    localised_name = {"entity-name.bi-rail-wood-bridge"},
-    localised_description = {"entity-description.bi-rail-wood-bridge"},
-    icon = ICONPATH .. "rail-wood-bridge.png",
-    icon_size = 64,
-    icons = {
-      {
-        icon = ICONPATH .. "rail-wood-bridge.png",
-        icon_size = 64,
-      }
-    },
-    subgroup = "transport",
-    order = "a[train-system]-aa[rail]",
-    place_result = "bi-straight-rail-wood-bridge",
-    stack_size = 100,
-    straight_rail = "bi-straight-rail-wood-bridge",
-    curved_rail = "bi-curved-rail-wood-bridge"
-  },
-
-  --- Electric Rail Planner
-  {
-    type = "rail-planner",
-    name = "bi-rail-power",
-    localised_name = {"entity-name.bi-rail-power"},
-    localised_description = {"entity-description.bi-rail-power"},
-    icon = ICONPATH .. "rail-concrete-power.png",
-    icon_size = 64,
-    icons = {
-      {
-        icon = ICONPATH .. "rail-concrete-power.png",
-        icon_size = 64,
-      }
-    },
-    subgroup = "transport",
-    order = "a[train-system]-ab[rail]",
-    place_result = "bi-straight-rail-power",
-    stack_size = 100,
-    straight_rail = "bi-straight-rail-power",
-    curved_rail = "bi-curved-rail-power"
-  },
-
   --- Wood Pipe
   {
     type = "item",
@@ -177,28 +111,6 @@ data:extend({
     place_result = "bi-wood-pipe-to-ground",
     fuel_value = "20MJ",
     fuel_category = "chemical",
-    stack_size = 50
-  },
-
-
-  ---- Power pole to connect Rail to Power Grid
-  {
-    type = "item",
-    name = "bi-power-to-rail-pole",
-    localised_name = {"entity-name.bi-power-to-rail-pole"},
-    localised_description = {"entity-description.bi-power-to-rail-pole"},
-    icon = ICONPATH .. "electric-to-rail.png",
-    icon_size = 64,
-    icon_mipmaps = 1,
-    icons = {
-      {
-        icon = ICONPATH .. "electric-to-rail.png",
-        icon_size = 64,
-      }
-    },
-    subgroup = "transport",
-    order = "a[train-system]-ac[rail]",
-    place_result = "bi-power-to-rail-pole",
     stack_size = 50
   },
 })

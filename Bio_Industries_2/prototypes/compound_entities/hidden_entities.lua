@@ -1,6 +1,5 @@
 -- Add functions that are also used in other files (debugging output etc.)
-local BioInd = require('common')('Bio_Industries')
---~ local ICONPATH = BioInd.modRoot .. "/graphics/icons/"
+local BioInd = require('common')('Bio_Industries_2')
 local ICONPATH = "__core__/graphics/"
 
 local HIDDENPATH = BioInd.modRoot .. "/prototypes/compound_entities/"
@@ -30,7 +29,6 @@ BI.hidden_entities.flags = {
   "not-in-kill-statistics",
   "not-on-map",
   "not-repairable",
-  --~ "not-selectable-in-game",
   "not-upgradable",
   "placeable-off-grid",
 }
@@ -58,7 +56,6 @@ BI.hidden_entities.icons = {
   }
 }
 BI.hidden_entities.picture = {
-  --~ filename = ICONPATH .. "blank.png",
   filename = ICONPATH .. "empty.png",
   priority = "low",
   size = 1,
@@ -89,24 +86,13 @@ BI.hidden_entities.misc = {
   corpse = "",
   created_effect = nil,
   created_smoke = nil,
-  --~ damaged_trigger_effect = {
-    --~ {
-      --~ type = "damage",
-      --~ damage = {
-        --~ type = "fire",
-        --~ amount = 0
-      --~ }
-    --~ }
-  --~ },
   damaged_trigger_effect = nil,
-  --~ dying_explosion = nil,
   energy_source = {
     render_no_network_icon = false,
     render_no_power_icon = false,
   },
   fast_replaceable_group = "",
   light = nil,
-  --~ minable = nil,
   next_upgrade = "",
   remove_decoratives = "false",
   water_reflection = {pictures = BI.hidden_entities.picture},
@@ -134,7 +120,6 @@ BI.set_common_properties = function(h_entity)
       {
         icon = h_entity.icon,
         icon_size = h_entity.icon_size or 1,
-        --~ icon_mipmaps = h_entity.icon_mipmaps or 1
         icon_mipmaps = h_entity.icon_mipmaps
       }
     }
@@ -144,13 +129,11 @@ BI.set_common_properties = function(h_entity)
 
   h_entity.picture = BioInd.is_debug and h_entity.picture or BI.hidden_entities.picture
   h_entity.pictures = BioInd.is_debug and h_entity.pictures or BI.hidden_entities.picture
-  --~ h_entity.pictures = BI.hidden_entities.picture
   h_entity.overlay = BioInd.is_debug and h_entity.overlay or BI.hidden_entities.overlay
   h_entity.flags = BI.hidden_entities.flags
   h_entity.selectable_in_game = BI.hidden_entities.selectable_in_game
   h_entity.max_health = BI.hidden_entities.max_health
 
-  --~ h_entity.resistances = {{type = "fire", percent = 100}}
   h_entity.collision_mask = BI.hidden_entities.collision_mask
   h_entity.collision_box = BI.hidden_entities.collision_box
   h_entity.selection_box = BI.hidden_entities.selection_box
@@ -169,11 +152,8 @@ BI.make_hidden_entity_list = function(hidden_type)
   local name, entity_locale
   for c_name, c_data in pairs(BioInd.compound_entities) do
     BioInd.writeDebug("Checking %s for hidden %ss", {c_name, hidden_type})
---~ BioInd.show("c_name", c_name)
---~ BioInd.show("c_data", c_data)
     local h_type = c_data.hidden[hidden_type]
     if h_type then
-      --~ name = c_data.tab:gsub("_table$", ""):gsub("_", "-") .. "-hidden-" .. hidden_type
       name = h_type and h_type.name or c_data.base and c_data.base.name .. "-hidden-" .. hidden_type
       -- Store the name of the compound entity -- we'll need it for the localization!
       BI.hidden_entities.types[hidden_type] = BI.hidden_entities.types[hidden_type] or {}
@@ -196,7 +176,6 @@ end
 -- The hidden entities DO need to have images, so that they can be identified in the
 -- production tab!
 BI.add_layer = function(layers, data)
-  --~ BioInd.check_args(layers, "table", "layer")
   BioInd.check_args(data, "table", "layer data")
   layers = layers or {}
 
@@ -207,8 +186,6 @@ BI.add_layer = function(layers, data)
   local size = data.size
   local shadow = data.shadow
 
-  --~ size = size or
-          --~ (height and width and height == width) and height
   layers[#layers + 1] = {
       filename = hr_name,
       priority = priority or "low",
@@ -223,8 +200,4 @@ end
 
 require(HIDDENPATH .. "hidden_lamps")
 require(HIDDENPATH .. "hidden_panels")
-require(HIDDENPATH .. "hidden_poles")
 require(HIDDENPATH .. "hidden_radars")
-
---~ BioInd.show("BI.hidden_entities.types", BI.hidden_entities.types)
---~ error("Break!")
