@@ -34,7 +34,7 @@ data:extend({
             icon_size = 64,
         }
     },
-    flags = {"hidden"},
+    hidden = true,
     subgroup = "bio-bio-gardens-fluid",
     order = "bi-purified-air",
     stack_size = 100

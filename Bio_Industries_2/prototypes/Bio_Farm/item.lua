@@ -412,7 +412,7 @@ data:extend(
         icon_size = 64,
       }
     },
-    flags = {"hidden"},
+    hidden = true,
     subgroup = "terrain",
     order = "bi-arboretum-r1",
     stack_size = 1
@@ -430,7 +430,7 @@ data:extend(
         icon_size = 64,
       }
     },
-    flags = {"hidden"},
+    hidden = true,
     subgroup = "terrain",
     order = "bi-arboretum-r2",
     stack_size = 1
@@ -448,7 +448,7 @@ data:extend(
         icon_size = 64,
       }
     },
-    flags = {"hidden"},
+    hidden = true,
     subgroup = "terrain",
     order = "bi-arboretum-r3",
     stack_size = 1
@@ -466,7 +466,7 @@ data:extend(
         icon_size = 64,
       }
     },
-    flags = {"hidden"},
+    hidden = true,
     subgroup = "terrain",
     order = "bi-arboretum-r4",
     stack_size = 1
@@ -484,7 +484,7 @@ data:extend(
         icon_size = 64,
       }
     },
-     flags = {"hidden"},
+     hidden = true,
     subgroup = "terrain",
     order = "bi-arboretum-r5",
     stack_size = 1
