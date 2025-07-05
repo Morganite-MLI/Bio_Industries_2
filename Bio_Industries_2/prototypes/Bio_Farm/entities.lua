@@ -624,7 +624,7 @@ data:extend({
     },
     light = {intensity = 0.8, size = 15},
     animation = {
-      filename = "__base__/graphics/entity/rocket/rocket.png",
+      filename = "__Bio_Industries_2__/graphics/entities/rocket.png",
       frame_count = 8,
       line_length = 8,
       width = 9,
@@ -633,7 +633,7 @@ data:extend({
       priority = "high"
     },
     shadow = {
-      filename = "__base__/graphics/entity/rocket/rocket-shadow.png",
+      filename = "__Bio_Industries_2__/graphics/entities/rocket-shadow.png",
       frame_count = 1,
       width = 7,
       height = 24,
@@ -685,7 +685,7 @@ data:extend({
     },
     light = {intensity = 0.8, size = 15},
     animation = {
-      filename = "__base__/graphics/entity/rocket/rocket.png",
+      filename = "__Bio_Industries_2__/graphics/entities/rocket.png",
       frame_count = 8,
       line_length = 8,
       width = 9,
@@ -694,7 +694,7 @@ data:extend({
       priority = "high"
     },
     shadow = {
-      filename = "__base__/graphics/entity/rocket/rocket-shadow.png",
+      filename = "__Bio_Industries_2__/graphics/entities/rocket-shadow.png",
       frame_count = 1,
       width = 7,
       height = 24,
@@ -746,7 +746,7 @@ data:extend({
     },
     light = {intensity = 0.8, size = 15},
     animation = {
-      filename = "__base__/graphics/entity/rocket/rocket.png",
+      filename = "__Bio_Industries_2__/graphics/entities/rocket.png",
       frame_count = 8,
       line_length = 8,
       width = 9,
@@ -755,7 +755,7 @@ data:extend({
       priority = "high"
     },
     shadow = {
-      filename = "__base__/graphics/entity/rocket/rocket-shadow.png",
+      filename = "__Bio_Industries_2__/graphics/entities/rocket-shadow.png",
       frame_count = 1,
       width = 7,
       height = 24,

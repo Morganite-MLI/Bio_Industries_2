@@ -15,7 +15,7 @@ function assembler2pipepicturesCokery()
         scale = 0.5,
     },
     east = {
-        filename = "__base__/graphics/entity/assembling-machine-2/hr-assembling-machine-2-pipe-E.png",
+        filename = "__base__/graphics/entity/assembling-machine-2/assembling-machine-2-pipe-E.png",
         priority = "extra-high",
         width = 42,
         height = 76,
@@ -31,7 +31,7 @@ function assembler2pipepicturesCokery()
         scale = 0.5,
     },
     west = {
-        filename = "__base__/graphics/entity/assembling-machine-2/hr-assembling-machine-2-pipe-W.png",
+        filename = "__base__/graphics/entity/assembling-machine-2/assembling-machine-2-pipe-W.png",
         priority = "extra-high",
         width = 39,
         height = 73,
@@ -123,7 +123,7 @@ function assembler2pipepicturesBioreactor()
         scale = 0.5,
     },
     east = {
-        filename = "__base__/graphics/entity/assembling-machine-2/hr-assembling-machine-2-pipe-E.png",
+        filename = "__base__/graphics/entity/assembling-machine-2/assembling-machine-2-pipe-E.png",
         priority = "extra-high",
         width = 42,
         height = 76,
@@ -131,7 +131,7 @@ function assembler2pipepicturesBioreactor()
         scale = 0.5,
     },
     south = {
-        filename = "__base__/graphics/entity/assembling-machine-2/hr-assembling-machine-2-pipe-S.png",
+        filename = "__base__/graphics/entity/assembling-machine-2/assembling-machine-2-pipe-S.png",
         priority = "extra-high",
         width = 88,
         height = 61,
@@ -139,7 +139,7 @@ function assembler2pipepicturesBioreactor()
         scale = 0.5,
     },
     west = {
-        filename = "__base__/graphics/entity/assembling-machine-2/hr-assembling-machine-2-pipe-W.png",
+        filename = "__base__/graphics/entity/assembling-machine-2/assembling-machine-2-pipe-W.png",
         priority = "extra-high",
         width = 39,
         height = 73,

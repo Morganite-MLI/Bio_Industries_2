@@ -23,128 +23,128 @@ end
 pipepictures_w = function()
   return {
     straight_vertical_single = {
-        filename = PIPEPATH .. "hr-pipe-straight-vertical-single.png",
+        filename = PIPEPATH .. "pipe-straight-vertical-single.png",
         priority = "extra-high",
         width = 160,
         height = 160,
         scale = 0.5
     },
     straight_vertical = {
-        filename = PIPEPATH .. "hr-pipe-straight-vertical.png",
+        filename = PIPEPATH .. "pipe-straight-vertical.png",
         priority = "extra-high",
         size = 128,
         scale = 0.5
     },
     straight_vertical_window = {
-        filename = PIPEPATH .. "hr-pipe-straight-vertical-window.png",
+        filename = PIPEPATH .. "pipe-straight-vertical-window.png",
         priority = "extra-high",
         size = 128,
         scale = 0.5
     },
     straight_horizontal_window = {
-        filename = PIPEPATH .. "hr-pipe-straight-horizontal-window.png",
+        filename = PIPEPATH .. "pipe-straight-horizontal-window.png",
         priority = "extra-high",
         size = 128,
         scale = 0.5
     },
     straight_horizontal = {
-        filename = PIPEPATH .. "hr-pipe-straight-horizontal.png",
+        filename = PIPEPATH .. "pipe-straight-horizontal.png",
         priority = "extra-high",
         size = 128,
         scale = 0.5
     },
     corner_up_right = {
-        filename = PIPEPATH .. "hr-pipe-corner-up-right.png",
+        filename = PIPEPATH .. "pipe-corner-up-right.png",
         priority = "extra-high",
         size = 128,
         scale = 0.5
     },
     corner_up_left = {
-        filename = PIPEPATH .. "hr-pipe-corner-up-left.png",
+        filename = PIPEPATH .. "pipe-corner-up-left.png",
         priority = "extra-high",
         size = 128,
         scale = 0.5
     },
     corner_down_right = {
-        filename = PIPEPATH .. "hr-pipe-corner-down-right.png",
+        filename = PIPEPATH .. "pipe-corner-down-right.png",
         priority = "extra-high",
         size = 128,
         scale = 0.5
     },
     corner_down_left = {
-        filename = PIPEPATH .. "hr-pipe-corner-down-left.png",
+        filename = PIPEPATH .. "pipe-corner-down-left.png",
         priority = "extra-high",
         size = 128,
         scale = 0.5
     },
     t_up = {
-        filename = PIPEPATH .. "hr-pipe-t-up.png",
+        filename = PIPEPATH .. "pipe-t-up.png",
         priority = "extra-high",
         size = 128,
         scale = 0.5
     },
     t_down = {
-        filename = PIPEPATH .. "hr-pipe-t-down.png",
+        filename = PIPEPATH .. "pipe-t-down.png",
         priority = "extra-high",
         size = 128,
         scale = 0.5
     },
     t_right = {
-        filename = PIPEPATH .. "hr-pipe-t-right.png",
+        filename = PIPEPATH .. "pipe-t-right.png",
         priority = "extra-high",
         size = 128,
         scale = 0.5
     },
     t_left = {
-        filename = PIPEPATH .. "hr-pipe-t-left.png",
+        filename = PIPEPATH .. "pipe-t-left.png",
         priority = "extra-high",
         size = 128,
         scale = 0.5
     },
     cross = {
-        filename = PIPEPATH .. "hr-pipe-cross.png",
+        filename = PIPEPATH .. "pipe-cross.png",
         priority = "extra-high",
         size = 128,
         scale = 0.5
     },
     ending_up = {
-        filename = PIPEPATH .. "hr-pipe-ending-up.png",
+        filename = PIPEPATH .. "pipe-ending-up.png",
         priority = "extra-high",
         size = 128,
         scale = 0.5
     },
     ending_down = {
-        filename = PIPEPATH .. "hr-pipe-ending-down.png",
+        filename = PIPEPATH .. "pipe-ending-down.png",
         priority = "extra-high",
         size = 128,
         scale = 0.5
     },
     ending_right = {
-        filename = PIPEPATH .. "hr-pipe-ending-right.png",
+        filename = PIPEPATH .. "pipe-ending-right.png",
         priority = "extra-high",
         size = 128,
         scale = 0.5
     },
     ending_left = {
-        filename = PIPEPATH .. "hr-pipe-ending-left.png",
+        filename = PIPEPATH .. "pipe-ending-left.png",
         priority = "extra-high",
         size = 128,
         scale = 0.5
     },
     horizontal_window_background = {
-        filename = PIPEPATH .. "hr-pipe-horizontal-window-background.png",
+        filename = PIPEPATH .. "pipe-horizontal-window-background.png",
         priority = "extra-high",
         size = 128,
         scale = 0.5
     },
     vertical_window_background = {
-        filename = PIPEPATH .. "hr-pipe-vertical-window-background.png",
+        filename = PIPEPATH .. "pipe-vertical-window-background.png",
         priority = "extra-high",
         size = 128,
         scale = 0.5
     },
     fluid_background = {
-        filename = PIPEPATH .. "hr-fluid-background.png",
+        filename = PIPEPATH .. "fluid-background.png",
         priority = "extra-high",
         width = 64,
         height = 40,
@@ -169,7 +169,7 @@ pipepictures_w = function()
       height = 18
     },
     gas_flow = {
-        filename = PIPEPATH .. "hr-steam.png",
+        filename = PIPEPATH .. "steam.png",
         priority = "extra-high",
         line_length = 10,
         width = 48,
@@ -815,25 +815,25 @@ data:extend({
     --~ vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
     pictures = {
       north = {
-          filename = ENTITYPATH .. "/pipe-to-ground/hr-pipe-to-ground-up.png",
+          filename = ENTITYPATH .. "/pipe-to-ground/pipe-to-ground-up.png",
           priority = "extra-high",
           size = 128,
           scale = 0.5
       },
       south = {
-          filename = ENTITYPATH .. "/pipe-to-ground/hr-pipe-to-ground-down.png",
+          filename = ENTITYPATH .. "/pipe-to-ground/pipe-to-ground-down.png",
           priority = "extra-high",
           size = 128,
           scale = 0.5
       },
       west = {
-          filename = ENTITYPATH .. "/pipe-to-ground/hr-pipe-to-ground-left.png",
+          filename = ENTITYPATH .. "/pipe-to-ground/pipe-to-ground-left.png",
           priority = "extra-high",
           size = 128,
           scale = 0.5
       },
       east = {
-          filename = ENTITYPATH .. "/pipe-to-ground/hr-pipe-to-ground-right.png",
+          filename = ENTITYPATH .. "/pipe-to-ground/pipe-to-ground-right.png",
           priority = "extra-high",
           size = 128,
           scale = 0.5

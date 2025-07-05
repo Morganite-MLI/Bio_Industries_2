@@ -112,7 +112,7 @@ BioInd.show("radar.name", c_entities["bi-arboretum"].hidden[h_key].name)
     radar.pictures = {
       layers = {
         {
-            filename = "__base__/graphics/entity/radar/hr-radar.png",
+            filename = "__base__/graphics/entity/radar/radar.png",
             priority = "extra-high",
             width = 196,
             height = 254,

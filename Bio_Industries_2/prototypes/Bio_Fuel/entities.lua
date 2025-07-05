@@ -194,7 +194,7 @@ if BI.Settings.BI_Bio_Fuel then
         north = {
         layers = {
           {
-              filename = ENTITYPATH .. "hr-boiler-N-idle.png",
+              filename = ENTITYPATH .. "boiler-N-idle.png",
               priority = "extra-high",
               width = 269,
               height = 221,
@@ -203,7 +203,7 @@ if BI.Settings.BI_Bio_Fuel then
               tint = bio_boiler_tint,
           },
           {
-              filename = ENTITYPATH .. "hr-boiler-N-shadow.png",
+              filename = ENTITYPATH .. "boiler-N-shadow.png",
               priority = "extra-high",
               width = 274,
               height = 164,
@@ -216,7 +216,7 @@ if BI.Settings.BI_Bio_Fuel then
       east = {
         layers = {
           {
-              filename = ENTITYPATH .. "hr-boiler-E-idle.png",
+              filename = ENTITYPATH .. "boiler-E-idle.png",
               priority = "extra-high",
               width = 216,
               height = 301,
@@ -225,7 +225,7 @@ if BI.Settings.BI_Bio_Fuel then
               tint = bio_boiler_tint,
           },
           {
-              filename = ENTITYPATH .. "hr-boiler-E-shadow.png",
+              filename = ENTITYPATH .. "boiler-E-shadow.png",
               priority = "extra-high",
               width = 184,
               height = 194,
@@ -238,7 +238,7 @@ if BI.Settings.BI_Bio_Fuel then
       south = {
         layers = {
           {
-              filename = ENTITYPATH .. "hr-boiler-S-idle.png",
+              filename = ENTITYPATH .. "boiler-S-idle.png",
               priority = "extra-high",
               width = 260,
               height = 192,
@@ -247,7 +247,7 @@ if BI.Settings.BI_Bio_Fuel then
               tint = bio_boiler_tint,
           },
           {
-              filename = ENTITYPATH .. "hr-boiler-S-shadow.png",
+              filename = ENTITYPATH .. "boiler-S-shadow.png",
               priority = "extra-high",
               width = 311,
               height = 131,
@@ -260,7 +260,7 @@ if BI.Settings.BI_Bio_Fuel then
       west = {
         layers = {
           {
-              filename = ENTITYPATH .. "hr-boiler-W-idle.png",
+              filename = ENTITYPATH .. "boiler-W-idle.png",
               priority = "extra-high",
               width = 196,
               height = 273,
@@ -269,7 +269,7 @@ if BI.Settings.BI_Bio_Fuel then
               tint = bio_boiler_tint,
           },
           {
-              filename = ENTITYPATH .. "hr-boiler-W-shadow.png",
+              filename = ENTITYPATH .. "boiler-W-shadow.png",
               priority = "extra-high",
               width = 206,
               height = 218,
@@ -282,7 +282,7 @@ if BI.Settings.BI_Bio_Fuel then
     },
     patch = {
       east = {
-          filename = ENTITYPATH .. "hr-boiler-E-patch.png",
+          filename = ENTITYPATH .. "boiler-E-patch.png",
           width = 6,
           height = 36,
           shift = util.by_pixel(33.5, -13.5),
@@ -293,7 +293,7 @@ if BI.Settings.BI_Bio_Fuel then
     fire_flicker_enabled = true,
       fire = {
         north = {
-            filename = ENTITYPATH .. "hr-boiler-N-fire.png",
+            filename = ENTITYPATH .. "boiler-N-fire.png",
             priority = "extra-high",
             frame_count = 64,
             line_length = 8,
@@ -304,7 +304,7 @@ if BI.Settings.BI_Bio_Fuel then
             scale = 0.5
         },
         east = {
-            filename = ENTITYPATH .. "hr-boiler-E-fire.png",
+            filename = ENTITYPATH .. "boiler-E-fire.png",
             priority = "extra-high",
             frame_count = 64,
             line_length = 8,
@@ -315,7 +315,7 @@ if BI.Settings.BI_Bio_Fuel then
             scale = 0.5
         },
         south = {
-            filename = ENTITYPATH .. "hr-boiler-S-fire.png",
+            filename = ENTITYPATH .. "boiler-S-fire.png",
             priority = "extra-high",
             frame_count = 64,
             line_length = 8,
@@ -326,7 +326,7 @@ if BI.Settings.BI_Bio_Fuel then
             scale = 0.5
         },
         west = {
-            filename = ENTITYPATH .. "hr-boiler-W-fire.png",
+            filename = ENTITYPATH .. "boiler-W-fire.png",
             priority = "extra-high",
             frame_count = 64,
             line_length = 8,
@@ -340,7 +340,7 @@ if BI.Settings.BI_Bio_Fuel then
       fire_glow_flicker_enabled = true,
       fire_glow = {
         north = {
-            filename = ENTITYPATH .. "hr-boiler-N-light.png",
+            filename = ENTITYPATH .. "boiler-N-light.png",
             priority = "extra-high",
             frame_count = 1,
             width = 200,
@@ -350,7 +350,7 @@ if BI.Settings.BI_Bio_Fuel then
             scale = 0.5
         },
         east = {
-            filename = ENTITYPATH .. "hr-boiler-E-light.png",
+            filename = ENTITYPATH .. "boiler-E-light.png",
             priority = "extra-high",
             frame_count = 1,
             width = 139,
@@ -360,7 +360,7 @@ if BI.Settings.BI_Bio_Fuel then
             scale = 0.5
         },
         south = {
-            filename = ENTITYPATH .. "hr-boiler-S-light.png",
+            filename = ENTITYPATH .. "boiler-S-light.png",
             priority = "extra-high",
             frame_count = 1,
             width = 200,
@@ -370,7 +370,7 @@ if BI.Settings.BI_Bio_Fuel then
             scale = 0.5
         },
         west = {
-            filename = ENTITYPATH .. "hr-boiler-W-light.png",
+            filename = ENTITYPATH .. "boiler-W-light.png",
             priority = "extra-high",
             frame_count = 1,
             width = 136,
