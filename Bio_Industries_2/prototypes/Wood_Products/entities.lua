@@ -814,25 +814,25 @@ data:extend({
     },
     --~ vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
     pictures = {
-      up = {
+      north = {
           filename = ENTITYPATH .. "/pipe-to-ground/hr-pipe-to-ground-up.png",
           priority = "extra-high",
           size = 128,
           scale = 0.5
       },
-      down = {
+      south = {
           filename = ENTITYPATH .. "/pipe-to-ground/hr-pipe-to-ground-down.png",
           priority = "extra-high",
           size = 128,
           scale = 0.5
       },
-      left = {
+      west = {
           filename = ENTITYPATH .. "/pipe-to-ground/hr-pipe-to-ground-left.png",
           priority = "extra-high",
           size = 128,
           scale = 0.5
       },
-      right = {
+      east = {
           filename = ENTITYPATH .. "/pipe-to-ground/hr-pipe-to-ground-right.png",
           priority = "extra-high",
           size = 128,
