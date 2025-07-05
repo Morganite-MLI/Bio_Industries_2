@@ -278,7 +278,8 @@ data:extend({
         volume = 0.85
       },
     },
-    call_for_help_radius = 40
+    call_for_help_radius = 40,
+    graphics_set = {}
   },
 
 

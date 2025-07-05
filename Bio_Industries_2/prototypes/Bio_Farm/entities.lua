@@ -939,7 +939,8 @@ data:extend({
         return res
         end)(),
 
-    call_for_help_radius = 1
+    call_for_help_radius = 1,
+    graphics_set = {}
   },
 
 

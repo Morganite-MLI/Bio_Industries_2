@@ -168,7 +168,8 @@ if BI.Settings.Bio_Cannon then
             folding_animation = folding_animation(),
             folded_animation = folded_animation(),
             call_for_help_radius = 90,
-            attack_target_mask = {"Bio_Cannon_Ammo"}
+            attack_target_mask = {"Bio_Cannon_Ammo"},
+            graphics_set = {}
         },
 
         ---- Corpse / Remnants
