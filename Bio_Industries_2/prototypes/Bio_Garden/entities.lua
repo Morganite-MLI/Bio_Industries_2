@@ -30,12 +30,12 @@ data:extend({
         production_type = "input",
         pipe_picture = assembler3pipepictures(),
         pipe_covers = pipecoverspictures(),
-        base_area = 10,
+        volume = 1000,
         base_level = -1,
-        pipe_connections = {{ flow_direction = "input", direction = defines.direction.north, position = {0, -2} }}
+        pipe_connections = {{ flow_direction = "input", direction = defines.direction.north, position = {0, -1} }}
       },
-      off_when_no_fluid_recipe = true
     },
+    fluid_boxes_off_when_no_fluid_recipe = true,
     animation = {
       filename = "__Bio_Industries_2__/graphics/entities/biogarden/bio_garden_x.png",
       width = 160,

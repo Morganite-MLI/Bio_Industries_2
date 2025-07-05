@@ -170,20 +170,20 @@ data:extend({
         production_type = "input",
         pipe_picture = assembler3pipepictures(),
         pipe_covers = pipecoverspictures(),
-        base_area = 10,
+        volume = 1000,
         base_level = -1,
-        pipe_connections = {{ flow_direction = "input", direction = defines.direction.north, position = {-1, -5} }}
+        pipe_connections = {{ flow_direction = "input", direction = defines.direction.north, position = {-1, -4} }}
       },
       {
         production_type = "input",
         pipe_picture = assembler3pipepictures(),
         pipe_covers = pipecoverspictures(),
-        base_area = 10,
+        volume = 1000,
         base_level = -1,
-        pipe_connections = {{ flow_direction = "input", direction = defines.direction.north, position = {1, -5} }}
+        pipe_connections = {{ flow_direction = "input", direction = defines.direction.north, position = {1, -4} }}
       },
-      off_when_no_fluid_recipe = true
     },
+    fluid_boxes_off_when_no_fluid_recipe = true,
 
     collision_box = {{-4.2, -4.2}, {4.2, 4.2}},
     selection_box = {{-4.5, -4.5}, {4.5, 4.5}},
@@ -453,9 +453,9 @@ data:extend({
         production_type = "input",
         pipe_picture = assembler3pipepictures(),
         pipe_covers = pipecoverspictures(),
-        base_area = 10,
+        volume = 1000,
         base_level = -1,
-        pipe_connections = {{ flow_direction = "input", direction = defines.direction.north, position = {0, -2} }}
+        pipe_connections = {{ flow_direction = "input", direction = defines.direction.north, position = {0, -1} }}
       },
     },
     module_specification = {
@@ -967,20 +967,20 @@ data:extend({
         production_type = "input",
         pipe_picture = assembler3pipepictures(),
         pipe_covers = pipecoverspictures(),
-        base_area = 10,
+        volume = 1000,
         base_level = -1,
-        pipe_connections = {{ flow_direction = "input", direction = defines.direction.north, position = {-1, -5} }}
+        pipe_connections = {{ flow_direction = "input", direction = defines.direction.north, position = {-1, -4} }}
       },
       {
         production_type = "input",
         pipe_picture = assembler3pipepictures(),
         pipe_covers = pipecoverspictures(),
-        base_area = 10,
+        volume = 1000,
         base_level = -1,
-        pipe_connections = {{ flow_direction = "input", direction = defines.direction.north, position = {1, -5} }}
+        pipe_connections = {{ flow_direction = "input", direction = defines.direction.north, position = {1, -4} }}
       },
-      off_when_no_fluid_recipe = true
     },
+    fluid_boxes_off_when_no_fluid_recipe = true,
     collision_box = {{-4.2, -4.2}, {4.2, 4.2}},
     selection_box = {{-4.5, -4.5}, {4.5, 4.5}},
     order = "x[bi]-a[bi-arboretum]",

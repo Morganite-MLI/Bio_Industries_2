@@ -326,25 +326,23 @@ data:extend({
     selection_box = {{-4.5, -4.5}, {4.5, 4.5}},
     target_temperature = 235,
     fluid_box = {
-      base_area = 1,
-      height = 2,
+      volume = 200,
       base_level = -1,
       pipe_covers = pipecoverspictures(),
       pipe_connections = {
-        {flow_direction = "input-output", direction = defines.direction.north, position = {5, 0}},
-                {flow_direction = "input-output", direction = defines.direction.north, position = {-5, 0}},
+        {flow_direction = "input-output", direction = defines.direction.north, position = {4, 0}},
+                {flow_direction = "input-output", direction = defines.direction.north, position = {-4, 0}},
       },
       production_type = "input-output",
       filter = "water"
     },
     output_fluid_box = {
-      base_area = 1,
-      height = 2,
+      volume = 200,
       base_level = 1,
       pipe_covers = pipecoverspictures(),
       pipe_connections = {
-       {flow_direction = "input-output", direction = defines.direction.north, position = {0, 5}},
-           {flow_direction = "input-output", direction = defines.direction.north, position = {0, -5}},
+       {flow_direction = "input-output", direction = defines.direction.north, position = {0, 4}},
+           {flow_direction = "input-output", direction = defines.direction.north, position = {0, -4}},
       },
       production_type = "output",
       filter = "steam"

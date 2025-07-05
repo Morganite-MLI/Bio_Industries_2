@@ -739,12 +739,12 @@ data:extend({
     collision_box = {{-0.29, -0.29}, {0.29, 0.29}},
     selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
     fluid_box = {
-      base_area = 1,
+      volume = 100,
       pipe_connections = {
-        { position = {0, -1} },
-        { position = {1, 0} },
-        { position = {0, 1} },
-        { position = {-1, 0} }
+        { direction = defines.direction.north, position = {0, 0} },
+        { direction = defines.direction.east, position = {0, 0} },
+        { direction = defines.direction.south, position = {0, 0} },
+        { direction = defines.direction.west, position = {0, 0} }
       },
     },
     pictures = pipepictures_w(),
@@ -794,12 +794,14 @@ data:extend({
     collision_box = {{-0.29, -0.29}, {0.29, 0.2}},
     selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
     fluid_box = {
-      base_area = 1,
+      volume = 100,
       pipe_covers = pipecoverspictures(),
       pipe_connections = {
-        { position = {0, -1} },
+        { direction = defines.direction.north, position = {0, 0} },
         {
-          position = {0, 1},
+          direction = defines.direction.south,
+          position = {0, 0},
+          connection_type = "underground",
           max_underground_distance = 10
         }
       },

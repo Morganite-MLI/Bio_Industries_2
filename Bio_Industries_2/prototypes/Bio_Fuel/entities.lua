@@ -36,44 +36,44 @@ data:extend({
         production_type = "input",
         pipe_picture = assembler2pipepicturesBioreactor(),
         pipe_covers = pipecoverspicturesBioreactor(),
-        base_area = 10,
+        volume = 1000,
         base_level = -1,
-        pipe_connections = {{ flow_direction = "input", direction = defines.direction.north, position = {0, -2} }}
+        pipe_connections = {{ flow_direction = "input", direction = defines.direction.north, position = {0, -1} }}
       },
       {
         production_type = "input",
         pipe_picture = assembler2pipepicturesBioreactor(),
         pipe_covers = pipecoverspicturesBioreactor(),
-        base_area = 10,
+        volume = 1000,
         base_level = -1,
-        pipe_connections = {{ flow_direction = "input", direction = defines.direction.north, position = {2, 0} }}
+        pipe_connections = {{ flow_direction = "input", direction = defines.direction.north, position = {1, 0} }}
       },
       {
         production_type = "input",
         pipe_picture = assembler2pipepicturesBioreactor(),
         pipe_covers = pipecoverspicturesBioreactor(),
-        base_area = 10,
+        volume = 1000,
         base_level = -1,
-        pipe_connections = {{ flow_direction = "input", direction = defines.direction.north, position = {0, 2} }}
+        pipe_connections = {{ flow_direction = "input", direction = defines.direction.north, position = {0, 1} }}
       },
       {
         production_type = "output",
         pipe_picture = assembler2pipepicturesBioreactor(),
         pipe_covers = pipecoverspicturesBioreactor(),
-        base_area = 10,
+        volume = 1000,
         base_level = 1,
-        pipe_connections = {{ flow_direction = "output", direction = defines.direction.north, position = {-2, -1} }}
+        pipe_connections = {{ flow_direction = "output", direction = defines.direction.north, position = {-1, -1} }}
       },
       {
         production_type = "output",
         pipe_picture = assembler2pipepicturesBioreactor(),
         pipe_covers = pipecoverspicturesBioreactor(),
-        base_area = 10,
+        volume = 1000,
         base_level = 1,
-        pipe_connections = {{ flow_direction = "output", direction = defines.direction.north, position = {-2, 1} }}
+        pipe_connections = {{ flow_direction = "output", direction = defines.direction.north, position = {-1, 1} }}
       },
-      off_when_no_fluid_recipe = false
     },
+    fluid_boxes_off_when_no_fluid_recipe = true,
     collision_box = {{-1.2, -1.2}, {1.2, 1.2}},
     selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
     animation = {
@@ -143,24 +143,22 @@ if BI.Settings.BI_Bio_Fuel then
       selection_box = {{-1.5, -1}, {1.5, 1}},
       target_temperature = 165,
       fluid_box = {
-        base_area = 1,
-        height = 2,
+        volume = 200,
         base_level = -1,
         pipe_covers = pipecoverspictures(),
         pipe_connections = {
-          {flow_direction = "input-output", direction = defines.direction.north, position = {-2, 0.5}},
-          {flow_direction = "input-output", direction = defines.direction.north, position = {2, 0.5}}
+          {flow_direction = "input-output", direction = defines.direction.north, position = {-1, 0.5}},
+          {flow_direction = "input-output", direction = defines.direction.north, position = {1, 0.5}}
         },
         production_type = "input-output",
         filter = "water"
       },
       output_fluid_box = {
-        base_area = 1,
-        height = 2,
+        volume = 200,
         base_level = 1,
         pipe_covers = pipecoverspictures(),
         pipe_connections = {
-          {flow_direction = "output", direction = defines.direction.north, position = {0, -1.5}}
+          {flow_direction = "output", direction = defines.direction.north, position = {0, -0.5}}
         },
         production_type = "output",
         filter = "steam"
