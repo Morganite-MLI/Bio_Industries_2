@@ -18,8 +18,8 @@ if BI.Settings.Bio_Cannon then
           icon_size = 64,
         }
       },
+      ammo_category = "artillery-shell",
       ammo_type = {
-        --~ category = "artillery-shell",
         category = "Bio_Cannon_Ammo",
         target_type = "direction",
         action = {
@@ -54,8 +54,8 @@ if BI.Settings.Bio_Cannon then
           icon_size = 64,
         }
       },
+      ammo_category = "artillery-shell",
       ammo_type = {
-        --~ category = "artillery-shell",
         category = "Bio_Cannon_Ammo",
         target_type = "direction",
         action = {
@@ -89,8 +89,8 @@ if BI.Settings.Bio_Cannon then
           icon_size = 64,
         }
       },
+      ammo_category = "artillery-shell",
       ammo_type = {
-        --~ category = "artillery-shell",
         category = "Bio_Cannon_Ammo",
         target_type = "direction",
         action = {

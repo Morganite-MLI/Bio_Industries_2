@@ -15,6 +15,7 @@ data:extend({
         icon_size = 64,
       }
     },
+    ammo_category = "bullet",
     ammo_type = {
       category = "Bio_Turret_Ammo",
       action = {
@@ -56,6 +57,7 @@ data:extend({
         icon_size = 64,
       }
     },
+    ammo_category = "bullet",
     ammo_type = {
       category = "Bio_Turret_Ammo",
       action = {
@@ -102,6 +104,7 @@ data:extend({
         icon_size = 64,
       }
     },
+    ammo_category = "bullet",
     ammo_type = {
       category = "Bio_Turret_Ammo",
       action = {
@@ -152,6 +155,7 @@ data:extend({
         icon_size = 64,
       }
     },
+    ammo_category = "bullet",
     ammo_type = {
       category = "Bio_Turret_Ammo",
       action = {

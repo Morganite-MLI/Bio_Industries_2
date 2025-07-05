@@ -299,6 +299,7 @@ data:extend(
         icon_size = 64,
       }
     },
+    ammo_category = "bullet",
     ammo_type = {
       range_modifier = 3,
       cooldown_modifier = 3,
@@ -331,6 +332,7 @@ data:extend(
         icon_size = 64,
       }
     },
+    ammo_category = "bullet",
     ammo_type = {
       range_modifier = 3,
       cooldown_modifier = 3,
@@ -363,6 +365,7 @@ data:extend(
         icon_size = 64,
       }
     },
+    ammo_category = "bullet",
     ammo_type = {
       range_modifier = 3,
       cooldown_modifier = 3,
