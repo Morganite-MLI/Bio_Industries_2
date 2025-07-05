@@ -1,3 +1,5 @@
+local tile_graphics = require("__base__/prototypes/tile/tile-graphics")
+
 local BioInd = require('common')('Bio_Industries_2')
 
 local ICONPATH = BioInd.modRoot .. "/graphics/icons/"
@@ -7,10 +9,7 @@ local ENTITYPATH = "__base__/graphics/entity/"
 local PIPEPATH = ENTITYPATH .. "pipe/"
 
 local SNDPATH = "__base__/sound/"
---~ local BIGICONS = BioInd.check_base_version("0.18.0")
 
-
--- demo-sounds has been removed in Factorio 1.1, so we need to check the game version!
 local sounds = {}
 sounds.walking_sound = {}
 for i = 1, 11 do
@@ -191,11 +190,12 @@ data:extend({
     --~ minable = {hardness = 0.2, mining_time = 0.5, result = "wood"},
     minable = {hardness = 0.2, mining_time = 0.25, result = "wood"},
     mined_sound = { filename = "__base__/sound/deconstruct-bricks.ogg" },
-    collision_mask = {"ground-tile"},
+    collision_mask = { layers = { ground_tile = true }},
     walking_speed_modifier = 1.2,
     layer = 62,
     decorative_removal_probability = 0.4,
     variants = {
+      transition = tile_graphics.generic_masked_tile_transitions1,
       main = {
         {
           picture = WOODPATH .. "wood_floor/wood1.png",
@@ -230,27 +230,8 @@ data:extend({
         count = 1
       }
     },
-    --~ walking_sound = {
-      --~ {
-        --~ filename = "__base__/sound/walking/concrete-01.ogg",
-        --~ volume = 1.2
-      --~ },
-      --~ {
-        --~ filename = "__base__/sound/walking/concrete-02.ogg",
-        --~ volume = 1.2
-      --~ },
-      --~ {
-        --~ filename = "__base__/sound/walking/concrete-03.ogg",
-        --~ volume = 1.2
-      --~ },
-      --~ {
-        --~ filename = "__base__/sound/walking/concrete-04.ogg",
-        --~ volume = 1.2
-      --~ }
-    --~ },
     walking_sound = sounds.walking_sound,
     map_color = {r = 139, g = 115, b = 85},
-    pollution_absorption_per_second = 0,
     vehicle_friction_modifier = dirt_vehicle_speed_modifer
   },
 })

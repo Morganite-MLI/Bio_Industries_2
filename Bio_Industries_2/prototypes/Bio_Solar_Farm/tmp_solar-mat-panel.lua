@@ -14,7 +14,7 @@
     selectable_in_game = false,
     max_health = 1,
     resistances = {{type = "fire", percent = 100}},
-    collision_mask = {"ground-tile"},
+    collision_mask = { layers = { ground_tile = true }},
     collision_box = {{-0.0, -0.0}, {0.0, 0.0}},
     selection_box = {{0, 0}, {0, 0}},
     energy_source = {

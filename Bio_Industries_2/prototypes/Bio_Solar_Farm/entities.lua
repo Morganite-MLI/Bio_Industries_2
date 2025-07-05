@@ -1,3 +1,4 @@
+local tile_graphics = require("__base__/prototypes/tile/tile-graphics")
 local BioInd = require('common')('Bio_Industries_2')
 require ("util")
 
@@ -243,13 +244,13 @@ data:extend({
     needs_correction = false,
     minable = {hardness = 0.1, mining_time = 0.25, result = "bi-solar-mat"},
     mined_sound = { filename = "__base__/sound/deconstruct-bricks.ogg" },
-    --collision_mask = {"ground-tile", "not-colliding-with-itself"},
-    collision_mask = {"ground-tile"},
+    collision_mask = { layers = { ground_tile = true }},
     collision_box = {{-0.5, -0.5}, {0.5, 0.5}},
     walking_speed_modifier = 1.45,
     layer = 62,
     decorative_removal_probability = 1,
     variants = {
+      transition = tile_graphics.generic_masked_tile_transitions1,
       main = {
         {
           picture = ENTITYPATH .. "solar1.png",
@@ -281,7 +282,6 @@ data:extend({
     },
     walking_sound = sounds.walking_sound,
     map_color = {r = 93, g = 138, b = 168},
-    pollution_absorption_per_second = 0,
     vehicle_friction_modifier = dirt_vehicle_speed_modifer
   },
 })
