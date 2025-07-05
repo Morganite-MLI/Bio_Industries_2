@@ -45,7 +45,7 @@ if BI.Settings.BI_Solar_Additions then
       place_as_tile = {
         result = "bi-solar-mat",
         condition_size = 4,
-        condition = { "water-tile" }
+        condition = { layers = { water_tile = true }}
       }
     },
 

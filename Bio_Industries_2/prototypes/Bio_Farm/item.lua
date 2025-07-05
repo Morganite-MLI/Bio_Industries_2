@@ -19,10 +19,6 @@ data:extend(
     },
     icon_mipmaps = 4,
     pictures = {
-      --~ { size = 64, filename = ICONPATHMIPS.."bio_seed_1.png", scale = 0.25, mipmap_count = 1 },
-      --~ { size = 64, filename = ICONPATHMIPS.."bio_seed_2.png", scale = 0.25, mipmap_count = 1 },
-      --~ { size = 64, filename = ICONPATHMIPS.."bio_seed_3.png", scale = 0.25, mipmap_count = 1 },
-      --~ { size = 64, filename = ICONPATHMIPS.."bio_seed_4.png", scale = 0.25, mipmap_count = 1 }
       { size = 64, filename = ICONPATHMIPS.."bio_seed_1.png", scale = 0.25 },
       { size = 64, filename = ICONPATHMIPS.."bio_seed_2.png", scale = 0.25 },
       { size = 64, filename = ICONPATHMIPS.."bio_seed_3.png", scale = 0.25 },
@@ -52,15 +48,6 @@ data:extend(
     },
         icon_mipmaps = 9,
     pictures = {
-      --~ { size = 64, filename = ICONPATHMIPS.."Seedling_1.png", scale = 0.25, mipmap_count = 1 },
-      --~ { size = 64, filename = ICONPATHMIPS.."Seedling_2.png", scale = 0.25, mipmap_count = 1 },
-      --~ { size = 64, filename = ICONPATHMIPS.."Seedling_3.png", scale = 0.25, mipmap_count = 1 },
-      --~ { size = 64, filename = ICONPATHMIPS.."Seedling_4.png", scale = 0.25, mipmap_count = 1 },
-      --~ { size = 64, filename = ICONPATHMIPS.."Seedling_5.png", scale = 0.25, mipmap_count = 1 },
-      --~ { size = 64, filename = ICONPATHMIPS.."Seedling_6.png", scale = 0.25, mipmap_count = 1 },
-      --~ { size = 64, filename = ICONPATHMIPS.."Seedling_7.png", scale = 0.25, mipmap_count = 1 },
-      --~ { size = 64, filename = ICONPATHMIPS.."Seedling_8.png", scale = 0.25, mipmap_count = 1 },
-      --~ { size = 64, filename = ICONPATHMIPS.."Seedling_9.png", scale = 0.25, mipmap_count = 1 }
       { size = 64, filename = ICONPATHMIPS.."Seedling_1.png", scale = 0.25 },
       { size = 64, filename = ICONPATHMIPS.."Seedling_2.png", scale = 0.25 },
       { size = 64, filename = ICONPATHMIPS.."Seedling_3.png", scale = 0.25 },
@@ -171,10 +158,6 @@ data:extend(
     },
     icon_mipmaps = 4,
     pictures = {
-      --~ { size = 64, filename = ICONPATHMIPS.."Woodpulp_1.png", scale = 0.2, mipmap_count = 1 },
-      --~ { size = 64, filename = ICONPATHMIPS.."Woodpulp_2.png", scale = 0.2, mipmap_count = 1 },
-      --~ { size = 64, filename = ICONPATHMIPS.."Woodpulp_3.png", scale = 0.2, mipmap_count = 1 },
-      --~ { size = 64, filename = ICONPATHMIPS.."Woodpulp_4.png", scale = 0.2, mipmap_count = 1 }
       { size = 64, filename = ICONPATHMIPS.."Woodpulp_1.png", scale = 0.2 },
       { size = 64, filename = ICONPATHMIPS.."Woodpulp_2.png", scale = 0.2 },
       { size = 64, filename = ICONPATHMIPS.."Woodpulp_3.png", scale = 0.2 },
@@ -221,17 +204,11 @@ data:extend(
     },
     icon_mipmaps = 4,
     pictures = {
-      --~ { size = 64, filename = ICONPATHMIPS.."Ash_1.png", scale = 0.2, mipmap_count = 1 },
-      --~ { size = 64, filename = ICONPATHMIPS.."Ash_2.png", scale = 0.2, mipmap_count = 1 },
-      --~ { size = 64, filename = ICONPATHMIPS.."Ash_3.png", scale = 0.2, mipmap_count = 1 },
-      --~ { size = 64, filename = ICONPATHMIPS.."Ash_4.png", scale = 0.2, mipmap_count = 1 }
       { size = 64, filename = ICONPATHMIPS.."Ash_1.png", scale = 0.2 },
       { size = 64, filename = ICONPATHMIPS.."Ash_2.png", scale = 0.2 },
       { size = 64, filename = ICONPATHMIPS.."Ash_3.png", scale = 0.2 },
       { size = 64, filename = ICONPATHMIPS.."Ash_4.png", scale = 0.2 }
     },
-    --~ fuel_value = "1MJ",
-    --~ fuel_category = "chemical",
     subgroup = "raw-material",
     order = "a[bi]-a-b[bi-ash]",
     stack_size = 400
@@ -251,10 +228,6 @@ data:extend(
     },
     icon_mipmaps = 4,
     pictures = {
-      --~ { size = 64, filename = ICONPATHMIPS.."Charcoal_1.png", scale = 0.2, mipmap_count = 1 },
-      --~ { size = 64, filename = ICONPATHMIPS.."Charcoal_2.png", scale = 0.2, mipmap_count = 1 },
-      --~ { size = 64, filename = ICONPATHMIPS.."Charcoal_3.png", scale = 0.2, mipmap_count = 1 },
-      --~ { size = 64, filename = ICONPATHMIPS.."Charcoal_4.png", scale = 0.2, mipmap_count = 1 }
       { size = 64, filename = ICONPATHMIPS.."Charcoal_1.png", scale = 0.2 },
       { size = 64, filename = ICONPATHMIPS.."Charcoal_2.png", scale = 0.2 },
       { size = 64, filename = ICONPATHMIPS.."Charcoal_3.png", scale = 0.2 },
@@ -303,10 +276,6 @@ data:extend(
     },
     icon_mipmaps = 4,
     pictures = {
-      --~ { size = 64, filename = ICONPATHMIPS.."Crush_1.png", scale = 0.2, mipmap_count = 1 },
-      --~ { size = 64, filename = ICONPATHMIPS.."Crush_2.png", scale = 0.2, mipmap_count = 1 },
-      --~ { size = 64, filename = ICONPATHMIPS.."Crush_3.png", scale = 0.2, mipmap_count = 1 },
-      --~ { size = 64, filename = ICONPATHMIPS.."Crush_4.png", scale = 0.2, mipmap_count = 1 }
       { size = 64, filename = ICONPATHMIPS.."Crush_1.png", scale = 0.2 },
       { size = 64, filename = ICONPATHMIPS.."Crush_2.png", scale = 0.2 },
       { size = 64, filename = ICONPATHMIPS.."Crush_3.png", scale = 0.2 },
@@ -314,8 +283,6 @@ data:extend(
     },
     subgroup = "raw-material",
     order = "a[bi]-a-z[stone-crushed]",
-    -- Changed for 0.18.34/1.1.4
-    --~ stack_size = 800
     stack_size = 400
   },
 
@@ -543,13 +510,6 @@ data:extend(
       subgroup = "intermediate-product",
       order = "b[fertilizer]",
       stack_size = 200,
-      -- 0.18.31/1.1.1: Moved to data-final-fixes.lua because we changed the name
-      -- fron "fertiliser" to "fertilizer" and now PyAlienLife removes place_as_tile!
-      --~ place_as_tile = {
-        --~ result = "vegetation-green-grass-3",
-        --~ condition_size = 1,
-        --~ condition = { "water-tile" }
-      --~ },
     },
 
     --- Adv fertilizer
@@ -567,14 +527,6 @@ data:extend(
       subgroup = "intermediate-product",
       order = "b[fertilizer]-b[bi-adv-fertilizer]",
       stack_size = 200,
-      -- 0.18.31/1.1.1: Moved to data-final-fixes.lua because we changed the name
-      -- from "bi-adv-fertiliser" to "bi-adv-fertilizer" and now PyAlienLife removes
-      -- place_as_tile!
-      --~ place_as_tile = {
-        --~ result = "vegetation-green-grass-1",
-        --~ condition_size = 1,
-        --~ condition = { "water-tile" }
-      --~ },
     },
   })
 

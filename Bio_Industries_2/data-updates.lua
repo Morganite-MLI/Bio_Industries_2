@@ -82,7 +82,7 @@ if not mods["Dectorio"] then
   data.raw.item["wood"].place_as_tile = {
     result = "bi-wood-floor",
     condition_size = 4,
-    condition = { "water-tile" }
+    condition = { layers = { water_tile = true }}
   }
 end
 
@@ -352,7 +352,7 @@ if data.raw["item"]["bob-greenhouse"] then
   data.raw["item"]["fertilizer"].place_as_tile = {
     result = BioInd.AB_tiles() and "vegetation-green-grass-3" or "grass-3",
     condition_size = 1,
-    condition = { "water-tile" }
+    condition = { layers = { water_tile = true }}
   }
 end
 

@@ -377,7 +377,7 @@ if not fertilizer.place_as_tile then
   fertilizer.place_as_tile = {
     result = AlienBiomes and "vegetation-green-grass-3" or "grass-3",
     condition_size = 1,
-    condition = { "water-tile" }
+    condition = { layers = { water_tile = true }}
   }
   fertilizer.icon = ICONPATH .. "fertilizer_64.png"
   fertilizer.icon_size = 64
@@ -394,7 +394,7 @@ end
 data.raw.item["bi-adv-fertilizer"].place_as_tile = {
   result = AlienBiomes and "vegetation-green-grass-1" or "grass-1",
   condition_size = 1,
-  condition = { "water-tile" }
+  condition = { layers = { water_tile = true }}
 }
 
 if mods["pycoalprocessing"] and BI.Settings.BI_Bio_Fuel then
