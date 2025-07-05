@@ -12,29 +12,17 @@ if BI.Settings.Bio_Cannon then
         return {
             layers = {
                 {
-                    priority = "high",
-                    width = 346,
-                    height = 336,
-                    direction_count = 1, 
-                    frame_count = 12, 
-                    line_length = 6,
-                    run_mode = "forward",
-                    axially_symmetrical = false,
-                    shift = {0, -0.8},
-                    filename = ENTITYPATH .. "bio_cannon_anim.png",
-                    hr_version = {
                         priority = "high",
                         width = 692,
                         height = 672,
-                        direction_count = 1, 
-                        frame_count = 12, 
-                        line_length = 6, 
+                        direction_count = 1,
+                        frame_count = 12,
+                        line_length = 6,
                         run_mode = "forward",
                         axially_symmetrical = false,
                         shift = {0, -0.8},
                         filename = ENTITYPATH .. "hr_bio_cannon_anim.png",
                         scale = 0.5
-                    }
                 }
 
             }
@@ -46,51 +34,28 @@ if BI.Settings.Bio_Cannon then
         return {
             layers = {
                 {
-                    priority = "high",
-                    width = 346,
-                    height = 336,
-                    direction_count = 1, 
-                    frame_count = 1, 
-                    line_length = 1, 
-                    axially_symmetrical = false,
-                    shift = {0, -0.8},
-                    filename = ENTITYPATH .. "bio_cannon_open.png",
-                    hr_version = {
                         priority = "high",
                         width = 692,
                         height = 672,
-                        direction_count = 1, 
-                        frame_count = 1, 
-                        line_length = 1, 
+                        direction_count = 1,
+                        frame_count = 1,
+                        line_length = 1,
                         axially_symmetrical = false,
                         shift = {0, -0.8},
                         filename = ENTITYPATH .. "hr_bio_cannon_open.png",
                         scale = 0.5
-                    }
                 }, {
-                    priority = "high",
-                    width = 160,
-                    height = 336,
-                    direction_count = 1, 
-                    frame_count = 1, 
-                    line_length = 1, 
-                    axially_symmetrical = false,
-                    shift = {5, -0.95},
-                    filename = ENTITYPATH .. "bio_cannon_shadow.png",
-                    draw_as_shadow = true,
-                    hr_version = {
                         priority = "high",
                         width = 320,
                         height = 672,
-                        direction_count = 1, 
-                        frame_count = 1, 
-                        line_length = 1, 
+                        direction_count = 1,
+                        frame_count = 1,
+                        line_length = 1,
                         axially_symmetrical = false,
                         shift = {5, -0.95},
                         filename = ENTITYPATH .. "hr_bio_cannon_shadow.png",
                         draw_as_shadow = true,
                         scale = 0.5
-                    }
                 }
             }
         }
@@ -101,29 +66,17 @@ if BI.Settings.Bio_Cannon then
             layers = {
 
                 {
-                    priority = "high",
-                    width = 346,
-                    height = 336,
-                    direction_count = 1, 
-                    frame_count = 12, 
-                    line_length = 6, 
-                    run_mode = "backward",
-                    axially_symmetrical = false,
-                    shift = {0, -0.8},
-                    filename = ENTITYPATH .. "bio_cannon_anim.png",
-                    hr_version = {
                         priority = "high",
                         width = 692,
                         height = 672,
-                        direction_count = 1, 
-                        frame_count = 12, 
-                        line_length = 6, 
+                        direction_count = 1,
+                        frame_count = 12,
+                        line_length = 6,
                         run_mode = "backward",
                         axially_symmetrical = false,
                         shift = {0, -0.8},
                         filename = ENTITYPATH .. "hr_bio_cannon_anim.png",
                         scale = 0.5
-                    }
                 }
 
             }
@@ -134,55 +87,28 @@ if BI.Settings.Bio_Cannon then
         return {
             layers = {
                 {
-                    priority = "high",
-                    width = 346,
-                    height = 336,
-                    direction_count = 1, 
-                    frame_count = 1,
-                    line_length = 1, 
-                    axially_symmetrical = false,
-                    shift = {0, -0.8},
-                    filename = ENTITYPATH .. "bio_cannon_anim.png",
-
-                    hr_version = {
                         priority = "high",
                         width = 692,
                         height = 672,
-                        direction_count = 1, 
-                        frame_count = 1, 
-                        line_length = 1, 
+                        direction_count = 1,
+                        frame_count = 1,
+                        line_length = 1,
                         axially_symmetrical = false,
                         shift = {0, -0.8},
                         filename = ENTITYPATH .. "hr_bio_cannon_anim.png",
                         scale = 0.5
-                    }
-
                 }, {
-                    priority = "high",
-                    width = 346,
-                    height = 336,
-                    direction_count = 1, 
-                    frame_count = 1,
-                    line_length = 1, 
-                    axially_symmetrical = false,
-                    shift = {0.2, -0.95},
-                    filename = ENTITYPATH .. "bio_cannon_shadow.png",
-                    draw_as_shadow = true,
-
-                    hr_version = {
                         priority = "high",
                         width = 692,
                         height = 672,
-                        direction_count = 1, 
-                        frame_count = 1, 
-                        line_length = 1, 
+                        direction_count = 1,
+                        frame_count = 1,
+                        line_length = 1,
                         axially_symmetrical = false,
                         shift = {0.2, -0.95},
                         filename = ENTITYPATH .. "hr_bio_cannon_shadow.png",
                         draw_as_shadow = true,
                         scale = 0.5
-                    }
-
                 }
             }
         }
@@ -243,8 +169,8 @@ if BI.Settings.Bio_Cannon then
             folded_animation = folded_animation(),
             call_for_help_radius = 90,
             attack_target_mask = {"Bio_Cannon_Ammo"}
-        }, 
-        
+        },
+
         ---- Corpse / Remnants
         {
             type = "corpse",
@@ -266,17 +192,6 @@ if BI.Settings.Bio_Cannon then
                 layers = {
 
                     {
-
-                        width = 346,
-                        height = 336,
-                        direction_count = 1,
-                        frame_count = 1,
-                        line_length = 1,
-                        axially_symmetrical = false,
-                        shift = {0, -0.8},
-                        filename = REMNANTSPATH .. "bio_cannon_remnant.png",
-                       
-                        hr_version = {
                             width = 692,
                             height = 672,
                             direction_count = 1,
@@ -286,7 +201,6 @@ if BI.Settings.Bio_Cannon then
                             shift = {0, -0.8},
                             filename = REMNANTSPATH .. "hr_bio_cannon_remnant.png",
                             scale = 0.5
-                        }
                     }
 
                 }

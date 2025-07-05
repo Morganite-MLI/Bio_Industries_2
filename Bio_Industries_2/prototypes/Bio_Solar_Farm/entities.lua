@@ -269,14 +269,6 @@ data:extend({
           size = 1,
           probability = 1,
         },
-  --[[
-        {
-          picture = ENTITYPATH .. "solar2.png",
-          count = 1,
-          size = 2,
-          probability = 1,
-        },
-    ]]
       },
       inner_corner = {
         picture = ENTITYPATH .. "solar-inner-corner.png",
@@ -306,228 +298,7 @@ data:extend({
   },
 })
 
-   --~ ------- Hidden Electric pole for Solar Mat
---~ local hidden_pole = table.deepcopy(data.raw["electric-pole"]["small-electric-pole"])
---~ {
---     type = "electric-pole",
---     name = "bi-musk-mat-hidden-pole",
---     icon = ICONPATH .. "solar-mat.png",
---     icon_size = 64,
---     icons = {
---       {
---         icon = ICONPATH .. "solar-mat.png",
---         icon_size = 64,
---       }
---     },
---     flags = {"not-blueprintable", "not-deconstructable", "placeable-off-grid", "not-on-map", "not-repairable"},
---     selectable_in_game = false,
---     draw_copper_wires = false,
---     max_health = 10,
---     resistances = {{type = "fire", percent = 100}},
---     collision_mask = {"ground-tile"},
---     collision_box = {{-0.0, -0.0}, {0.0, 0.0}},
---     selection_box = {{0, 0}, {0, 0}},
---     maximum_wire_distance = 1,
---     supply_area_distance = 3,
---     pictures = {
---       filename = ICONPATH .. "empty.png",
---       filename = "__base__/graphics/icons/small-electric-pole.png",
---       filename = BioInd.is_debug and
---         "__base__/graphics/icons/small-electric-pole.png" or
---         ICONPATH .. "empty.png",
---       priority = "low",
---       width = 1,
---       height = 1,
---       frame_count = 1,
---       axially_symmetrical = false,
---       direction_count = 4,
---       shift = {0.75, 0},
---     },
---     connection_points = {
---       {
---         shadow = {
---
---         },
---         wire = {
---           copper_wire = {-0, -0},
---         }
---       },
---       {
---         shadow = {
---
---         },
---         wire = {
---           copper_wire = {-0, -0},
---         }
---       },
---       {
---         shadow = {
---
---         },
---         wire = {
---           copper_wire = {-0, -0},
---         }
---       },
---       {
---         shadow = {
---
---         },
---         wire = {
---           copper_wire = {-0, -0},
---         }
---       }
---     },
---
---     radius_visualisation_picture = {
---       filename = ICONPATH .. "empty.png",
---       width = 1,
---       height = 1,
---       priority = "low"
---     },
---   },
---~ hidden_pole.name = "bi-musk-mat-hidden-pole"
---~ hidden_pole.icon = ICONPATH .. "solar-mat.png"
---~ hidden_pole.icon_size = 64
---~ hidden_pole.icons = {
-  --~ {
-    --~ icon = ICONPATH .. "solar-mat.png",
-    --~ icon_size = 64,
-  --~ }
---~ }
---~ hidden_pole.flags = {"not-blueprintable", "not-deconstructable", "placeable-off-grid", "not-on-map", "not-repairable"}
---~ hidden_pole.selectable_in_game = false
---~ hidden_pole.draw_copper_wires = BioInd.is_debug
---~ hidden_pole.max_health = 10
---~ hidden_pole.resistances = {{type = "fire", percent = 100}}
---~ hidden_pole.collision_mask = {"ground-tile"}
---~ hidden_pole.collision_box = {{-0.0, -0.0}, {0.0, 0.0}}
---~ hidden_pole.selection_box = {{0, 0}, {0, 0}}
---~ hidden_pole.maximum_wire_distance = 1
---~ hidden_pole.supply_area_distance = 3
---~ hidden_pole.pictures = BioInd.is_debug and hidden_pole.pictures or {
-  --~ filename = ICONPATH .. "empty.png",
-  --~ priority = "low",
-  --~ width = 1,
-  --~ height = 1,
-  --~ frame_count = 1,
-  --~ axially_symmetrical = false,
-  --~ direction_count = 1,
-  --~ shift = {0.75, 0},
---~ }
---~ hidden_pole.connection_points = BioInd.is_debug and hidden_pole.connection_points or {
-  --~ {
-    --~ shadow = {},
-    --~ wire = { copper_wire = {-0, -0} }
-  --~ },
---~ }
---~ hidden_pole.radius_visualisation_picture = {
-  --~ filename = ICONPATH .. "empty.png",
-  --~ width = 1,
-  --~ height = 1,
-  --~ priority = "low"
---~ }
---~ data:extend({hidden_pole})
-
 data:extend({
-  --~ ------- Hidden Solar Panel for Solar Mat
-  --~ {
-    --~ type = "solar-panel",
-    --~ name = "bi-musk-mat-hidden-panel",
-    --~ icon = ICONPATH .. "solar-mat.png",
-    --~ icon_size = 64,
-    --~ icons = {
-      --~ {
-        --~ icon = ICONPATH .. "solar-mat.png",
-        --~ icon_size = 64,
-      --~ }
-    --~ },
-    --~ flags = {"not-blueprintable", "not-deconstructable", "placeable-off-grid", "not-on-map", "not-repairable"},
-    --~ selectable_in_game = false,
-    --~ max_health = 1,
-    --~ resistances = {{type = "fire", percent = 100}},
-    --~ collision_mask = {"ground-tile"},
-    --~ collision_box = {{-0.0, -0.0}, {0.0, 0.0}},
-    --~ selection_box = {{0, 0}, {0, 0}},
-    --~ energy_source = {
-      --~ type = "electric",
-      --~ usage_priority = "solar"
-    --~ },
-    --~ picture = {
-      --~ -- filename = ICONPATH .. "empty.png",
-      --~ filename = "__base__/graphics/icons/solar-panel.png",
-      --~ priority = "low",
-      --~ width = 1,
-      --~ height = 1,
-    --~ },
-    --~ production = "10kW"
-  --~ },
-
-
- --~ ------- Solar Panel for Solar Plant / Boiler
-  --~ {
-    --~ type = "solar-panel",
-    --~ name = "bi-solar-boiler-hidden-panel",
-    --~ localised_name = {"entity-name.bi-solar-boiler"},
-    --~ localised_description = {"entity-description.bi-solar-boiler"},
-    --~ icon = ICONPATH .. "Bio_Solar_Boiler_Panel_Icon.png",
-    --~ icon_size = 64,
-    --~ icons = {
-      --~ {
-        --~ icon = ICONPATH .. "Bio_Solar_Boiler_Panel_Icon.png",
-        --~ icon_size = 64,
-      --~ }
-    --~ },
-    --~ flags = {"not-blueprintable", "not-deconstructable", "placeable-off-grid", "not-on-map", "not-repairable"},
-    --~ max_health = 400,
-    --~ render_no_power_icon = true,
-    --~ resistances = {{type = "fire", percent = 100}},
-    --~ -- collision_box = {{-4.2, -4.2}, {4.2, 4.2}},
-    --~ -- selection_box = {{-1.2, -1.2}, {1.2, 1.2}},
-    --~ collision_box = {{0, 0}, {0, 0}},
-    --~ selection_box = {{0, 0}, {0, 0}},
---~ collision_mask = {},
-    --~ energy_source = {
-      --~ type = "electric",
-      --~ usage_priority = "solar"
-    --~ },
-    --~ -- picture = {
-      --~ -- filename = ENTITYPATH .. "Bio_Solar_Boiler.png",
-      --~ -- priority = "low",
-      --~ -- width = 288,
-      --~ -- height = 288,
-      --~ -- hr_version = {
-        --~ -- filename = ENTITYPATH .. "Bio_Solar_Boiler.png",
-        --~ -- priority = "low",
-        --~ -- width = 288,
-        --~ -- height = 288,
-      --~ -- }
-    --~ -- },
-    --~ picture = {
-      --~ filename = ICONPATH .. "empty.png",
-      --~ priority = "low",
-      --~ size = 1,
-    --~ },
-
-    --~ overlay = {
-        --~ layers = {
-          --~ {
-            --~ filename = ENTITYPATH .. "Bio_Solar_Boiler.png",
-            --~ priority = "high",
-            --~ width = 288,
-            --~ height = 288,
-            --~ hr_version = {
-            --~ filename = ENTITYPATH .. "Bio_Solar_Boiler.png",
-            --~ priority = "high",
-            --~ width = 288,
-            --~ height = 288,
-          --~ }
-        --~ },
-      --~ }
-    --~ },
-    --~ production = "1.8MW"
-  --~ },
-
-
   ------- Boiler for Solar Plant / Boiler
   {
     type = "boiler",
@@ -608,64 +379,40 @@ data:extend({
       north = {
         layers = {
           {
-            filename = ENTITYPATH .. "Bio_Solar_Boiler.png",
-            priority = "high",
-            width = 288,
-            height = 288,
-            hr_version = {
               filename = ENTITYPATH .. "Bio_Solar_Boiler.png",
               priority = "high",
               width = 288,
               height = 288,
-            }
           },
         }
       },
       east = {
         layers = {
           {
-            filename = ENTITYPATH .. "Bio_Solar_Boiler.png",
-            priority = "high",
-            width = 288,
-            height = 288,
-            hr_version = {
               filename = ENTITYPATH .. "Bio_Solar_Boiler.png",
               priority = "high",
                           width = 288,
                           height = 288,
-            }
           },
         },
       },
       south = {
         layers = {
           {
-            filename = ENTITYPATH .. "Bio_Solar_Boiler.png",
-            priority = "high",
-            width = 288,
-            height = 288,
-            hr_version = {
               filename = ENTITYPATH .. "Bio_Solar_Boiler.png",
               priority = "high",
               width = 288,
               height = 288,
-            }
           },
         }
       },
       west = {
         layers = {
           {
-            filename = ENTITYPATH .. "Bio_Solar_Boiler.png",
-            priority = "high",
-            width = 288,
-            height = 288,
-            hr_version = {
               filename = ENTITYPATH .. "Bio_Solar_Boiler.png",
               priority = "high",
               width = 288,
               height = 288,
-            }
           },
         }
       }
@@ -675,15 +422,6 @@ data:extend({
     fire_glow_flicker_enabled = false,
     fire_glow = {
       north = {
-        filename = "__Bio_Industries__/graphics/entities/small-lamp/light-on-patch.png",
-        priority = "extra-high",
-        frame_count = 1,
-        width = 62,
-        height = 62,
-        shift = {0.09, -2.8},
-        scale = 1.5,
-        blend_mode = "additive",
-        hr_version = {
           filename = "__Bio_Industries__/graphics/entities/small-lamp/light-on-patch.png",
           priority = "extra-high",
           frame_count = 1,
@@ -692,17 +430,8 @@ data:extend({
           shift = {0.09, -2.8},
           scale = 1.5,
           blend_mode = "additive",
-        }
       },
       east = {
-        filename = "__Bio_Industries__/graphics/entities/small-lamp/light-on-patch.png",
-        priority = "extra-high",
-        frame_count = 1,
-        width = 62,
-        height = 62,
-        shift = {0, -3},
-        blend_mode = "additive",
-        hr_version = {
           filename = "__Bio_Industries__/graphics/entities/small-lamp/light-on-patch.png",
           priority = "extra-high",
           frame_count = 1,
@@ -710,17 +439,8 @@ data:extend({
           height = 62,
           shift = {0, -3},
           blend_mode = "additive",
-        }
       },
       south = {
-        filename = "__Bio_Industries__/graphics/entities/small-lamp/light-on-patch.png",
-        priority = "extra-high",
-        frame_count = 1,
-        width = 62,
-        height = 62,
-        shift = {0, -3},
-        blend_mode = "additive",
-        hr_version = {
           filename = "__Bio_Industries__/graphics/entities/small-lamp/light-on-patch.png",
           priority = "extra-high",
           frame_count = 1,
@@ -728,17 +448,8 @@ data:extend({
           height = 62,
           shift = {0, -3},
           blend_mode = "additive",
-        }
       },
       west = {
-        filename = "__Bio_Industries__/graphics/entities/small-lamp/light-on-patch.png",
-        priority = "extra-high",
-        frame_count = 1,
-        width = 62,
-        height = 62,
-        shift = {0, -3},
-        blend_mode = "additive",
-        hr_version = {
           filename = "__Bio_Industries__/graphics/entities/small-lamp/light-on-patch.png",
           priority = "extra-high",
           frame_count = 1,
@@ -746,7 +457,6 @@ data:extend({
           height = 62,
           shift = {0, -3},
           blend_mode = "additive",
-        }
       },
     },
     burning_cooldown = 20

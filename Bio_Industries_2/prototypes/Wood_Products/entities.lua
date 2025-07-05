@@ -37,239 +37,132 @@ end
 pipepictures_w = function()
   return {
     straight_vertical_single = {
-      filename = PIPEPATH .. "pipe-straight-vertical-single.png",
-      priority = "extra-high",
-      width = 80,
-      height = 80,
-      hr_version = {
         filename = PIPEPATH .. "hr-pipe-straight-vertical-single.png",
         priority = "extra-high",
         width = 160,
         height = 160,
         scale = 0.5
-      }
     },
     straight_vertical = {
-      filename = PIPEPATH .. "pipe-straight-vertical.png",
-      priority = "extra-high",
-      size = 64,
-      hr_version = {
         filename = PIPEPATH .. "hr-pipe-straight-vertical.png",
         priority = "extra-high",
         size = 128,
         scale = 0.5
-      }
     },
     straight_vertical_window = {
-      filename = PIPEPATH .. "pipe-straight-vertical-window.png",
-      priority = "extra-high",
-      size = 64,
-      hr_version = {
         filename = PIPEPATH .. "hr-pipe-straight-vertical-window.png",
         priority = "extra-high",
         size = 128,
         scale = 0.5
-      }
     },
     straight_horizontal_window = {
-      filename = PIPEPATH .. "pipe-straight-horizontal-window.png",
-      priority = "extra-high",
-      size = 64,
-      hr_version = {
         filename = PIPEPATH .. "hr-pipe-straight-horizontal-window.png",
         priority = "extra-high",
         size = 128,
         scale = 0.5
-      }
     },
     straight_horizontal = {
-      filename = PIPEPATH .. "pipe-straight-horizontal.png",
-      priority = "extra-high",
-      size = 64,
-      hr_version = {
         filename = PIPEPATH .. "hr-pipe-straight-horizontal.png",
         priority = "extra-high",
         size = 128,
         scale = 0.5
-      }
     },
     corner_up_right = {
-      filename = PIPEPATH .. "pipe-corner-up-right.png",
-      priority = "extra-high",
-      size = 64,
-      hr_version = {
         filename = PIPEPATH .. "hr-pipe-corner-up-right.png",
         priority = "extra-high",
         size = 128,
         scale = 0.5
-      }
     },
     corner_up_left = {
-      filename = PIPEPATH .. "pipe-corner-up-left.png",
-      priority = "extra-high",
-      size = 64,
-      hr_version = {
         filename = PIPEPATH .. "hr-pipe-corner-up-left.png",
         priority = "extra-high",
         size = 128,
         scale = 0.5
-      }
     },
     corner_down_right = {
-      filename = PIPEPATH .. "pipe-corner-down-right.png",
-      priority = "extra-high",
-      size = 64,
-      hr_version = {
         filename = PIPEPATH .. "hr-pipe-corner-down-right.png",
         priority = "extra-high",
         size = 128,
         scale = 0.5
-      }
     },
     corner_down_left = {
-      filename = PIPEPATH .. "pipe-corner-down-left.png",
-      priority = "extra-high",
-      size = 64,
-      hr_version = {
         filename = PIPEPATH .. "hr-pipe-corner-down-left.png",
         priority = "extra-high",
         size = 128,
         scale = 0.5
-      }
     },
     t_up = {
-      filename = PIPEPATH .. "pipe-t-up.png",
-      priority = "extra-high",
-      size = 64,
-      hr_version = {
         filename = PIPEPATH .. "hr-pipe-t-up.png",
         priority = "extra-high",
         size = 128,
         scale = 0.5
-      }
     },
     t_down = {
-      filename = PIPEPATH .. "pipe-t-down.png",
-      priority = "extra-high",
-      size = 64,
-      hr_version = {
         filename = PIPEPATH .. "hr-pipe-t-down.png",
         priority = "extra-high",
         size = 128,
         scale = 0.5
-      }
     },
     t_right = {
-      filename = PIPEPATH .. "pipe-t-right.png",
-      priority = "extra-high",
-      size = 64,
-      hr_version = {
         filename = PIPEPATH .. "hr-pipe-t-right.png",
         priority = "extra-high",
         size = 128,
         scale = 0.5
-      }
     },
     t_left = {
-      filename = PIPEPATH .. "pipe-t-left.png",
-      priority = "extra-high",
-      size = 64,
-      hr_version = {
         filename = PIPEPATH .. "hr-pipe-t-left.png",
         priority = "extra-high",
         size = 128,
         scale = 0.5
-      }
     },
     cross = {
-      filename = PIPEPATH .. "pipe-cross.png",
-      priority = "extra-high",
-      size = 64,
-      hr_version = {
         filename = PIPEPATH .. "hr-pipe-cross.png",
         priority = "extra-high",
         size = 128,
         scale = 0.5
-      }
     },
     ending_up = {
-      filename = PIPEPATH .. "pipe-ending-up.png",
-      priority = "extra-high",
-      size = 64,
-      hr_version = {
         filename = PIPEPATH .. "hr-pipe-ending-up.png",
         priority = "extra-high",
         size = 128,
         scale = 0.5
-      }
     },
     ending_down = {
-      filename = PIPEPATH .. "pipe-ending-down.png",
-      priority = "extra-high",
-      size = 64,
-      hr_version = {
         filename = PIPEPATH .. "hr-pipe-ending-down.png",
         priority = "extra-high",
         size = 128,
         scale = 0.5
-      }
     },
     ending_right = {
-      filename = PIPEPATH .. "pipe-ending-right.png",
-      priority = "extra-high",
-      size = 64,
-      hr_version = {
         filename = PIPEPATH .. "hr-pipe-ending-right.png",
         priority = "extra-high",
         size = 128,
         scale = 0.5
-      }
     },
     ending_left = {
-      filename = PIPEPATH .. "pipe-ending-left.png",
-      priority = "extra-high",
-      size = 64,
-      hr_version = {
         filename = PIPEPATH .. "hr-pipe-ending-left.png",
         priority = "extra-high",
         size = 128,
         scale = 0.5
-      }
     },
     horizontal_window_background = {
-      filename = PIPEPATH .. "pipe-horizontal-window-background.png",
-      priority = "extra-high",
-      size = 64,
-      hr_version = {
         filename = PIPEPATH .. "hr-pipe-horizontal-window-background.png",
         priority = "extra-high",
         size = 128,
         scale = 0.5
-      }
     },
     vertical_window_background = {
-      filename = PIPEPATH .. "pipe-vertical-window-background.png",
-      priority = "extra-high",
-      size = 64,
-      hr_version = {
         filename = PIPEPATH .. "hr-pipe-vertical-window-background.png",
         priority = "extra-high",
         size = 128,
         scale = 0.5
-      }
     },
     fluid_background = {
-      filename = PIPEPATH .. "fluid-background.png",
-      priority = "extra-high",
-      width = 32,
-      height = 20,
-      hr_version = {
         filename = PIPEPATH .. "hr-fluid-background.png",
         priority = "extra-high",
         width = 64,
         height = 40,
         scale = 0.5
-      }
     },
     low_temperature_flow = {
       filename = PIPEPATH .. "fluid-flow-low-temperature.png",
@@ -290,15 +183,6 @@ pipepictures_w = function()
       height = 18
     },
     gas_flow = {
-      filename = PIPEPATH .. "steam.png",
-      priority = "extra-high",
-      line_length = 10,
-      width = 24,
-      height = 15,
-      frame_count = 60,
-      axially_symmetrical = false,
-      direction_count = 1,
-      hr_version = {
         filename = PIPEPATH .. "hr-steam.png",
         priority = "extra-high",
         line_length = 10,
@@ -307,7 +191,6 @@ pipepictures_w = function()
         frame_count = 60,
         axially_symmetrical = false,
         direction_count = 1
-      }
     }
   }
 end
@@ -1244,168 +1127,32 @@ data:extend({
     vehicle_impact_sound = sounds.generic_impact,
     pictures = {
       up = {
-        filename = ENTITYPATH .. "/pipe-to-ground/pipe-to-ground-up.png",
-        priority = "high",
-        size = 64, --, shift = {0.10, -0.04}
-        hr_version = {
           filename = ENTITYPATH .. "/pipe-to-ground/hr-pipe-to-ground-up.png",
           priority = "extra-high",
           size = 128,
           scale = 0.5
-        }
       },
       down = {
-        filename = ENTITYPATH .. "/pipe-to-ground/pipe-to-ground-down.png",
-        priority = "high",
-        size = 64, --, shift = {0.05, 0}
-        hr_version = {
           filename = ENTITYPATH .. "/pipe-to-ground/hr-pipe-to-ground-down.png",
           priority = "extra-high",
           size = 128,
           scale = 0.5
-        }
       },
       left = {
-        filename = ENTITYPATH .. "/pipe-to-ground/pipe-to-ground-left.png",
-        priority = "high",
-        size = 64, --, shift = {-0.12, 0.1}
-        hr_version = {
           filename = ENTITYPATH .. "/pipe-to-ground/hr-pipe-to-ground-left.png",
           priority = "extra-high",
           size = 128,
           scale = 0.5
-        }
       },
       right = {
-        filename = ENTITYPATH .. "/pipe-to-ground/pipe-to-ground-right.png",
-        priority = "high",
-        size = 64, --, shift = {0.1, 0.1}
-        hr_version = {
           filename = ENTITYPATH .. "/pipe-to-ground/hr-pipe-to-ground-right.png",
           priority = "extra-high",
           size = 128,
           scale = 0.5
-        }
       },
     },
   },
 })
-
---~ ------- Large Wooden Chest
---~ data:extend({
-  --~ {
-    --~ type = "container",
-    --~ name = "bi-wooden-chest-large",
-    --~ icon = ICONPATH .. "large_wooden_chest_icon.png",
-    --~ icon_size = 64,
-    --~ icons = {
-      --~ {
-        --~ icon = ICONPATH .. "large_wooden_chest_icon.png",
-        --~ icon_size = 64,
-      --~ }
-    --~ },
-    --~ flags = {"placeable-neutral", "player-creation"},
-    --~ minable = {mining_time = 1, result = "bi-wooden-chest-large"},
-    --~ max_health = 200,
-    --~ corpse = "small-remnants",
-    --~ collision_box = {{-0.7, -0.7}, {0.7, 0.7}},
-    --~ selection_box = {{-1.0, -1.0}, {1.0, 1.0}},
-    --~ fast_replaceable_group = "container",
-    --~ inventory_size = 128, -- 64
-    --~ open_sound = { filename = "__base__/sound/wooden-chest-open.ogg" },
-    --~ close_sound = { filename = "__base__/sound/wooden-chest-close.ogg" },
-    --~ vehicle_impact_sound = sounds.car_wood_impact,
-    --~ picture = {
-      --~ filename = WOODPATH .. "large_wooden_chest.png",
-      --~ priority = "extra-high",
-      --~ width = 184,
-      --~ height = 132,
-      --~ shift = {0.5, 0},
-      --~ scale = 0.5,
-    --~ },
-    --~ circuit_wire_connection_point = circuit_connector_definitions["chest"].points,
-    --~ circuit_connector_sprites = circuit_connector_definitions["chest"].sprites,
-    --~ circuit_wire_max_distance = default_circuit_wire_max_distance
-  --~ },
---~ })
-
---~ ------- Huge Wooden Chest
---~ data:extend({
-  --~ {
-    --~ type = "container",
-    --~ name = "bi-wooden-chest-huge",
-    --~ icon = ICONPATH .. "huge_wooden_chest_icon.png",
-    --~ icon_size = 64,
-    --~ icons = {
-      --~ {
-        --~ icon = ICONPATH .. "huge_wooden_chest_icon.png",
-        --~ icon_size = 64,
-      --~ }
-    --~ },
-    --~ scale_info_icons = true,
-    --~ flags = {"placeable-neutral", "player-creation"},
-    --~ minable = {mining_time = 1.5, result = "bi-wooden-chest-huge"},
-    --~ max_health = 350,
-    --~ corpse = "small-remnants",
-    --~ collision_box = {{-1.2, -1.2}, {1.2, 1.2}},
-    --~ selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
-    --~ fast_replaceable_group = "container",
-    --~ inventory_size = 432, --144
-    --~ open_sound = { filename = "__base__/sound/wooden-chest-open.ogg" },
-    --~ close_sound = { filename = "__base__/sound/wooden-chest-close.ogg" },
-    --~ vehicle_impact_sound = sounds.car_wood_impact,
-    --~ picture = {
-      --~ filename = WOODPATH .. "huge_wooden_chest.png",
-      --~ priority = "extra-high",
-      --~ width = 184,
-      --~ height = 132,
-      --~ shift = {0.5, 0},
-      --~ scale = 0.75,
-    --~ },
-    --~ circuit_wire_connection_point = circuit_connector_definitions["chest"].points,
-    --~ circuit_connector_sprites = circuit_connector_definitions["chest"].sprites,
-    --~ circuit_wire_max_distance = default_circuit_wire_max_distance
-  --~ },
---~ })
-
---~ ------- Giga Wooden Chest
---~ data:extend({
-  --~ {
-    --~ type = "container",
-    --~ name = "bi-wooden-chest-giga",
-    --~ icon = ICONPATH .. "giga_wooden_chest_icon.png",
-    --~ icon_size = 64,
-    --~ icons = {
-      --~ {
-        --~ icon = ICONPATH .. "giga_wooden_chest_icon.png",
-        --~ icon_size = 64,
-      --~ }
-    --~ },
-    --~ scale_info_icons = true,
-    --~ flags = {"placeable-neutral", "player-creation"},
-    --~ minable = {mining_time = 3.5, result = "bi-wooden-chest-giga"},
-    --~ max_health = 350,
-    --~ corpse = "big-remnants",
-    --~ collision_box = {{-2.8, -2.8}, {2.8, 2.8}},
-    --~ selection_box = {{-3, -3}, {3, 3}},
-    --~ fast_replaceable_group = "container",
-    --~ inventory_size = 1728, --576
-    --~ open_sound = { filename = "__base__/sound/wooden-chest-open.ogg" },
-    --~ close_sound = { filename = "__base__/sound/wooden-chest-close.ogg" },
-    --~ vehicle_impact_sound = sounds.car_wood_impact,
-    --~ picture = {
-      --~ filename = WOODPATH .. "giga_wooden_chest.png",
-      --~ priority = "extra-high",
-      --~ width = 501,
-      --~ height = 366,
-      --~ shift = {0.88, -0.170},
-      --~ scale = 0.5,
-    --~ },
-    --~ circuit_wire_connection_point = circuit_connector_definitions["chest"].points,
-    --~ circuit_connector_sprites = circuit_connector_definitions["chest"].sprites,
-    --~ circuit_wire_max_distance = default_circuit_wire_max_distance
-  --~ },
---~ })
 
 ------ Power to Rail Pole
 -- Changed to medium-electric pole so the built entity resembles the icon (0.18.1)

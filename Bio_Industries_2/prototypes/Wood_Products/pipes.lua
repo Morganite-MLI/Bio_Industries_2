@@ -143,15 +143,9 @@ function change_graphics (was_picture, sheet_element, quality)
   if not sheet_element.shift then
     sheet_element.shift = {x = 0, y = 0}
   end
-  if (quality == "hq") and (was_picture.hr_version) then
-    --BioInd.writeDebug("hq")
-    picture = was_picture.hr_version
-    k = 2
-  else
     --BioInd.writeDebug("lq")
     picture = was_picture
     k = 1
-  end
   --BioInd.writeDebug("%s Quality: %s", {sheet_element.number, quality})
 
   if not (picture) then

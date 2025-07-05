@@ -22,33 +22,27 @@ for i = 1, TREE_LEVELS do
   wooden.name = "bio-" .. wooden.name .. "-" .. i
   for _, pic in pairs(wooden.pictures) do
     pic.scale = (pic.scale or 1)/TREE_LEVELS*i
-    pic.hr_version.scale = (pic.hr_version.scale or 1)/TREE_LEVELS*i
   end
   for _, pic in pairs(wooden.shadows) do
     pic.scale = (pic.scale or 1)/TREE_LEVELS*i
-    pic.hr_version.scale = (pic.hr_version.scale or 1)/TREE_LEVELS*i
   end
 
   branch = table.deepcopy(data.raw["optimized-particle"]["branch-particle"])
   branch.name = "bio-" .. branch.name .. "-" .. i
   for _, pic in pairs(branch.pictures) do
     pic.scale = (pic.scale or 1)/TREE_LEVELS*i
-    pic.hr_version.scale = (pic.hr_version.scale or 1)/TREE_LEVELS*i
   end
   for _, pic in pairs(branch.shadows) do
     pic.scale = (pic.scale or 1)/TREE_LEVELS*i
-    pic.hr_version.scale = (pic.hr_version.scale or 1)/TREE_LEVELS*i
   end
 
   leaf = table.deepcopy(data.raw["optimized-particle"]["leaf-particle"])
   leaf.name = "bio-" .. leaf.name .. "-" .. i
   for _, pic in pairs(leaf.pictures) do
     pic.scale = (pic.scale or 1)/TREE_LEVELS*math.max(2, i)
-    --pic.hr_version.scale = (pic.hr_version.scale or 1)/TREE_LEVELS*i
   end
   for _, pic in pairs(leaf.shadows) do
     pic.scale = (pic.scale or 1)/TREE_LEVELS*math.max(2, i)
-    --pic.hr_version.scale = (pic.hr_version.scale or 1)/TREE_LEVELS*i
   end
 
   data:extend({wooden, branch, leaf})
@@ -124,16 +118,6 @@ for id, prototype in pairs(data.raw.tree) do
             variation.trunk.shift[2] = variation.trunk.shift[2]/TREE_LEVELS*i
           end
 
-          if variation.trunk.hr_version then
-            variation.trunk.hr_version.scale = (variation.trunk.hr_version.scale or 1) * i / TREE_LEVELS
-
-            if variation.trunk.hr_version.shift then
-              variation.trunk.hr_version.shift[1] = (variation.trunk.hr_version.shift[1] or 0)/TREE_LEVELS*i
-              variation.trunk.hr_version.shift[2] = (variation.trunk.hr_version.shift[2] or 0)/TREE_LEVELS*i
-
-            end
-          end
-
           -- This doesn't make sense, the condition can never be true! Either more
           -- than 4 levels have been used originally, or it should be compared to just
           -- TREE_LEVELS, not TREE_LEVELS/10 (i.e. typo)
@@ -169,14 +153,6 @@ for id, prototype in pairs(data.raw.tree) do
             variation.leaves.shift[2] = (variation.leaves.shift[2] or 0)/TREE_LEVELS*i
           end
 
-          if variation.leaves.hr_version then
-            variation.leaves.hr_version.scale = (variation.leaves.hr_version.scale or 1) * i / TREE_LEVELS
-            if variation.leaves.hr_version.shift then
-              variation.leaves.hr_version.shift[1] = (variation.leaves.hr_version.shift[1] or 0)/TREE_LEVELS*i
-              variation.leaves.hr_version.shift[2] = (variation.leaves.hr_version.shift[2] or 0)/TREE_LEVELS*i
-            end
-          end
-
           variation.leaf_generation.scale = (variation.leaf_generation.scale or 1) * i / TREE_LEVELS
           variation.leaf_generation.offset_deviation = {{-0.5, -0.5}, {0.5, 0.5}}
           variation.leaf_generation.initial_height = 2/TREE_LEVELS*i
@@ -196,14 +172,6 @@ for id, prototype in pairs(data.raw.tree) do
             variation.shadow.shift[1] = (variation.shadow.shift[1] or 0)/TREE_LEVELS*i
             variation.shadow.shift[2] = (variation.shadow.shift[2] or 0)/TREE_LEVELS*i
           end
-
-          if variation.shadow.hr_version then
-            variation.shadow.hr_version.scale = (variation.shadow.hr_version.scale or 1) * i / TREE_LEVELS
-            if variation.shadow.hr_version.shift then
-              variation.shadow.hr_version.shift[1] = (variation.shadow.hr_version.shift[1] or 0)/TREE_LEVELS*i
-              variation.shadow.hr_version.shift[2] = (variation.shadow.hr_version.shift[2] or 0)/TREE_LEVELS*i
-            end
-          end
       end
 
 
@@ -219,7 +187,6 @@ for id, prototype in pairs(data.raw.tree) do
 
         for _, variation in pairs(stump.animation) do
           variation.scale = (variation.scale or 1) * i / TREE_LEVELS
-          variation.hr_version = nil
           variation.shift[1] = variation.shift[1]/TREE_LEVELS*i
           variation.shift[2] = variation.shift[2]/TREE_LEVELS*i
 

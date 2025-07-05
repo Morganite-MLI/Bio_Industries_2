@@ -51,11 +51,9 @@ function set_tint_to_rails (rails_entities, tint)
   for i, handler in pairs (global.rails) do
     --handler.name = "straight_rail_horizontal"
     local was_filename = handler.table.filename
-    handler.table.filename = sheet_path_ties .. handler.name .. "-ties.png"
-    handler.table.hr_version.filename = sheet_path_ties .. "hr-" .. handler.name .. "-ties.png"
+    handler.table.filename = sheet_path_ties .. "hr-" .. handler.name .. "-ties.png"
     BioInd.writeDebug('Replaced: %s ===>>> %s', {was_filename, handler.table.filename})
     handler.table.tint = tint
-    handler.table.hr_version.tint = tint -- oops, i've forgot it, added in 0.0.3
   end
   --BioInd.writeDebug("End rails")        ---------------------
 end
@@ -82,11 +80,9 @@ end
 for i, handler in pairs (global.remnants) do
   --remnants.name = "straight_rail_horizontal"
   local was_filename = handler.table.filename
-  handler.table.filename = sheet_path_ties .. handler.name .. "-ties-remnants.png"
-  handler.table.hr_version.filename = sheet_path_ties .. "hr-" .. handler.name .. "-ties-remnants.png"
+  handler.table.filename = sheet_path_ties .. "hr-" .. handler.name .. "-ties-remnants.png"
   BioInd.writeDebug('Replaced: %s ===>>> %s', {was_filename, handler.table.filename})
   handler.table.tint = tint
-  handler.table.hr_version.tint = tint -- oops, i'mm forgot it, added in 0.0.3
 end
 --BioInd.writeDebug("End remnants")           ---------------------
 end

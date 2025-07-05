@@ -112,16 +112,6 @@ BioInd.show("radar.name", c_entities["bi-arboretum"].hidden[h_key].name)
     radar.pictures = {
       layers = {
         {
-          filename = "__base__/graphics/entity/radar/radar.png",
-          priority = "extra-high",
-          width = 98,
-          height = 128,
-          apply_projection = false,
-          direction_count = 64,
-          line_length = 8,
-          shift = util.by_pixel(1, -16),
-          scale = 0.5,
-          hr_version = {
             filename = "__base__/graphics/entity/radar/hr-radar.png",
             priority = "extra-high",
             width = 196,
@@ -131,7 +121,6 @@ BioInd.show("radar.name", c_entities["bi-arboretum"].hidden[h_key].name)
             line_length = 8,
             shift = util.by_pixel(1, -16),
             scale = 0.25
-          }
         }
       }
     }
