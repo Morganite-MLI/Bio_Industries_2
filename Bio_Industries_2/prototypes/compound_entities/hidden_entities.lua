@@ -180,7 +180,7 @@ BI.add_layer = function(layers, data)
   BioInd.check_args(data, "table", "layer data")
   layers = layers or {}
 
-  local hr_name = data.hr_name
+  local name = data.name
   local priority = data.priority
   local height = data.height
   local width = data.width
@@ -188,7 +188,7 @@ BI.add_layer = function(layers, data)
   local shadow = data.shadow
 
   layers[#layers + 1] = {
-      filename = hr_name,
+      filename = name,
       priority = priority or "low",
       width = width and width * 2,
       height = height and height * 2,

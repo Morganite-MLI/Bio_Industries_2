@@ -61,12 +61,12 @@ for panel_name, locale_name in pairs(BI.hidden_entities.types[h_key]) do
     panel.BI_add_icon = true
 
     panel.picture = {}
-    panel.picture.layers = BI.add_layer(panel.picture.layers, {
+    panel.picture = BI.add_layer(panel.picture, {
       name = BioInd.modRoot .. "/graphics/entities/bio_solar_farm/Bio_Solar_Boiler.png",
       size = 288
     })
     panel.overlay = {}
-    panel.overlay.layers = table.deepcopy(panel.picture.layers)
+    panel.overlay = table.deepcopy(panel.picture)
 
     panel.max_health = 400
     panel.render_no_power_icon = true
