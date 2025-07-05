@@ -59,7 +59,7 @@ data:extend({
     energy_source = {
       type = "electric",
       usage_priority = "secondary-input",
-      emissions_per_minute = -45, -- Negative value: pollution is absorbed!
+      emissions_per_minute = { pollution = -45 }, -- Negative value: pollution is absorbed!
     },
     energy_usage = "200kW",
     ingredient_count = 1,

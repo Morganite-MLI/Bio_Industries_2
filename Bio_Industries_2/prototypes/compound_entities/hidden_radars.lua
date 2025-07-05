@@ -103,7 +103,7 @@ BioInd.show("radar.name", c_entities["bi-arboretum"].hidden[h_key].name)
 
     radar.energy_per_sector = "2MJ"
     radar.energy_per_nearby_scan = "200kW"
-    radar.energy_source.emissions_per_minute = 0
+    radar.energy_source.emissions_per_minute = {}
     radar.energy_usage = "150kW"
     radar.max_distance_of_nearby_sector_revealed = 2
     radar.max_distance_of_sector_revealed = 5

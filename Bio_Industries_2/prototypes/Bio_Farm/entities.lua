@@ -46,7 +46,7 @@ data:extend({
     },
     corpse = nil,
     remains_when_mined = nil,
-    emissions_per_second = -0.0006,
+    emissions_per_second = { pollution = -0.0006 },
     max_health = 5,
 
     collision_box = {{-0.1, -0.1}, {0.1, 0.1}},
@@ -88,7 +88,7 @@ data:extend({
     },
     corpse = nil,
     remains_when_mined = nil,
-    emissions_per_second = -0.0006,
+    emissions_per_second = { pollution = -0.0006 },
     max_health = 5,
 
     collision_box = {{-0.1, -0.1}, {0.1, 0.1}},
@@ -129,7 +129,7 @@ data:extend({
     },
     corpse = nil,
     remains_when_mined = nil,
-    emissions_per_second = -0.0006,
+    emissions_per_second = { pollution = -0.0006 },
     max_health = 5,
 
     collision_box = {{-0.1, -0.1}, {0.1, 0.1}},
@@ -213,7 +213,7 @@ data:extend({
       type = "electric",
       usage_priority = "primary-input",
       drain = "50kW",
-      emissions_per_minute = -9, -- the "-" means it Absorbs pollution.
+      emissions_per_minute = { pollution = -9 }, -- the "-" means it Absorbs pollution.
     },
     energy_usage = "100kW",
     ingredient_count = 3,
@@ -438,7 +438,7 @@ data:extend({
       type = "electric",
       usage_priority = "primary-input",
       drain = "15kW",
-      emissions_per_minute = -6, -- the "-" means it Absorbs pollution.
+      emissions_per_minute = { pollution = -6 }, -- the "-" means it Absorbs pollution.
     },
     energy_usage = "50kW",
     ingredient_count = 3,
@@ -529,7 +529,7 @@ data:extend({
       type = "electric",
       input_priority = "secondary",
       usage_priority = "secondary-input",
-      emissions_per_minute = 2.5,
+      emissions_per_minute = { pollution = 2.5 },
     },
     energy_usage = "180kW",
     crafting_speed = 2,
@@ -585,7 +585,7 @@ data:extend({
     energy_source = {
       type = "electric",
       usage_priority = "secondary-input",
-      emissions_per_minute = 0.25,
+      emissions_per_minute = { pollution = 0.25 },
     },
     energy_usage = "50kW",
     module_specification = {
@@ -1008,7 +1008,7 @@ data:extend({
     energy_source = {
       type = "electric",
       usage_priority = "primary-input",
-      emissions_per_minute = -8, -- the "-" means it Absorbs pollution.
+      emissions_per_minute = { pollution = -8 }, -- the "-" means it Absorbs pollution.
     },
     energy_usage = "150kW",
     ingredient_count = 3,
@@ -1035,7 +1035,7 @@ my_seedling.remains_when_mined = nil
 my_seedling.max_health = 5
 my_seedling.collision_box = {{-0.1, -0.1}, {0.1, 0.1}}
 my_seedling.selection_box = {{-0.5, -0.5}, {0.5, 0.5}}
-my_seedling.emissions_per_second = -0.0006
+my_seedling.emissions_per_second = { pollution = -0.0006 }
 
 data:extend({my_seedling})
 ]]
