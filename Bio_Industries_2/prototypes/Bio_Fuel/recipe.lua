@@ -21,7 +21,6 @@ data:extend({
         icon_size = 64,
       }
     },
-    normal = {
       enabled = false,
       energy_required = 20,
       ingredients = {
@@ -34,28 +33,8 @@ data:extend({
       allow_as_intermediate = false,    -- Added for 0.18.34/1.1.4
       always_show_made_in = false,      -- Added for 0.18.34/1.1.4
       allow_decomposition = true,       -- Added for 0.18.34/1.1.4
-    },
-    expensive = {
-      enabled = false,
-      energy_required = 30,
-      ingredients = {
-        {type="item", name="assembling-machine-1", amount=2},
-        {type="item", name="steel-plate", amount=5},
-        {type="item", name="electronic-circuit", amount=5},
-      },
-      results = {{type="item", name="bi-bio-reactor", amount=1}},
-      main_product = "",
-      allow_as_intermediate = false,    -- Added for 0.18.34/1.1.4
-      always_show_made_in = false,      -- Added for 0.18.34/1.1.4
-      allow_decomposition = true,       -- Added for 0.18.34/1.1.4
-    },
     subgroup = "bio-bio-fuel-fluid",
     order = "a",
-    --~ always_show_made_in = true,
-    --~ allow_decomposition = false,
-    allow_as_intermediate = false,      -- Changed for 0.18.34/1.1.4
-    always_show_made_in = false,        -- Changed for 0.18.34/1.1.4
-    allow_decomposition = true,         -- Changed for 0.18.34/1.1.4  },
   },
   -- BIOMASS 1 --
   {
@@ -140,7 +119,6 @@ if BI.Settings.BI_Bio_Fuel then
           icon_size = 64,
         }
       },
-      normal = {
         enabled = false,
         energy_required = 10,
         ingredients = {
@@ -153,25 +131,6 @@ if BI.Settings.BI_Bio_Fuel then
         allow_as_intermediate = false,  -- Added for 0.18.34/1.1.4
         always_show_made_in = false,    -- Added for 0.18.34/1.1.4
         allow_decomposition = true,     -- Added for 0.18.34/1.1.4
-      },
-      expensive = {
-        enabled = false,
-        energy_required = 15,
-        ingredients = {
-          {type="item", name="boiler", amount=2},
-          {type="item", name="steel-plate", amount=5},
-          {type="item", name="concrete", amount=5},
-        },
-        results = {{type="item", name="bi-bio-boiler", amount=1}},
-        main_product = "",
-        allow_as_intermediate = false,  -- Added for 0.18.34/1.1.4
-        always_show_made_in = false,    -- Added for 0.18.34/1.1.4
-        allow_decomposition = true,     -- Added for 0.18.34/1.1.4
-     },
-      allow_as_intermediate = false,    -- Changed for 0.18.34/1.1.4
-      always_show_made_in = false,      -- Changed for 0.18.34/1.1.4
-      allow_decomposition = true,       -- Changed for 0.18.34/1.1.4
-      --~ subgroup = "bio-energy-boiler",
       subgroup = "energy",              -- Changed for 0.18.34/1.1.4
       order = "b-[steam-power]-a[boiler]-a[bi-bio-boiler]"      -- Changed for 0.18.34/1.1.4
     },

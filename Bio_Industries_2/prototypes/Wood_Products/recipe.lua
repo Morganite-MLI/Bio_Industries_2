@@ -18,7 +18,6 @@ data:extend({
         icon_size = 64,
       }
     },
-    normal = {
       enabled = false,
       ingredients = {
         {type="item", name="wood", amount=5},
@@ -29,24 +28,6 @@ data:extend({
       allow_as_intermediate = false,    -- Added for 0.18.34/1.1.4
       always_show_made_in = false,      -- Added for 0.18.34/1.1.4
       allow_decomposition = true,       -- Added for 0.18.34/1.1.4
-    },
-    expensive = {
-      enabled = false,
-      ingredients = {
-        {type="item", name="wood", amount=10},
-        {type="item", name="small-electric-pole", amount=4},
-      },
-      results = {{type="item", name="bi-wooden-pole-big", amount=1}},
-      main_product = "",
-      allow_as_intermediate = false,    -- Added for 0.18.34/1.1.4
-      always_show_made_in = false,      -- Added for 0.18.34/1.1.4
-      allow_decomposition = true,       -- Added for 0.18.34/1.1.4
-    },
-    --~ always_show_made_in = true,
-    --~ allow_decomposition = false,
-    allow_as_intermediate = false,      -- Added for 0.18.34/1.1.4
-    always_show_made_in = false,        -- Changed for 0.18.34/1.1.4
-    allow_decomposition = true,         -- Changed for 0.18.34/1.1.4
     subgroup = "energy-pipe-distribution",
     order = "a[energy]-b[small-electric-pole]",
     -- This is a custom property for use by "Krastorio 2" (it will change
@@ -68,7 +49,6 @@ data:extend({
         icon_size = 64,
       }
     },
-    normal = {
       enabled = false,
       ingredients = {
         {type="item", name="wood", amount=5},
@@ -80,25 +60,6 @@ data:extend({
       allow_as_intermediate = false,    -- Added for 0.18.34/1.1.4
       always_show_made_in = false,      -- Added for 0.18.34/1.1.4
       allow_decomposition = true,       -- Added for 0.18.34/1.1.4
-    },
-    expensive = {
-      enabled = false,
-      ingredients = {
-        {type="item", name="wood", amount=10},
-        {type="item", name="concrete", amount=150},
-        {type="item", name="bi-wooden-pole-big", amount=10},
-      },
-      results = {{type="item", name="bi-wooden-pole-huge", amount=1}},
-      main_product = "",
-      allow_as_intermediate = false,    -- Added for 0.18.34/1.1.4
-      always_show_made_in = false,      -- Added for 0.18.34/1.1.4
-      allow_decomposition = true,       -- Added for 0.18.34/1.1.4
-    },
-    --~ always_show_made_in = true,
-    --~ allow_decomposition = false,
-    allow_as_intermediate = false,      -- Added for 0.18.34/1.1.4
-    always_show_made_in = false,        -- Changed for 0.18.34/1.1.4
-    allow_decomposition = true,         -- Changed for 0.18.34/1.1.4
     subgroup = "energy-pipe-distribution",
     order = "a[energy]-d[big-electric-pole]",
     -- This is a custom property for use by "Krastorio 2" (it will change
@@ -120,7 +81,6 @@ data:extend({
         icon_size = 64,
       }
     },
-    normal = {
       enabled = true,
       ingredients = {
         {type="item", name="wood", amount=2},
@@ -130,23 +90,6 @@ data:extend({
       allow_as_intermediate = false,    -- Added for 0.18.34/1.1.4
       always_show_made_in = false,      -- Added for 0.18.34/1.1.4
       allow_decomposition = true,       -- Added for 0.18.34/1.1.4
-    },
-    expensive = {
-      enabled = true,
-      ingredients = {
-        {type="item", name="wood", amount=4},
-      },
-      results = {{type="item", name="bi-wooden-fence", amount=1}},
-      main_product = "",
-      allow_as_intermediate = false,    -- Added for 0.18.34/1.1.4
-      always_show_made_in = false,      -- Added for 0.18.34/1.1.4
-      allow_decomposition = true,       -- Added for 0.18.34/1.1.4
-    },
-    --~ always_show_made_in = true,
-    --~ allow_decomposition = false,
-    allow_as_intermediate = false,      -- Added for 0.18.34/1.1.4
-    always_show_made_in = false,        -- Changed for 0.18.34/1.1.4
-    allow_decomposition = true,         -- Changed for 0.18.34/1.1.4
     subgroup = "defensive-structure",
     -- This is a custom property for use by "Krastorio 2" (it will change
     -- ingredients/results; used for wood/wood pulp)
@@ -167,7 +110,6 @@ data:extend({
         icon_size = 64,
       }
     },
-    normal = {
       energy_required = 1,
       enabled = true,
       ingredients = {
@@ -180,26 +122,6 @@ data:extend({
       allow_as_intermediate = false,    -- Added for 0.18.34/1.1.4
       always_show_made_in = false,      -- Added for 0.18.34/1.1.4
       allow_decomposition = true,       -- Added for 0.18.34/1.1.4
-    },
-    expensive = {
-      energy_required = 2,
-      enabled = true,
-      ingredients = {
-        {type="item", name="copper-plate", amount=1},
-        {type="item", name="wood", amount=12}
-      },
-      results = {{type="item", name="bi-wood-pipe", amount=4}},
-      main_product = "",
-      requester_paste_multiplier = 15,
-      allow_as_intermediate = false,    -- Added for 0.18.34/1.1.4
-      always_show_made_in = false,      -- Added for 0.18.34/1.1.4
-      allow_decomposition = true,       -- Added for 0.18.34/1.1.4
-    },
-    --~ always_show_made_in = true,
-    --~ allow_decomposition = false,
-    allow_as_intermediate = false,      -- Added for 0.18.34/1.1.4
-    always_show_made_in = false,        -- Changed for 0.18.34/1.1.4
-    allow_decomposition = true,         -- Changed for 0.18.34/1.1.4
     subgroup = "energy-pipe-distribution",
     order = "a[pipe]-1a[pipe]",
     -- This is a custom property for use by "Krastorio 2" (it will change
@@ -221,7 +143,6 @@ data:extend({
         icon_size = 64,
       }
     },
-    normal = {
       energy_required = 2,
       enabled = true,
       ingredients = {
@@ -233,25 +154,6 @@ data:extend({
       allow_as_intermediate = false,    -- Added for 0.18.34/1.1.4
       always_show_made_in = false,      -- Added for 0.18.34/1.1.4
       allow_decomposition = true,       -- Added for 0.18.34/1.1.4
-    },
-    expensive = {
-      energy_required = 4,
-      enabled = true,
-      ingredients = {
-        {type="item", name="copper-plate", amount=5},
-        {type="item", name="bi-wood-pipe", amount=6}
-      },
-      results = {{type="item", name="bi-wood-pipe-to-ground", amount=2}},
-      main_product = "",
-      allow_as_intermediate = false,    -- Added for 0.18.34/1.1.4
-      always_show_made_in = false,      -- Added for 0.18.34/1.1.4
-      allow_decomposition = true,       -- Added for 0.18.34/1.1.4
-    },
-    --~ always_show_made_in = true,
-    --~ allow_decomposition = false,
-    allow_as_intermediate = false,      -- Added for 0.18.34/1.1.4
-    always_show_made_in = false,        -- Changed for 0.18.34/1.1.4
-    allow_decomposition = true,         -- Changed for 0.18.34/1.1.4
     subgroup = "energy-pipe-distribution",
     order = "a[pipe]-1b[pipe-to-ground]",
   },

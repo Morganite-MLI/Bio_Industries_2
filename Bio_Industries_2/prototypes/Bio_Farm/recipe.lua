@@ -428,7 +428,6 @@ data:extend({
         icon_size = 64,
       }
     },
-    normal = {
       enabled = false,
       --~ energy_required = 5,
       energy_required = 2.5,
@@ -442,27 +441,8 @@ data:extend({
       allow_as_intermediate = true,     -- Added for 0.18.34/1.1.4
       always_show_made_in = false,      -- Added for 0.18.34/1.1.4
       allow_decomposition = false,      -- Added for 0.18.34/1.1.4
-    },
-    expensive = {
-      enabled = false,
-      --~ energy_required = 8,
-      energy_required = 4,
-      ingredients = {
-        {type="item", name="iron-stick", amount=15},
-        {type="item", name="stone-brick", amount=15},
-        {type="item", name="small-lamp", amount=5},
-      },
-      results = {{type="item", name="bi-bio-greenhouse", amount=1}},
-      main_product = "",
-      allow_as_intermediate = true,     -- Added for 0.18.34/1.1.4
-      always_show_made_in = false,      -- Added for 0.18.34/1.1.4
-      allow_decomposition = false,      -- Added for 0.18.34/1.1.4
-    },
     subgroup = "bio-bio-farm-fluid-entity",
     order = "a[bi]",
-    allow_as_intermediate = true,       -- Added for 0.18.34/1.1.4
-    always_show_made_in = false,        -- Changed for 0.18.34/1.1.4
-    allow_decomposition = true,         -- Changed for 0.18.34/1.1.4
   },
 
 
@@ -480,7 +460,6 @@ data:extend({
         icon_size = 64,
       }
     },
-    normal = {
       enabled = false,
       --~ energy_required = 10,
       energy_required = 5,
@@ -494,27 +473,8 @@ data:extend({
       allow_as_intermediate = false,    -- Added for 0.18.34/1.1.4
       always_show_made_in = false,      -- Added for 0.18.34/1.1.4
       allow_decomposition = true,       -- Added for 0.18.34/1.1.4
-    },
-    expensive = {
-      enabled = false,
-      --~ energy_required = 15,
-      energy_required = 7.5,
-      ingredients = {
-        {type="item", name="bi-bio-greenhouse", amount=8},
-        {type="item", name="stone-crushed", amount=20},
-        {type="item", name="copper-cable", amount=20},
-      },
-      results = {{type="item", name="bi-bio-farm", amount=1}},
-      main_product = "",
-      allow_as_intermediate = false,    -- Added for 0.18.34/1.1.4
-      always_show_made_in = false,      -- Added for 0.18.34/1.1.4
-      allow_decomposition = true,       -- Added for 0.18.34/1.1.4
-    },
     subgroup = "bio-bio-farm-fluid-entity",
     order = "b[bi]",
-    allow_as_intermediate = false,      -- Added for 0.18.34/1.1.4
-    always_show_made_in = false,        -- Changed for 0.18.34/1.1.4
-    allow_decomposition = true,         -- Changed for 0.18.34/1.1.4
   },
 
 
@@ -1122,7 +1082,6 @@ data:extend({
         icon_size = 64,
       }
     },
-    normal = {
       enabled = false,
       energy_required = 8,
       ingredients = {
@@ -1134,27 +1093,8 @@ data:extend({
       allow_as_intermediate = false,      -- Added for 0.18.34/1.1.4
       always_show_made_in = false,        -- Added for 0.18.34/1.1.4
       allow_decomposition = true,         -- Added for 0.18.34/1.1.4
-    },
-    expensive = {
-      enabled = false,
-      energy_required = 10,
-      ingredients = {
-        {type="item", name="stone-furnace", amount=3},
-        {type="item", name="steel-plate", amount=12},
-      },
-      results = {{type="item", name="bi-cokery", amount=1}},
-      main_product = "",
-      allow_as_intermediate = false,      -- Added for 0.18.34/1.1.4
-      always_show_made_in = false,        -- Added for 0.18.34/1.1.4
-      allow_decomposition = true,         -- Added for 0.18.34/1.1.4
-    },
     subgroup = "bio-bio-farm-raw-entity",
     order = "a[bi]",
-    --~ always_show_made_in = true,
-    --~ allow_decomposition = false,
-    allow_as_intermediate = false,      -- Added for 0.18.34/1.1.4
-    always_show_made_in = false,        -- Changed for 0.18.34/1.1.4
-    allow_decomposition = true,         -- Changed for 0.18.34/1.1.4
   },
 
 
@@ -1172,7 +1112,6 @@ data:extend({
         icon_size = 64,
       }
     },
-    normal = {
       enabled = false,
       energy_required = 3,
       ingredients = {
@@ -1185,28 +1124,8 @@ data:extend({
       allow_as_intermediate = false,      -- Added for 0.18.34/1.1.4
       always_show_made_in = false,        -- Added for 0.18.34/1.1.4
       allow_decomposition = true,         -- Added for 0.18.34/1.1.4
-    },
-    expensive = {
-      enabled = false,
-      energy_required = 5,
-      ingredients = {
-        {type="item", name="iron-plate", amount=12},
-        {type="item", name="steel-plate", amount=12},
-        {type="item", name="iron-gear-wheel", amount=8},
-      },
-      results = {{type="item", name="bi-stone-crusher", amount=1}},
-      main_product = "",
-      allow_as_intermediate = false,      -- Added for 0.18.34/1.1.4
-      always_show_made_in = false,        -- Added for 0.18.34/1.1.4
-      allow_decomposition = true,         -- Added for 0.18.34/1.1.4
-    },
     subgroup = "bio-bio-farm-raw-entity",
     order = "b[bi]",
-    --~ always_show_made_in = true,
-    --~ allow_decomposition = false,
-    allow_as_intermediate = false,        -- Added for 0.18.34/1.1.4
-    always_show_made_in = false,          -- Changed for 0.18.34/1.1.4
-    allow_decomposition = true,           -- Added for 0.18.34/1.1.4
   },
 
 
@@ -1390,7 +1309,6 @@ data:extend({
         icon_size = 64,
       }
     },
-    normal = {
       enabled = false,
       energy_required = 8,
       ingredients = {
@@ -1402,25 +1320,6 @@ data:extend({
       allow_as_intermediate = false,    -- Added for 0.18.34/1.1.4
       always_show_made_in = false,      -- Added for 0.18.34/1.1.4
       allow_decomposition = true,       -- Added for 0.18.34/1.1.4
-    },
-    expensive = {
-      enabled = false,
-      energy_required = 8,
-      ingredients = {
-        {type="item", name="bi-seed", amount=400},
-        {type="item", name="rocket", amount=2},
-      },
-      results = {{type="item", name="bi-seed-bomb-basic", amount=1}},
-      main_product = "",
-      allow_as_intermediate = false,    -- Added for 0.18.34/1.1.4
-      always_show_made_in = false,      -- Added for 0.18.34/1.1.4
-      allow_decomposition = true,       -- Added for 0.18.34/1.1.4
-    },
-    --~ always_show_made_in = true,
-    --~ allow_decomposition = false,
-    allow_as_intermediate = false,      -- Changed for 0.18.34/1.1.4
-    always_show_made_in = false,        -- Added for 0.18.34/1.1.4
-    allow_decomposition = true,         -- Added for 0.18.34/1.1.4
     subgroup = "bi-ammo",
     order = "a[rocket-launcher]-x[seed-bomb]-a",
   },
@@ -1430,8 +1329,6 @@ data:extend({
   {
     type = "recipe",
     name = "bi-seed-bomb-standard",
-    --~ localised_name = {"item-name.bi-seed-bomb-standard"},
-    --~ localised_description = {"item-description.bi-seed-bomb-standard"},
     icon = ICONPATH .. "Seed_bomb_icon_s.png",
     icon_size = 64,
     icons = {
@@ -1440,7 +1337,6 @@ data:extend({
         icon_size = 64,
       }
     },
-    normal = {
       enabled = false,
       energy_required = 8,
       ingredients = {
@@ -1453,26 +1349,6 @@ data:extend({
       allow_as_intermediate = false,    -- Added for 0.18.34/1.1.4
       always_show_made_in = false,      -- Added for 0.18.34/1.1.4
       allow_decomposition = true,       -- Added for 0.18.34/1.1.4
-    },
-    expensive = {
-      enabled = false,
-      energy_required = 8,
-      ingredients = {
-        {type="item", name="bi-seed", amount=400},
-        {type="item", name="fertilizer", amount=200},
-        {type="item", name="rocket", amount=2},
-      },
-      results = {{type="item", name="bi-seed-bomb-standard", amount=1}},
-      main_product = "",
-      allow_as_intermediate = false,    -- Added for 0.18.34/1.1.4
-      always_show_made_in = false,      -- Added for 0.18.34/1.1.4
-      allow_decomposition = true,       -- Added for 0.18.34/1.1.4
-    },
-    --~ always_show_made_in = true,
-    --~ allow_decomposition = false,
-    allow_as_intermediate = false,      -- Changed for 0.18.34/1.1.4
-    always_show_made_in = false,        -- Added for 0.18.34/1.1.4
-    allow_decomposition = true,         -- Added for 0.18.34/1.1.4
     subgroup = "bi-ammo",
     order = "a[rocket-launcher]-x[seed-bomb]-b",
   },
@@ -1492,7 +1368,6 @@ data:extend({
         icon_size = 64,
       }
     },
-    normal = {
       enabled = false,
       energy_required = 8,
       ingredients = {
@@ -1505,26 +1380,6 @@ data:extend({
       allow_as_intermediate = false,    -- Added for 0.18.34/1.1.4
       always_show_made_in = false,      -- Added for 0.18.34/1.1.4
       allow_decomposition = true,       -- Added for 0.18.34/1.1.4
-    },
-    expensive = {
-      enabled = false,
-      energy_required = 8,
-      ingredients = {
-        {type="item", name="bi-seed", amount=400},
-        {type="item", name="bi-adv-fertilizer", amount=200},
-        {type="item", name="rocket", amount=2},
-      },
-      results = {{type="item", name="bi-seed-bomb-advanced", amount=1}},
-      main_product = "",
-      allow_as_intermediate = false,    -- Added for 0.18.34/1.1.4
-      always_show_made_in = false,      -- Added for 0.18.34/1.1.4
-      allow_decomposition = true,       -- Added for 0.18.34/1.1.4
-    },
-    --~ always_show_made_in = true,
-    --~ allow_decomposition = false,
-    allow_as_intermediate = false,      -- Changed for 0.18.34/1.1.4
-    always_show_made_in = false,        -- Added for 0.18.34/1.1.4
-    allow_decomposition = true,         -- Added for 0.18.34/1.1.4
     subgroup = "bi-ammo",
     order = "a[rocket-launcher]-x[seed-bomb]-c",
     },
@@ -1544,7 +1399,6 @@ data:extend({
         icon_size = 64,
       }
     },
-    normal = {
       enabled = false,
       energy_required = 10,
       ingredients = {
@@ -1557,28 +1411,6 @@ data:extend({
       allow_as_intermediate = false,    -- Added for 0.18.34/1.1.4
       always_show_made_in = false,      -- Added for 0.18.34/1.1.4
       allow_decomposition = true,       -- Added for 0.18.34/1.1.4
-    },
-    expensive = {
-      enabled = false,
-      energy_required = 15,
-      ingredients = {
-        {type="item", name="bi-bio-greenhouse", amount=4},
-        {type="item", name="assembling-machine-2", amount=4},
-        {type="item", name="stone-brick", amount=20},
-      },
-      results = {{type="item", name="bi-arboretum-area", amount=1}},
-      main_product = "",
-      allow_as_intermediate = false,    -- Added for 0.18.34/1.1.4
-      always_show_made_in = false,      -- Added for 0.18.34/1.1.4
-      allow_decomposition = true,       -- Added for 0.18.34/1.1.4
-    },
-    subgroup = "bio-arboretum-fluid",
-    order = "1-a[bi]",
-    --~ always_show_made_in = true,
-    --~ allow_decomposition = false,
-    allow_as_intermediate = false,      -- Added for 0.18.34/1.1.4
-    always_show_made_in = false,        -- Changed for 0.18.34/1.1.4
-    allow_decomposition = true,         -- Changed for 0.18.34/1.1.4
   },
 
 

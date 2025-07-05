@@ -22,7 +22,6 @@ data:extend({
         icon_size = 64,
       }
     },
-    normal = {
       energy_required = 2,
       enabled = false,
       ingredients = {
@@ -36,27 +35,6 @@ data:extend({
       allow_as_intermediate = false,    -- Added for 0.18.34/1.1.4
       always_show_made_in = false,      -- Added for 0.18.34/1.1.4
       allow_decomposition = true,       -- Added for 0.18.34/1.1.4
-    },
-    expensive = {
-      energy_required = 4,
-      enabled = false,
-      ingredients = {
-        {type="item", name="copper-plate", amount=24},
-        {type="item", name="resin", amount=32},
-        {type="item", name="wooden-chest", amount=8}
-      },
-      results = {{type="item", name="bi-wooden-chest-large", amount=1}},
-      main_product = "",
-      requester_paste_multiplier = 4,
-      allow_as_intermediate = false,    -- Added for 0.18.34/1.1.4
-      always_show_made_in = false,      -- Added for 0.18.34/1.1.4
-      allow_decomposition = true,       -- Added for 0.18.34/1.1.4
-    },
-    --~ always_show_made_in = true,
-    --~ allow_decomposition = false,
-    allow_as_intermediate = false,      -- Added for 0.18.34/1.1.4
-    always_show_made_in = false,        -- Changed for 0.18.34/1.1.4
-    allow_decomposition = true,         -- Changed for 0.18.34/1.1.4
     subgroup = "storage",
     order = "a[items]-aa[wooden-chest]",
   },
@@ -75,7 +53,6 @@ data:extend({
         icon_size = 64,
       }
     },
-    normal = {
       energy_required = 2,
       enabled = false,
       ingredients = {
@@ -89,27 +66,6 @@ data:extend({
       allow_as_intermediate = false,    -- Added for 0.18.34/1.1.4
       always_show_made_in = false,      -- Added for 0.18.34/1.1.4
       allow_decomposition = true,       -- Added for 0.18.34/1.1.4
-    },
-    expensive = {
-      energy_required = 4,
-      enabled = false,
-      ingredients = {
-        {type="item", name="iron-stick", amount=48},
-        {type="item", name="stone-brick", amount=48},
-        {type="item", name="bi-wooden-chest-large", amount=16}
-      },
-      results = {{type="item", name="bi-wooden-chest-huge", amount=1}},
-      main_product = "",
-      requester_paste_multiplier = 4,
-      allow_as_intermediate = false,    -- Added for 0.18.34/1.1.4
-      always_show_made_in = false,      -- Added for 0.18.34/1.1.4
-      allow_decomposition = true,       -- Added for 0.18.34/1.1.4
-    },
-    --~ always_show_made_in = true,
-    --~ allow_decomposition = false,
-    allow_as_intermediate = false,      -- Added for 0.18.34/1.1.4
-    always_show_made_in = false,        -- Changed for 0.18.34/1.1.4
-    allow_decomposition = true,         -- Changed for 0.18.34/1.1.4
     subgroup = "storage",
     order = "a[items]-ab[wooden-chest]",
   },
@@ -128,7 +84,6 @@ data:extend({
         icon_size = 64,
       }
     },
-    normal = {
       energy_required = 4,
       enabled = false,
       ingredients = {
@@ -142,28 +97,6 @@ data:extend({
       allow_as_intermediate = false,    -- Added for 0.18.34/1.1.4
       always_show_made_in = false,      -- Added for 0.18.34/1.1.4
       allow_decomposition = true,       -- Added for 0.18.34/1.1.4
-    },
-    expensive = {
-      energy_required = 6,
-      enabled = false,
-      ingredients = {
-        {type="item", name="steel-plate", amount=48},
-        {type="item", name="concrete", amount=48},
-        {type="item", name="bi-wooden-chest-huge", amount=16}
-      },
-      main_product = "",
-      results = {{type="item", name="bi-wooden-chest-giga", amount=1}},
-      main_product = "",
-      requester_paste_multiplier = 4,
-      allow_as_intermediate = false,    -- Added for 0.18.34/1.1.4
-      always_show_made_in = false,      -- Added for 0.18.34/1.1.4
-      allow_decomposition = true,       -- Added for 0.18.34/1.1.4
-    },
-    --~ always_show_made_in = true,
-    --~ allow_decomposition = false,
-    allow_as_intermediate = false,      -- Added for 0.18.34/1.1.4
-    always_show_made_in = false,        -- Changed for 0.18.34/1.1.4
-    allow_decomposition = true,         -- Changed for 0.18.34/1.1.4
     subgroup = "storage",
     order = "a[items]-ac[wooden-chest]",
   },

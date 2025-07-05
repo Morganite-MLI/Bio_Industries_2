@@ -37,7 +37,7 @@ BioInd.show("Changing localization for", v)
   ------------------------------------------------------------------------------------
   local i_old = "stone-crushed"
   local i_new = "gravel"
-  local replaced, check, add
+  local replaced, recipe, add
 
   for recipe_name, recipe in pairs(data.raw.recipe) do
     -- Ingredients
@@ -45,40 +45,26 @@ BioInd.show("Changing localization for", v)
 BioInd.writeDebug("Replaced ingredient %s with %s in recipe %s: %s", {i_old, i_new, recipe_name, replaced})
 
     -- Results
-    for t, tab in ipairs({"", "normal", "expensive"}) do
---~ BioInd.show("tab", tab)
-      check = (tab == "") and recipe or recipe[tab]
-      thxbob.lib.result_check(check) -- Make sure we have results!
-BioInd.writeDebug("Recipe%s: %s", {tab == "" and "" or " for difficulty " .. tab, check or "nil"})
---~ BioInd.show("check", check)
-      for r, result in ipairs(check and check.results or {}) do
---~ BioInd.show("result", result)
+      thxbob.lib.result_check(recipe) -- Make sure we have results!
+      for r, result in ipairs(recipe and recipe.results or {}) do
         if result.name == i_old then
---~ BioInd.show("Must replace", result.name)
           -- Store the properties of the original result
           add = {
             type = result.type,
             name = i_new,
             amount = result.amount
           }
---~ BioInd.show("Must add", add)
           thxbob.lib.recipe.remove_result(recipe_name, i_old)
---~ BioInd.show("Removed results", recipe)
-          thxbob.lib.item.add(check.results, add)
-BioInd.writeDebug("Exchanged %s in %sresults of %s with %s:\t%s",
-                  {i_old, tab == "" and tab or " " .. tab .. " ", recipe_name, i_new, recipe})
+          thxbob.lib.item.add(recipe.results, add)
         else
 BioInd.show("Skipping", result.name)
         end
       end
 
       -- Don't forget to change main_product as well!
-      if check and check.main_product and check.main_product == i_old then
-        check.main_product = i_new
-BioInd.writeDebug("Exchanged %s in main_product%s of %s with %s:\t%s",
-                  {i_old, tab == "" and tab or " (" .. tab .. ")", recipe_name, i_new, recipe})
+      if recipe and recipe.main_product and recipe.main_product == i_old then
+        recipe.main_product = i_new
       end
-    end
   end
 
   -- Add recipe unlocks
