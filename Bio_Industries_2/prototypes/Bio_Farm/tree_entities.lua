@@ -1,3 +1,4 @@
+local default_masks = require("collision-mask-defaults")
 local BioInd = require('common')('Bio_Industries_2')
 
 --[[
@@ -65,7 +66,7 @@ for id, prototype in pairs(data.raw.tree) do
       end
       tree.max_health = math.floor(50 * i/TREE_LEVELS)
       tree.flags = {"placeable-neutral", "breaths-air"}
-      tree.collision_mask = {"item-layer", "object-layer", "player-layer", "water-tile", "layer-13"}
+      tree.collision_mask = table.deepcopy(default_masks["tree"])
       tree.autoplace = nil
       tree.selection_box = {
         {-0.9/TREE_LEVELS * i, -2.2/TREE_LEVELS * i},

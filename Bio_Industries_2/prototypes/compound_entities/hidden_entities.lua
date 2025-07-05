@@ -35,7 +35,7 @@ if not BioInd.is_debug then
   table.insert(BI.hidden_entities.flags, "not-selectable-in-game")
 end
 
-BI.hidden_entities.collision_mask = BioInd.is_debug and {"ground-tile"} or {}
+BI.hidden_entities.collision_mask = nil
 BI.hidden_entities.collision_box = {{0, 0}, {0, 0}}
 BI.hidden_entities.selection_box = BioInd.is_debug and
                                     {{-0.5, -0.5}, {0.5, 0.5}} or
