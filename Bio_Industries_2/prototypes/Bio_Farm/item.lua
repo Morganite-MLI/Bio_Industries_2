@@ -496,7 +496,6 @@ data:extend(
 })
 
 --- Fertilizer can change terrain to better terrain
---~ if BioInd.AB_tiles() then
   data:extend({
     --- fertilizer
     {

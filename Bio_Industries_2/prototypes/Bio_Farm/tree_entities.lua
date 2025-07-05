@@ -52,7 +52,6 @@ end
 
 local tree, stump
 for id, prototype in pairs(data.raw.tree) do
---~ BioInd.show("id", id)
   if prototype.variations and not ignore_trees[id] then
     for i = 1, TREE_LEVELS do
       tree = table.deepcopy(prototype)
@@ -77,28 +76,12 @@ for id, prototype in pairs(data.raw.tree) do
       end
       tree.minable.mining_particle = "bio-wooden-particle-" .. i
       -- The longer a tree has grown, the harder it is to mine
-      --~ tree.minable.mining_time = 0.25
-      tree.minable.mining_time = 0.25 * i
-      --~ tree.minable.count = nil
+            tree.minable.mining_time = 0.25 * i
 
       -- Now the tree-level thingie starts to make sense: higher growing stages correspond
       -- to a higher probability of getting something when the tree is mined!
-      --~ tree.minable.results = {}
 
-      --~ if i < (TREE_LEVELS) then
-        --~ table.insert(tree.minable.results, {
-          --~ name = "seedling",
-          --~ probability = i/4,
-          --~ amount = 1,
-        --~ })
-      --~ else
-        --~ table.insert(tree.minable.results, {
-          --~ name = "wood",
-          --~ amount = 1,
-          --~ probability = 1
-        --~ })
-      --~ end
-      tree.minable.results = {
+                                                                                                                    tree.minable.results = {
         {
           type = "item",
           name = (i < TREE_LEVELS) and "seedling" or "wood",
@@ -124,8 +107,7 @@ for id, prototype in pairs(data.raw.tree) do
           -- TREE_LEVELS, not TREE_LEVELS/10 (i.e. typo)
           -- EDIT: OwnlyMe's Robot Tree Farm has 20 grow stages per default (min 3, max 200),
           -- so we should use a limit of i<=2.)
-          --~ local max = TREE_LEVELS /10
-          local max = 2
+                    local max = 2
           if i <= max then
             variation.trunk.layers = {{
               filename = "__Bio_Industries_2__/graphics/icons/Seedling_a.png",
@@ -135,11 +117,7 @@ for id, prototype in pairs(data.raw.tree) do
               scale = 0.5,
               frame_count = 1,
               tint= {
-                --~ r = 0.7-0.5*i/(TREE_LEVELS/10),
-                --~ g = 0.7-0.5*i/(TREE_LEVELS/10),
-                --~ b = 0.7-0.5*i/(TREE_LEVELS/10),
-                --~ a = 0.7-0.5*i/(TREE_LEVELS/10)
-                r = 0.7-0.5*i/max,
+                                                                                r = 0.7-0.5*i/max,
                 g = 0.7-0.5*i/max,
                 b = 0.7-0.5*i/max,
                 a = 0.7-0.5*i/max
@@ -201,9 +179,4 @@ for id, prototype in pairs(data.raw.tree) do
 end
 
 data:extend(extend)
---~ BioInd.writeDebug("Trees known to the game:")
 
---~ for t, tree in pairs(data.raw.tree) do
---~ BioInd.show("Treename", t)
---~ BioInd.writeDebug("Treename: %s\tAutoplace: %s", {t, t.autoplace or "nil"})
---~ end

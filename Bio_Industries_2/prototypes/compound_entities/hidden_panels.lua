@@ -100,7 +100,3 @@ end
 
 
 ------------------------------------------------------------------------------------
---~ -- Testing
---~ for k, v in pairs(data.raw[h_entity.type]) do
-  --~ BioInd.writeDebug("%s: %s", {k, v})
---~ end

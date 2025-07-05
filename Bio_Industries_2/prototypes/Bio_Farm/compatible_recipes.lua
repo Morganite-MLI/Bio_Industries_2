@@ -49,10 +49,7 @@ data:extend({
       {type = "item", name = "fertilizer", amount = 5}
     },
     enabled = false,
-    --~ always_show_made_in = true,
-    --~ allow_decomposition = false,
-    --~ allow_as_intermediate = false,
-    allow_as_intermediate = true,       -- Changed for 0.18.34/1.1.4
+                allow_as_intermediate = true,       -- Changed for 0.18.34/1.1.4
     always_show_made_in = true,         -- Changed for 0.18.34/1.1.4
     allow_decomposition = true,         -- Changed for 0.18.34/1.1.4
     subgroup = "bio-bio-farm-intermediate-product",
@@ -78,18 +75,13 @@ if not data.raw.item["resin"] then
       },
       icon_mipmaps = 4,
       pictures = {
-        --~ { size = 64, filename = ICONPATHMIPS.."Resin_1.png", scale = 0.2, mipmap_count = 1 },
-        --~ { size = 64, filename = ICONPATHMIPS.."Resin_2.png", scale = 0.2, mipmap_count = 1 },
-        --~ { size = 64, filename = ICONPATHMIPS.."Resin_3.png", scale = 0.2, mipmap_count = 1 },
-        --~ { size = 64, filename = ICONPATHMIPS.."Resin_4.png", scale = 0.2, mipmap_count = 1 }
-        { size = 64, filename = ICONPATHMIPS.."Resin_1.png", scale = 0.2 },
+                                        { size = 64, filename = ICONPATHMIPS.."Resin_1.png", scale = 0.2 },
         { size = 64, filename = ICONPATHMIPS.."Resin_2.png", scale = 0.2 },
         { size = 64, filename = ICONPATHMIPS.."Resin_3.png", scale = 0.2 },
         { size = 64, filename = ICONPATHMIPS.."Resin_4.png", scale = 0.2 }
       },
       subgroup = "bio-bio-farm-raw",
-      --~ order = "a[bi]-a-b[bi-resin]",
-      order = "a[bi]-a-bb[bi-resin]",
+            order = "a[bi]-a-bb[bi-resin]",
       stack_size = 200
     },
 
@@ -107,16 +99,10 @@ if not data.raw.item["resin"] then
           icon_size = 64,
         }
       },
-      --~ subgroup = "bio-bio-farm-raw",
-      --~ order = "a[bi]-a-ab[bi-resin2]",
-      subgroup = "bio-bio-farm-raw",
-      --~ order = "a[bi]-a-aa[bi-2-resin-1-wood]",
-      order = "a[bi]-a-bb[bi-2-resin-2-wood]",
+                  subgroup = "bio-bio-farm-raw",
+            order = "a[bi]-a-bb[bi-2-resin-2-wood]",
       enabled = false,
-      --~ allow_as_intermediate = false,
-      --~ always_show_made_in = true,
-      --~ allow_decomposition = false,
-      allow_as_intermediate = true,     -- Changed for 0.18.34/1.1.4
+                        allow_as_intermediate = true,     -- Changed for 0.18.34/1.1.4
       always_show_made_in = false,      -- Changed for 0.18.34/1.1.4
       allow_decomposition = true,       -- Changed for 0.18.34/1.1.4
 
@@ -146,9 +132,6 @@ elseif data.raw.recipe["bob-resin-wood"] then
 end
 
 
---~ --update crushed stone icon
---~ data.raw.item["stone-crushed"].icon = ICONPATH .. "crushed-stone.png"
---~ data.raw.item["stone-crushed"].icon_size = 64
 
  -- Pellet-Coke from Carbon - Bobs & Angels
 if data.raw.item["solid-carbon"] and mods["angelspetrochem"] then
@@ -420,10 +403,7 @@ BioInd.writeDebug("Generating recipe for sand from crushed stone!")
       results = {{type="item", name="sand", amount=5}},
       main_product = "",
       enabled = false,
-      --~ always_show_made_in = true,
-      --~ allow_decomposition = false,
-      --~ allow_as_intermediate = false,
-      allow_as_intermediate = true,     -- Changed for 0.18.34/1.1.4
+                        allow_as_intermediate = true,     -- Changed for 0.18.34/1.1.4
       always_show_made_in = true,       -- Changed for 0.18.34/1.1.4
       allow_decomposition = true,               -- Changed for 0.18.34/1.1.4
     },

@@ -5,7 +5,6 @@ require ("util")
 local ICONPATH = BioInd.modRoot .. "/graphics/icons/"
 local ENTITYPATH = "__Bio_Industries_2__/graphics/entities/bio_solar_farm/"
 
---~ local BIGICONS = BioInd.check_base_version("0.18.0")
 
 
 if BI.Settings.BI_Solar_Additions then
@@ -185,8 +184,7 @@ data:extend({
     drawing_box = {{-2.5, -5}, {2.5, 2.5}},
     maximum_wire_distance = 25,
     -- Changed for 0.18.34/1.1.4
-    --~ supply_area_distance = 50,
-    supply_area_distance = 50.5,
+        supply_area_distance = 50.5,
     pictures = {
       filename = ENTITYPATH .. "bi_LargeSubstation.png",
       priority = "high",

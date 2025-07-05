@@ -1,18 +1,15 @@
---~ local BioInd = require("__" .. script.mod_name .. "__.common")(script.mod_name)
 
 BioInd.writeDebug("Entered control_arboretum.lua")
 
 ---Arboretum Stuff
 
---~ local Event = require('__kry_stdlib__/stdlib/event/event').set_protected_mode(true)
 local Event = require('__kry_stdlib__/stdlib/event/event').set_protected_mode(false)
 
 -- If a recipe with NORMAL FERTILIZER is used, don't fertilize tiles set have "true"
 -- set! (Fertile tiles set to true in this table can't be made more fertile with
 -- normal fertilizer, and nothing should grow on the other tiles.)
 local Terrain_Check_1 = {
-  --~ ["landfill"] = true,
-  ["grass-1"] = true,                   -- Fertility: 100%
+    ["grass-1"] = true,                   -- Fertility: 100%
   ["grass-3"] = true,                   -- Fertility: 85%
   ["vegetation-green-grass-1"] = true,  -- Fertility: 100%
   ["vegetation-green-grass-3"] = true,  -- Fertility: 85%
@@ -22,19 +19,16 @@ local Terrain_Check_1 = {
 -- (Fertile tiles in this table can't be made more fertile, and nothing should grow on the
 --  the others tiles!)
 local Terrain_Check_2 = {
-  --~ ["landfill"] = true,
-  ["grass-1"] = true,                   -- Fertility: 100%
+    ["grass-1"] = true,                   -- Fertility: 100%
   ["vegetation-green-grass-1"] = true,  -- Fertility: 100%
 }
 
 local plant_radius = 75
---~ local plant_radius = 25
 
 -- Different tiles are used if AlienBiomes is active
 local AB, terrain_name_g1, terrain_name_g3
 
 -- OmniFluid replaces all fluids with items, so the arboretum won't have a fluidbox!
---~ local OmniFluid
 
 
 local function get_new_position(pos)
@@ -105,16 +99,13 @@ function Get_Arboretum_Recipe(ArboretumTable, event)
   end
 
   local arboretum = ArboretumTable.base
-  --~ local new_position, currentTilename, can_be_placed
-  local new_position, currentTilename
+    local new_position, currentTilename
   local pos, surface, Inventory, stack
 
   -- 'AlienBiomes' is a bool value -- we don't want to read it again if it's false,
   -- but only if it hasn't been set yet!
   AB = storage.compatible.AlienBiomes
-  --~ terrain_name_g1 = terrain_name_g1 or (AB and "vegetation-green-grass-1" or "grass-1")
-  --~ terrain_name_g3 = terrain_name_g3 or (AB and "vegetation-green-grass-3" or "grass-3")
-  terrain_name_g1 = terrain_name_g1 or (AB and "vegetation-green-grass-1" or "grass-1")
+      terrain_name_g1 = terrain_name_g1 or (AB and "vegetation-green-grass-1" or "grass-1")
   terrain_name_g3 = terrain_name_g3 or (AB and "vegetation-green-grass-3" or "grass-3")
 
 

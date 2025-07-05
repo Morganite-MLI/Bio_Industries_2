@@ -48,7 +48,6 @@ return function(mod_name)
       ['<' ] = function(A, B) return V.gtr(B, A) end,
     }
 
-    --~ common.Version.compare = function(mod_name, operator, need_version)
     common.check_version = function(mod_name, operator, need_version)
       local mod_version = (mods and mods[mod_name]) or (script and script.active_mods[mod_name])
       return map[operator](mod_version, need_version)
@@ -58,7 +57,6 @@ return function(mod_name)
   ------------------------------------------------------------------------------------
   -- Sane values for collision masks
   -- Default: {"item-layer", "object-layer", "rail-layer", "floor-layer", "water-tile"}
-  --~ common.RAIL_BRIDGE_MASK = {"floor-layer", "object-layer", "consider-tile-transitions"}
   common.RAIL_BRIDGE_MASK = {"object-layer", "consider-tile-transitions"}
 
   -- "Transport Drones" removes "object-layer" from rails, so if bridges have only
@@ -75,8 +73,6 @@ return function(mod_name)
   -- ... we just need to add some layers so our rails have the same mask as vanilla rails.
   table.insert(common.RAIL_MASK, "item-layer")
   table.insert(common.RAIL_MASK, "water-tile")
---~ log("common.RAIL_BRIDGE_MASK: " .. serpent.block(common.RAIL_BRIDGE_MASK))
---~ log("common.RAIL_MASK: " .. serpent.block(common.RAIL_MASK))
 
 
 
@@ -116,27 +112,20 @@ return function(mod_name)
 
   -- Get list of tree prototypes that we want to ignore
   common.get_tree_ignore_list = function()
-  --~ log("Entered function get_tree_ignore_list!")
     local ignore = {}
     local trees = game and
                     prototypes.get_entity_filtered({{filter = "type", type = "tree"}}) or
                     data.raw.tree
     for tree_name, tree in pairs(trees) do
---~ log("tree_name: " .. tree_name)
       for p, pattern in ipairs(common.ignore_name_patterns) do
---~ log("Check for match against pattern " .. pattern)
         if tree_name:match(pattern) then
---~ log("Pattern matches!")
           ignore[tree_name] = true
           break
         end
       end
     end
-    --~ log("Tree ignore list (" .. table_size(ignore) .. "): " .. serpent.block(ignore))
-    return ignore
+        return ignore
   end
-
-
 
 
   -- 0.17.42/0.18.09 fixed a bug where musk floor was created for the force "enemy".
@@ -149,11 +138,6 @@ return function(mod_name)
   common.MuskForceName = "BI-Musk_floor_general_owner"
   common.UseMuskForce = not settings.startup["BI_Show_musk_floor_in_mapview"].value
 
-  --~ ------------------------------------------------------------------------------------
-  --~ -- Set some values for Musk floor tiles (bi-solar-mat), so we can use these with
-  --~ -- confidence when filtering for the prototype
-  --~ common.MUSK_FLOOR_walking_speed_modifier = 1.45
-  --~ common.MUSK_FLOOR_decorative_removal_probability = 1
 
   ------------------------------------------------------------------------------------
   -- Enable writing to log file until startup options are set, so debugging output
@@ -239,8 +223,7 @@ return function(mod_name)
       name = entity.name
     end
 
-    --~ return name .. " (" .. tostring(id) .. ")"
-    return string.format("%s (%s)", name, id or "nil")
+        return string.format("%s (%s)", name, id or "nil")
   end
 
   ------------------------------------------------------------------------------------
@@ -298,7 +281,6 @@ return function(mod_name)
   -- Function for removing individual entities
   common.remove_entity = function(entity)
     if entity and entity.valid then
-      --~ entity.destroy()
       entity.destroy{raise_destroy = true}
     end
   end
@@ -310,7 +292,6 @@ return function(mod_name)
     common.writeDebug("Entered function %s()", {f_name})
 
     local ret = {}
-    local h_type
 
     for c_name, c_data in pairs(common.compound_entities) do
 common.show("base_name", c_name)
@@ -323,7 +304,6 @@ common.show("data", c_data)
 
         -- Check hidden entities
         for h_key, h_data in pairs(ret[c_name].hidden) do
-          --~ h_type = common.HE_map[h_key]
 common.writeDebug("h_key: %s\th_data: %s", {h_key, h_data})
           -- Remove hidden entity if it doesn't exist
           if not prototypes.entity[h_data.name] then
@@ -401,9 +381,7 @@ common.show("storage[tab]", storage[tab] or "nil")
 common.writeDebug("Entered function %s(%s)", {f_name, entity_name or "nil"})
 common.writeDebug("Entries in common.compound_entities[%s]: %s", {entity_name, table_size(storage.compound_entities[entity_name])})
 
-    --~ local entity_table = storage[common.compound_entities[entity_name].tab]
-    --~ local hidden_entities = common.compound_entities[entity_name].hidden
-    local entity_table = storage.compound_entities[entity_name]
+            local entity_table = storage.compound_entities[entity_name]
 common.show("entity_table", entity_table and entity_table.tab)
     entity_table = entity_table and entity_table.tab and storage[entity_table.tab]
 common.writeDebug("entity_table: %s", {entity_table}, "line")
@@ -428,7 +406,6 @@ common.writeDebug("Removed %s %s", {entity_name, c})
     end
 common.show("Removed entities", removed)
 common.show("Pruned list size", table_size(entity_table))
---~ common.show("Pruned list", entity_table)
     return removed
   end
 
@@ -438,7 +415,6 @@ common.show("Pruned list size", table_size(entity_table))
   common.restore_missing_entities = function(entity_name)
     local f_name = "restore_missing_entities"
 common.writeDebug("Entered function %s(%s)", {f_name, entity_name or "nil"})
---~ common.writeDebug("storage.compound_entities[%s]: %s", {entity_name, storage.compound_entities[entity_name]})
 common.writeDebug("storage.compound_entities[%s]: %s entries", {entity_name, table_size(storage.compound_entities[entity_name])})
 
     local check = storage.compound_entities[entity_name]
@@ -449,12 +425,10 @@ common.writeDebug("storage.compound_entities[%s]: %s entries", {entity_name, tab
     local restored = 0
     -- Scan the whole table
     for c, compound in pairs(entity_table) do
---~ common.writeDebug("c: %s\tcompound: %s", {c, compound})
       -- Base entity is valid!
       if (compound.base and compound.base.valid) then
 common.writeDebug("%s is valid -- checking hidden entities!", {common.print_name_id(compound.base)})
         for h_name, h_entity in pairs(hidden_entities) do
---~ common.writeDebug("h_name: %s\th_entity: %s", {h_name, h_entity})
           -- Hidden entity is missing
           if compound[h_name] and compound[h_name].valid then
             common.writeDebug("%s: OK", {h_name})
@@ -467,12 +441,10 @@ common.writeDebug("%s is valid -- checking hidden entities!", {common.print_name
           end
         end
         checked = checked + 1
---~ common.writeDebug("Restored %s %s", {entity_name, c})
       end
     end
 common.writeDebug("Checked %s compound entities", {checked})
 common.writeDebug("Restored %s entities", {restored})
---~ common.show("Fixed list", entity_table)
     return {checked = checked, restored = restored}
   end
 
@@ -556,8 +528,7 @@ common.writeDebug("Restored %s entities", {restored})
     for compound_entity, c in pairs(storage.compound_entities) do
       cnt = cnt + common.register_in_compound_entity_tab(compound_entity)
     end
-    --~ common.writeDebug("Registered %s compound entities", {cnt})
-    common.writeDebug("Registered %s compound entities.", {cnt})
+        common.writeDebug("Registered %s compound entities.", {cnt})
     return cnt
   end
 
@@ -614,13 +585,11 @@ common.show("new", {x = base_pos.x + offset.x, y = base_pos.y + offset.y})
 
   --------------------------------------------------------------------
   -- Create and register hidden entities
-  --~ common.create_entities = function(g_table, base_entity, hidden_entity_names, position, ...)
-  common.create_entities = function(g_table, base_entity, hidden_entities)
+    common.create_entities = function(g_table, base_entity, hidden_entities)
     local f_name = "create_entities"
     common.writeDebug("Entered function %s(%s, %s, %s)",
                       {f_name, "g_table", base_entity, hidden_entities})
     common.show("#g_table", g_table and table_size(g_table))
-    --~ common.show("hidden_entities", hidden_entities)
 
     common.check_args(g_table, "table")
     common.check_args(base_entity, "table")
@@ -646,11 +615,8 @@ common.show("new", {x = base_pos.x + offset.x, y = base_pos.y + offset.y})
     local data
     for key, tab in pairs(hidden_entities) do
 common.writeDebug("key: %s\tname: %s", {key, tab})
---~ data = common.compound_entities[base_entity.name].hidden[key]
       data = storage.compound_entities[base_entity.name].hidden[key]
---~ common.show("common.compound_entities[base_entity.name].hidden",
-            --~ common.compound_entities[base_entity.name].hidden)
-common.show("data", data)
+            common.show("data", data)
       entity = base_entity.surface.create_entity({
         name = data.name,
         type = data.type,
@@ -671,11 +637,7 @@ common.show("data", data)
     end
 
     -- Add optional values to global table
-    --~ local optional = storage.compound_entities[base_entity.name].optional
-    --~ for k, v in pairs(optional or {}) do
-      --~ g_table[base_entity.unit_number][k] = v
-    --~ end
-    common.add_optional_data(base_entity)
+                      common.add_optional_data(base_entity)
     common.writeDebug("g_table[%s]: %s", {base_entity.unit_number, g_table[base_entity.unit_number]})
   end
 
@@ -683,8 +645,7 @@ common.show("data", data)
   --------------------------------------------------------------------
   -- Make a list of the pole types that Bio gardens may connect to
   common.get_garden_pole_connectors = function()
-    --~ local ret = {}
-    local ret
+        local ret
     if common.get_startup_setting("BI_Easy_Bio_Gardens") then
 common.writeDebug("\"Easy gardens\": Compiling list of poles they can connect to!" )
       ret = {}
@@ -714,18 +675,11 @@ common.writeDebug("\"Easy gardens\": Not active -- nothing to do!" )
   -- case, we pass on the new pole explicitly!)
   common.connect_garden_pole = function(base, new_pole)
     local compound_entity = storage.compound_entities["bi-bio-garden"]
-    --~ local pole_type = "electric-pole"
-    --~ local pole = storage[compound_entity.tab][base.unit_number] and
-                  --~ storage[compound_entity.tab][base.unit_number][pole_type] or
-                  --~ new_pole
-    local pole = storage[compound_entity.tab][base.unit_number] and
+                                                local pole = storage[compound_entity.tab][base.unit_number] and
                   storage[compound_entity.tab][base.unit_number].pole or
                   new_pole
 
-    --~ if pole and pole.valid then
-      --~ local wire_reach = prototypes.entity[compound_entity.hidden[pole_type]] and
-                          --~ prototypes.entity[compound_entity.hidden[pole_type]].max_wire_distance
-    if pole and pole.valid and  compound_entity.hidden and
+                                        if pole and pole.valid and  compound_entity.hidden and
                                 compound_entity.hidden.pole and
                                 compound_entity.hidden.pole.name then
       local wire_reach = prototypes.entity[compound_entity.hidden.pole.name] and
@@ -755,10 +709,6 @@ common.writeDebug("Connected pole %g to %s %g: %s",
         end
       end
 
-      --~ -- Connect hidden poles to other poles that may be in reach.
-      --~ common.garden_pole_connectors = common.garden_pole_connectors and next() or
-                                      --~ common.get_garden_pole_connectors()
---~ common.show("Poles hidden bio-garden poles may connect to", storage.mod_settings.garden_pole_connectors)
 
       -- Look for other poles around this one
       neighbours = pole.surface.find_entities_filtered({
@@ -783,7 +733,6 @@ common.writeDebug("Connected pole %g to neighbour %s (%g): %s",
   -- added to the table yet if the pole has just been built. In this
   -- case, we pass on the new pole explicitly!)
   common.connect_power_rail = function(base, new_pole)
-    --~ local pole_type = "electric-pole"
 
     local pole = storage.bi_power_rail_table[base.unit_number].pole or new_pole
     if pole and pole.valid then
@@ -844,9 +793,7 @@ common.writeDebug("Rail %s of %s (%s): %s (%s)", {direction, base.name, base.uni
   ------------------------------------------------------------------------------------
   common.BI_add_icons = function()
     for tab_name, tab in pairs(data.raw) do
-      --~ common.writeDebug("Checking data.raw[%s]", {tab_name})
-      for proto_type_name, proto_type in pairs(data.raw[tab_name] or {}) do
---~ common.show("proto_type.BI_add_icon", proto_type.BI_add_icon or "nil" )
+            for proto_type_name, proto_type in pairs(data.raw[tab_name] or {}) do
 
         if proto_type.BI_add_icon then
           proto_type.icons = {

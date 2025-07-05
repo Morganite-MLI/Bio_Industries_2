@@ -1,7 +1,6 @@
 local BioInd = require('common')('Bio_Industries_2')
 
 local ICONPATH = BioInd.modRoot .. "/graphics/icons/"
---~ local new_battery_icon = BioInd.check_base_version("0.18.47")
 
 -- Changed for 0.18.29: We always want to make advanced fertilizer, so we need to
 -- unlock the bio-reactor and the most basic recipe for algae biomass even if
@@ -93,8 +92,7 @@ if BI.Settings.BI_Bio_Fuel then
         {type = "fluid", name ="steam", amount = 50}
       },
       results = {
-        --~ {type = "fluid", name = "petroleum-gas", amount = 15, fluidbox_index = 3},
-        {type = "fluid", name = "petroleum-gas", amount = 15},
+                {type = "fluid", name = "petroleum-gas", amount = 15},
         {type = "item", name = "bi-ash", amount = 15}
       },
       subgroup = "bio-bio-fuel-other",
@@ -165,9 +163,7 @@ if BI.Settings.BI_Bio_Fuel then
       allow_decomposition = false,
       subgroup = "bio-bio-fuel-other",
       order = "[bi-cellulose-1]",
-      --~ subgroup = "intermediate-product",
-      --~ order = "b[cellulose-1]",
-    },
+                },
 
     -- CELLULOSE 2 --
     {
@@ -199,9 +195,7 @@ if BI.Settings.BI_Bio_Fuel then
       allow_decomposition = false,
       subgroup = "bio-bio-fuel-other",
       order = "[bi-cellulose-2]",
-      --~ subgroup = "intermediate-product",
-      --~ order = "b[cellulose-2]",
-      -- This is a custom property for use by "Krastorio 2" (it will change
+                  -- This is a custom property for use by "Krastorio 2" (it will change
       -- ingredients/results; used for wood/wood pulp)
       mod = "Bio_Industries_2",
     },
@@ -229,8 +223,7 @@ if BI.Settings.BI_Bio_Fuel then
         -- for 0.18.34/1.1.4  to avoid an additional (potentially factory-breaking)
         -- change shortly before the new release will change so many things anyway!
         {type = "item", name = "wood", amount = 10},
-        --~ {type = "item", name = "bi-woodpulp", amount = 20},
-        {type = "fluid", name = "light-oil", amount = 20},
+                {type = "fluid", name = "light-oil", amount = 20},
       },
       results = {
         {type = "item", name = "plastic-bar", amount = 2}
@@ -241,9 +234,7 @@ if BI.Settings.BI_Bio_Fuel then
       allow_decomposition = false,
       subgroup = "bio-bio-fuel-solid",
       order = "g[plastic-bar-1]",
-      --~ subgroup = "intermediate-product",
-      --~ order = "b[bi-plastic-1]",
-      -- This is a custom property for use by "Krastorio 2" (it will change
+                  -- This is a custom property for use by "Krastorio 2" (it will change
       -- ingredients/results; used for wood/wood pulp)
       mod = "Bio_Industries_2",
     },
@@ -277,9 +268,7 @@ if BI.Settings.BI_Bio_Fuel then
       allow_decomposition = false,
       subgroup = "bio-bio-fuel-solid",
       order = "g[plastic-bar-2]",
-      --~ subgroup = "intermediate-product",
-      --~ order = "b[bi-plastic-2]",
-    },
+                },
 
     -- BIOMASS 2 --
     {
@@ -309,9 +298,7 @@ if BI.Settings.BI_Bio_Fuel then
       enabled = false,
       always_show_made_in = true,
       allow_decomposition = false,
-      --~ subgroup = "bio-bio-fuel-fluid",
-      --~ order = "x[oil-processing]-z3[bi-biomass]"
-      subgroup = "bio-bio-fuel-fluid",
+                  subgroup = "bio-bio-fuel-fluid",
       order = "x[oil-processing]-z2[bi-biomass]" -- This recipe is not as good as bi_biomass_2!
     },
 
@@ -344,9 +331,7 @@ if BI.Settings.BI_Bio_Fuel then
       enabled = false,
       always_show_made_in = true,
       allow_decomposition = false,
-      --~ subgroup = "bio-bio-fuel-fluid",
-      --~ order = "x[oil-processing]-z2[bi-biomass]"
-      subgroup = "bio-bio-fuel-fluid",
+                  subgroup = "bio-bio-fuel-fluid",
       order = "x[oil-processing]-z3[bi-biomass]" -- This recipe is more powerful than bi_biomass_3!
     },
 
@@ -513,9 +498,7 @@ if BI.Settings.BI_Bio_Fuel then
       },
       main_product = "",
       enabled = false,
-      --~ always_show_made_in = true,
-      --~ allow_decomposition = false,
-      allow_as_intermediate = false,    -- Changed for 0.18.34/1.1.4
+                  allow_as_intermediate = false,    -- Changed for 0.18.34/1.1.4
       always_show_made_in = true,       -- Added for 0.18.34/1.1.4
       allow_decomposition = true,       -- Added for 0.18.34/1.1.4
       crafting_machine_tint = {
@@ -525,9 +508,7 @@ if BI.Settings.BI_Bio_Fuel then
       },
       subgroup = "bio-bio-fuel-solid",
       order = "h",
-      --~ subgroup = "raw-material",
-      --~ order = "h[bi-battery]",
-    },
+                },
 
       --- Bio Acid
     {
@@ -562,9 +543,7 @@ if BI.Settings.BI_Bio_Fuel then
       },
       subgroup = "bio-bio-fuel-other",
       order = "a",
-      --~ subgroup = "fluid-recipes",
-      --~ order = "a",
-    },
+                },
 
     -- Sulfuric acid to Sulfur --
     {
@@ -593,9 +572,7 @@ if BI.Settings.BI_Bio_Fuel then
       allow_decomposition = false,
       subgroup = "bio-bio-fuel-solid",
       order = "i1",
-      --~ subgroup = "raw-material",
-      --~ order = "g[sulfur]-[bi-sulfur]",
-    },
+                },
 
     -- Sulfuric acid to Sulfur --IF ANGELS INSTALLED (More Expensice)
     {
@@ -629,4 +606,3 @@ if BI.Settings.BI_Bio_Fuel then
 
   })
 end
---~ log("recipe.lua: data.raw.recipe[\"bi-sulfur\"]: " .. serpent.block(data.raw.recipe["bi-sulfur"]))

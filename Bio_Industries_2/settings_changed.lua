@@ -4,7 +4,6 @@
 -- read!
 --------------------------------------------------------------------
 
---~ local BioInd = require('common')('Bio_Industries_2')
 
 local settings_changed = {}
 
@@ -24,8 +23,7 @@ log("Entered function settings_changed.musk_floor!")
   -- which force built a certain musk floor tile, so "enemy" will still be used.
   -- (Only fix in this case: Players must remove and rebuild all existing musk floor tiles!)
 
-  --~ local single_player_force = game.is_multiplayer() and nil or game.players[1].force.name
-  local force = nil
+    local force = nil
 
   -- Always use dummy force if option is set
   if BioInd.UseMuskForce then
@@ -36,8 +34,7 @@ log("Entered function settings_changed.musk_floor!")
     -- Could it be that a game that was originally a multiplayer game has been saved and reused
     -- as singleplayer game, but there was no player 1? Let's go over all players and break after
     -- the first hit, so we make sure we'll get the single player whatever its index!
-    --~ force = game.players[1].force.name
-    for p, player in pairs(game.players) do
+        for p, player in pairs(game.players) do
       force = player.force.name
       break
     end
@@ -171,8 +168,7 @@ BioInd.show("pole", pole)
             storage[compound_entity.tab],
             base,
             {pole = hidden_entities[pole_type].name}
-            --~ base.position
-          )
+                      )
 
           -- Add the new pole to the table
           if pole then

@@ -10,7 +10,6 @@ if mods["IndustrialRevolution"] then
   local big_pole = "bi-wooden-pole-big"
   thxbob.lib.tech.remove_recipe_unlock ("logistics", big_pole)
   thxbob.lib.tech.add_recipe_unlock ("electric-energy-distribution-1", big_pole)
-  --~ thxbob.lib.tech.add_recipe_unlock ("electric-energy-distribution-2", "bi-wooden-pole-huge")
 
   -- Adjust localizations
   for k, v in ipairs({"electric-pole", "item", "recipe"}) do

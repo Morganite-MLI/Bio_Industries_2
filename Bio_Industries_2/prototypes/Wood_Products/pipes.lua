@@ -1,6 +1,4 @@
---~ local BioInd = require('common')('Bio_Industries_2')
 
---~ local ICONPATH = BioInd.modRoot .. "/graphics/icons/"
 
 local pipes_sheet = {
   straight_vertical_single = {
@@ -160,9 +158,7 @@ function change_graphics (was_picture, sheet_element, quality)
   end
 
   picture.filename = sheet_path .. quality .. "_" .. sheet_name
-  --~ picture.width = 8 * k * size.x
-  --~ picture.height = 8 * k * size.y
-  picture.size = {8 * k * size.x, 8 * k * size.y}
+      picture.size = {8 * k * size.x, 8 * k * size.y}
   picture.scale = 1/k
   picture.x = 8 * k * (sheet_element.position.x or sheet_element.position[1])
   picture.y = 8 * k * (sheet_element.position.y or sheet_element.position[2])

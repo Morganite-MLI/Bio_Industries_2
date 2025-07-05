@@ -104,8 +104,7 @@ data:extend({
     inventory_size = 432, --144
     open_sound = { filename = "__base__/sound/wooden-chest-open.ogg" },
     close_sound = { filename = "__base__/sound/wooden-chest-close.ogg" },
-    --~ vehicle_impact_sound =  { filename = "__base__/sound/car-wood-impact.ogg", volume = 1.0 },
-    impact_category = "wood",
+        impact_category = "wood",
     picture = {
       filename = WOODPATH .. "huge_wooden_chest.png",
       priority = "extra-high",
@@ -147,8 +146,7 @@ data:extend({
     inventory_size = 1728, --576
     open_sound = { filename = "__base__/sound/wooden-chest-open.ogg" },
     close_sound = { filename = "__base__/sound/wooden-chest-close.ogg" },
-    --~ vehicle_impact_sound =  { filename = "__base__/sound/car-wood-impact.ogg", volume = 1.0 },
-    impact_category = "wood",
+        impact_category = "wood",
     picture = {
       filename = WOODPATH .. "giga_wooden_chest.png",
       priority = "extra-high",

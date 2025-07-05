@@ -7,8 +7,6 @@ local ICONPATH = BioInd.modRoot .. "/graphics/icons/"
 ------------------------------------------------------------------------------------
 --  Create the main prototype for hidden lamps. All others will be based on this! --
 ------------------------------------------------------------------------------------
---~ local h_type = "lamp"
---~ local h_entity = table.deepcopy(data.raw[h_type]["small-lamp"])
 -- The short name of the hidden entity (e.g. "lamp" or "pole")
 local h_key = "lamp"
 -- The actual prototype type, identified by h_key
@@ -34,10 +32,8 @@ for l, led in ipairs({"red", "green", "blue", "light"}) do
 end
 
 h_entity.picture_off = BI.hidden_entities.picture
---~ h_entity.picture_off.shift = {0.75, 0}
 
 h_entity.picture_on = BI.hidden_entities.picture
---~ h_entity.picture_on.shift = {0.75, 0}
 
 
 ------------------------------------------------------------------------------------
@@ -76,6 +72,3 @@ end
 
 ------------------------------------------------------------------------------------
 -- Testing
---~ for k, v in pairs(data.raw[h_entity.type]) do
-  --~ BioInd.writeDebug("%s: %s", {k, v})
---~ end

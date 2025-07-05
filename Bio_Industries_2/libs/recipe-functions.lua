@@ -36,8 +36,7 @@ function thxbob.lib.recipe.replace_ingredient(recipe, old, new)
     if not thxbob.lib.item.get_type(new) then
       BioInd.writeDebug("Ingredient %s does not exist.", {new})
     end
-    --~ return false
-  end
+      end
 
   return retval
 end

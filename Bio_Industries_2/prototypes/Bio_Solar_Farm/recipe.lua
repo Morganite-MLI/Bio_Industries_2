@@ -29,13 +29,9 @@ if BI.Settings.BI_Solar_Additions then
       },
       results = {{type="item", name="bi-bio-solar-farm", amount=1}},
       main_product = "",
-      --~ subgroup = "bio-bio-solar-entity",
-      --~ order = "a[bi]",
-      subgroup = "energy",
+                  subgroup = "energy",
       order = "d[solar-panel]-a[solar-panel]-a[bi-bio-solar-farm]",
-      --~ always_show_made_in = true,
-      --~ allow_decomposition = false,
-    allow_as_intermediate = false,      -- Added for 0.18.34/1.1.4
+                allow_as_intermediate = false,      -- Added for 0.18.34/1.1.4
     always_show_made_in = false,        -- Changed for 0.18.34/1.1.4
     allow_decomposition = true,         -- Changed for 0.18.34/1.1.4
     },
@@ -44,8 +40,7 @@ if BI.Settings.BI_Solar_Additions then
     {
       type = "recipe",
       name = "bi-solar-boiler-hidden-panel",
-      --~ name = "bi-solar-boiler",
-      localised_name = {"entity-name.bi-solar-boiler"},
+            localised_name = {"entity-name.bi-solar-boiler"},
       localised_description = {"entity-description.bi-solar-boiler"},
       icon = ICONPATH .. "Bio_Solar_Boiler_Icon.png",
       icon_size = 64,
@@ -66,9 +61,7 @@ if BI.Settings.BI_Solar_Additions then
       main_product = "",
       subgroup = "energy",
       order = "b[steam-power]-c[steam-engine]",
-      --~ always_show_made_in = true,
-      --~ allow_decomposition = false,
-      allow_as_intermediate = false,    -- Added for 0.18.34/1.1.4
+                  allow_as_intermediate = false,    -- Added for 0.18.34/1.1.4
       always_show_made_in = false,      -- Changed for 0.18.34/1.1.4
       allow_decomposition = true,               -- Changed for 0.18.34/1.1.4
     },
@@ -96,13 +89,9 @@ if BI.Settings.BI_Solar_Additions then
       },
       results = {{type="item", name="bi-solar-mat", amount=1}},
       main_product = "",
-      --~ subgroup = "bio-bio-solar-entity",
-      --~ order = "c[bi]",
-      subgroup = "energy",
+                  subgroup = "energy",
       order = "d[solar-panel]-aa[solar-panel-1-a]",
-      --~ always_show_made_in = true,
-      --~ allow_decomposition = false,
-      allow_as_intermediate = false,    -- Added for 0.18.34/1.1.4
+                  allow_as_intermediate = false,    -- Added for 0.18.34/1.1.4
       always_show_made_in = false,      -- Changed for 0.18.34/1.1.4
       allow_decomposition = true,               -- Changed for 0.18.34/1.1.4
     },
@@ -130,13 +119,9 @@ if BI.Settings.BI_Solar_Additions then
       },
       results = {{type="item", name="bi-bio-accumulator", amount=1}},
       main_product = "",
-      --~ subgroup = "bio-bio-solar-entity",
-      --~ order = "d[bi]",
-      subgroup = "energy",
+                  subgroup = "energy",
       order = "e[accumulator]-a[bi-accumulator]",
-      --~ always_show_made_in = true,
-      --~ allow_decomposition = false,
-      allow_as_intermediate = false,    -- Added for 0.18.34/1.1.4
+                  allow_as_intermediate = false,    -- Added for 0.18.34/1.1.4
       always_show_made_in = false,      -- Changed for 0.18.34/1.1.4
       allow_decomposition = true,       -- Changed for 0.18.34/1.1.4
     },
@@ -144,8 +129,7 @@ if BI.Settings.BI_Solar_Additions then
     -- Large Substation
     {
       type = "recipe",
-      --~ name = "bi-huge-substation",
-      name = "bi-large-substation",
+            name = "bi-large-substation",
       localised_name = {"entity-name.bi-large-substation"},
       localised_description = {"entity-description.bi-large-substation"},
       icon = ICONPATH .. "bi_LargeSubstation_icon.png",
@@ -164,13 +148,9 @@ if BI.Settings.BI_Solar_Additions then
       },
       results = {{type="item", name="bi-large-substation", amount=1}},
       main_product = "",
-      --~ subgroup = "bio-bio-solar-entity",
-      --~ order = "e[bi]",
-      subgroup = "energy-pipe-distribution",
+                  subgroup = "energy-pipe-distribution",
       order = "a[energy]-d[substation]-b[large-substation]",
-      --~ always_show_made_in = true,
-      --~ allow_decomposition = false,
-      allow_as_intermediate = false,    -- Added for 0.18.34/1.1.4
+                  allow_as_intermediate = false,    -- Added for 0.18.34/1.1.4
       always_show_made_in = false,      -- Changed for 0.18.34/1.1.4
       allow_decomposition = true,               -- Changed for 0.18.34/1.1.4
     },

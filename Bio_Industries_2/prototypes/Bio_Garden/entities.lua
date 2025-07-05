@@ -69,67 +69,11 @@ data:extend({
     module_specification = {
       module_slots = 1
     },
-    --~ module_specification = {
-      --~ module_slots = 0
-    --~ },
-    -- Changed for 0.18.34/1.1.4 -- We need to use an empty table here, so the gardens
+                  -- Changed for 0.18.34/1.1.4 -- We need to use an empty table here, so the gardens
     -- won't be affected by beacons!
     allowed_effects = {"consumption", "speed"},
-    --~ allowed_effects = {},
-  },
+      },
 })
 
 
---~ -- We only need the hidden pole if the "Easy Gardens" setting is active!
---~ if BI.Settings.BI_Easy_Bio_Gardens then
-  --~ local hidden_pole = table.deepcopy(data.raw["electric-pole"]["small-electric-pole"])
-  --~ hidden_pole.name = "bi-bio-garden-hidden-pole"
-  --~ hidden_pole.icon = "__base__/graphics/icons/small-electric-pole.png"
-  --~ hidden_pole.icon_size = 64
-  --~ hidden_pole.icons = {
-    --~ {
-      --~ icon = "__base__/graphics/icons/small-electric-pole.png",
-      --~ icon_size = 64,
-    --~ }
-  --~ }
-  --~ hidden_pole.flags = {
-    --~ "not-deconstructable",
-    --~ "not-on-map",
-    --~ "placeable-off-grid",
-    --~ "not-repairable",
-    --~ "not-blueprintable",
-  --~ }
-  --~ hidden_pole.selectable_in_game = false
-  --~ hidden_pole.draw_copper_wires = BioInd.is_debug
-  --~ hidden_pole.max_health = 1
-  --~ hidden_pole.minable = nil
-  --~ hidden_pole.collision_mask = {}
-  --~ hidden_pole.collision_box = {{-0, -0}, {0, 0}}
-  --~ hidden_pole.selection_box = {{0, 0}, {0, 0}}
-  --~ hidden_pole.maximum_wire_distance = 4
-  --~ hidden_pole.supply_area_distance = 1
-  --~ hidden_pole.pictures = BioInd.is_debug and hidden_pole.pictures or {
-    --~ filename = ICONPATH .. "empty.png",
-    --~ priority = "low",
-    --~ width = 1,
-    --~ height = 1,
-    --~ frame_count = 1,
-    --~ axially_symmetrical = false,
-    --~ direction_count = 1,
-  --~ }
-  --~ hidden_pole.connection_points = BioInd.is_debug and hidden_pole.connection_points or {
-    --~ {
-      --~ shadow = {},
-      --~ wire = { copper_wire_tweak = {-0, -0} }
-    --~ }
-  --~ }
-  --~ hidden_pole.radius_visualisation_picture = BioInd.is_debug and
-                                              --~ hidden_pole.radius_visualisation_picture or {
-                                                  --~ filename = ICONPATH .. "empty.png",
-                                                  --~ width = 1,
-                                                  --~ height = 1,
-                                                  --~ priority = "low"
-                                                --~ }
 
-  --~ data:extend({hidden_pole})
---~ end

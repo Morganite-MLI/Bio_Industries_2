@@ -1,10 +1,8 @@
 local BioInd = require('common')('Bio_Industries_2')
 
---~ local ICONPATH = BioInd.modRoot .. "/graphics/entities/biofarm/"
 local ICONPATH = BioInd.modRoot .. "/graphics/icons/"
 local ENTITYPATH = BioInd.modRoot .. "/graphics/entities/biofarm/"
 
---~ local BIGICONS = BioInd.check_base_version()
 
 require ("prototypes.Bio_Farm.pipeConnectors")
 require ("util")
@@ -58,8 +56,7 @@ data:extend({
       priority = "extra-high",
       width = 64,
       height = 64,
-      --~ scale = 0.75
-      scale = 0.3
+            scale = 0.3
     },
   },
 
@@ -100,8 +97,7 @@ data:extend({
       priority = "extra-high",
       width = 64,
       height = 64,
-      --~ scale = 0.75
-      scale = 0.3
+            scale = 0.3
     },
   },
 
@@ -141,8 +137,7 @@ data:extend({
       priority = "extra-high",
       width = 64,
       height = 64,
-      --~ scale = 0.75
-      scale = 0.3
+            scale = 0.3
     },
   },
 
@@ -225,193 +220,12 @@ data:extend({
     allowed_effects = {"consumption", "speed", "productivity", "pollution"},
   },
 
---~ ------- Bio Farm Lamp
-  --~ {
-    --~ type = "lamp",
-    --~ name = "bi-bio-farm-light",
-    --~ icon = ICONPATH .. "Bio_Farm_Lamp.png",
-    --~ icon_size = 64,
-    --~ icons = {
-      --~ {
-        --~ icon = ICONPATH .. "Bio_Farm_Lamp.png",
-        --~ icon_size = 64,
-      --~ }
-    --~ },
-    --~ flags = {"not-deconstructable", "not-on-map", "placeable-off-grid", "not-repairable", "not-blueprintable"},
-    --~ selectable_in_game = false,
-    --~ max_health = 1,
-    --~ collision_box = {{-0.0, -0.0}, {0.0, 0.0}},
-    --~ collision_mask = {},
-    --~ energy_source = {
-      --~ type = "void",
-      --~ render_no_network_icon = false,
-      --~ render_no_power_icon = false,
-      --~ usage_priority = "lamp"
-    --~ },
-    --~ energy_usage_per_tick = "100kW",
-    --~ light = {intensity = 1, size = 45},
-    --~ picture_off = {
-      --~ filename = ENTITYPATH .. "Bio_Farm_Idle.png",
-      --~ priority = "low",
-      --~ width = 1,
-      --~ height = 1,
-      --~ frame_count = 1,
-      --~ axially_symmetrical = false,
-      --~ direction_count = 1,
-      --~ shift = {0.75, 0},
-    --~ },
-    --~ picture_on = {
-      --~ filename = ENTITYPATH .. "Bio_Farm_Working.png",
-      --~ priority = "low",
-      --~ width = 1,
-      --~ height = 1,
-      --~ frame_count = 1,
-      --~ axially_symmetrical = false,
-      --~ direction_count = 1,
-      --~ shift = {0.75, 0},
-    --~ },
-  --~ },
-})
+                                                                                                                                                                                                                                    })
 
   ------- Bio Farm Hidden Electric Pole
-  --~ {
-    --~ type = "electric-pole",
-    --~ name = "bi-bio-farm-hidden-pole",
-    --~ icon = ICONPATH .. "Bio_Farm_Cabeling.png",
-    --~ icon_size = 64,
-    --~ icons = {
-      --~ {
-        --~ icon = ICONPATH .. "Bio_Farm_Cabeling.png",
-        --~ icon_size = 64,
-      --~ }
-    --~ },
-    --~ flags = {"not-deconstructable", "not-on-map", "placeable-off-grid", "not-repairable", "not-blueprintable"},
-    --~ selectable_in_game = false,
-    --~ max_health = 1,
-    --~ resistances = {{type = "fire", percent = 100}},
-    --~ collision_box = {{-0, -0}, {0, 0}},
-    --~ collision_mask = {},
-    --~ maximum_wire_distance = 10,
-    --~ supply_area_distance = 5,
-    --~ pictures = {
-      --~ filename = ICONPATH .. "empty.png",
-      --~ priority = "low",
-      --~ width = 1,
-      --~ height = 1,
-      --~ frame_count = 1,
-      --~ axially_symmetrical = false,
-      --~ direction_count = 4,
-      --~ direction_count = 1,
-      --~ shift = {0.75, 0},
-    --~ },
-    --~ connection_points = {
-      --~ {
-        --~ shadow = {},
-        --~ wire = {}
-      --~ },
-      --~ {
-        --~ shadow = {},
-        --~ wire = {}
-      --~ },
-      --~ {
-        --~ shadow = {},
-        --~ wire = {}
-      --~ },
-      --~ {
-        --~ shadow = {},
-        --~ wire = {}
-      --~ }
-    --~ },
-    --~ radius_visualisation_picture = {
-      --~ filename = ICONPATH .. "empty.png",
-      --~ width = 1,
-      --~ height = 1,
-      --~ priority = "low"
-    --~ },
-  --~ },
---~ local hidden_pole = table.deepcopy(data.raw["electric-pole"]["small-electric-pole"])
---~ BioInd.show("data.raw[\"electric-pole\"][\"small-electric-pole\"]", data.raw["electric-pole"]["small-electric-pole"])
---~ hidden_pole.name = "bi-bio-farm-hidden-pole"
---~ hidden_pole.icon = BioInd.is_debug and hidden_pole.icon or ICONPATH .. "Bio_Farm_Cabeling.png"
---~ hidden_pole.icon_size = BioInd.is_debug and hidden_pole.icon_size or 64
---~ hidden_pole.icons = BioInd.is_debug and hidden_pole.icons or {
-  --~ {
-    --~ icon = ICONPATH .. "Bio_Farm_Cabeling.png",
-    --~ icon_size = 64,
-  --~ }
---~ }
---~ hidden_pole.flags = {"not-deconstructable", "not-on-map", "placeable-off-grid", "not-repairable", "not-blueprintable"}
---~ hidden_pole.selectable_in_game = false
---~ hidden_pole.draw_copper_wires = BioInd.is_debug
---~ hidden_pole.max_health = 1
---~ hidden_pole.resistances = {{type = "fire", percent = 100}}
---~ hidden_pole.collision_box = {{-0, -0}, {0, 0}}
---~ hidden_pole.collision_mask = {}
---~ hidden_pole.maximum_wire_distance = 10
---~ hidden_pole.supply_area_distance = 5
---~ hidden_pole.pictures = BioInd.is_debug and hidden_pole.pictures or {
-  --~ filename = ICONPATH .. "empty.png",
-  --~ priority = "low",
-  --~ width = 1,
-  --~ height = 1,
-  --~ frame_count = 1,
-  --~ axially_symmetrical = false,
-  --~ direction_count = 1,
-  --~ shift = {0.75, 0},
---~ }
---~ hidden_pole.connection_points = BioInd.is_debug and hidden_pole.connection_points or {
-  --~ {
-    --~ shadow = {},
-    --~ wire = {}
-  --~ },
---~ }
---~ hidden_pole.radius_visualisation_picture = BioInd.is_debug and
-                                            --~ hidden_pole.radius_visualisation_picture or {
-                                              --~ filename = ICONPATH .. "empty.png",
-                                              --~ width = 1,
-                                              --~ height = 1,
-                                              --~ priority = "low"
-                                            --~ }
---~ hidden_pole.dying_explosion = nil
---~ hidden_pole.fast_replaceable_group = nil
---~ hidden_pole.minable = nil
---~ hidden_pole.open_sound = nil
---~ hidden_pole.vehicle_impact_sound = nil
---~ hidden_pole.water_reflection = nil
 
---~ data:extend({hidden_pole})
 
 data:extend({
-  --~ ------- Bio Farm Solar Panel
-  --~ {
-    --~ type = "solar-panel",
-    --~ name = "bi-bio-farm-hidden-panel",
-    --~ icon = ICONPATH .. "Bio_Farm_Solar.png",
-    --~ icon_size = 64,
-    --~ icons = {
-      --~ {
-        --~ icon = ICONPATH .. "Bio_Farm_Solar.png",
-        --~ icon_size = 64,
-      --~ }
-    --~ },
-    --~ flags = {"not-deconstructable", "not-on-map", "placeable-off-grid", "not-repairable", "not-blueprintable"},
-    --~ selectable_in_game = false,
-    --~ max_health = 1,
-    --~ resistances = {{type = "fire", percent = 100}},
-    --~ collision_box = {{-0, -0}, {0, 0}},
-    --~ collision_mask = {},
-    --~ energy_source = {
-      --~ type = "electric",
-      --~ usage_priority = "solar"
-    --~ },
-    --~ picture = {
-      --~ filename = ICONPATH .. "empty.png",
-      --~ priority = "low",
-      --~ width = 1,
-      --~ height = 1,
-    --~ },
-    --~ production = "100kW"
-  --~ },
 
   ------ Greenhouse
   {
@@ -1019,15 +833,10 @@ data:extend({
   },
 })
 
---~ local my_pole_1 = util.table.deepcopy(data.raw["electric-pole"]["bi-bio-farm-hidden-pole"])
---~ my_pole_1.name = "bi-hidden-power-pole"
---~ my_pole_1.pictures = BioInd.is_debug and data.raw["electric-pole"]["small-electric-pole"].pictures  or my_pole_1.pictures
---~ data:extend({my_pole_1})
 
 --[[
 local my_seedling = util.table.deepcopy(data.raw.tree["tree-01"])
 my_seedling.name = "seedling"
---~ my_seedling.vehicle_impact_sound = { filename = "__base__/sound/car-wood-impact.ogg", volume = 0.8 }
 my_seedling.vehicle_impact_sound = impact_category = "wood"
 my_seedling.flags = {"placeable-neutral", "placeable-player", "playeminabler-creation", "breaths-air"}
 my_seedling.minable = {mining_particle = "wooden-particle", mining_time = 0.25, result = "seedling", count = 1}

@@ -1,4 +1,3 @@
---~ local BioInd = require('common')('Bio_Industries_2')
 
 if BI.Settings.Bio_Cannon then
 

@@ -1,4 +1,3 @@
---~ local BioInd = require("__" .. script.mod_name .. "__.common")(script.mod_name)
 BioInd = require("__" .. script.mod_name .. "__.common")(script.mod_name)
 local settings_changed = require("settings_changed")
 
@@ -14,7 +13,6 @@ end
 -- let's just declare the variable here and fill it later.
 local AlienBiomes
 
---~ local Event = require('__kry_stdlib__/stdlib/event/event').set_protected_mode(true)
 local Event = require('__kry_stdlib__/stdlib/event/event').set_protected_mode(false)
 require ("util")
 require ("libs/util_ext")
@@ -135,8 +133,7 @@ BioInd.writeDebug("Entered init!")
   -- Global table for storing the data of compound entities. They may change between
   -- saves (e.g. Bio gardens only need hidden poles when the "Easy gardens" setting
   -- is active).
-  --~ storage.compound_entities = storage.compound_entities or BioInd.compound_entities
-  storage.compound_entities = BioInd.rebuild_compound_entity_list()
+    storage.compound_entities = BioInd.rebuild_compound_entity_list()
 
 
   --------------------------------------------------------------------
@@ -159,8 +156,7 @@ BioInd.writeDebug("Entered init!")
   --------------------------------------------------------------------
   -- Check what global tables we need for compound entities
   local compound_entity_tables = {}
-  --~ for compound, compound_data in pairs(BioInd.compound_entities) do
-  for compound, compound_data in pairs(storage.compound_entities) do
+    for compound, compound_data in pairs(storage.compound_entities) do
     -- BioInd.compound_entities contains entries that point to the same table
     -- (e.g. straight/curved rails, or overlay entities), so we just overwrite
     -- them to remove duplicates
@@ -246,8 +242,7 @@ BioInd.show("Need to check these tables in global", compound_entity_tables)
 
   -- Create dummy force for musk floor if electric grid overlay should NOT be shown in map view
   if BioInd.UseMuskForce and not game.forces[BioInd.MuskForceName] then
-    --~ BioInd.writeDebug("Force for musk floor is required but doesn't exist.")
-    Create_dummy_force()
+        Create_dummy_force()
   end
 
 end
@@ -272,8 +267,7 @@ BioInd.writeDebug("On Configuration changed: %s", {ConfigurationChangedData})
   if ConfigurationChangedData.mod_startup_settings_changed then
     settings_changed.musk_floor()
     -- Has this been obsoleted by the new init process? Turn it off for now!
-    --~ settings_changed.bio_garden()
-  end
+      end
 
   -- We've made a list of the tree prototypes that are currently available. Now we
   -- need to make sure that the lists of growing trees don't contain removed tree
@@ -285,13 +279,7 @@ BioInd.writeDebug("On Configuration changed: %s", {ConfigurationChangedData})
   for i = 1, 4 do
     tab = storage.bi["tree_growing_stage_" .. i]
 BioInd.writeDebug("Number of trees in growing stage %s: %s", {i, table_size(tab)})
-    --~ for t, tree in pairs(tab) do
-      --~ if not trees[tree.tree_name] then
---~ BioInd.writeDebug("Removing invalid tree %s (%s)", {t, tree.tree_name})
-        --~ table.remove(tab, t)
-      --~ end
-    --~ end
-    for t = #tab, 1, -1 do
+                                for t = #tab, 1, -1 do
       if not trees[tab[t].tree_name] then
         BioInd.writeDebug("Removing invalid tree %s (%s)", {t, tab[t].tree_name})
         table.remove(tab, t)
@@ -303,7 +291,6 @@ BioInd.writeDebug("Number of trees in growing stage %s: %s", {i, table_size(tab)
     -- tree with index 1 when checking if a tree has completed the growing stage, so
     -- lets sort the table after all invalid trees have been removed!)
     table.sort(tab, function(a, b) return a.time < b.time end)
---~ BioInd.show("Final tree list", tab)
 BioInd.show("Number of trees in final list", #tab)
   end
 end
@@ -316,9 +303,7 @@ Event.register(defines.events.on_player_joined_game, function(event)
    local force = player.force
    local techs = force.technologies
 
-  --~ if settings.startup["angels-use-angels-barreling"] and
-     --~ settings.startup["angels-use-angels-barreling"].value then
-  if BioInd.get_startup_setting("angels-use-angels-barreling") then
+         if BioInd.get_startup_setting("angels-use-angels-barreling") then
       techs['fluid-handling'].researched = false
       techs['bi-tech-fertilizer'].reload()
       local _t = techs['angels-fluid-barreling'].researched
@@ -346,11 +331,7 @@ Event.register(defines.events.on_trigger_created_entity, function(event)
 
   -- Standard
   elseif ent.name == "seedling-2" then
-    --~ BioInd.writeDebug("Seed Bomb Activated - Standard")
-    --~ local terrain_name_s = AlienBiomes and "vegetation-green-grass-3" or "grass-3"
-    --~ surface.set_tiles{{name = terrain_name_s, position = position}}
-    --~ seed_planted_trigger(event)
-    BioInd.writeDebug("Seed Bomb Activated - Standard")
+                    BioInd.writeDebug("Seed Bomb Activated - Standard")
     local currTile = surface.get_tile(position).name
     if storage.bi.barren_tiles[currTile] then
       BioInd.writeDebug("Can't fertilize %s!", {currTile})
@@ -363,11 +344,7 @@ Event.register(defines.events.on_trigger_created_entity, function(event)
 
   -- Advanced
   elseif ent.name == "seedling-3" then
-    --~ BioInd.writeDebug("Seed Bomb Activated - Advanced")
-    --~ local terrain_name_a = AlienBiomes and "vegetation-green-grass-1" or "grass-1"
-    --~ surface.set_tiles{{name = terrain_name_a, position = position}}
-    --~ seed_planted_trigger(event)
-    BioInd.writeDebug("Seed Bomb Activated - Advanced")
+                    BioInd.writeDebug("Seed Bomb Activated - Advanced")
     local currTile = surface.get_tile(position).name
     if storage.bi.barren_tiles[currTile] then
       BioInd.writeDebug("Can't fertilize %s!", {currTile})
@@ -394,8 +371,6 @@ local function On_Built(event)
                     BioInd.arg_err(entity.position or "nil", "position")
   local force = entity.force
 
---~ BioInd.writeDebug("Entered function On_Built with these data: " .. serpent.block(event))
---~ BioInd.writeDebug("Entity name: %s", {BioInd.print_name_id(entity)})
 
   -- We can ignore ghosts -- if ghosts are revived, there will be
   -- another event that triggers where actual entities are placed!
@@ -417,8 +392,7 @@ local function On_Built(event)
 
     BioInd.writeDebug("%s (%s) is a compound entity. Need to create %s", {base.name, base.unit_number, hidden_entities})
 BioInd.show("hidden_entities", hidden_entities)
-    --~ local new_base, new_base_name, optional
-    local new_base
+        local new_base
     local new_base_name = base_entry.new_base_name
     -- If the base entity is only an overlay, we'll replace it with the real base
     -- entity and raise an event. The hidden entities will be created in the second
@@ -426,8 +400,7 @@ BioInd.show("hidden_entities", hidden_entities)
 BioInd.show("base_entry.new_base_name", base_entry.new_base_name)
 BioInd.show("base_entry.new_base_name == base.name", base_entry.new_base_name == base.name)
 BioInd.show("base_entry.optional", base_entry.optional)
-    --~ if new_base_name then
-    if new_base_name and new_base_name ~= base.name then
+        if new_base_name and new_base_name ~= base.name then
       new_base = surface.create_entity({
         name = new_base_name,
         position = base.position,
@@ -561,8 +534,7 @@ BioInd.writeDebug("Entered function On_Pre_Remove(%s)", {event})
     return
   end
 
-  --~ local compound_entity = BioInd.compound_entities[entity.name]
-  local compound_entity = storage.compound_entities[entity.name]
+    local compound_entity = storage.compound_entities[entity.name]
   local base_entry = compound_entity and storage[compound_entity.tab][entity.unit_number]
 BioInd.show("entity.name", entity.name)
 BioInd.show("entity.unit_number", entity.unit_number)
@@ -586,8 +558,7 @@ BioInd.show("Removed arboretum radar! Table", storage.bi_arboretum_radar_table)
     -- Power rails: Connections must be explicitely removed, otherwise the poles
     -- from the remaining rails will automatically connect and bridge the gap in
     -- the power supply!
-    --~ if entity.name:match("bi%-%a+%-rail%-power") then
-    if entity.name:match("bi%-%a+%-rail%-power") and base_entry.pole and base_entry.pole.valid then
+        if entity.name:match("bi%-%a+%-rail%-power") and base_entry.pole and base_entry.pole.valid then
 BioInd.writeDebug("Before")
       BioInd.writeDebug("Disconnecting %s!", {BioInd.print_name_id(base_entry.pole)})
       base_entry.pole.disconnect_neighbour()
@@ -598,7 +569,6 @@ BioInd.writeDebug("After")
     for hidden, h_name in pairs(compound_entity.hidden or {}) do
 BioInd.show("hidden", hidden)
 
---~ BioInd.writeDebug("Removing hidden entity %s %s", {base_entry[hidden] and base_entry[hidden].valid and base_entry[hidden].name or "nil", base_entry[hidden] and base_entry[hidden].valid and base_entry[hidden].unit_number or "nil"})
 BioInd.writeDebug("Removing hidden entity %s", {BioInd.print_name_id(base_entry[hidden])})
       BioInd.remove_entity(base_entry[hidden])
       base_entry[hidden] = nil
@@ -821,8 +791,7 @@ BioInd.show("Force.name", force)
     BioInd.writeDebug("Solar Mat has been built -- must create hidden entities!")
 BioInd.show("Tile data", tile )
 
-    --~ for index, old_tile in pairs(old_tiles or {}) do
-    for index, t in pairs(old_tiles or {tile}) do
+        for index, t in pairs(old_tiles or {tile}) do
 BioInd.show("Read old_tile inside loop", t)
       -- event.tiles will also contain landscape tiles like "grass-1", and it will always
       -- contain at least one tile
@@ -856,16 +825,7 @@ BioInd.writeDebug("%s was used on forbidden ground (%s)!", {item.name, t.old_til
         -- Is that tile minable?
         products = storage.bi.barren_tiles[t.old_tile.name]
         if type(products) == "table" then
-          --~ for p, product in ipairs(products) do
-            --~ if player then
---~ BioInd.writeDebug("Removing %s (%s) from player %s", {product.name, product.amount, player.name})
-              --~ player.remove_item({name = product.name, count = product.amount})
-            --~ elseif robot then
---~ BioInd.writeDebug("Removing %s (%s) from robot %s", {product.name, product.amount, robot.unit_number})
-              --~ robot.remove_item({name = product.name, count = product.amount})
-            --~ end
-          --~ end
-          for p, product in ipairs(products) do
+                                                                                              for p, product in ipairs(products) do
             remove_this = {name = product.name, count = product.amount}
             if player then
               BioInd.writeDebug("Removing %s (%s) from player %s",
@@ -909,8 +869,7 @@ BioInd.show("restore_tiles", restore_tiles)
       end
     end
     if next(removed_tiles) then
-      --~ solar_mat_removed(surface, removed_tiles)
-      solar_mat_removed({surface_index = event.surface_index, tiles = removed_tiles})
+            solar_mat_removed({surface_index = event.surface_index, tiles = removed_tiles})
     else
       BioInd.writeDebug("%s has been built -- nothing to do!", {tile.name})
     end
@@ -939,11 +898,7 @@ BioInd.show("t", t)
     pos = BioInd.normalize_position(tile.position)
     tile_force = storage.bi_musk_floor_table.tiles[pos.x] and
                   storage.bi_musk_floor_table.tiles[pos.x][pos.y]
-                  --~ -- Fall back to MuskForceName if it is available
-                 --~ UseMuskForce and MuskForceName or
-                 --~ -- Fall back to "neutral"
-                 --~ "neutral"
-BioInd.show("Placed tile", tile.name)
+                                                                     BioInd.show("Placed tile", tile.name)
 
     -- Musk floor was placed
     if tile.name == "bi-solar-mat" then
@@ -1023,11 +978,7 @@ Event.pre_remove_events = {
   defines.events.on_player_mined_entity,
   defines.events.on_robot_mined_entity,
 }
---~ Event.remove_events = {
-  --~ defines.events.on_player_mined_entity,
-  --~ defines.events.on_robot_mined_entity,
---~ }
-Event.death_events = {
+    Event.death_events = {
   defines.events.on_entity_died,
   defines.events.script_raised_destroy
 }
@@ -1045,8 +996,6 @@ Event.tile_script_action = {
 
 Event.register(Event.build_events, On_Built)
 Event.register(Event.pre_remove_events, On_Pre_Remove)
---~ Event.register(Event.remove_events, On_Remove)
---~ Event.register(Event.remove_events, On_Remove)
 Event.register(Event.death_events, On_Death)
 Event.register(Event.tile_build_events, solar_mat_built)
 Event.register(Event.tile_remove_events, solar_mat_removed)

@@ -2,7 +2,6 @@ local BioInd = require('common')('Bio_Industries_2')
 
 local ICONPATH = BioInd.modRoot .. "/graphics/technology/"
 
---~ if BI.Settings.BI_Bio_Fuel or mods["Natural_Evolution_Buildings"] then
 
   data:extend(
   {
@@ -57,8 +56,6 @@ local ICONPATH = BioInd.modRoot .. "/graphics/technology/"
           type = "unlock-recipe",
           recipe = "bi-biomass-1"
         },
-  --~ thxbob.lib.tech.add_recipe_unlock("bi-tech-advanced-biotechnology", "bi-bio-reactor")
-  --~ thxbob.lib.tech.add_recipe_unlock("bi-tech-advanced-biotechnology", "bi-biomass-1")
 
         -- Added for 0.18.29: Now that we always make advanced fertilizer, we can also add
         -- the advanced recipe for purified air even if BI.Settings.BI_Bio_Fuel has been
@@ -68,7 +65,6 @@ local ICONPATH = BioInd.modRoot .. "/graphics/technology/"
           recipe = "bi-purified-air-2"
         },
 
-  --~ thxbob.lib.tech.add_recipe_unlock("bi-tech-advanced-biotechnology", "bi-purified-air-2")
 
       },
       prerequisites = {
@@ -85,4 +81,3 @@ local ICONPATH = BioInd.modRoot .. "/graphics/technology/"
       }
     },
   })
---~ end

@@ -1,4 +1,3 @@
---~ local BioInd = require("__"..script.mod_name.."__.common")(script.mod_name)
 
 -- All tree Growing stuff
 local Event = require('__kry_stdlib__/stdlib/event/event').set_protected_mode(true)
@@ -222,15 +221,8 @@ Bi_Industries.fertility = {
     ["landfill"] = 1,
 }
 
---~ local function get_tile_fertility(surface, position)
-  --~ surface = BioInd.is_surface(surface) or BioInd.arg_err(surface or "nil", "surface")
-  --~ position = BioInd.normalize_position(position) or BioInd.arg_err(position or "nil", "position")
 
-  --~ local fertility = Bi_Industries.fertility[surface.get_tile(position.x, position.y).name]
 
-  --~ return fertility and {fertility = fertility, key = "fertilizer"} or
-                        --~ {fertility = 1, key = "default"}
---~ end
 
 -- If we get passed on a tile_name, we can skip getting the tile at position!
 local function get_tile_fertility(surface, position, tile_name)
@@ -267,10 +259,7 @@ BioInd.show("grow_until_tick", grow_until_tick)
   tabl[grow_until_tick] = tabl[grow_until_tick] or {}
 
   -- Update table
-  --~ table.insert(tabl, tree)
-  --~ table.sort(tabl, function(a, b) return a.time < b.time end)
-  --~ table.sort(tabl, function(a, b) return a.time > b.time end)
-  table.insert(tabl[grow_until_tick], tree)
+        table.insert(tabl[grow_until_tick], tree)
 BioInd.writeDebug("Added tree to table!")
 
   -- Plant the new tree
@@ -417,8 +406,7 @@ BioInd.show("key", key)
   local tree_name, can_be_placed
   if tree or tree2 or tree3 then
 BioInd.writeDebug("Found a seedling!")
-    --~ tree_name = random_tree(surface, position)
-    tree_name = random_tree(tile_name)
+        tree_name = random_tree(tile_name)
   end
 BioInd.show("tree_name", tree_name)
 

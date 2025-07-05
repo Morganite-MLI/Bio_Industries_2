@@ -10,8 +10,6 @@ require ("util")
 ------------------------------------------------------------------------------------
 --  Create the main prototype for hidden radars. All others will be based on this! --
 ------------------------------------------------------------------------------------
---~ local h_type = "radar"
---~ local h_entity = table.deepcopy(data.raw[h_type]["radar"])
 -- The short name of the hidden entity (e.g. "lamp" or "pole")
 local h_key = "radar"
 -- The actual prototype type, identified by h_key
@@ -134,7 +132,3 @@ end
 
 
 ------------------------------------------------------------------------------------
---~ -- Testing
---~ for k, v in pairs(data.raw[h_entity.type]) do
-  --~ BioInd.writeDebug("%s: %s", {k, v})
---~ end

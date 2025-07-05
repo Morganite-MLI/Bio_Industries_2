@@ -187,8 +187,7 @@ data:extend({
     type = "tile",
     name = "bi-wood-floor",
     needs_correction = false,
-    --~ minable = {hardness = 0.2, mining_time = 0.5, result = "wood"},
-    minable = {hardness = 0.2, mining_time = 0.25, result = "wood"},
+        minable = {hardness = 0.2, mining_time = 0.25, result = "wood"},
     mined_sound = { filename = "__base__/sound/deconstruct-bricks.ogg" },
     collision_mask = { layers = { ground_tile = true }},
     walking_speed_modifier = 1.2,
@@ -270,8 +269,7 @@ data:extend({
     selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
     drawing_box = {{-1, -6}, {1, 0.5}},
     maximum_wire_distance = 24,
-    --~ supply_area_distance = 2,
-    supply_area_distance = 1.5, -- This is the radius, so the supply area is 3x3.
+        supply_area_distance = 1.5, -- This is the radius, so the supply area is 3x3.
     pictures = {
       filename = WOODPATH .. "big-wooden-pole-01.png",
       priority = "high",
@@ -361,8 +359,7 @@ data:extend({
     selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
     drawing_box = {{-1, -7}, {1, 0.5}},
     maximum_wire_distance = 64, -- Factorio Max
-    --~ supply_area_distance = 2,
-    supply_area_distance = 1,   -- This is the radius, so the supply area is 2x2.
+        supply_area_distance = 1,   -- This is the radius, so the supply area is 2x2.
     pictures = {
       filename = WOODPATH .. "huge-wooden-pole.png",
       priority = "high",
@@ -453,8 +450,7 @@ data:extend({
     repair_speed_modifier = 2,
     corpse = "wall-remnants",
     repair_sound = { filename = "__base__/sound/manual-repair-simple.ogg" },
-    --~ vehicle_impact_sound =  { filename = "__base__/sound/car-wood-impact.ogg", volume = 1.0 },
-    impact_category = "wood",
+        impact_category = "wood",
     resistances = {
       {
         type = "physical",
@@ -812,8 +808,7 @@ data:extend({
       size = 64,
       scale = 0.5
     },
-    --~ vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
-    pictures = {
+        pictures = {
       north = {
           filename = ENTITYPATH .. "/pipe-to-ground/pipe-to-ground-up.png",
           priority = "extra-high",

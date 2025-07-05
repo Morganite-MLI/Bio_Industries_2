@@ -429,8 +429,7 @@ data:extend({
       }
     },
       enabled = false,
-      --~ energy_required = 5,
-      energy_required = 2.5,
+            energy_required = 2.5,
       ingredients = {
         {type="item", name="iron-stick", amount=10},
         {type="item", name="stone-brick", amount=10},
@@ -461,8 +460,7 @@ data:extend({
       }
     },
       enabled = false,
-      --~ energy_required = 10,
-      energy_required = 5,
+            energy_required = 5,
       ingredients = {
         {type="item", name="bi-bio-greenhouse", amount=4},
         {type="item", name="stone-crushed", amount=10},
@@ -493,10 +491,7 @@ data:extend({
     subgroup = "bio-bio-farm-raw",
     order = "a[bi]-a-a[bi-1-woodpulp]",
     enabled = false,
-    --~ always_show_made_in = true,
-    --~ allow_decomposition = false,
-    --~ allow_as_intermediate = false,
-    energy_required = 2,
+                energy_required = 2,
     ingredients = {{type="item", name="wood", amount=2}},
     results = {{type="item", name="bi-woodpulp", amount=4}},
     main_product = "",
@@ -525,10 +520,7 @@ data:extend({
     subgroup = "bio-bio-farm-raw",
     order = "a[bi]-a-ba[bi-2-resin-2-pulp]",
     enabled = false,
-    --~ always_show_made_in = true,
-    --~ allow_decomposition = false,
-    --~ allow_as_intermediate = false,
-    energy_required = 1,
+                energy_required = 1,
     ingredients = {
        {type = "item", name = "bi-woodpulp", amount = 3},
     },
@@ -559,18 +551,14 @@ data:extend({
     subgroup = "bio-bio-farm-raw",
     order = "a[bi]-a-c[bi-3-wood_from_pulp]",
     enabled = false,
-    --~ always_show_made_in = true,
-    --~ allow_decomposition = false,
-    --~ allow_as_intermediate = false,
-    energy_required = 2.5,
+                energy_required = 2.5,
     ingredients = {
        {type = "item", name = "bi-woodpulp", amount = 8},
        {type = "item", name = "resin", amount = 2},
     },
     results = {{type="item", name="wood", amount=4}},
     main_product = "",
-    --~ allow_as_intermediate = true,       -- Added for 0.18.34/1.1.4
-    allow_as_intermediate = false,       -- Added for 0.18.34/1.1.4
+        allow_as_intermediate = false,       -- Added for 0.18.34/1.1.4
     always_show_made_in = false,        -- Added for 0.18.34/1.1.4
     allow_decomposition = false,        -- Added for 0.18.34/1.1.4
     -- This is a custom property for use by "Krastorio 2" (it will change
@@ -584,9 +572,7 @@ data:extend({
   {
     type = "recipe",
     name = "bi-wood-fuel-brick",
-    --~ localised_name = {"item-name.wood-bricks"},
-    --~ localised_description = {"item-description.wood-bricks"},
-    icon = ICONPATH .. "Fuel_Brick.png",
+            icon = ICONPATH .. "Fuel_Brick.png",
     icon_size = 64,
     icons = {
       {
@@ -601,10 +587,7 @@ data:extend({
     results = {{type="item", name="wood-bricks", amount=1}},
     main_product = "",
     enabled = false,
-    --~ always_show_made_in = true,
-    --~ allow_decomposition = false,
-    --~ allow_as_intermediate = false,
-    allow_as_intermediate = true,       -- Changed for 0.18.34/1.1.4
+                allow_as_intermediate = true,       -- Changed for 0.18.34/1.1.4
     always_show_made_in = false,        -- Changed for 0.18.34/1.1.4
     allow_decomposition = true,         -- Changed for 0.18.34/1.1.4
     -- This is a custom property for use by "Krastorio 2" (it will change
@@ -629,10 +612,7 @@ data:extend({
     subgroup = "bio-bio-farm-raw",
     order = "a[bi]-a-cb[bi-5-ash-1]",
     enabled = false,
-    --~ always_show_made_in = true,
-    --~ allow_decomposition = false,
-    --~ allow_as_intermediate = false,
-    energy_required = 3,
+                energy_required = 3,
     ingredients = {{type="item", name="wood", amount=5}},
     results = {{type="item", name="bi-ash", amount=5}},
     main_product = "",
@@ -662,10 +642,7 @@ data:extend({
     subgroup = "bio-bio-farm-raw",
     order = "a[bi]-a-ca[bi-5-ash-2]",
     enabled = false,
-    --~ always_show_made_in = true,
-    --~ allow_decomposition = false,
-    --~ allow_as_intermediate = false,
-    allow_as_intermediate = true,       -- Added for 0.18.34/1.1.4
+                allow_as_intermediate = true,       -- Added for 0.18.34/1.1.4
     always_show_made_in = false,        -- Changed for 0.18.34/1.1.4
     allow_decomposition = true,         -- Changed for 0.18.34/1.1.4
 
@@ -757,10 +734,7 @@ data:extend({
     results = {{type="item", name="coal", amount=12}},
     main_product = "",
     enabled = false,
-    --~ always_show_made_in = true,
-    --~ allow_decomposition = false,
-    --~ allow_as_intermediate = false,
-    allow_as_intermediate = false,      -- Added for 0.18.34/1.1.4
+                allow_as_intermediate = false,      -- Added for 0.18.34/1.1.4
     always_show_made_in = true,        -- Changed for 0.18.34/1.1.4
     allow_decomposition = true,         -- Changed for 0.18.34/1.1.4
 
@@ -787,10 +761,7 @@ data:extend({
     results = {{type="item", name="coal", amount=16}},
     main_product = "",
     enabled = false,
-    --~ always_show_made_in = true,
-    --~ allow_decomposition = false,
-    --~ allow_as_intermediate = false,
-    allow_as_intermediate = false,      -- Added for 0.18.34/1.1.4
+                allow_as_intermediate = false,      -- Added for 0.18.34/1.1.4
     always_show_made_in = true,        -- Changed for 0.18.34/1.1.4
     allow_decomposition = true,         -- Changed for 0.18.34/1.1.4
 
@@ -817,10 +788,7 @@ data:extend({
     results = {{type="item", name="solid-fuel", amount=2}},
     main_product = "",
     enabled = false,
-    --~ always_show_made_in = true,
-    --~ allow_decomposition = false,
-    --~ allow_as_intermediate = false,
-    allow_as_intermediate = true,       -- Changed for 0.18.34/1.1.4
+                allow_as_intermediate = true,       -- Changed for 0.18.34/1.1.4
     always_show_made_in = true, -- Changed for 0.18.34/1.1.4
     allow_decomposition = true,         -- Changed for 0.18.34/1.1.4
 
@@ -831,9 +799,7 @@ data:extend({
     {
     type = "recipe",
     name = "bi-coke-coal",
-    --~ localised_name = {"item-name.pellet-coke"},
-    --~ localised_description = {"item-description.pellet-coke"},
-    icon = ICONPATH .. "pellet_coke_coal.png",
+            icon = ICONPATH .. "pellet_coke_coal.png",
     icon_size = 64,
     icons = {
       {
@@ -849,9 +815,7 @@ data:extend({
     results = {{type="item", name="pellet-coke", amount=2}},
     main_product = "",
     enabled = false,
-    --~ always_show_made_in = true,
-    --~ allow_as_intermediate = false,
-    allow_as_intermediate = false,      -- Added for 0.18.34/1.1.4
+            allow_as_intermediate = false,      -- Added for 0.18.34/1.1.4
     always_show_made_in = true,        -- Changed for 0.18.34/1.1.4
     allow_decomposition = true,         -- Changed for 0.18.34/1.1.4
 
@@ -862,9 +826,7 @@ data:extend({
     {
     type = "recipe",
     name = "bi-pellet-coke",
-    --~ localised_name = {"item-name.pellet-coke"},
-    --~ localised_description = {"item-description.pellet-coke"},
-    icon = ICONPATH .. "pellet_coke_solid.png",
+            icon = ICONPATH .. "pellet_coke_solid.png",
     --icon = "__Bio_Industries_2__/graphics/icons/pellet_coke_c.png",
     icon_size = 64,
     icons = {
@@ -881,9 +843,7 @@ data:extend({
     results = {{type="item", name="pellet-coke", amount=3}},
     main_product = "",
     enabled = false,
-    --~ always_show_made_in = true,
-    --~ allow_as_intermediate = false,
-    allow_as_intermediate = false,      -- Added for 0.18.34/1.1.4
+            allow_as_intermediate = false,      -- Added for 0.18.34/1.1.4
     always_show_made_in = true,        -- Changed for 0.18.34/1.1.4
     allow_decomposition = true,         -- Changed for 0.18.34/1.1.4
   },
@@ -908,10 +868,7 @@ data:extend({
     results = {{type="item", name="stone-crushed", amount=2}},
     main_product = "",
     enabled = false,
-    --~ always_show_made_in = true,
-    --~ allow_decomposition = false,
-    --~ allow_as_intermediate = false,
-    allow_as_intermediate = true,      -- Added for 0.18.34/1.1.4
+                allow_as_intermediate = true,      -- Added for 0.18.34/1.1.4
     always_show_made_in = true,        -- Changed for 0.18.34/1.1.4
     allow_decomposition = true,         -- Changed for 0.18.34/1.1.4
 
@@ -938,10 +895,7 @@ data:extend({
     results = {{type="item", name="stone-crushed", amount=2}},
     main_product = "",
     enabled = false,
-    --~ always_show_made_in = true,
-    --~ allow_decomposition = false,
-    --~ allow_as_intermediate = false,
-    allow_as_intermediate = true,      -- Added for 0.18.34/1.1.4
+                allow_as_intermediate = true,      -- Added for 0.18.34/1.1.4
     always_show_made_in = true,        -- Changed for 0.18.34/1.1.4
     allow_decomposition = true,         -- Changed for 0.18.34/1.1.4
   },
@@ -967,10 +921,7 @@ data:extend({
     results = {{type="item", name="stone-crushed", amount=2}},
     main_product = "",
     enabled = false,
-    --~ always_show_made_in = true,
-    --~ allow_decomposition = false,
-    --~ allow_as_intermediate = false,
-    allow_as_intermediate = true,      -- Added for 0.18.34/1.1.4
+                allow_as_intermediate = true,      -- Added for 0.18.34/1.1.4
     always_show_made_in = true,        -- Changed for 0.18.34/1.1.4
     allow_decomposition = true,         -- Changed for 0.18.34/1.1.4
 
@@ -997,10 +948,7 @@ data:extend({
     results = {{type="item", name="stone-crushed", amount=4}},
     main_product = "",
     enabled = false,
-    --~ always_show_made_in = true,
-    --~ allow_decomposition = false,
-    --~ allow_as_intermediate = false,
-    allow_as_intermediate = true,      -- Added for 0.18.34/1.1.4
+                allow_as_intermediate = true,      -- Added for 0.18.34/1.1.4
     always_show_made_in = true,        -- Changed for 0.18.34/1.1.4
     allow_decomposition = true,         -- Changed for 0.18.34/1.1.4
   },
@@ -1026,10 +974,7 @@ data:extend({
     results = {{type="item", name="stone-crushed", amount=4}},
     main_product = "",
     enabled = false,
-    --~ always_show_made_in = true,
-    --~ allow_decomposition = false,
-    --~ allow_as_intermediate = false,
-    allow_as_intermediate = true,      -- Added for 0.18.34/1.1.4
+                allow_as_intermediate = true,      -- Added for 0.18.34/1.1.4
     always_show_made_in = true,        -- Changed for 0.18.34/1.1.4
     allow_decomposition = true,         -- Changed for 0.18.34/1.1.4
   },
@@ -1060,10 +1005,7 @@ data:extend({
     },
     enabled = false,
     main_product = "",
-    --~ always_show_made_in = true,
-    --~ allow_decomposition = false,
-    --~ allow_as_intermediate = false,
-    allow_as_intermediate = true,      -- Added for 0.18.34/1.1.4
+                allow_as_intermediate = true,      -- Added for 0.18.34/1.1.4
     always_show_made_in = true,        -- Changed for 0.18.34/1.1.4
     allow_decomposition = true,         -- Changed for 0.18.34/1.1.4
   },
@@ -1211,10 +1153,7 @@ data:extend({
     },
     main_product = "",
     enabled = false,
-    --~ always_show_made_in = true,
-    --~ allow_decomposition = false,
-    --~ allow_as_intermediate = false,
-    allow_as_intermediate = true,       -- Changed for 0.18.34/1.1.4
+                allow_as_intermediate = true,       -- Changed for 0.18.34/1.1.4
     always_show_made_in = true,         -- Changed for 0.18.34/1.1.4
     allow_decomposition = true,         -- Changed for 0.18.34/1.1.4
     subgroup = "bio-bio-farm-intermediate-product",
@@ -1246,10 +1185,7 @@ data:extend({
     },
     main_product = "",
     enabled = false,
-    --~ always_show_made_in = true,
-    --~ allow_decomposition = false,
-    --~ allow_as_intermediate = false,
-    allow_as_intermediate = true,       -- Changed for 0.18.34/1.1.4
+                allow_as_intermediate = true,       -- Changed for 0.18.34/1.1.4
     always_show_made_in = true,         -- Changed for 0.18.34/1.1.4
     allow_decomposition = true,         -- Changed for 0.18.34/1.1.4
     subgroup = "bio-bio-farm-intermediate-product",
@@ -1281,10 +1217,7 @@ data:extend({
     },
     main_product = "",
     enabled = false,
-    --~ always_show_made_in = true,
-    --~ allow_decomposition = false,
-    --~ allow_as_intermediate = false,
-    allow_as_intermediate = true,       -- Changed for 0.18.34/1.1.4
+                allow_as_intermediate = true,       -- Changed for 0.18.34/1.1.4
     always_show_made_in = true,         -- Changed for 0.18.34/1.1.4
     allow_decomposition = true,         -- Changed for 0.18.34/1.1.4
     subgroup = "bio-bio-farm-intermediate-product",
@@ -1299,9 +1232,7 @@ data:extend({
   {
     type = "recipe",
     name = "bi-seed-bomb-basic",
-    --~ localised_name = {"item-name.bi-seed-bomb-basic"},
-    --~ localised_description = {"item-description.bi-seed-bomb-basic"},
-    icon = ICONPATH .. "Seed_bomb_icon_b.png",
+            icon = ICONPATH .. "Seed_bomb_icon_b.png",
     icon_size = 64,
     icons = {
       {
@@ -1358,9 +1289,7 @@ data:extend({
   {
     type = "recipe",
     name = "bi-seed-bomb-advanced",
-    --~ localised_name = {"item-name.bi-seed-bomb-advanced"},
-    --~ localised_description = {"item-description.bi-seed-bomb-advanced"},
-    icon = ICONPATH .. "Seed_bomb_icon_a.png",
+            icon = ICONPATH .. "Seed_bomb_icon_a.png",
     icon_size = 64,
     icons = {
       {

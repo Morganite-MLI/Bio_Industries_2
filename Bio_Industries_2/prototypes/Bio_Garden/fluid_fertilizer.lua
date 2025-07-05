@@ -4,8 +4,6 @@
 local BioInd = require('common')('Bio_Industries_2')
 local ICONPATH = BioInd.modRoot .. "/graphics/icons/"
 
---~ BioInd.show("fluid_fertilizer.lua -- BI.Settings.BI_Easy_Bio_Gardens", BI.Settings.BI_Easy_Bio_Gardens)
---~ if BI.Settings.BI_Easy_Bio_Gardens then
 
 local function make_colors(color)
   local r, g, b = color.r, color.g, color.b
@@ -51,12 +49,9 @@ data:extend({
     default_temperature = 25,
     max_temperature = 100,
     heat_capacity = "1kJ",
-    --~ base_color = {r = 0.478, g = 0.341, b = 0.118},
-    -- 19cf44
-    --~ base_color = {r = 0.098, g = 0.811, b = 0.269},
-    base_color = fertilizer_fluid_colors.base,
-    --~ flow_color = {r = 0, g = 0, b = 0},
-    flow_color = fertilizer_fluid_colors.flow,
+        -- 19cf44
+        base_color = fertilizer_fluid_colors.base,
+        flow_color = fertilizer_fluid_colors.flow,
     pressure_to_speed_ratio = 0.4,
     flow_to_energy_ratio = 0.59,
     order = "a[fluid]-b[fertilizer]"
@@ -80,11 +75,8 @@ data:extend({
     max_temperature = 100,
     heat_capacity = "1kJ",
     --00ff12
-    --~ base_color = {r = 0.465, g = 0.306, b = 0.272},
-    --~ base_color = {r = 0, g = 1, b = 0.071},
-    base_color = adv_fertilizer_fluid_colors.base,
-    --~ flow_color = {r = 0, g = 0, b = 0},
-    flow_color = adv_fertilizer_fluid_colors.flow,
+            base_color = adv_fertilizer_fluid_colors.base,
+        flow_color = adv_fertilizer_fluid_colors.flow,
     pressure_to_speed_ratio = 0.4,
     flow_to_energy_ratio = 0.59,
     order = "a[fluid]-b[fertilizer-advanced]"

@@ -1,5 +1,3 @@
---~ data:extend(
---~ {
 local setting_list = {}
         -- Add/enable stuff
 setting_list.BI_Solar_Additions = {
@@ -73,16 +71,7 @@ setting_list.BI_Game_Tweaks_Recipe = {
     default_value = true,
     order = "b[tweaks]-c1[Recipe]",
 }
---~ if not mods["IndustrialRevolution"] then
-  --~ setting_list.BI_Game_Tweaks_Disassemble = {
-      --~ type = "bool-setting",
-      --~ name = "BI_Game_Tweaks_Disassemble",
-      --~ setting_type = "startup",
-      --~ default_value = true,
-      --~ order = "b[tweaks]-c2[Disassemble]",
-  --~ }
---~ end
-setting_list.BI_Game_Tweaks_Production_Science = {
+                                  setting_list.BI_Game_Tweaks_Production_Science = {
     type = "bool-setting",
     name = "BI_Game_Tweaks_Production_Science",
     setting_type = "startup",
@@ -131,23 +120,6 @@ if not (mods["IndustrialRevolution"] or mods["aai-industry"]) then
   }
 end
 
---~ if not (
-          --~ -- mods["ArchdruidsChests"] or           -- "Archdruid's Chest Mod"
-          --~ mods["Juicy_mods"] or                 -- "Advanced storage +"
-          --~ mods["Warehousing"] or                -- "Warehousing Mod"
-          --~ mods["aai-containers"] or             -- "AAI Containers & Warehouses"
-          --~ mods["angelsaddons-storage"] or       -- "Angel's Addons - Storage Options"
-          --~ mods["boblogistics"] or               -- "Bob's Logistics mod"
-          --~ mods["cruxchests"]                    -- "Crux Chests"
-        --~ ) then
-  --~ setting_list.BI_Bigger_Wooden_Chests = {
-      --~ type = "bool-setting",
-      --~ name = "BI_Bigger_Wooden_Chests",
-      --~ setting_type = "startup",
-      --~ default_value = true,
-      --~ order = "a[modifier]-b[Bigger_Wooden_Chests]",
-  --~ }
---~ end
 
   -- Lua API global Variable Viewer (gvv)
 if mods["gvv"] then
@@ -162,11 +134,8 @@ end
 
 local list = {}
 for name, setting in pairs(setting_list) do
-  --~ list[#list + 1] = setting
-  data:extend({setting})
+    data:extend({setting})
 end
---~ log("Setting list: " .. serpent.block(list))
---~ data:extend({list})
 --[[
 Types of settings:
         � startup - game must be restarted if changed (such a setting may affect prototypes' changes)

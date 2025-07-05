@@ -47,15 +47,7 @@ BioInd.writeDebug("Tree name: %s\tminable.results: %s", {tree.name, (tree.minabl
           BioInd.writeDebug("Changing wood yield of %s to random value.", {tree.name})
           tree.minable.mining_particle = "wooden-particle"
           tree.minable.mining_time = 1.5
-          --~ tree.minable.results = {
-            --~ {
-              --~ type = "item",
-              --~ name = "wood",
-              --~ amount_min = 1,
-              --~ amount_max = 6
-            --~ }
-          --~ }
-          tree.minable.results = new_results
+                                                                                                              tree.minable.results = new_results
         -- CONVERT RESULT TO RESULTS
         else
           BioInd.writeDebug("Converting tree.minable.result to tree.minable.results!")
@@ -92,7 +84,6 @@ BioInd.writeDebug("Tree name: %s\tminable.results: %s", {tree.name, (tree.minabl
     else
       BioInd.writeDebug("Won't change results of %s!", {tree.name})
     end
---~ BioInd.show("tree.minable", tree.minable)
   end
 end
 
@@ -143,12 +134,10 @@ BioInd.show("Checking character", char_name)
     found = false
 
     for w, w_pattern in ipairs(whitelist) do
---~ BioInd.show("w_pattern", w_pattern)
       if char_name == w_pattern or char_name:match(w_pattern) then
         ignore = false
 BioInd.show("Found whitelisted character name", char_name)
         for b, b_pattern in ipairs(blacklist) do
---~ BioInd.show("b_pattern", b_pattern)
 
           if char_name == b_pattern or char_name:match(b_pattern) then
 BioInd.writeDebug("%s is on the ignore list!", char_name)
@@ -181,20 +170,7 @@ end
 
 
 -- Moved to data-updates.lua for 0.18.34/1.1.4!
---~ ---- Game Tweaks ---- Disassemble Recipes
---~ require("prototypes.Bio_Tweaks.recipe")
---~ if BI.Settings.BI_Game_Tweaks_Disassemble then
-  --~ for recipe, tech in pairs({
-    --~ ["bi-burner-mining-drill-disassemble"] = "automation-2",
-    --~ ["bi-burner-inserter-disassemble"] = "automation-2",
-    --~ ["bi-long-handed-inserter-disassemble"] = "automation-2",
-    --~ ["bi-stone-furnace-disassemble"] = "automation-2",
-    --~ ["bi-steel-furnace-disassemble"] = "advanced-material-processing",
-  --~ }) do
-    --~ thxbob.lib.tech.add_recipe_unlock(tech, recipe)
-  --~ end
 
---~ end
 
 ---- Game Tweaks ---- Production science pack recipe
 if data.raw.recipe["bi-production-science-pack"] then
@@ -208,13 +184,7 @@ if BI.Settings.BI_Game_Tweaks_Bot then
   -- Logistic & Construction bots can't catch fire or be mined
   local function immunify(bot)
     -- Changed for 0.18.34/1.1.4!
-    --~ if not bot.flags then
-      --~ bot.flags = {}
-    --~ end
-    --~ if not bot.resistances then
-      --~ bot.resistances = {}
-    --~ end
-    local can_insert = true
+                                local can_insert = true
     bot.flags = bot.flags or {}
     bot.resistances = bot.resistances or {}
     for f, flag in pairs(bot.flags) do
@@ -319,8 +289,7 @@ if BI.Settings.BI_Game_Tweaks_Emissions_Multiplier then
     ["wood"] = 1.60,
     ["coal"] = 2.00,
     -- Removed in 0.17.48/0.18.16
-    --~ ["thorium-fuel-cell"] = 5.00,
-  }) do
+      }) do
     BI_Functions.lib.fuel_emissions_multiplier_update(item, factor)
   end
 end
@@ -409,15 +378,6 @@ end
 
 
 -- Moved to data-updates.lua for 0.18.34/1.1.4!
---~ -- "Transport drones" ruins rails by removing object-layer from the collision mask. That
---~ -- causes problems for our "Wooden rail bridges" as they will also pass through cliffs.
---~ -- Fix the collision masks for rail bridges if "Transport drones" is active!
---~ if mods["Transport_Drones"] then
-  --~ for _, type in pairs({"straight-rail", "curved-rail"}) do
-        --~ data.raw[type]["bi-" .. type .. "-wood-bridge"].collision_mask = BioInd.RAIL_BRIDGE_MASK
-  --~ end
---~ end
---~ require("prototypes.Wood_Products.rail_updates")
 
 
 --- If Space Exploration Mod is installed.
@@ -477,30 +437,7 @@ BioInd.BI_add_icons()
 
 
 ---TESTING!
---~ for k,v in pairs(data.raw["curved-rail"]) do
---~ log(v.name)
---~ end
---~ for k,v in pairs(data.raw["straight-rail"]) do
---~ log(v.name)
---~ end
---~ for k,v in pairs(data.raw["rail-planner"]) do
---~ log(v.name)
---~ end
 
---~ BioInd.writeDebug("Testing at end of data-final-fixes.lua!")
---~ for rail_name, rail in pairs(data.raw["straight-rail"]) do
-  --~ BioInd.show("rail_name", rail_name)
-  --~ BioInd.show("flags", rail.flags)
-  --~ BioInd.show("fast_replaceable_group", rail.fast_replaceable_group)
-  --~ BioInd.show("next_upgrade", rail.next_upgrade)
-  --~ BioInd.show("bounding_box", rail.bounding_box)
-  --~ BioInd.show("collision_mask", rail.collision_mask)
---~ end
---~ for r, recipe in pairs(data.raw.recipe) do
-  --~ if r:match("^.*boiler.*$") then
-    --~ BioInd.writeDebug("recipe: %s\torder: %s\tsubgroup: %s", {r, recipe.order or "", recipe.subgroup or "" })
-  --~ end
---~ end
 
 for k, v in pairs(data.raw) do
   for t, p in pairs(v) do

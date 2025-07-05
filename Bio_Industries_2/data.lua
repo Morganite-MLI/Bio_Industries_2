@@ -3,8 +3,6 @@ local BioInd = require('common')('Bio_Industries_2')
 if not BI then BI = {} end
 if not BI.Settings then BI.Settings = {} end
 
---~ if not BI_Config then BI_Config = {} end
---~ if not BI_Config.mod then BI_Config.mod = {} end
 if not BI_Functions then BI_Functions = {} end
 if not BI_Functions.lib then BI_Functions.lib = {} end
 
@@ -28,8 +26,6 @@ for var, name in pairs({
   BI.Settings[var] = BioInd.get_startup_setting(name)
 end
 
---~ BioInd.show("BI.Settings.BI_Easy_Bio_Gardens", BI.Settings.BI_Easy_Bio_Gardens)
---~ BioInd.show("BI.Settings.BI_Game_Tweaks_Disassemble", BI.Settings.BI_Game_Tweaks_Disassemble)
 --- Help Files
 require ("libs.item-functions") -- From Bob's Libary
 require ("libs.recipe-functions") -- From Bob's Libary
@@ -40,11 +36,7 @@ require ("libs.bi_functions") -- Functions
 
 require ("prototypes.category")
 
---~ -- Create the hidden entities
---~ require("prototypes.compound_entities.hidden_entities")
 
---~ BioInd.show("BioInd.compound_entities", BioInd.compound_entities)
---~ error("Break!")
 
 
 --- Bio Farm
@@ -127,9 +119,6 @@ require("prototypes.compound_entities.hidden_entities")
 alien_biomes_priority_tiles = alien_biomes_priority_tiles or {}
 table.insert(alien_biomes_priority_tiles, "bi-solar-mat")
 
---~ for i, item in pairs(data.raw.item) do
---~ BioInd.show("Item", i)
---~ end
 
 
 ------------------------------------------------------------------------------------

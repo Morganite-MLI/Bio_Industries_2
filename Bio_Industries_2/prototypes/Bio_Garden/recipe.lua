@@ -30,11 +30,7 @@ data:extend({
     main_product = "",
     subgroup = "bio-bio-gardens-fluid",
     order = "a[bi]",
-    --~ subgroup = "production-machine",
-    --~ order = "x[bi]-b[bi_bio_garden]",
-    --~ always_show_made_in = true,
-    --~ allow_decomposition = false,
-    allow_as_intermediate = false,      -- Changed for 0.18.34/1.1.4
+                    allow_as_intermediate = false,      -- Changed for 0.18.34/1.1.4
     always_show_made_in = false,        -- Changed for 0.18.34/1.1.4
     allow_decomposition = true,         -- Changed for 0.18.34/1.1.4    -- This is a custom property for use by "Krastorio 2" (it will change
     -- ingredients/results; used for wood/wood pulp)
@@ -46,9 +42,7 @@ data:extend({
   {
     type = "recipe",
     name = "bi-purified-air-1",
-    --~ localised_name = {"recipe-name.bi-purified-air-1"},
-    --~ localised_description = {"recipe-description.bi-purified-air-1"},
-    icon = ICONPATH .. "clean-air_mk1.png",
+            icon = ICONPATH .. "clean-air_mk1.png",
     icon_size = 64,
     icons = {
       {
@@ -79,9 +73,7 @@ data:extend({
   {
     type = "recipe",
     name = "bi-purified-air-2",
-    --~ localised_name = {"recipe-name.bi-purified-air-2"},
-    --~ localised_description = {"recipe-description.bi-purified-air-2"},
-    icon = ICONPATH .. "clean-air_mk2.png",
+            icon = ICONPATH .. "clean-air_mk2.png",
     icon_size = 64,
     icons = {
       {
