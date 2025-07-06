@@ -459,34 +459,12 @@ BioInd.show("Base entity", BioInd.print_name_id(base))
 
     -- Electric poles -- we need to take care that they don't hook up to hidden poles!
     elseif entity.type == "electric-pole" then
-BioInd.show("entities[\"bi-straight-rail-power\"].hidden[h_key].name", entities["bi-straight-rail-power"].hidden[h_key].name)
       local pole = entity
       -- Make sure hidden poles of the Bio gardens are connected correctly!
       if pole.name == entities["bi-bio-garden"].hidden[h_key].name and base then
 BioInd.writeDebug("Bio garden!")
         BioInd.connect_garden_pole(base, pole)
         BioInd.writeDebug("Connected %s (%s)", {pole.name, pole.unit_number or "nil"})
-
-      -- Make sure hidden poles for powered rails are connected correctly!
-      elseif pole.name == entities["bi-straight-rail-power"].hidden[h_key].name and base then
-BioInd.writeDebug("Powered rail!")
-        BioInd.connect_power_rail(base, pole)
-        BioInd.writeDebug("Connected %s", {BioInd.print_name_id(pole)})
-
-      -- Do nothing for rail-to-power connectors
-      elseif pole.name == "bi-power-to-rail-pole" then
-        BioInd.writeDebug("Nothing to do for %s", {BioInd.print_name_id(pole)})
-
-      -- Disconnect other poles from hidden poles on powered rails
-      else
-BioInd.writeDebug("Must disconnect!")
-        for n, neighbour in ipairs(pole.neighbours["copper"] or {}) do
-          if neighbour.name == entities["bi-straight-rail-power"].hidden[h_key].name then
-            pole.disconnect_neighbour(neighbour)
-            BioInd.writeDebug("Disconnected %s from %s",
-                              {BioInd.print_name_id(pole), BioInd.print_name_id(neighbour)})
-          end
-        end
       end
 
     -- A seedling has been planted
