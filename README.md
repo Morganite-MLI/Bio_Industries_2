@@ -3,7 +3,7 @@ _________________
 
 ## Bio Industries
 
-**Disclaimer:** This is a fork of Bio Industries to bring it to Factorio 2.x. The main reason for the fork is the preparation for [ATOM](https://mods.factorio.com/mod/all-the-overhaul-modpack). Space Age is currently not supported. Rails have been removed from the mod because of changed graphics requirements. If you want to contribute, feel free to contact me.
+**Disclaimer:** This is a fork of [Bio Industries](https://mods.factorio.com/mod/Bio_Industries) to bring it to Factorio 2.x. The main reason for the fork is the preparation for [ATOM](https://mods.factorio.com/mod/all-the-overhaul-modpack). Space Age is currently not supported. Rails have been removed from the mod because of changed graphics requirements. If you want to contribute, feel free to contact me.
 
 Bio Industries provides you with some very useful buildings and products.
 
