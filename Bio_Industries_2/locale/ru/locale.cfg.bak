@@ -20,7 +20,7 @@ BI_Bio_Fuel=Включает производство нефтяной прод�
 BI_Bio_Cannon=Прототип артиллерии очень мощный, но стреляет только по гнездам
 BI_Game_Tweaks_Stack_Size=Влияет на размеры стаков Древесины, Камня, Щебня, Бетона и Шлака
 BI_Game_Tweaks_Recipe=Изменения в рецептах:\nБетон (Железная руда => Железный прут)\nКаменная стена (+ Железный прут)\nЖелезная дорога (Камень => Измельченный камень)
-BI_Game_Tweaks_Tree=Твики игры - при рубке деревья случайно дают от 1 до 6 древесины. В ваниле = 4
+BI_Game_Tweaks_Tree=Твики игры - при рубке деревья случайно дают от 1 до 6 древесины. В ваниле=4
 BI_Game_Tweaks_Small_Tree_Collisionbox=EXPERIMENTAL: This setting is enabled per default. If it isn't, trees will have the bigger vanilla collision box, making forests more likely to block players, vehicles, and biters. Not sure if this will have any side effects!
 BI_Game_Tweaks_Player=Дистанция взаимодействия 6 => 20, подбор количества предметов 1 => 4, дистанция добычи ресурсов 2.7 => 4, дистанция подбора предметов 2 => 5, скорость бега 0.15 => 0.25
 BI_Game_Tweaks_Disassemble=Добавить некоторые рецепты для разборки. Вы получите около 50% ресурсов обратно
