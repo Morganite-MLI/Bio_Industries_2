@@ -27,7 +27,7 @@ BI_Game_Tweaks_Player=Build, drop & reach distance: 6 => 20\nReach distance for 
 #~ BI_Game_Tweaks_Recipe=Recipes Affected: CONCRETE Remove: Iron Ore Add: Iron Stick, STONE-WALL Add: Iron Stick, RAIL Remove: stone Add: crushed-stone and Concrete, STEEL-AXE Remove: Iron-Stick Add: Iron-Axe
 BI_Game_Tweaks_Recipe=Affected recipes:\nConcrete (Iron ore => Iron stick)\nStone wall(Iron stick added)\nRail (stone => crushed-stone + concrete)
 BI_Game_Tweaks_Stack_Size=Affects stack sizes of wood, stone, crushed-stone, concrete & slag
-BI_Game_Tweaks_Tree=Game tweaks - trees randomly provide 1 to 6 wood when chopped down. Vanilla = 4
+BI_Game_Tweaks_Tree=Game tweaks - trees randomly provide 1 to 6 wood when chopped down. Vanilla=4
 BI_Game_Tweaks_Small_Tree_Collisionbox=EXPERIMENTAL: This setting is enabled per default. If it isn't, trees will have the bigger vanilla collision box, making forests more likely to block players, vehicles, and biters. Not sure if this will have any side effects!
 BI_Game_Tweaks_Production_Science=If this is enabled, an alternative recipe for Production science packs will be available.\n(Default: on)
 #~ BI_Hide_musk_floor_in_mapview=In map view, the electric grid overlay will be hidden for Musk floor if this setting is enabled. This shouldn't be changed in a running game as applying the setting to every Musk floor tile may take some time!
