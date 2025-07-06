@@ -566,10 +566,13 @@ return function(mod_name)
     -- Check if argument is a valid surface
     common.is_surface = function(surface)
         local t = type(surface)
-        surface = (t == "number" or t == "string" and game.surfaces[surface]) or
-            (t == "table" and surface.object_name and
-                surface.object_name == "LuaSurface" and surface)
-        return surface
+        local result = false
+        if (t == "number" or t == "string") and game.surfaces[surface] and game.surfaces[surface].valid then
+            result = game.surfaces[surface]
+        elseif surface and surface.object_name == "LuaSurface" and surface.valid then
+            result = surface
+        end
+        return result
     end
 
 
