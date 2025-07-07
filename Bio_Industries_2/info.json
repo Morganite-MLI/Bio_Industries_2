@@ -1,6 +1,6 @@
 {
     "name": "Bio_Industries_2",
-    "version": "2.0.1",
+    "version": "2.0.2",
     "factorio_version": "2.0",
     "title": "Bio Industries",
     "author": "cackling fiend",
@@ -12,6 +12,7 @@
         "kry_stdlib >= 2.0.6",
         "? alien-biomes",
         "? Krastorio2",
+        "? Krastorio2-spaced-out",
         "(?) angelspetrochem",
         "(?) Transport_Drones",
         "(?) Natural_Evolution_Buildings",
