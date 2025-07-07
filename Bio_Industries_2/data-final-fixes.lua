@@ -311,7 +311,7 @@ end
 
 
 
-if mods["Krastorio2"] then
+if mods["Krastorio2"] or mods["Krastorio2-spaced-out"] then
     -- Krastorio² needs much more wood than usually provided by Bio Industries. If Krastorio² is
     -- active, BI should produce much more wood/wood pulp. For better baĺancing, our recipes should
     -- also be changed to require more wood/wood pulp as ingredients.
@@ -322,11 +322,20 @@ if mods["Krastorio2"] then
         "wood", "bi-woodpulp",
         "bi-seed", "seedling", "water",
     }
+    local multiply = function(items)
+        for _, item in pairs(items) do
+            for _, updateItem in pairs(update) do
+                if item.name == updateItem then
+                    item.amount = item.amount * 4
+                end
+            end
+        end
+    end
     for _, recipe in pairs(data.raw.recipe) do
         BioInd.writeDebug("Recipe has \"mod\" property: %s", { recipe.mod and true or false })
         if recipe.mod == "Bio_Industries_2" then
-            krastorio.recipes.multiplyIngredients(recipe.name, update, 4)
-            krastorio.recipes.multiplyProducts(recipe.name, update, 4)
+            multiply(recipe.ingredients)
+            multiply(recipe.results)
             BioInd.writeDebug("Changed ingredients for %s: %s",
                 { recipe and recipe.name or "nil", recipe and recipe.ingredients or "nil" })
             BioInd.writeDebug("Changed results for %s: %s",

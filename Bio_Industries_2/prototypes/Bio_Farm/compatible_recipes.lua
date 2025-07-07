@@ -237,7 +237,7 @@ end
 
 
 -- Krastorio2
-if mods["Krastorio2"] then
+if mods["Krastorio2"] or mods["Krastorio2-spaced-out"] then
   -- Replace liquid air with oxygen in Algae Biomass conversion 2 and 3
   thxbob.lib.recipe.replace_ingredient("bi-biomass-2", "liquid-air", "oxygen")
   thxbob.lib.recipe.replace_ingredient("bi-biomass-3", "liquid-air", "oxygen")
@@ -422,7 +422,7 @@ BioInd.writeDebug("Adjusting result for \"angelsrefining\" …")
     recipe.result = "solid-sand"
 
   -- Adjust icon for Krastorio
-  elseif mods["Krastorio2"] or mods["Krastorio"] then
+  elseif mods["Krastorio2"] or mods["Krastorio2-spaced-out"] then
 BioInd.writeDebug("Using Krastorio icon …")
     recipe.icons[1].icon = ICONPATH .. "sand-Krastorio.png"
   end
