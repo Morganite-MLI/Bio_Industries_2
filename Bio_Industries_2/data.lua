@@ -10,93 +10,92 @@ if not thxbob then thxbob = {} end
 if not thxbob.lib then thxbob.lib = {} end
 
 for var, name in pairs({
-  Bio_Cannon = "BI_Bio_Cannon",
-  BI_Bio_Fuel = "BI_Bio_Fuel",
-  BI_Easy_Bio_Gardens = "BI_Easy_Bio_Gardens",
-  BI_Bigger_Wooden_Chests = "BI_Bigger_Wooden_Chests",
-  BI_Game_Tweaks_Stack_Size = "BI_Game_Tweaks_Stack_Size",
-  BI_Game_Tweaks_Recipe = "BI_Game_Tweaks_Recipe",
-  BI_Game_Tweaks_Tree = "BI_Game_Tweaks_Tree",
-  BI_Game_Tweaks_Small_Tree_Collisionbox = "BI_Game_Tweaks_Small_Tree_Collisionbox",
-  BI_Game_Tweaks_Player = "BI_Game_Tweaks_Player",
-  BI_Game_Tweaks_Disassemble = "BI_Game_Tweaks_Disassemble",
-  BI_Game_Tweaks_Bot = "BI_Game_Tweaks_Bot",
-  BI_Solar_Additions = "BI_Solar_Additions"
+    Bio_Cannon = "BI_Bio_Cannon",
+    BI_Bio_Fuel = "BI_Bio_Fuel",
+    BI_Easy_Bio_Gardens = "BI_Easy_Bio_Gardens",
+    BI_Bigger_Wooden_Chests = "BI_Bigger_Wooden_Chests",
+    BI_Game_Tweaks_Stack_Size = "BI_Game_Tweaks_Stack_Size",
+    BI_Game_Tweaks_Recipe = "BI_Game_Tweaks_Recipe",
+    BI_Game_Tweaks_Tree = "BI_Game_Tweaks_Tree",
+    BI_Game_Tweaks_Small_Tree_Collisionbox = "BI_Game_Tweaks_Small_Tree_Collisionbox",
+    BI_Game_Tweaks_Player = "BI_Game_Tweaks_Player",
+    BI_Game_Tweaks_Disassemble = "BI_Game_Tweaks_Disassemble",
+    BI_Game_Tweaks_Bot = "BI_Game_Tweaks_Bot",
+    BI_Solar_Additions = "BI_Solar_Additions"
 }) do
-  BI.Settings[var] = BioInd.get_startup_setting(name)
+    BI.Settings[var] = BioInd.get_startup_setting(name)
 end
 
 --- Help Files
-require ("libs.item-functions") -- From Bob's Libary
-require ("libs.recipe-functions") -- From Bob's Libary
-require ("libs.technology-functions") -- From Bob's Libary
-require ("libs.functions") -- From Bob's Libary
-require ("libs.category-functions") -- From Bob's Libary
-require ("libs.bi_functions") -- Functions
+require("libs.item-functions")       -- From Bob's Libary
+require("libs.recipe-functions")     -- From Bob's Libary
+require("libs.technology-functions") -- From Bob's Libary
+require("libs.functions")            -- From Bob's Libary
+require("libs.category-functions")   -- From Bob's Libary
+require("libs.bi_functions")         -- Functions
 
-require ("prototypes.category")
+require("prototypes.category")
 
 
 
 
 --- Bio Farm
-require ("prototypes.Bio_Farm.entities")
-require ("prototypes.Bio_Farm.item")
-require ("prototypes.Bio_Farm.recipe")
-require ("prototypes.Bio_Farm.liquids")
-require ("prototypes.Bio_Farm.recipe-categories")
-require ("prototypes.Bio_Farm.pipeConnectors")
-require ("prototypes.Bio_Farm.technology")
-require ("prototypes.Bio_Farm.tree_entities")
+require("prototypes.Bio_Farm.entities")
+require("prototypes.Bio_Farm.item")
+require("prototypes.Bio_Farm.recipe")
+require("prototypes.Bio_Farm.liquids")
+require("prototypes.Bio_Farm.recipe-categories")
+require("prototypes.Bio_Farm.pipeConnectors")
+require("prototypes.Bio_Farm.technology")
+require("prototypes.Bio_Farm.tree_entities")
 
 -- Bio Garden
-require ("prototypes.Bio_Garden.entities")
-require ("prototypes.Bio_Garden.item")
-require ("prototypes.Bio_Garden.recipe")
-require ("prototypes.Bio_Garden.recipe-categories")
+require("prototypes.Bio_Garden.entities")
+require("prototypes.Bio_Garden.item")
+require("prototypes.Bio_Garden.recipe")
+require("prototypes.Bio_Garden.recipe-categories")
 
 
 --- Bio Solar Farm
-require ("prototypes.Bio_Solar_Farm.entities")
-require ("prototypes.Bio_Solar_Farm.item")
-require ("prototypes.Bio_Solar_Farm.recipe")
+require("prototypes.Bio_Solar_Farm.entities")
+require("prototypes.Bio_Solar_Farm.item")
+require("prototypes.Bio_Solar_Farm.recipe")
 
 
 --- Wood Products
-require ("prototypes.Wood_Products.entities")
-require ("prototypes.Wood_Products.item")
-require ("prototypes.Wood_Products.recipe")
-require ("prototypes.Wood_Products.containers-entities")
-require ("prototypes.Wood_Products.containers-item")
-require ("prototypes.Wood_Products.containers-recipe")
+require("prototypes.Wood_Products.entities")
+require("prototypes.Wood_Products.item")
+require("prototypes.Wood_Products.recipe")
+require("prototypes.Wood_Products.containers-entities")
+require("prototypes.Wood_Products.containers-item")
+require("prototypes.Wood_Products.containers-recipe")
 
 
 if not mods["Natural_Evolution_Buildings"] then
-  --- Dart Turret (Bio turret)
-  require ("prototypes.Bio_Turret.item-group")
-  require ("prototypes.Bio_Turret.damage-type")
-  require ("prototypes.Bio_Turret.item")
-  require ("prototypes.Bio_Turret.recipe")
-  require ("prototypes.Bio_Turret.entity")
+    --- Dart Turret (Bio turret)
+    require("prototypes.Bio_Turret.item-group")
+    require("prototypes.Bio_Turret.damage-type")
+    require("prototypes.Bio_Turret.item")
+    require("prototypes.Bio_Turret.recipe")
+    require("prototypes.Bio_Turret.entity")
 
 
---- Bio Cannon
+    --- Bio Cannon
 
 
-  -- Items Groups
-  require ("prototypes.Bio_Cannon.item-group")
+    -- Items Groups
+    require("prototypes.Bio_Cannon.item-group")
 
-  -- Cannon
-  require ("prototypes.Bio_Cannon.item")
-  require ("prototypes.Bio_Cannon.recipe")
-  require ("prototypes.Bio_Cannon.entity")
-  require ("prototypes.Bio_Cannon.technology")
+    -- Cannon
+    require("prototypes.Bio_Cannon.item")
+    require("prototypes.Bio_Cannon.recipe")
+    require("prototypes.Bio_Cannon.entity")
+    require("prototypes.Bio_Cannon.technology")
 
-  -- Projectiles
-  require ("prototypes.Bio_Cannon.projectiles-item")
-  require ("prototypes.Bio_Cannon.projectiles-recipe")
-  require ("prototypes.Bio_Cannon.projectiles-entity")
-
+    -- Projectiles
+    require("prototypes.Bio_Cannon.projectiles-item")
+    require("prototypes.Bio_Cannon.projectiles-recipe")
+    require("prototypes.Bio_Cannon.projectiles-entity")
 end
 
 ---- Add Bio Fuel & Plastic, etc.

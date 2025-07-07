@@ -1,5 +1,5 @@
 local setting_list = {}
-        -- Add/enable stuff
+-- Add/enable stuff
 setting_list.BI_Solar_Additions = {
     type = "bool-setting",
     name = "BI_Solar_Additions",
@@ -48,7 +48,7 @@ setting_list.BI_Bigger_Wooden_Chests = {
     order = "a[modifier]-b[Bigger_Wooden_Chests]",
 }
 
-        -- Game tweaks
+-- Game tweaks
 setting_list.BI_Game_Tweaks_Emissions_Multiplier = {
     type = "bool-setting",
     name = "BI_Game_Tweaks_Emissions_Multiplier",
@@ -71,7 +71,7 @@ setting_list.BI_Game_Tweaks_Recipe = {
     default_value = true,
     order = "b[tweaks]-c1[Recipe]",
 }
-                                  setting_list.BI_Game_Tweaks_Production_Science = {
+setting_list.BI_Game_Tweaks_Production_Science = {
     type = "bool-setting",
     name = "BI_Game_Tweaks_Production_Science",
     setting_type = "startup",
@@ -109,32 +109,32 @@ setting_list.BI_Game_Tweaks_Bot = {
 
 
 -- Compatibility with other mods (optional)
-  -- Industrial Revolution + AAI Industry
+-- Industrial Revolution + AAI Industry
 if not (mods["IndustrialRevolution"] or mods["aai-industry"]) then
-  setting_list.BI_Game_Tweaks_Disassemble = {
-      type = "bool-setting",
-      name = "BI_Game_Tweaks_Disassemble",
-      setting_type = "startup",
-      default_value = true,
-      order = "b[tweaks]-c2[Disassemble]",
-  }
+    setting_list.BI_Game_Tweaks_Disassemble = {
+        type = "bool-setting",
+        name = "BI_Game_Tweaks_Disassemble",
+        setting_type = "startup",
+        default_value = true,
+        order = "b[tweaks]-c2[Disassemble]",
+    }
 end
 
 
-  -- Lua API global Variable Viewer (gvv)
+-- Lua API global Variable Viewer (gvv)
 if mods["gvv"] then
-  setting_list.BI_Enable_gvv_support = {
-      type = "bool-setting",
-      name = "BI_Enable_gvv_support",
-      setting_type = "startup",
-      default_value = false,
-      order = "c[compatibility]-c1[debugging_gvv]",
-  }
+    setting_list.BI_Enable_gvv_support = {
+        type = "bool-setting",
+        name = "BI_Enable_gvv_support",
+        setting_type = "startup",
+        default_value = false,
+        order = "c[compatibility]-c1[debugging_gvv]",
+    }
 end
 
 local list = {}
 for name, setting in pairs(setting_list) do
-    data:extend({setting})
+    data:extend({ setting })
 end
 --[[
 Types of settings:
