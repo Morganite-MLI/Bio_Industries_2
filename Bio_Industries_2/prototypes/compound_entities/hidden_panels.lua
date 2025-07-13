@@ -1,6 +1,6 @@
 -- Add functions that are also used in other files (debugging output etc.)
 local BioInd = require('common')('Bio_Industries_2')
-BioInd.writeDebug("Entered prototypes.hidden_panels.lua of \"%s\".", {BioInd.modName})
+BioInd.writeDebug("Entered prototypes.hidden_panels.lua of \"%s\".", { BioInd.modName })
 
 local ICONPATH = BioInd.modRoot .. "/graphics/icons/"
 
@@ -46,56 +46,48 @@ local tmp, panel
 local c_entities = BioInd.compound_entities
 
 for panel_name, locale_name in pairs(BI.hidden_entities.types[h_key]) do
-  panel = table.deepcopy(h_entity)
-  panel.name = panel_name
-  panel.localised_name = {"entity-name." .. locale_name}
-  panel.localised_description = {"entity-description." .. locale_name}
+    panel = table.deepcopy(h_entity)
+    panel.name = panel_name
+    panel.localised_name = { "entity-name." .. locale_name }
+    panel.localised_description = { "entity-description." .. locale_name }
 
 
-  -- Adjust properties for hidden panel of Solar boiler
-  if c_entities["bi-solar-boiler"] and
-      panel_name == c_entities["bi-solar-boiler"].hidden[h_key].name then
+    -- Adjust properties for hidden panel of Solar boiler
+    if c_entities["bi-solar-boiler"] and
+        panel_name == c_entities["bi-solar-boiler"].hidden[h_key].name then
+        panel.icon = ICONPATH .. "Bio_Solar_Boiler_Icon.png"
+        panel.icon_size = 64
+        panel.BI_add_icon = true
+        panel.picture = nil
+        panel.overlay = nil
+        panel.max_health = 400
+        panel.render_no_power_icon = true
+        panel.collision_box = { { -4.2, -4.2 }, { 4.2, 4.2 } }
+        panel.production = "1.8MW"
+        BioInd.show("Adjusted properties of", panel_name)
 
-    panel.icon = ICONPATH .. "Bio_Solar_Boiler_Icon.png"
-    panel.icon_size = 64
-    panel.BI_add_icon = true
+        -- Adjust properties for hidden panel of bio farms
+    elseif c_entities["bi-bio-farm"] and
+        c_entities["bi-bio-farm"].hidden[h_key] and
+        panel_name == c_entities["bi-bio-farm"].hidden[h_key].name then
+        panel.icon = ICONPATH .. "Bio_Farm_Solar.png"
+        panel.icon_size = 64
+        panel.BI_add_icon = true
+        panel.production = "100kW"
+        BioInd.show("Adjusted properties of", panel_name)
 
-    panel.picture = {}
-    panel.picture = BI.add_layer(panel.picture, {
-      name = BioInd.modRoot .. "/graphics/entities/bio_solar_farm/Bio_Solar_Boiler.png",
-      size = 288
-    })
-    panel.overlay = {}
-    panel.overlay = table.deepcopy(panel.picture)
+        -- Adjust properties for hidden panel of Musk floor
+    elseif panel_name == Musk_name then
+        panel.icon = ICONPATH .. "solar-mat.png"
+        panel.icon_size = 64
+        panel.BI_add_icon = true
+        panel.production = "10kW"
+        BioInd.show("Adjusted properties of", panel_name)
+    end
 
-    panel.max_health = 400
-    panel.render_no_power_icon = true
-    panel.collision_box = {{-4.2, -4.2}, {4.2, 4.2}}
-    panel.production = "1.8MW"
-    BioInd.show("Adjusted properties of", panel_name)
+    data:extend({ panel })
 
-  -- Adjust properties for hidden panel of bio farms
-  elseif c_entities["bi-bio-farm"] and
-            c_entities["bi-bio-farm"].hidden[h_key] and
-            panel_name == c_entities["bi-bio-farm"].hidden[h_key].name then
-    panel.icon = ICONPATH .. "Bio_Farm_Solar.png"
-    panel.icon_size = 64
-    panel.BI_add_icon = true
-    panel.production = "100kW"
-    BioInd.show("Adjusted properties of", panel_name)
-
-  -- Adjust properties for hidden panel of Musk floor
-  elseif panel_name == Musk_name then
-    panel.icon = ICONPATH .. "solar-mat.png"
-    panel.icon_size = 64
-    panel.BI_add_icon = true
-    panel.production = "10kW"
-    BioInd.show("Adjusted properties of", panel_name)
-  end
-
-  data:extend({panel})
-
-  BioInd.show("Created", panel_name)
+    BioInd.show("Created", panel_name)
 end
 
 

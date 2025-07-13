@@ -247,6 +247,7 @@ return function(mod_name)
     -- Rudimentary check of the arguments passed to a function
     common.check_args = function(arg, arg_type, desc)
         if not (arg and type(arg) == arg_type) then
+            game.print(type(arg) .. " = " .. arg_type)
             common.arg_err(arg or "nil", desc or arg_type or "nil")
         end
     end
@@ -596,7 +597,7 @@ return function(mod_name)
         common.show("#g_table", g_table and table_size(g_table))
 
         common.check_args(g_table, "table")
-        common.check_args(base_entity, "table")
+        common.check_args(base_entity, "userdata")
 
         if not base_entity.valid then
             common.arg_err(base_entity, "base entity")
