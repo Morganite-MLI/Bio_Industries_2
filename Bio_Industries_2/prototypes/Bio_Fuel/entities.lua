@@ -149,8 +149,8 @@ if BI.Settings.BI_Bio_Fuel then
                 base_level = -1,
                 pipe_covers = pipecoverspictures(),
                 pipe_connections = {
-                    { flow_direction = "input-output", direction = defines.direction.north, position = { -1, 0.5 } },
-                    { flow_direction = "input-output", direction = defines.direction.north, position = { 1, 0.5 } }
+                    { flow_direction = "input-output", direction = defines.direction.west, position = { -1, 0.5 } },
+                    { flow_direction = "input-output", direction = defines.direction.east, position = { 1, 0.5 } }
                 },
                 production_type = "input-output",
                 filter = "water"
@@ -192,92 +192,100 @@ if BI.Settings.BI_Bio_Fuel then
                 },
                 max_sounds_per_type = 3
             },
-            structure = {
+            pictures = {
                 north = {
-                    layers = {
-                        {
-                            filename = ENTITYPATH .. "boiler-N-idle.png",
-                            priority = "extra-high",
-                            width = 269,
-                            height = 221,
-                            shift = util.by_pixel(-1.25, 5.25),
-                            scale = 0.5,
-                            tint = bio_boiler_tint,
-                        },
-                        {
-                            filename = ENTITYPATH .. "boiler-N-shadow.png",
-                            priority = "extra-high",
-                            width = 274,
-                            height = 164,
-                            scale = 0.5,
-                            shift = util.by_pixel(20.5, 9),
-                            draw_as_shadow = true,
+                    structure = {
+                        layers = {
+                            {
+                                filename = ENTITYPATH .. "boiler-N-idle.png",
+                                priority = "extra-high",
+                                width = 269,
+                                height = 221,
+                                shift = util.by_pixel(-1.25, 5.25),
+                                scale = 0.5,
+                                tint = bio_boiler_tint,
+                            },
+                            {
+                                filename = ENTITYPATH .. "boiler-N-shadow.png",
+                                priority = "extra-high",
+                                width = 274,
+                                height = 164,
+                                scale = 0.5,
+                                shift = util.by_pixel(20.5, 9),
+                                draw_as_shadow = true,
+                            }
                         }
                     }
                 },
                 east = {
-                    layers = {
-                        {
-                            filename = ENTITYPATH .. "boiler-E-idle.png",
-                            priority = "extra-high",
-                            width = 216,
-                            height = 301,
-                            shift = util.by_pixel(-3, 1.25),
-                            scale = 0.5,
-                            tint = bio_boiler_tint,
-                        },
-                        {
-                            filename = ENTITYPATH .. "boiler-E-shadow.png",
-                            priority = "extra-high",
-                            width = 184,
-                            height = 194,
-                            scale = 0.5,
-                            shift = util.by_pixel(30, 9.5),
-                            draw_as_shadow = true,
+                    structure = {
+                        layers = {
+                            {
+                                filename = ENTITYPATH .. "boiler-E-idle.png",
+                                priority = "extra-high",
+                                width = 216,
+                                height = 301,
+                                shift = util.by_pixel(-3, 1.25),
+                                scale = 0.5,
+                                tint = bio_boiler_tint,
+                            },
+                            {
+                                filename = ENTITYPATH .. "boiler-E-shadow.png",
+                                priority = "extra-high",
+                                width = 184,
+                                height = 194,
+                                scale = 0.5,
+                                shift = util.by_pixel(30, 9.5),
+                                draw_as_shadow = true,
+                            }
                         }
                     }
                 },
                 south = {
-                    layers = {
-                        {
-                            filename = ENTITYPATH .. "boiler-S-idle.png",
-                            priority = "extra-high",
-                            width = 260,
-                            height = 192,
-                            shift = util.by_pixel(4, 13),
-                            scale = 0.5,
-                            tint = bio_boiler_tint,
-                        },
-                        {
-                            filename = ENTITYPATH .. "boiler-S-shadow.png",
-                            priority = "extra-high",
-                            width = 311,
-                            height = 131,
-                            scale = 0.5,
-                            shift = util.by_pixel(29.75, 15.75),
-                            draw_as_shadow = true,
+                    structure = {
+                        layers = {
+                            {
+                                filename = ENTITYPATH .. "boiler-S-idle.png",
+                                priority = "extra-high",
+                                width = 260,
+                                height = 192,
+                                shift = util.by_pixel(4, 13),
+                                scale = 0.5,
+                                tint = bio_boiler_tint,
+                            },
+                            {
+                                filename = ENTITYPATH .. "boiler-S-shadow.png",
+                                priority = "extra-high",
+                                width = 311,
+                                height = 131,
+                                scale = 0.5,
+                                shift = util.by_pixel(29.75, 15.75),
+                                draw_as_shadow = true,
+                            }
                         }
                     }
                 },
                 west = {
-                    layers = {
-                        {
-                            filename = ENTITYPATH .. "boiler-W-idle.png",
-                            priority = "extra-high",
-                            width = 196,
-                            height = 273,
-                            shift = util.by_pixel(1.5, 7.75),
-                            scale = 0.5,
-                            tint = bio_boiler_tint,
-                        },
-                        {
-                            filename = ENTITYPATH .. "boiler-W-shadow.png",
-                            priority = "extra-high",
-                            width = 206,
-                            height = 218,
-                            scale = 0.5,
-                            shift = util.by_pixel(19.5, 6.5),
-                            draw_as_shadow = true,
+                    structure = {
+                        layers = {
+                            {
+                                filename = ENTITYPATH .. "boiler-W-idle.png",
+                                priority = "extra-high",
+                                width = 196,
+                                height = 273,
+                                shift = util.by_pixel(1.5, 7.75),
+                                scale = 0.5,
+                                tint = bio_boiler_tint,
+                            },
+                            {
+                                filename = ENTITYPATH .. "boiler-W-shadow.png",
+                                priority = "extra-high",
+                                width = 206,
+                                height = 218,
+                                scale = 0.5,
+                                shift = util.by_pixel(19.5, 6.5),
+                                draw_as_shadow = true,
+                            }
                         }
                     }
                 }
