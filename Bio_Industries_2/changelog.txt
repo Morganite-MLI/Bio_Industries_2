@@ -1,6 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.0.6
+Date: 31.08.2025
+  Bug Fixes:
+    - Add missing subgroups (put icons in correct tab)
+---------------------------------------------------------------------------------------------------
 Version: 2.0.5
-Date: 27.08.2025
+Date: 31.08.2025
   Bug Fixes:
     - Fixed Wood Underground pipe graphic (TheSAguy)
     - Fixed Wood Underground pipe graphic (TheSAguy)
