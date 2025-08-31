@@ -1,6 +1,8 @@
 local BioInd = require('common')('Bio_Industries_2')
 
 local ICONPATH = BioInd.modRoot .. "/graphics/icons/"
+local ICONPATH_W = BioInd.modRoot .. "/graphics/icons/weapons/"
+local ICONPATH_E = BioInd.modRoot .. "/graphics/icons/entity/"
 local ICONPATHMIPS = BioInd.modRoot .. "/graphics/icons/mips/"
 
 data:extend(
@@ -29,7 +31,8 @@ data:extend(
     order = "x[bi]-a[bi-seed]",
     fuel_value = "0.5MJ",
     fuel_category = "chemical",
-    stack_size= 800
+    stack_size= 800,
+	weight = 0.1 * kg,
   },
 
   ---- Seedling
@@ -48,22 +51,23 @@ data:extend(
     },
         icon_mipmaps = 9,
     pictures = {
-      { size = 64, filename = ICONPATHMIPS.."Seedling_1.png", scale = 0.25 },
-      { size = 64, filename = ICONPATHMIPS.."Seedling_2.png", scale = 0.25 },
-      { size = 64, filename = ICONPATHMIPS.."Seedling_3.png", scale = 0.25 },
-      { size = 64, filename = ICONPATHMIPS.."Seedling_4.png", scale = 0.25 },
-      { size = 64, filename = ICONPATHMIPS.."Seedling_5.png", scale = 0.25 },
-      { size = 64, filename = ICONPATHMIPS.."Seedling_6.png", scale = 0.25 },
-      { size = 64, filename = ICONPATHMIPS.."Seedling_7.png", scale = 0.25 },
-      { size = 64, filename = ICONPATHMIPS.."Seedling_8.png", scale = 0.25 },
-      { size = 64, filename = ICONPATHMIPS.."Seedling_9.png", scale = 0.25 }
+      { size = 64, filename = ICONPATHMIPS.."seedling_1.png", scale = 0.25 },
+      { size = 64, filename = ICONPATHMIPS.."seedling_2.png", scale = 0.25 },
+      { size = 64, filename = ICONPATHMIPS.."seedling_3.png", scale = 0.25 },
+      { size = 64, filename = ICONPATHMIPS.."seedling_4.png", scale = 0.25 },
+      { size = 64, filename = ICONPATHMIPS.."seedling_5.png", scale = 0.25 },
+      { size = 64, filename = ICONPATHMIPS.."seedling_6.png", scale = 0.25 },
+      { size = 64, filename = ICONPATHMIPS.."seedling_7.png", scale = 0.25 },
+      { size = 64, filename = ICONPATHMIPS.."seedling_8.png", scale = 0.25 },
+      { size = 64, filename = ICONPATHMIPS.."seedling_9.png", scale = 0.25 }
     },
     subgroup = "bio-bio-farm",
     order = "x[bi]-b[bi-seedling]",
     place_result = "seedling",
     fuel_value = "0.5MJ",
     fuel_category = "chemical",
-    stack_size= 400
+    stack_size= 400,
+	weight = 0.2 * kg,
   },
 
   ----Bio Farm
@@ -72,11 +76,11 @@ data:extend(
     name= "bi-bio-farm",
     localised_name = {"entity-name.bi-bio-farm"},
     localised_description = {"entity-description.bi-bio-farm"},
-    icon = ICONPATH .. "Bio_Farm_Icon.png",
+    icon = ICONPATH_E .. "bio_Farm_Icon.png",
     icon_size = 64,
     icons = {
       {
-        icon = ICONPATH .. "Bio_Farm_Icon.png",
+        icon = ICONPATH_E .. "bio_Farm_Icon.png",
         icon_size = 64,
       }
     },
@@ -84,6 +88,7 @@ data:extend(
     order = "x[bi]-ab[bi-bio-farm]",
     place_result = "bi-bio-farm",
     stack_size= 10,
+	weight = 400 * kg,
   },
 
   ----Bio Greenhouse (Nursery)
@@ -92,11 +97,11 @@ data:extend(
     name= "bi-bio-greenhouse",
     localised_name = {"entity-name.bi-bio-greenhouse"},
     localised_description = {"entity-description.bi-bio-greenhouse"},
-    icon = ICONPATH .. "bio_greenhouse.png",
+    icon = ICONPATH_E .. "bio_greenhouse.png",
     icon_size = 64,
     icons = {
       {
-        icon = ICONPATH .. "bio_greenhouse.png",
+        icon = ICONPATH_E .. "bio_greenhouse.png",
         icon_size = 64,
       }
     },
@@ -104,24 +109,26 @@ data:extend(
     order = "x[bi]-aa[bi-bio-greenhouse]",
     place_result = "bi-bio-greenhouse",
     stack_size= 10,
+    weight = 250 * kg,
   },
 
   --- Cokery
   {
     type = "item",
     name = "bi-cokery",
-    icon = ICONPATH .. "cokery.png",
+    icon = ICONPATH_E .. "cokery.png",
     icon_size = 64,
     icons = {
       {
-        icon = ICONPATH .. "cokery.png",
+        icon = ICONPATH_E .. "cokery.png",
         icon_size = 64,
       }
     },
     subgroup = "production-machine",
     order = "x[bi]-b[bi-cokery]",
     place_result = "bi-cokery",
-    stack_size = 10
+    stack_size = 10,
+    weight = 1 * kg,	
   },
 
   --- Stone Crusher
@@ -130,18 +137,19 @@ data:extend(
     name = "bi-stone-crusher",
     localised_name = {"entity-name.bi-stone-crusher"},
     localised_description = {"entity-description.bi-stone-crusher"},
-    icon = ICONPATH .. "stone_crusher.png",
+    icon = ICONPATH_E .. "stone_crusher.png",
     icon_size = 64,
     icons = {
       {
-        icon = ICONPATH .. "stone_crusher.png",
+        icon = ICONPATH_E .. "stone_crusher.png",
         icon_size = 64,
       }
     },
     subgroup = "production-machine",
     order = "x[bi]-c[bi-stone-crusher]",
     place_result = "bi-stone-crusher",
-    stack_size = 10
+    stack_size = 10,
+    weight = 400 * kg,
   },
 
   --- Wood Pulp
@@ -158,16 +166,17 @@ data:extend(
     },
     icon_mipmaps = 4,
     pictures = {
-      { size = 64, filename = ICONPATHMIPS.."Woodpulp_1.png", scale = 0.2 },
-      { size = 64, filename = ICONPATHMIPS.."Woodpulp_2.png", scale = 0.2 },
-      { size = 64, filename = ICONPATHMIPS.."Woodpulp_3.png", scale = 0.2 },
-      { size = 64, filename = ICONPATHMIPS.."Woodpulp_4.png", scale = 0.2 }
+      { size = 64, filename = ICONPATHMIPS.."woodpulp_1.png", scale = 0.2 },
+      { size = 64, filename = ICONPATHMIPS.."woodpulp_2.png", scale = 0.2 },
+      { size = 64, filename = ICONPATHMIPS.."woodpulp_3.png", scale = 0.2 },
+      { size = 64, filename = ICONPATHMIPS.."woodpulp_4.png", scale = 0.2 }
     },
     fuel_value = "1MJ",
     fuel_category = "chemical",
     subgroup = "raw-material",
     order = "a-b[bi-woodpulp]",
-    stack_size = 800
+    stack_size = 800,
+    weight = 0.15 * kg,
   },
 
   --- Wood Bricks
@@ -186,7 +195,8 @@ data:extend(
     order = "a[bi]-a-bx[bi-woodbrick]",
     fuel_category = "chemical",
     fuel_value = "20MJ",
-    stack_size = 200
+    stack_size = 200,
+    weight = 4 * kg,
   },
 
 
@@ -204,14 +214,15 @@ data:extend(
     },
     icon_mipmaps = 4,
     pictures = {
-      { size = 64, filename = ICONPATHMIPS.."Ash_1.png", scale = 0.2 },
-      { size = 64, filename = ICONPATHMIPS.."Ash_2.png", scale = 0.2 },
-      { size = 64, filename = ICONPATHMIPS.."Ash_3.png", scale = 0.2 },
-      { size = 64, filename = ICONPATHMIPS.."Ash_4.png", scale = 0.2 }
+      { size = 64, filename = ICONPATHMIPS.."ash_1.png", scale = 0.2 },
+      { size = 64, filename = ICONPATHMIPS.."ash_2.png", scale = 0.2 },
+      { size = 64, filename = ICONPATHMIPS.."ash_3.png", scale = 0.2 },
+      { size = 64, filename = ICONPATHMIPS.."ash_4.png", scale = 0.2 }
     },
     subgroup = "raw-material",
     order = "a[bi]-a-b[bi-ash]",
-    stack_size = 400
+    stack_size = 400,
+    weight = 0.125 * kg,
   },
 
   --- Charcoal
@@ -228,16 +239,17 @@ data:extend(
     },
     icon_mipmaps = 4,
     pictures = {
-      { size = 64, filename = ICONPATHMIPS.."Charcoal_1.png", scale = 0.2 },
-      { size = 64, filename = ICONPATHMIPS.."Charcoal_2.png", scale = 0.2 },
-      { size = 64, filename = ICONPATHMIPS.."Charcoal_3.png", scale = 0.2 },
-      { size = 64, filename = ICONPATHMIPS.."Charcoal_4.png", scale = 0.2 }
+      { size = 64, filename = ICONPATHMIPS.."charcoal_1.png", scale = 0.2 },
+      { size = 64, filename = ICONPATHMIPS.."charcoal_2.png", scale = 0.2 },
+      { size = 64, filename = ICONPATHMIPS.."charcoal_3.png", scale = 0.2 },
+      { size = 64, filename = ICONPATHMIPS.."charcoal_4.png", scale = 0.2 }
     },
     fuel_value = "6MJ",
     fuel_category = "chemical",
     subgroup = "raw-material",
     order = "a[bi]-a-c[charcoal]",
-    stack_size = 400
+    stack_size = 400,
+    weight = 1 * kg,
   },
 
   --- Coke Coal / Pellet Coke for Angels
@@ -258,7 +270,8 @@ data:extend(
     fuel_top_speed_multiplier = 1.1,
     subgroup = "raw-material",
     order = "a[bi]-a-g[bi-coke-coal]",
-    stack_size = 400
+    stack_size = 400,
+    weight = 2.5 * kg,
   },
 
 
@@ -276,14 +289,15 @@ data:extend(
     },
     icon_mipmaps = 4,
     pictures = {
-      { size = 64, filename = ICONPATHMIPS.."Crush_1.png", scale = 0.2 },
-      { size = 64, filename = ICONPATHMIPS.."Crush_2.png", scale = 0.2 },
-      { size = 64, filename = ICONPATHMIPS.."Crush_3.png", scale = 0.2 },
-      { size = 64, filename = ICONPATHMIPS.."Crush_4.png", scale = 0.2 }
+      { size = 64, filename = ICONPATHMIPS.."crush_1.png", scale = 0.2 },
+      { size = 64, filename = ICONPATHMIPS.."crush_2.png", scale = 0.2 },
+      { size = 64, filename = ICONPATHMIPS.."crush_3.png", scale = 0.2 },
+      { size = 64, filename = ICONPATHMIPS.."crush_4.png", scale = 0.2 }
     },
     subgroup = "raw-material",
     order = "a[bi]-a-z[stone-crushed]",
-    stack_size = 400
+    stack_size = 400,
+    weight = 1 * kg,
   },
 
 
@@ -291,15 +305,15 @@ data:extend(
   {
     type = "ammo",
     name = "bi-seed-bomb-basic",
-    icon = ICONPATH .. "Seed_bomb_icon_b.png",
+    icon = ICONPATH_W .. "seed_bomb_icon_b.png",
     icon_size = 64,
     icons = {
       {
-        icon = ICONPATH .. "Seed_bomb_icon_b.png",
+        icon = ICONPATH_W .. "seed_bomb_icon_b.png",
         icon_size = 64,
       }
     },
-    ammo_category = "bullet",
+    ammo_category = "rocket",
     ammo_type = {
       range_modifier = 3,
       cooldown_modifier = 3,
@@ -316,7 +330,8 @@ data:extend(
     },
     subgroup = "ammo",
     order = "a[rocket-launcher]-x[seed-bomb]-a",
-    stack_size = 10
+    stack_size = 10,
+    weight = 5 * kg,
   },
 
 
@@ -324,15 +339,15 @@ data:extend(
   {
     type = "ammo",
     name = "bi-seed-bomb-standard",
-    icon = ICONPATH .. "Seed_bomb_icon_s.png",
+    icon = ICONPATH_W .. "seed_bomb_icon_s.png",
     icon_size = 64,
     icons = {
       {
-        icon = ICONPATH .. "Seed_bomb_icon_s.png",
+        icon = ICONPATH_W .. "seed_bomb_icon_s.png",
         icon_size = 64,
       }
     },
-    ammo_category = "bullet",
+    ammo_category = "rocket",
     ammo_type = {
       range_modifier = 3,
       cooldown_modifier = 3,
@@ -349,7 +364,8 @@ data:extend(
     },
     subgroup = "ammo",
     order = "a[rocket-launcher]-x[seed-bomb]-b",
-    stack_size = 10
+    stack_size = 10,
+    weight = 5 * kg,
   },
 
 
@@ -357,15 +373,15 @@ data:extend(
   {
     type = "ammo",
     name = "bi-seed-bomb-advanced",
-    icon = ICONPATH .. "Seed_bomb_icon_a.png",
+    icon = ICONPATH_W .. "seed_bomb_icon_a.png",
     icon_size = 64,
     icons = {
       {
-        icon = ICONPATH .. "Seed_bomb_icon_a.png",
+        icon = ICONPATH_W .. "seed_bomb_icon_a.png",
         icon_size = 64,
       }
     },
-    ammo_category = "bullet",
+    ammo_category = "rocket",
     ammo_type = {
       range_modifier = 3,
       cooldown_modifier = 3,
@@ -382,18 +398,19 @@ data:extend(
     },
     subgroup = "ammo",
     order = "a[rocket-launcher]-x[seed-bomb]-c",
-    stack_size = 10
+    stack_size = 10,
+    weight = 5 * kg,
   },
 
    --- Arboretum (Entity)
   {
     type= "item",
     name= "bi-arboretum-area",
-    icon = ICONPATH .. "Arboretum_Icon.png",
+    icon = ICONPATH_E .. "arboretum_Icon.png",
     icon_size = 64,
     icons = {
       {
-        icon = ICONPATH .. "Arboretum_Icon.png",
+        icon = ICONPATH_E .. "arboretum_Icon.png",
         icon_size = 64,
       }
     },
@@ -401,6 +418,7 @@ data:extend(
     order = "x[bi]-a[bi-arboretum]",
     place_result = "bi-arboretum-area",
     stack_size= 10,
+    weight = 400 * kg,
   },
 
    --- Arboretum Hidden Recipe
@@ -512,6 +530,7 @@ data:extend(
       subgroup = "intermediate-product",
       order = "b[fertilizer]",
       stack_size = 200,
+      weight = 5 * kg,
     },
 
     --- Adv fertilizer
@@ -529,6 +548,7 @@ data:extend(
       subgroup = "intermediate-product",
       order = "b[fertilizer]-b[bi-adv-fertilizer]",
       stack_size = 200,
+      weight = 5 * kg,
     },
   })
 

@@ -185,6 +185,7 @@ for i, was_picture in pairs (pipe_pictures) do
 end
 
 --------------------------------underground pipes
+--[[
 local pipe_to_ground_pictures = data.raw["pipe-to-ground"]["bi-wood-pipe-to-ground"].pictures
 
 for i, was_picture in pairs (pipe_to_ground_pictures) do
@@ -194,5 +195,29 @@ for i, was_picture in pairs (pipe_to_ground_pictures) do
       change_graphics (was_picture, sheet_element, "hq")
       change_graphics (was_picture, sheet_element, "lq")
     end
+  end
+end
+]]
+
+--------------------------------underground pipes
+local pipe_to_ground_pictures = data.raw["pipe-to-ground"]["bi-wood-pipe-to-ground"].pictures
+-- map the pipe-to-ground picture keys (north/south/east/west) to our sheet keys (up/down/right/left)
+local direction_map = {
+  north = "up",
+  south = "down",
+  west  = "left",
+  east  = "right",
+  -- keep backwards compatibility if somehow up/down/left/right already present
+  up    = "up",
+  down  = "down",
+  left  = "left",
+  right = "right"
+}
+
+for i, was_picture in pairs(pipe_to_ground_pictures) do
+  local sheet_key = direction_map[i]
+  if sheet_key and pipes_sheet[sheet_key] then
+    change_graphics(was_picture, pipes_sheet[sheet_key], "hq")
+    change_graphics(was_picture, pipes_sheet[sheet_key], "lq")
   end
 end

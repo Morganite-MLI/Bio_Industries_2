@@ -25,7 +25,7 @@ return {
       type = "unlock-recipe",
       recipe = "bi-wood-fuel-brick"
     },
-                        {
+    {
       type = "unlock-recipe",
       recipe = "bi-seed-2"
     },
@@ -37,7 +37,7 @@ return {
       type = "unlock-recipe",
       recipe = "bi-logs-2"
     },
-                        {
+    {
       type = "unlock-recipe",
       recipe = "bi-cokery"
     },

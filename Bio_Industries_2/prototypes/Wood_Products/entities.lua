@@ -3,6 +3,7 @@ local tile_graphics = require("__base__/prototypes/tile/tile-graphics")
 local BioInd = require('common')('Bio_Industries_2')
 
 local ICONPATH = BioInd.modRoot .. "/graphics/icons/"
+local ICONPATH_E = BioInd.modRoot .. "/graphics/icons/entity/"
 local WOODPATH = BioInd.modRoot .. "/graphics/entities/wood_products/"
 
 local ENTITYPATH = "__base__/graphics/entity/"
@@ -189,44 +190,43 @@ data:extend({
     needs_correction = false,
         minable = {hardness = 0.2, mining_time = 0.25, result = "wood"},
     mined_sound = { filename = "__base__/sound/deconstruct-bricks.ogg" },
-    collision_mask = { layers = { ground_tile = true }},
+    collision_mask = { layers = { ground_tile = true } },
     walking_speed_modifier = 1.2,
-    layer = 62,
-    decorative_removal_probability = 0.4,
+    layer = 13,
+    decorative_removal_probability = 1,
     variants = {
       transition = tile_graphics.generic_masked_tile_transitions1,
       main = {
         {
-          picture = WOODPATH .. "wood_floor/wood1.png",
+          picture = WOODPATH .. "wood_floor/woodfloor.png",
           count = 4,
-          size = 1
-        },
-        {
-          picture = WOODPATH .. "wood_floor/wood2.png",
-          count = 1,
-          size = 2,
-          probability = 1,
+          size = 1,
+		  scale = 0.5
         },
       },
       inner_corner = {
-        picture = WOODPATH .. "wood_floor/wood-inner-corner.png",
-        count = 8
+        picture = WOODPATH .. "wood_floor/woodfloor_inner-corner.png",
+        count = 4
       },
       outer_corner = {
-        picture = WOODPATH .. "wood_floor/wood-outer-corner.png",
-        count = 8
+        picture = WOODPATH .. "wood_floor/woodfloor_outer-corner.png",
+        count = 4,
+		scale = 0.5
       },
       side = {
-        picture = WOODPATH .. "wood_floor/wood-side.png",
-        count = 8
+        picture = WOODPATH .. "wood_floor/woodfloor_side.png",
+        count = 4,
+		scale = 0.5
       },
       u_transition = {
-        picture = WOODPATH .. "wood_floor/wood-u.png",
-        count = 8
+        picture = WOODPATH .. "wood_floor/woodfloor_u.png",
+        count = 4,
+		scale = 0.5
       },
       o_transition = {
-        picture = WOODPATH .. "wood_floor/wood-o.png",
-        count = 1
+        picture = WOODPATH .. "wood_floor/hr_woodfloor_o.png",
+        count = 1,
+		scale = 0.5
       }
     },
     walking_sound = sounds.walking_sound,
@@ -240,11 +240,11 @@ data:extend({
   {
     type = "electric-pole",
     name = "bi-wooden-pole-big",
-    icon = ICONPATH .. "big-wooden-pole.png",
+    icon = ICONPATH_E .. "big-wooden-pole.png",
     icon_size = 64,
     icons = {
       {
-        icon = ICONPATH .. "big-wooden-pole.png",
+        icon = ICONPATH_E .. "big-wooden-pole.png",
         icon_size = 64,
       }
     },
@@ -330,11 +330,11 @@ data:extend({
   {
     type = "electric-pole",
     name = "bi-wooden-pole-huge",
-    icon = ICONPATH .. "huge-wooden-pole.png",
+    icon = ICONPATH_E .. "huge-wooden-pole.png",
     icon_size = 64,
     icons = {
       {
-        icon = ICONPATH .. "huge-wooden-pole.png",
+        icon = ICONPATH_E .. "huge-wooden-pole.png",
         icon_size = 64,
       }
     },
@@ -359,7 +359,7 @@ data:extend({
     selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
     drawing_box = {{-1, -7}, {1, 0.5}},
     maximum_wire_distance = 64, -- Factorio Max
-        supply_area_distance = 1,   -- This is the radius, so the supply area is 2x2.
+    supply_area_distance = 2,   -- This is the radius, so the supply area is 4x4.
     pictures = {
       filename = WOODPATH .. "huge-wooden-pole.png",
       priority = "high",
@@ -433,11 +433,11 @@ data:extend({
  {
     type = "wall",
     name = "bi-wooden-fence",
-    icon = ICONPATH .. "wooden-fence.png",
+    icon = ICONPATH_E .. "wooden-fence.png",
     icon_size = 64,
     icons = {
       {
-        icon = ICONPATH .. "wooden-fence.png",
+        icon = ICONPATH_E .. "wooden-fence.png",
         icon_size = 64,
       }
     },
@@ -709,11 +709,11 @@ data:extend({
  {
     type = "pipe",
     name = "bi-wood-pipe",
-    icon = ICONPATH .. "wood_pipe.png",
+    icon = ICONPATH_E .. "wood_pipe.png",
     icon_size = 64,
     icons = {
       {
-        icon = ICONPATH .. "wood_pipe.png",
+        icon = ICONPATH_E .. "wood_pipe.png",
         icon_size = 64,
       }
     },
@@ -764,11 +764,11 @@ data:extend({
   {
     type = "pipe-to-ground",
     name = "bi-wood-pipe-to-ground",
-    icon = ICONPATH .. "pipe-to-ground-wood.png",
+    icon = ICONPATH_E .. "pipe-to-ground-wood.png",
     icon_size = 64,
     icons = {
       {
-        icon = ICONPATH .. "pipe-to-ground-wood.png",
+        icon = ICONPATH_E .. "pipe-to-ground-wood.png",
         icon_size = 64,
       }
     },

@@ -1,8 +1,9 @@
 -- Add functions that are also used in other files (debugging output etc.)
-local BioInd = require('common')('Bio_Industries')
+local BioInd = require('common')('Bio_Industries_2')
 BioInd.writeDebug("Entered prototypes.hidden_poles.lua of \"%s\".", {BioInd.modName})
 
 local ICONPATH = BioInd.modRoot .. "/graphics/icons/"
+local ICONPATH_E = BioInd.modRoot .. "/graphics/icons/entity/"
 
 ------------------------------------------------------------------------------------
 --  Create the main prototype for hidden poles. All others will be based on this! --
@@ -24,16 +25,6 @@ h_entity.draw_circuit_wires = BioInd.is_debug
 
 h_entity.maximum_wire_distance = 10
 h_entity.supply_area_distance = 5
-
---~ hidden_pole.resistances = {}
---~ for damage, d in pairs(data.raw["damage-type"]) do
-  --~ hidden_pole.resistances[#hidden_pole.resistances +1] = {
-    --~ type = damage,
-    --~ percent = 100
-  --~ }
---~ end
---~ BioInd.show("hidden_pole.resistances", hidden_pole.resistances)
-
 h_entity.connection_points = BioInd.is_debug and
                               h_entity.connection_points or {
                                 {
@@ -41,7 +32,6 @@ h_entity.connection_points = BioInd.is_debug and
                                   wire = { copper_wire_tweak = {0, 0} }
                                 }
                               }
---~ h_entity.connection_points = h_entity.connection_points
 h_entity.radius_visualisation_picture = BioInd.is_debug and
                                             h_entity.radius_visualisation_picture or
                                             BI.hidden_entities.picture
@@ -92,6 +82,8 @@ BioInd.show("locale_name", locale_name)
   pole.localised_name = {"entity-name." .. locale_name}
   pole.localised_description = {"entity-description." .. locale_name}
   pole.icon_size = BioInd.is_debug and pole.icon_size or 64
+  pole.collision_mask = { layers = {} }
+  pole.collision_box = {{0,0},{0,0}}
 
   ------------------------------------------------------------------------------------
   -- Adjust properties for hidden biofarm poles
@@ -182,7 +174,7 @@ BioInd.show("locale_name", locale_name)
   -- Adjust properties for hidden pole of Musk floor
   ------------------------------------------------------------------------------------
   elseif pole_name == Musk_name then
-    pole.icon = ICONPATH .. "solar-mat.png"
+    pole.icon = ICONPATH_E .. "solar-mat.png"
     pole.icon_size = 64
     pole.maximum_wire_distance = 1
     pole.supply_area_distance = 3

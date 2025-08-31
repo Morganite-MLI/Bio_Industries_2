@@ -3,6 +3,7 @@ local BioInd = require('common')('Bio_Industries_2')
 BioInd.writeDebug("Entered prototypes.hidden_lamps.lua of \"%s\".", {BioInd.modName})
 
 local ICONPATH = BioInd.modRoot .. "/graphics/icons/"
+local ICONPATH_E = BioInd.modRoot .. "/graphics/icons/entity/"
 
 ------------------------------------------------------------------------------------
 --  Create the main prototype for hidden lamps. All others will be based on this! --
@@ -54,12 +55,14 @@ for lamp_name, locale_name in pairs(BI.hidden_entities.types[h_key]) do
   lamp.name = lamp_name
   lamp.localised_name = {"entity-name." .. locale_name}
   lamp.localised_description = {"entity-description." .. locale_name}
+  lamp.collision_mask = { layers = {} }
+  lamp.collision_box = {{0,0},{0,0}}
 
   -- Adjust properties for hidden lamp of Bio farm
   if c_entities["bi-bio-farm"] and
       lamp_name == c_entities["bi-bio-farm"].hidden[h_type].name then
 
-    lamp.icon = ICONPATH .. "Bio_Farm_Lamp.png"
+    lamp.icon = ICONPATH_E .. "bio_Farm_Lamp.png"
     lamp.icon_size = 64
     lamp.BI_add_icon = true
     BioInd.show("Adjusted properties of", lamp_name)

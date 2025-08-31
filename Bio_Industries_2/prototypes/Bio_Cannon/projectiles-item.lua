@@ -1,6 +1,6 @@
 local BioInd = require('common')('Bio_Industries_2')
 
-local ICONPATH = BioInd.modRoot .. "/graphics/icons/weapon/"
+local ICONPATH_W = BioInd.modRoot .. "/graphics/icons/weapons/"
 
 if BI.Settings.Bio_Cannon then
 
@@ -10,15 +10,15 @@ if BI.Settings.Bio_Cannon then
     {
       type = "ammo",
       name = "bi-bio-cannon-proto-ammo",
-      icon = ICONPATH .. "bio_cannon_proto_ammo_icon.png",
+      icon = ICONPATH_W .. "bio_cannon_proto_ammo_icon.png",
       icon_size = 64,
       icons = {
         {
-          icon = ICONPATH .. "bio_cannon_proto_ammo_icon.png",
+          icon = ICONPATH_W .. "bio_cannon_proto_ammo_icon.png",
           icon_size = 64,
         }
       },
-      ammo_category = "artillery-shell",
+      ammo_category = "Bio_Cannon_Ammo",
       ammo_type = {
         category = "Bio_Cannon_Ammo",
         target_type = "direction",
@@ -46,15 +46,15 @@ if BI.Settings.Bio_Cannon then
     {
       type = "ammo",
       name = "bi-bio-cannon-basic-ammo",
-      icon = ICONPATH .. "bio_cannon_basic_ammo_icon.png",
+      icon = ICONPATH_W .. "bio_cannon_basic_ammo_icon.png",
       icon_size = 64,
       icons = {
         {
-          icon = ICONPATH .. "bio_cannon_basic_ammo_icon.png",
+          icon = ICONPATH_W .. "bio_cannon_basic_ammo_icon.png",
           icon_size = 64,
         }
       },
-      ammo_category = "artillery-shell",
+      ammo_category = "Bio_Cannon_Ammo",
       ammo_type = {
         category = "Bio_Cannon_Ammo",
         target_type = "direction",
@@ -81,15 +81,15 @@ if BI.Settings.Bio_Cannon then
     {
       type = "ammo",
       name = "bi-bio-cannon-poison-ammo",
-      icon = ICONPATH .. "bio_cannon_poison_ammo_icon.png",
+      icon = ICONPATH_W .. "bio_cannon_poison_ammo_icon.png",
       icon_size = 64,
       icons = {
         {
-          icon = ICONPATH .. "bio_cannon_poison_ammo_icon.png",
+          icon = ICONPATH_W .. "bio_cannon_poison_ammo_icon.png",
           icon_size = 64,
         }
       },
-      ammo_category = "artillery-shell",
+      ammo_category = "Bio_Cannon_Ammo",
       ammo_type = {
         category = "Bio_Cannon_Ammo",
         target_type = "direction",

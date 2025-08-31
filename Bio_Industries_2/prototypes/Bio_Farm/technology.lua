@@ -1,6 +1,5 @@
 local BioInd = require('common')('Bio_Industries_2')
 local coal_processing = require("prototypes.Bio_Farm.coal_processing")
-
 local ICONPATH = BioInd.modRoot .. "/graphics/technology/"
 
 ---- Bio Farm
@@ -8,12 +7,12 @@ data:extend({
   {
     type = "technology",
     name = "bi-tech-bio-farming",
-    icon_size = 128,
-    icon = ICONPATH .. "Bio_Farm_Tech_128.png",
+    icon_size = 256,
+    icon = ICONPATH .. "bi-tech-bio-farming.png",
     icons = {
       {
-        icon = ICONPATH .. "Bio_Farm_Tech_128.png",
-        icon_size = 128,
+        icon = ICONPATH .. "bi-tech-bio-farming.png",
+        icon_size = 256,
       }
     },
     effects = {
@@ -73,12 +72,12 @@ data:extend({
     name = "bi-tech-coal-processing-1",
     localised_name = {"technology-name.bi-tech-coal-processing-1"},
     localised_description = {"technology-description.bi-tech-coal-processing-1"},
-    icon_size = 128,
-    icon = ICONPATH .. "Coal_128.png",
+    icon_size = 256,
+    icon = ICONPATH .. "bi-tech-coal-processing-1.png",
     icons = {
       {
-        icon = ICONPATH .. "Coal_128.png",
-        icon_size = 128,
+        icon = ICONPATH .. "bi-tech-coal-processing-1.png",
+        icon_size = 256,
       }
     },
     effects = coal_processing[1],
@@ -98,12 +97,12 @@ data:extend({
     name = "bi-tech-coal-processing-2",
     localised_name = {"technology-name.bi-tech-coal-processing-2"},
     localised_description = {"technology-description.bi-tech-coal-processing-2"},
-    icon_size = 128,
-    icon = ICONPATH .. "Coal_128.png",
+    icon_size = 256,
+    icon = ICONPATH .. "bi-tech-coal-processing-2.png",
     icons = {
       {
-        icon = ICONPATH .. "Coal_128.png",
-        icon_size = 128,
+        icon = ICONPATH .. "bi-tech-coal-processing-2.png",
+        icon_size = 256,
       }
     },
     effects = coal_processing[2],
@@ -124,12 +123,12 @@ data:extend({
     name = "bi-tech-coal-processing-3",
     localised_name = {"technology-name.bi-tech-coal-processing-3"},
     localised_description = {"technology-description.bi-tech-coal-processing-3"},
-    icon_size = 128,
-    icon = ICONPATH .. "Coal_128.png",
+    icon_size = 256,
+    icon = ICONPATH .. "bi-tech-coal-processing-3.png",
     icons = {
       {
-        icon = ICONPATH .. "Coal_128.png",
-        icon_size = 128,
+        icon = ICONPATH .. "bi-tech-coal-processing-3.png",
+        icon_size = 256,
       }
     },
     effects = coal_processing[3],
@@ -149,12 +148,12 @@ data:extend({
   {
     type = "technology",
     name = "bi-tech-fertilizer",
-    icon_size = 128,
-    icon = ICONPATH .. "Fertilizer_128.png",
+    icon_size = 256,
+    icon = ICONPATH .. "bi-tech-fertilizer.png",
     icons = {
       {
-        icon = ICONPATH .. "Fertilizer_128.png",
-        icon_size = 128,
+        icon = ICONPATH .. "bi-tech-fertilizer.png",
+        icon_size = 256,
       }
     },
     effects = {
@@ -185,6 +184,14 @@ data:extend({
       {
         type = "unlock-recipe",
         recipe = "bi-bio-garden"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "bi-bio-garden-lagre"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "bi-bio-garden-huge"
       },
       {
         type = "unlock-recipe",

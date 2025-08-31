@@ -1,8 +1,9 @@
 -- Add functions that are also used in other files (debugging output etc.)
 local BioInd = require('common')('Bio_Industries_2')
 local ICONPATH = "__core__/graphics/"
-
+local ICONPATH_E = BioInd.modRoot .. "/graphics/icons/entity/"
 local HIDDENPATH = BioInd.modRoot .. "/prototypes/compound_entities/"
+
 BioInd.writeDebug("Entered prototypes.hidden_entities.lua of \"%s\".", {BioInd.modName})
 
 ------------------------------------------------------------------------------------
@@ -35,7 +36,8 @@ if not BioInd.is_debug then
   table.insert(BI.hidden_entities.flags, "not-selectable-in-game")
 end
 
-BI.hidden_entities.collision_mask = nil
+-- make hidden entities non-colliding by default
+BI.hidden_entities.collision_mask = { layers = {} }
 BI.hidden_entities.collision_box = {{0, 0}, {0, 0}}
 BI.hidden_entities.selection_box = BioInd.is_debug and
                                     {{-0.5, -0.5}, {0.5, 0.5}} or
@@ -133,6 +135,7 @@ BI.set_common_properties = function(h_entity)
   h_entity.selectable_in_game = BI.hidden_entities.selectable_in_game
   h_entity.max_health = BI.hidden_entities.max_health
 
+  --h_entity.collision_mask = {}
   h_entity.collision_mask = BI.hidden_entities.collision_mask
   h_entity.collision_box = BI.hidden_entities.collision_box
   h_entity.selection_box = BI.hidden_entities.selection_box

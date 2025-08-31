@@ -4,6 +4,7 @@ end
 
 local BioInd = require('common')('Bio_Industries_2')
 local ICONPATH = BioInd.modRoot .. "/graphics/icons/"
+local ICONPATH_E = BioInd.modRoot .. "/graphics/icons/entity/"
 
 
 BioInd.writeDebug("Creating items for bigger wooden chests!")
@@ -15,11 +16,11 @@ data:extend({
     name = "bi-wooden-chest-large",
     localised_name = {"entity-name.bi-wooden-chest-large"},
     localised_description = {"entity-description.bi-wooden-chest-large"},
-    icon = ICONPATH .. "large_wooden_chest_icon.png",
+    icon = ICONPATH_E .. "large_wooden_chest_icon.png",
     icon_size = 64,
     icons = {
       {
-        icon = ICONPATH .. "large_wooden_chest_icon.png",
+        icon = ICONPATH_E .. "large_wooden_chest_icon.png",
         icon_size = 64,
       }
     },
@@ -37,11 +38,11 @@ data:extend({
     name = "bi-wooden-chest-huge",
     localised_name = {"entity-name.bi-wooden-chest-huge"},
     localised_description = {"entity-description.bi-wooden-chest-huge"},
-    icon = ICONPATH .. "huge_wooden_chest_icon.png",
+    icon = ICONPATH_E .. "huge_wooden_chest_icon.png",
     icon_size = 64,
     icons = {
       {
-        icon = ICONPATH .. "huge_wooden_chest_icon.png",
+        icon = ICONPATH_E .. "huge_wooden_chest_icon.png",
         icon_size = 64,
       }
     },
@@ -59,11 +60,11 @@ data:extend({
     name = "bi-wooden-chest-giga",
     localised_name = {"entity-name.bi-wooden-chest-giga"},
     localised_description = {"entity-description.bi-wooden-chest-giga"},
-    icon = ICONPATH .. "giga_wooden_chest_icon.png",
+    icon = ICONPATH_E .. "giga_wooden_chest_icon.png",
     icon_size = 64,
     icons = {
       {
-        icon = ICONPATH .. "giga_wooden_chest_icon.png",
+        icon = ICONPATH_E .. "giga_wooden_chest_icon.png",
         icon_size = 64,
       }
     },

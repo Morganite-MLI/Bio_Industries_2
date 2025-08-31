@@ -9,6 +9,7 @@ BioInd.writeDebug("Creating bigger wooden chests!")
 
 
 local ICONPATH = BioInd.modRoot .. "/graphics/icons/"
+local ICONPATH_E = BioInd.modRoot .. "/graphics/icons/entity/"
 local WOODPATH = BioInd.modRoot .. "/graphics/entities/wood_products/"
 
 local SNDPATH = "__base__/sound/"
@@ -41,11 +42,11 @@ data:extend({
   {
     type = "container",
     name = "bi-wooden-chest-large",
-    icon = ICONPATH .. "large_wooden_chest_icon.png",
+    icon = ICONPATH_E .. "large_wooden_chest_icon.png",
     icon_size = 64,
     icons = {
       {
-        icon = ICONPATH .. "large_wooden_chest_icon.png",
+        icon = ICONPATH_E .. "large_wooden_chest_icon.png",
         icon_size = 64,
       }
     },
@@ -64,13 +65,26 @@ data:extend({
     close_sound = { filename = "__base__/sound/wooden-chest-close.ogg" },
     impact_category = "wood",
     picture = {
+	layers = {
+	{
       filename = WOODPATH .. "large_wooden_chest.png",
       priority = "extra-high",
-      width = 184,
-      height = 132,
-      shift = {0.5, 0},
+      width = 128,
+      height = 128,
+      shift = {0, 0},
       scale = 0.5,
     },
+	{
+      filename = WOODPATH .. "large_wooden_chest_shadow.png",
+      priority = "extra-high",
+      width = 128,
+      height = 128,
+      shift = {1, 0},
+	  draw_as_shadow = true,
+      scale = 0.5,
+    },
+	},	
+	},
     circuit_wire_connection_point = circuit_connector_definitions["chest"].points,
     circuit_connector_sprites = circuit_connector_definitions["chest"].sprites,
     circuit_wire_max_distance = default_circuit_wire_max_distance
@@ -82,11 +96,11 @@ data:extend({
   {
     type = "container",
     name = "bi-wooden-chest-huge",
-    icon = ICONPATH .. "huge_wooden_chest_icon.png",
+    icon = ICONPATH_E .. "huge_wooden_chest_icon.png",
     icon_size = 64,
     icons = {
       {
-        icon = ICONPATH .. "huge_wooden_chest_icon.png",
+        icon = ICONPATH_E .. "huge_wooden_chest_icon.png",
         icon_size = 64,
       }
     },
@@ -106,13 +120,26 @@ data:extend({
     close_sound = { filename = "__base__/sound/wooden-chest-close.ogg" },
         impact_category = "wood",
     picture = {
+	layers = {
+	{
       filename = WOODPATH .. "huge_wooden_chest.png",
       priority = "extra-high",
-      width = 184,
-      height = 132,
-      shift = {0.5, 0},
-      scale = 0.75,
+      width = 224,
+      height = 224,
+      shift = {0, 0},
+      scale = 0.5,
     },
+	{
+      filename = WOODPATH .. "huge_wooden_chest_shadow.png",
+      priority = "extra-high",
+      width = 224,
+      height = 224,
+      shift = {1, 0},
+	  draw_as_shadow = true,
+      scale = 0.5,
+    },	
+	},
+	},
     circuit_wire_connection_point = circuit_connector_definitions["chest"].points,
     circuit_connector_sprites = circuit_connector_definitions["chest"].sprites,
     circuit_wire_max_distance = default_circuit_wire_max_distance
@@ -124,11 +151,11 @@ data:extend({
   {
     type = "container",
     name = "bi-wooden-chest-giga",
-    icon = ICONPATH .. "giga_wooden_chest_icon.png",
+    icon = ICONPATH_E .. "giga_wooden_chest_icon.png",
     icon_size = 64,
     icons = {
       {
-        icon = ICONPATH .. "giga_wooden_chest_icon.png",
+        icon = ICONPATH_E .. "giga_wooden_chest_icon.png",
         icon_size = 64,
       }
     },
@@ -148,13 +175,26 @@ data:extend({
     close_sound = { filename = "__base__/sound/wooden-chest-close.ogg" },
         impact_category = "wood",
     picture = {
+	layers = {
+	{
       filename = WOODPATH .. "giga_wooden_chest.png",
       priority = "extra-high",
-      width = 501,
-      height = 366,
-      shift = {0.88, -0.170},
+      width = 384,
+      height = 448,
+      shift = {0, -0.5},
       scale = 0.5,
     },
+	{
+      filename = WOODPATH .. "giga_wooden_chest_shadow.png",
+      priority = "extra-high",
+      width = 192,
+      height = 384,
+      shift = {1, -0.5},
+	  draw_as_shadow = true,
+      scale = 0.5,
+    },	
+	},
+	},
     circuit_wire_connection_point = circuit_connector_definitions["chest"].points,
     circuit_connector_sprites = circuit_connector_definitions["chest"].sprites,
     circuit_wire_max_distance = default_circuit_wire_max_distance

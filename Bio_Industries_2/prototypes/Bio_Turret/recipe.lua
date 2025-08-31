@@ -1,6 +1,7 @@
 local BioInd = require('common')('Bio_Industries_2')
 
-local ICONPATH = BioInd.modRoot .. "/graphics/icons/"
+local ICONPATH = BioInd.modRoot .. "/graphics/icons/weapons/"
+local ICONPATH_W = BioInd.modRoot .. "/graphics/icons/weapons/"
 
 data:extend({
   --- Basic Dart Ammo
@@ -127,11 +128,11 @@ data:extend({
     name = "bi-dart-turret",
     localised_name = {"entity-name.bi-dart-turret"},
     localised_description = {"entity-description.bi-dart-turret"},
-    icon = ICONPATH .. "bio_turret_icon.png",
+    icon = ICONPATH_W .. "bio_turret_icon.png",
     icon_size = 64,
     icons = {
       {
-        icon = ICONPATH .. "bio_turret_icon.png",
+        icon = ICONPATH_W .. "bio_turret_icon.png",
         icon_size = 64,
       }
     },
@@ -159,11 +160,11 @@ data:extend({
     name = "bi-dart-rifle",
     localised_name = {"item-name.bi-dart-rifle"},
     localised_description = {"item-description.bi-dart-rifle"},
-    icon = ICONPATH .. "bi_dart_rifle_icon.png",
+    icon = ICONPATH_W .. "bi_dart_rifle_icon.png",
     icon_size = 64,
     icons = {
       {
-        icon = ICONPATH .. "bi_dart_rifle_icon.png",
+        icon = ICONPATH_W .. "bi_dart_rifle_icon.png",
         icon_size = 64,
       }
     },

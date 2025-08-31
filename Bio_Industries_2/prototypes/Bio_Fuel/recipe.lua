@@ -1,6 +1,7 @@
 local BioInd = require('common')('Bio_Industries_2')
 
 local ICONPATH = BioInd.modRoot .. "/graphics/icons/"
+local ICONPATH_E = BioInd.modRoot .. "/graphics/icons/entity/"
 
 -- Changed for 0.18.29: We always want to make advanced fertilizer, so we need to
 -- unlock the bio-reactor and the most basic recipe for algae biomass even if
@@ -12,11 +13,11 @@ data:extend({
     name = "bi-bio-reactor",
     localised_name = {"entity-name.bi-bio-reactor"},
     localised_description = {"entity-description.bi-bio-reactor"},
-    icon = ICONPATH .. "bioreactor.png",
+    icon = ICONPATH_E .. "bioreactor.png",
     icon_size = 64,
     icons = {
       {
-        icon = ICONPATH .. "bioreactor.png",
+        icon = ICONPATH_E .. "bioreactor.png",
         icon_size = 64,
       }
     },
@@ -109,11 +110,11 @@ if BI.Settings.BI_Bio_Fuel then
       name = "bi-bio-boiler",
       localised_name = {"entity-name.bi-bio-boiler"},
       localised_description = {"entity-description.bi-bio-boiler"},
-      icon = ICONPATH .. "bio_boiler.png",
+      icon = ICONPATH_E .. "bio_boiler.png",
       icon_size = 64,
       icons = {
         {
-          icon = ICONPATH .. "bio_boiler.png",
+          icon = ICONPATH_E .. "bio_boiler.png",
           icon_size = 64,
         }
       },

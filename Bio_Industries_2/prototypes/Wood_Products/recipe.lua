@@ -1,6 +1,7 @@
 local BioInd = require('common')('Bio_Industries_2')
 
 local ICONPATH = BioInd.modRoot .. "/graphics/icons/"
+local ICONPATH_E = BioInd.modRoot .. "/graphics/icons/entity/"
 
 data:extend({
 
@@ -10,11 +11,11 @@ data:extend({
     name = "bi-wooden-pole-big",
     localised_name = {"entity-name.bi-wooden-pole-big"},
     localised_description = {"entity-description.bi-wooden-pole-big"},
-    icon = ICONPATH .. "big-wooden-pole.png",
+    icon = ICONPATH_E .. "big-wooden-pole.png",
     icon_size = 64,
     icons = {
       {
-        icon = ICONPATH .. "big-wooden-pole.png",
+        icon = ICONPATH_E .. "big-wooden-pole.png",
         icon_size = 64,
       }
     },
@@ -41,11 +42,11 @@ data:extend({
     name = "bi-wooden-pole-huge",
     localised_name = {"entity-name.bi-wooden-pole-huge"},
     localised_description = {"entity-description.bi-wooden-pole-huge"},
-    icon = ICONPATH .. "huge-wooden-pole.png",
+    icon = ICONPATH_E .. "huge-wooden-pole.png",
     icon_size = 64,
     icons = {
       {
-        icon = ICONPATH .. "huge-wooden-pole.png",
+        icon = ICONPATH_E .. "huge-wooden-pole.png",
         icon_size = 64,
       }
     },
@@ -73,11 +74,11 @@ data:extend({
     name = "bi-wooden-fence",
     localised_name = {"entity-name.bi-wooden-fence"},
     localised_description = {"entity-description.bi-wooden-fence"},
-    icon = ICONPATH .. "wooden-fence.png",
+    icon = ICONPATH_E .. "wooden-fence.png",
     icon_size = 64,
     icons = {
       {
-        icon = ICONPATH .. "wooden-fence.png",
+        icon = ICONPATH_E .. "wooden-fence.png",
         icon_size = 64,
       }
     },
@@ -102,11 +103,11 @@ data:extend({
     name = "bi-wood-pipe",
     localised_name = {"entity-name.bi-wood-pipe"},
     localised_description = {"entity-description.bi-wood-pipe"},
-    icon = ICONPATH .. "wood_pipe.png",
+    icon = ICONPATH_E .. "wood_pipe.png",
     icon_size = 64,
     icons = {
       {
-        icon = ICONPATH .. "wood_pipe.png",
+        icon = ICONPATH_E .. "wood_pipe.png",
         icon_size = 64,
       }
     },
@@ -135,11 +136,11 @@ data:extend({
     name = "bi-wood-pipe-to-ground",
     localised_name = {"entity-name.bi-wood-pipe-to-ground"},
     localised_description = {"entity-description.bi-wood-pipe-to-ground"},
-    icon = ICONPATH .. "pipe-to-ground-wood.png",
+    icon = ICONPATH_E .. "pipe-to-ground-wood.png",
     icon_size = 64,
     icons = {
       {
-        icon = ICONPATH .. "pipe-to-ground-wood.png",
+        icon = ICONPATH_E .. "pipe-to-ground-wood.png",
         icon_size = 64,
       }
     },
@@ -157,4 +158,55 @@ data:extend({
     subgroup = "energy-pipe-distribution",
     order = "a[pipe]-1b[pipe-to-ground]",
   },
+  
+   })
+
+  if BI.Settings.BI_Game_Tweaks_Recipe then
+  
+	data:extend({
+	  {
+		type = "recipe",	
+		name = "bi-rail-wood",
+		icon = ICONPATH_E .. "rail-wood.png",
+		icon_size = 64,
+		icons = {
+			{
+				icon = ICONPATH_E .. "rail-wood.png",
+				icon_size = 64,
+			}
+		},
+		localised_name = {"entity-name.bi-rail-wood"},
+		localised_description = {"entity-description.bi-rail-wood"},
+		enabled = false,
+		ingredients =
+		{
+		  {type = "item", name = "stone-crushed", amount = 6},
+		  {type = "item", name = "wood", amount = 12},
+		  {type = "item", name = "steel-plate", amount = 2}
+		},
+		results = {{type="item", name="rail", amount=1}}
+	  },
+	  
+	   {
+		type = "recipe",
+		name = "bi-rail-wood-to-concrete",
+		icon = ICONPATH_E .. "rail-wood-to-concrete.png",
+		icon_size = 64,
+		icons = {
+		  {
+			icon = ICONPATH_E .. "rail-wood-to-concrete.png",
+			icon_size = 64,
+		  }
+		},
+	  enabled = false,
+		  ingredients =
+		{
+		  {type = "item", name = "bi-rail-wood", amount = 2},
+		  {type = "item", name = "stone-brick", amount = 6},
+
+		},
+		results = {{type="item", name="rail", amount=2}}
+	  },
+	  
  })
+  end

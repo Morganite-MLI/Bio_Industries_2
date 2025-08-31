@@ -18,6 +18,8 @@ end
 
 BioInd.show("BI.Settings.BI_Easy_Bio_Gardens", BI.Settings.BI_Easy_Bio_Gardens)
 local ICONPATH = "__Bio_Industries_2__/graphics/icons/"
+local ICONPATH_E = BioInd.modRoot .. "/graphics/icons/entity/"
+local ICONPATH_PY = "__Bio_Industries_2__/graphics/icons/mod_py/"
 
 ----Update the Wood Pipe Images
 require("prototypes.Wood_Products.pipes")
@@ -386,7 +388,7 @@ if data.raw.item["ash"] and mods["pycoalprocessing"] then
         thxbob.lib.recipe.replace_ingredient("bi-sulfur", "bi-ash", "ash")
         thxbob.lib.recipe.replace_ingredient("bi-sulfur-angels", "bi-ash", "ash")
 
-        data.raw.recipe["bi-sulfur"].icon = ICONPATH .. "py_bio_sulfur.png"
+        data.raw.recipe["bi-sulfur"].icon = ICONPATH_PY .. "py_bio_sulfur.png"
         data.raw.recipe["bi-sulfur"].icon_size = 64
     end
 
@@ -397,17 +399,17 @@ if data.raw.item["ash"] and mods["pycoalprocessing"] then
     data.raw.recipe["bi-ash-2"].icon_size = 32
 
     -- Use ash icon from pycoalprocessing in icons of recipes using ash
-    data.raw.recipe["bi-seed-2"].icon = ICONPATH .. "py_bio_seed2.png"
+    data.raw.recipe["bi-seed-2"].icon = ICONPATH_PY .. "py_bio_seed2.png"
     data.raw.recipe["bi-seed-2"].icon_size = 64
-    data.raw.recipe["bi-seedling-2"].icon = ICONPATH .. "py_Seedling2.png"
+    data.raw.recipe["bi-seedling-2"].icon = ICONPATH_PY .. "py_Seedling2.png"
     data.raw.recipe["bi-seedling-2"].icon_size = 64
-    data.raw.recipe["bi-logs-2"].icon = ICONPATH .. "py_raw-wood-mk2.png"
+    data.raw.recipe["bi-logs-2"].icon = ICONPATH_PY .. "py_raw-wood-mk2.png"
     data.raw.recipe["bi-logs-2"].icon_size = 64
-    data.raw.recipe["bi-ash-1"].icon = ICONPATH .. "py_ash_raw-wood.png"
+    data.raw.recipe["bi-ash-1"].icon = ICONPATH_PY .. "py_ash_raw-wood.png"
     data.raw.recipe["bi-ash-1"].icon_size = 64
-    data.raw.recipe["bi-ash-2"].icon = ICONPATH .. "py_ash_woodpulp.png"
+    data.raw.recipe["bi-ash-2"].icon = ICONPATH_PY .. "py_ash_woodpulp.png"
     data.raw.recipe["bi-ash-2"].icon_size = 64
-    data.raw.recipe["bi-stone-brick"].icon = ICONPATH .. "py_bi_stone_brick.png"
+    data.raw.recipe["bi-stone-brick"].icon = ICONPATH_PY .. "py_bi_stone_brick.png"
     data.raw.recipe["bi-stone-brick"].icon_size = 64
 end
 
@@ -524,7 +526,8 @@ if BI.Settings.BI_Game_Tweaks_Recipe then
     --- Stone Wall
     thxbob.lib.recipe.add_new_ingredient("stone-wall", { type = "item", name = "iron-stick", amount = 1 })
 
-    --- Rail (Remove Stone and Add Crushed Stone)
+    --- Rail Stuff 
+	--(Remove Stone and Add Crushed Stone)
     if data.raw.item["stone-crushed"] then
         thxbob.lib.recipe.remove_ingredient("rail", "stone")
         thxbob.lib.recipe.add_new_ingredient("rail", { type = "item", name = "stone-crushed", amount = 6 })
@@ -533,7 +536,15 @@ if BI.Settings.BI_Game_Tweaks_Recipe then
     end
 
     -- vanilla rail recipe update
-    thxbob.lib.recipe.add_new_ingredient("rail", { type = "item", name = "concrete", amount = 6 })
+    thxbob.lib.recipe.remove_ingredient("rail", "iron-stick")
+	thxbob.lib.recipe.add_new_ingredient("rail", { type = "item", name = "concrete", amount = 2 })
+	data.raw["legacy-straight-rail"]["legacy-straight-rail"].icon = ICONPATH_E .. "rail-concrete.png"
+	data.raw["straight-rail"]["straight-rail"].icon = ICONPATH_E .. "rail-concrete.png"
+
+--- Wood Rail added to Tech
+	thxbob.lib.tech.add_recipe_unlock("railway", "bi-rail-wood")
+	thxbob.lib.tech.add_recipe_unlock("railway", "bi-rail-wood-to-concrete")
+	
 end
 
 
@@ -692,7 +703,7 @@ if set then
 end
 
 -- Compatibility with Industrial Revolution
-require("prototypes.Industrial_Revolution")
+--require("prototypes.Industrial_Revolution")
 
 
 ------------------------------------------------------------------------------------

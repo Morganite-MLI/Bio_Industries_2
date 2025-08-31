@@ -170,8 +170,6 @@ if BI.Settings.BI_Game_Tweaks_Player then
 end
 
 
--- Moved to data-updates.lua for 0.18.34/1.1.4!
-
 
 ---- Game Tweaks ---- Production science pack recipe
 if data.raw.recipe["bi-production-science-pack"] then
@@ -184,7 +182,6 @@ end
 if BI.Settings.BI_Game_Tweaks_Bot then
     -- Logistic & Construction bots can't catch fire or be mined
     local function immunify(bot)
-        -- Changed for 0.18.34/1.1.4!
         local can_insert = true
         bot.flags = bot.flags or {}
         bot.resistances = bot.resistances or {}
@@ -290,7 +287,6 @@ if BI.Settings.BI_Game_Tweaks_Emissions_Multiplier then
         ["coal-crushed"] = 1.50,
         ["wood"] = 1.60,
         ["coal"] = 2.00,
-        -- Removed in 0.17.48/0.18.16
     }) do
         BI_Functions.lib.fuel_emissions_multiplier_update(item, factor)
     end
@@ -388,9 +384,6 @@ if mods["pycoalprocessing"] and BI.Settings.BI_Bio_Fuel then
         amount = 15
     })
 end
-
-
--- Moved to data-updates.lua for 0.18.34/1.1.4!
 
 
 --- If Space Exploration Mod is installed.

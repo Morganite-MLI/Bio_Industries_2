@@ -1,6 +1,6 @@
 local BioInd = require('common')('Bio_Industries_2')
-
 local ICONPATH = BioInd.modRoot .. "/graphics/icons/"
+local ICONPATH_W = BioInd.modRoot .. "/graphics/icons/weapons/"
 local ENTITYPATH = BioInd.modRoot .. "/graphics/entities/bio_cannon/"
 local REMNANTSPATH = BioInd.modRoot .. "/graphics/entities/remnants/"
 
@@ -120,9 +120,9 @@ if BI.Settings.Bio_Cannon then
         {
             type = "ammo-turret",
             name = "bi-bio-cannon",
-            icon = ICONPATH .. "biocannon_icon.png",
+            icon = ICONPATH_W .. "biocannon_icon.png",
             icon_size = 64,
-            icons = {{icon = ICONPATH .. "biocannon_icon.png", icon_size = 64}},
+            icons = {{icon = ICONPATH_W .. "biocannon_icon.png", icon_size = 64}},
             flags = {"placeable-neutral", "placeable-player", "player-creation"},
             -- makes cannon blueprintable
             placeable_by = {item = "bi-bio-cannon", count = 1},
@@ -177,7 +177,7 @@ if BI.Settings.Bio_Cannon then
             type = "corpse",
             name = "bi-bio-cannon-remnants",
             icon_size = 64,
-            icons = {{icon = ICONPATH .. "biocannon_icon.png", icon_size = 64}},
+            icons = {{icon = ICONPATH_W .. "biocannon_icon.png", icon_size = 64}},
 
             flags = {"placeable-neutral", "not-on-map"},
             subgroup = "defensive-structure-remnants",

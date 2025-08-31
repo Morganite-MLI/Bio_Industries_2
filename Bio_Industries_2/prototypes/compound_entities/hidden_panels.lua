@@ -3,6 +3,7 @@ local BioInd = require('common')('Bio_Industries_2')
 BioInd.writeDebug("Entered prototypes.hidden_panels.lua of \"%s\".", { BioInd.modName })
 
 local ICONPATH = BioInd.modRoot .. "/graphics/icons/"
+local ICONPATH_E = BioInd.modRoot .. "/graphics/icons/entity/"
 
 ------------------------------------------------------------------------------------
 --  Create the main prototype for hidden lamps. All others will be based on this! --
@@ -50,12 +51,14 @@ for panel_name, locale_name in pairs(BI.hidden_entities.types[h_key]) do
     panel.name = panel_name
     panel.localised_name = { "entity-name." .. locale_name }
     panel.localised_description = { "entity-description." .. locale_name }
+    panel.collision_mask = { layers = {} }
+    panel.collision_box = {{0,0},{0,0}}
 
 
     -- Adjust properties for hidden panel of Solar boiler
     if c_entities["bi-solar-boiler"] and
         panel_name == c_entities["bi-solar-boiler"].hidden[h_key].name then
-        panel.icon = ICONPATH .. "Bio_Solar_Boiler_Icon.png"
+        panel.icon = ICONPATH_E .. "bio_Solar_Boiler_Icon.png"
         panel.icon_size = 64
         panel.BI_add_icon = true
         panel.picture = nil
@@ -70,7 +73,7 @@ for panel_name, locale_name in pairs(BI.hidden_entities.types[h_key]) do
     elseif c_entities["bi-bio-farm"] and
         c_entities["bi-bio-farm"].hidden[h_key] and
         panel_name == c_entities["bi-bio-farm"].hidden[h_key].name then
-        panel.icon = ICONPATH .. "Bio_Farm_Solar.png"
+        panel.icon = ICONPATH_E .. "bio_Farm_Solar.png"
         panel.icon_size = 64
         panel.BI_add_icon = true
         panel.production = "100kW"
@@ -78,7 +81,7 @@ for panel_name, locale_name in pairs(BI.hidden_entities.types[h_key]) do
 
         -- Adjust properties for hidden panel of Musk floor
     elseif panel_name == Musk_name then
-        panel.icon = ICONPATH .. "solar-mat.png"
+        panel.icon = ICONPATH_E .. "solar-mat.png"
         panel.icon_size = 64
         panel.BI_add_icon = true
         panel.production = "10kW"

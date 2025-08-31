@@ -1,5 +1,4 @@
 local BioInd = require('common')('Bio_Industries_2')
-
 local ICONPATH = BioInd.modRoot .. "/graphics/technology/"
 
 if BI.Settings.Bio_Cannon then
@@ -41,7 +40,7 @@ if BI.Settings.Bio_Cannon then
         ingredients = {
           {"automation-science-pack", 1},
           {"logistic-science-pack", 1},
-          {"military-science-pack", 1},
+          {"military-science-pack", 3},
         },
         time = 30,
       }

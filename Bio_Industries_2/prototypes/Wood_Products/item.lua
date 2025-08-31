@@ -1,6 +1,7 @@
 local BioInd = require('common')('Bio_Industries_2')
-
 local ICONPATH = BioInd.modRoot .. "/graphics/icons/"
+local ICONPATH_E = BioInd.modRoot .. "/graphics/icons/entity/"
+local item_sounds = require("__base__.prototypes.item_sounds")
 
 data:extend({
 
@@ -10,19 +11,19 @@ data:extend({
     name = "bi-wooden-pole-big",
     localised_name = {"entity-name.bi-wooden-pole-big"},
     localised_description = {"entity-description.bi-wooden-pole-big"},
-    icon = ICONPATH .. "big-wooden-pole.png",
+    icon = ICONPATH_E .. "big-wooden-pole.png",
     icon_size = 64,
     icons = {
       {
-        icon = ICONPATH .. "big-wooden-pole.png",
+        icon = ICONPATH_E .. "big-wooden-pole.png",
         icon_size = 64,
       }
     },
     subgroup = "energy-pipe-distribution",
     order = "a[energy]-b[small-electric-pole]",
     place_result = "bi-wooden-pole-big",
-    fuel_value = "14MJ",
-    fuel_category = "chemical",
+    --fuel_value = "14MJ",
+    --fuel_category = "chemical",
     stack_size = 50
   },
 
@@ -32,19 +33,19 @@ data:extend({
     name = "bi-wooden-pole-huge",
     localised_name = {"entity-name.bi-wooden-pole-huge"},
     localised_description = {"entity-description.bi-wooden-pole-huge"},
-    icon = ICONPATH .. "huge-wooden-pole.png",
+    icon = ICONPATH_E .. "huge-wooden-pole.png",
     icon_size = 64,
     icons = {
       {
-        icon = ICONPATH .. "huge-wooden-pole.png",
+        icon = ICONPATH_E .. "huge-wooden-pole.png",
         icon_size = 64,
       }
     },
     subgroup = "energy-pipe-distribution",
     order = "a[energy]-d[big-electric-pole]",
     place_result = "bi-wooden-pole-huge",
-    fuel_value = "90MJ",
-    fuel_category = "chemical",
+    --fuel_value = "90MJ",
+    --fuel_category = "chemical",
     stack_size = 50
   },
 
@@ -54,11 +55,11 @@ data:extend({
     name = "bi-wooden-fence",
     localised_name = {"entity-name.bi-wooden-fence"},
     localised_description = {"entity-description.bi-wooden-fence"},
-    icon = ICONPATH .. "wooden-fence.png",
+    icon = ICONPATH_E .. "wooden-fence.png",
     icon_size = 64,
     icons = {
       {
-        icon = ICONPATH .. "wooden-fence.png",
+        icon = ICONPATH_E .. "wooden-fence.png",
         icon_size = 64,
       }
     },
@@ -76,11 +77,11 @@ data:extend({
     name = "bi-wood-pipe",
     localised_name = {"entity-name.bi-wood-pipe"},
     localised_description = {"entity-description.bi-wood-pipe"},
-    icon = ICONPATH .. "wood_pipe.png",
+    icon = ICONPATH_E .. "wood_pipe.png",
     icon_size = 64,
     icons = {
       {
-        icon = ICONPATH .. "wood_pipe.png",
+        icon = ICONPATH_E .. "wood_pipe.png",
         icon_size = 64,
       }
     },
@@ -98,11 +99,11 @@ data:extend({
     name = "bi-wood-pipe-to-ground",
     localised_name = {"entity-name.bi-wood-pipe-to-ground"},
     localised_description = {"entity-description.bi-wood-pipe-to-ground"},
-    icon = ICONPATH .. "pipe-to-ground-wood.png",
+    icon = ICONPATH_E .. "pipe-to-ground-wood.png",
     icon_size = 64,
     icons = {
       {
-        icon = ICONPATH .. "pipe-to-ground-wood.png",
+        icon = ICONPATH_E .. "pipe-to-ground-wood.png",
         icon_size = 64,
       }
     },
@@ -113,4 +114,41 @@ data:extend({
     fuel_category = "chemical",
     stack_size = 50
   },
+  
 })
+
+  if BI.Settings.BI_Game_Tweaks_Recipe then
+  data:extend({
+    {
+    type = "rail-planner",
+    name = "bi-rail-wood",
+	icon = ICONPATH_E .. "rail-wood.png",
+    icon_size = 64,
+    icons = {
+      {
+        icon = ICONPATH_E .. "rail-wood.png",
+        icon_size = 64,
+      }
+    },
+    localised_name = {"item-name.bi-rail-wood"},
+    subgroup = "train-transport",
+    order = "a[rail]-0[rail]",
+    inventory_move_sound = item_sounds.train_inventory_move,
+    pick_sound = item_sounds.train_inventory_pickup,
+    drop_sound = item_sounds.train_inventory_move,
+    place_result = "straight-rail",
+    stack_size = 100,
+    rails =
+    {
+      "straight-rail",
+      "curved-rail-a",
+      "curved-rail-b",
+      "half-diagonal-rail"
+    },
+    manual_length_limit = 22.5 -- 2*(Curved-A) + 2*(Curved-B) + their planner penalty + margin
+  },
+  
+   })
+  end
+  
+

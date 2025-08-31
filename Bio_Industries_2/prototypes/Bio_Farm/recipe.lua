@@ -1,6 +1,8 @@
 local BioInd = require('common')('Bio_Industries_2')
-
 local ICONPATH = BioInd.modRoot .. "/graphics/icons/"
+local ICONPATH_W = BioInd.modRoot .. "/graphics/icons/weapons/"
+local ICONPATH_E = BioInd.modRoot .. "/graphics/icons/entity/"
+local ICONPATHMIPS = BioInd.modRoot .. "/graphics/icons/mips/"
 
 data:extend({
 
@@ -420,11 +422,11 @@ data:extend({
     name = "bi-bio-greenhouse",
     localised_name = {"entity-name.bi-bio-greenhouse"},
     localised_description = {"entity-description.bi-bio-greenhouse"},
-    icon = ICONPATH .. "bio_greenhouse.png",
+    icon = ICONPATH_E .. "bio_greenhouse.png",
     icon_size = 64,
     icons = {
       {
-        icon = ICONPATH .. "bio_greenhouse.png",
+        icon = ICONPATH_E .. "bio_greenhouse.png",
         icon_size = 64,
       }
     },
@@ -451,11 +453,11 @@ data:extend({
     name = "bi-bio-farm",
     localised_name = {"entity-name.bi-bio-farm"},
     localised_description = {"entity-description.bi-bio-farm"},
-    icon = ICONPATH .. "Bio_Farm_Icon.png",
+    icon = ICONPATH_E .. "bio_Farm_Icon.png",
     icon_size = 64,
     icons = {
       {
-        icon = ICONPATH .. "Bio_Farm_Icon.png",
+        icon = ICONPATH_E .. "bio_Farm_Icon.png",
         icon_size = 64,
       }
     },
@@ -1016,11 +1018,11 @@ data:extend({
     name = "bi-cokery",
     localised_name = {"entity-name.bi-cokery"},
     localised_description = {"entity-description.bi-cokery"},
-    icon = ICONPATH .. "cokery.png",
+    icon = ICONPATH_E .. "cokery.png",
     icon_size = 64,
     icons = {
       {
-        icon = ICONPATH .. "cokery.png",
+        icon = ICONPATH_E .. "cokery.png",
         icon_size = 64,
       }
     },
@@ -1046,11 +1048,11 @@ data:extend({
     name = "bi-stone-crusher",
     localised_name = {"entity-name.bi-stone-crusher"},
     localised_description = {"entity-description.bi-stone-crusher"},
-    icon = ICONPATH .. "stone_crusher.png",
+    icon = ICONPATH_E .. "stone_crusher.png",
     icon_size = 64,
     icons = {
       {
-        icon = ICONPATH .. "stone_crusher.png",
+        icon = ICONPATH_E .. "stone_crusher.png",
         icon_size = 64,
       }
     },
@@ -1232,11 +1234,11 @@ data:extend({
   {
     type = "recipe",
     name = "bi-seed-bomb-basic",
-            icon = ICONPATH .. "Seed_bomb_icon_b.png",
+            icon = ICONPATH_W .. "seed_bomb_icon_b.png",
     icon_size = 64,
     icons = {
       {
-        icon = ICONPATH .. "Seed_bomb_icon_b.png",
+        icon = ICONPATH_W .. "seed_bomb_icon_b.png",
         icon_size = 64,
       }
     },
@@ -1260,11 +1262,11 @@ data:extend({
   {
     type = "recipe",
     name = "bi-seed-bomb-standard",
-    icon = ICONPATH .. "Seed_bomb_icon_s.png",
+    icon = ICONPATH_W .. "seed_bomb_icon_s.png",
     icon_size = 64,
     icons = {
       {
-        icon = ICONPATH .. "Seed_bomb_icon_s.png",
+        icon = ICONPATH_W .. "seed_bomb_icon_s.png",
         icon_size = 64,
       }
     },
@@ -1289,11 +1291,11 @@ data:extend({
   {
     type = "recipe",
     name = "bi-seed-bomb-advanced",
-            icon = ICONPATH .. "Seed_bomb_icon_a.png",
+            icon = ICONPATH_W .. "seed_bomb_icon_a.png",
     icon_size = 64,
     icons = {
       {
-        icon = ICONPATH .. "Seed_bomb_icon_a.png",
+        icon = ICONPATH_W .. "seed_bomb_icon_a.png",
         icon_size = 64,
       }
     },
@@ -1320,11 +1322,11 @@ data:extend({
     name = "bi-arboretum",
     localised_name = {"entity-name.bi-arboretum"},
     localised_description = {"entity-description.bi-arboretum"},
-    icon = ICONPATH .. "Arboretum_Icon.png",
+    icon = ICONPATH_E .. "arboretum_Icon.png",
     icon_size = 64,
     icons = {
       {
-        icon = ICONPATH .. "Arboretum_Icon.png",
+        icon = ICONPATH_E .. "arboretum_Icon.png",
         icon_size = 64,
       }
     },

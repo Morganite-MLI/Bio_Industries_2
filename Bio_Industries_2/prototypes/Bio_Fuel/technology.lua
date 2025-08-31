@@ -8,12 +8,12 @@ if BI.Settings.BI_Bio_Fuel then
     {
       type = "technology",
       name = "bi-tech-organic-plastic",
-      icon_size = 128,
-      icon = ICONPATH .. "Cellulose_128.png",
+      icon_size = 256,
+      icon = ICONPATH .. "bi-tech-cellulose.png",
       icons = {
         {
-          icon = ICONPATH .. "Cellulose_128.png",
-          icon_size = 128,
+          icon = ICONPATH .. "bi-tech-cellulose.png",
+          icon_size = 256,
         }
       },
       effects = {

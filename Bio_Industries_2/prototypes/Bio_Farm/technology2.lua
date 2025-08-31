@@ -8,12 +8,12 @@ local ICONPATH = BioInd.modRoot .. "/graphics/technology/"
     {
       type = "technology",
       name = "bi-tech-advanced-biotechnology",
-      icon_size = 128,
-      icon = ICONPATH .. "Biomass_128.png",
+      icon_size = 256,
+      icon = ICONPATH .. "bi-tech-biomass.png",
       icons = {
         {
-          icon = ICONPATH .. "Biomass_128.png",
-          icon_size = 128,
+          icon = ICONPATH .. "bi-tech-biomass.png",
+          icon_size = 256,
         }
       },
       effects = {

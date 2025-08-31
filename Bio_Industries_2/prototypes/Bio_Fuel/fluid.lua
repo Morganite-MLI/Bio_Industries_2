@@ -1,6 +1,7 @@
 local BioInd = require('common')('Bio_Industries_2')
 
 local ICONPATH = BioInd.modRoot .. "/graphics/icons/"
+local ICONPATH_E = BioInd.modRoot .. "/graphics/icons/entity/"
 
 data:extend({
   {
@@ -10,7 +11,7 @@ data:extend({
     icon_size = 64,
     icons = {
       {
-        icon = ICONPATH .. "bio_boiler.png",
+        icon = ICONPATH_E .. "bio_boiler.png",
         icon_size = 64,
       }
     },

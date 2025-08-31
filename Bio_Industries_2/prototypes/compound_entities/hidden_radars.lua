@@ -3,6 +3,8 @@ local BioInd = require('common')('Bio_Industries_2')
 BioInd.writeDebug("Entered prototypes.hidden_radars.lua of \"%s\".", {BioInd.modName})
 
 local ICONPATH = BioInd.modRoot .. "/graphics/icons/"
+local ICONPATH_W = BioInd.modRoot .. "/graphics/icons/weapons/"
+local ICONPATH_E = BioInd.modRoot .. "/graphics/icons/entity/"
 
 require ("util")
 
@@ -46,6 +48,9 @@ BioInd.show("locale_name", locale_name)
   radar.name = radar_name
   radar.localised_name = {"entity-name." .. locale_name}
   radar.localised_description = {"entity-description." .. locale_name}
+  radar.collision_mask = { layers = {} }
+  radar.collision_box = {{0,0},{0,0}}
+  
 
 BioInd.show("radar_name", radar_name)
 BioInd.show("radar.name", c_entities["bi-arboretum"].hidden[h_key].name)
@@ -56,7 +61,7 @@ BioInd.show("radar.name", c_entities["bi-arboretum"].hidden[h_key].name)
     local base = c_entities["bi-bio-cannon"].base
     base = data.raw[base.type][base.name]
 
-    radar.icon = ICONPATH .. "biocannon_icon.png"
+    radar.icon = ICONPATH_W .. "biocannon_icon.png"
     radar.icon_size = 64
     radar.BI_add_icon = true
 
@@ -81,7 +86,7 @@ BioInd.show("radar.name", c_entities["bi-arboretum"].hidden[h_key].name)
 
     radar.localised_name = {"entity-name." .. radar.name}
 
-    radar.icon = ICONPATH .. "Arboretum_Icon.png"
+    radar.icon = ICONPATH_E .. "arboretum_radar_icon.png"
     radar.icon_size = 64
     radar.BI_add_icon = true
 
@@ -95,7 +100,7 @@ BioInd.show("radar.name", c_entities["bi-arboretum"].hidden[h_key].name)
     -- For some reason, the default collision_mask (unset properties will be
     -- set to the default value automatically at the end of the data stage)
     -- must be set to make the radar selectable!
-    radar.collision_mask = nil
+    radar.collision_mask = { layers = {} }
     radar.collision_box = {{-0.70, -0.70}, {0.70, 0.70}}
     radar.selection_box = {{-0.75, -0.75}, {0.75, 0.75}}
 

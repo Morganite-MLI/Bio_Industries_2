@@ -460,10 +460,14 @@ local function On_Built(event)
         elseif entity.type == "electric-pole" then
             local pole = entity
             -- Make sure hidden poles of the Bio gardens are connected correctly!
-            if pole.name == entities["bi-bio-garden"].hidden[h_key].name and base then
-                BioInd.writeDebug("Bio garden!")
-                BioInd.connect_garden_pole(base, pole)
-                BioInd.writeDebug("Connected %s (%s)", { pole.name, pole.unit_number or "nil" })
+            local garden_names = { "bi-bio-garden", "bi-bio-garden-larger", "bi-bio-garden-huge" }
+            for _, gname in ipairs(garden_names) do
+                if entities[gname] and pole.name == entities[gname].hidden[h_key].name and base then
+                    BioInd.writeDebug("Bio garden (" .. gname .. ")!")
+                    BioInd.connect_garden_pole(base, pole)
+                    BioInd.writeDebug("Connected %s (%s)", { pole.name, pole.unit_number or "nil" })
+                    break
+                end
             end
 
             -- A seedling has been planted
@@ -645,16 +649,37 @@ end
 -- Radar stuff
 --------------------------------------------------------------------
 
--- Radar completed a sector scan
+-- Robust sector scanned handler for Arboretum radar
 local function On_Sector_Scanned(event)
-    local f_name = "On_Sector_Scanned"
-    BioInd.writeDebug("Entered function %s(%s)", { f_name, event })
+    -- defensive checks
+    BioInd.writeDebug("On_Sector_Scanned fired")
+    --game.print("On_Sector_Scanned fired")
+    if not (event and event.radar) then return end
+    local radar = event.radar
+    if not (radar.valid and radar.unit_number) then return end
 
-    ---- Each time a Arboretum-Radar scans a sector  ----
-    local arboretum = storage.bi_arboretum_radar_table[event.radar.unit_number]
-    if arboretum then
-        Get_Arboretum_Recipe(storage.bi_arboretum_table[arboretum], event)
+    -- Make sure compound-entity data is available before accessing it
+    local arb_proto = BioInd.compound_entities and BioInd.compound_entities["bi-arboretum"]
+    if not (arb_proto and arb_proto.hidden and arb_proto.hidden.radar and arb_proto.hidden.radar.name) then
+        -- not ready yet (init not finished) — bail out safely
+        return
     end
+
+    -- Only handle scans from our arboretum radar type
+    if radar.name ~= arb_proto.hidden.radar.name then return end
+
+    -- Look up the base arboretum unit_number (stored when the hidden radar was created)
+    local base_unit_number = storage.bi_arboretum_radar_table and storage.bi_arboretum_radar_table[radar.unit_number]
+    if not base_unit_number then
+        -- no mapping found -> nothing to do
+        return
+    end
+
+    local arb_table = storage.bi_arboretum_table and storage.bi_arboretum_table[base_unit_number]
+    if not arb_table then return end
+
+    -- All good: call the arboretum recipe handler
+    Get_Arboretum_Recipe(arb_table, event)
 end
 
 

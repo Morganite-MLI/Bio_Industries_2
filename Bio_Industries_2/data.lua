@@ -26,6 +26,7 @@ for var, name in pairs({
     BI.Settings[var] = BioInd.get_startup_setting(name)
 end
 
+
 --- Help Files
 require("libs.item-functions")       -- From Bob's Libary
 require("libs.recipe-functions")     -- From Bob's Libary
@@ -79,10 +80,7 @@ if not mods["Natural_Evolution_Buildings"] then
     require("prototypes.Bio_Turret.recipe")
     require("prototypes.Bio_Turret.entity")
 
-
     --- Bio Cannon
-
-
     -- Items Groups
     require("prototypes.Bio_Cannon.item-group")
 
