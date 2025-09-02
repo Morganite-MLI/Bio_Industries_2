@@ -331,7 +331,8 @@ data:extend({
 						frame_count = 10,
 						scale = 0.5,
 						animation_speed = 0.1,
-						shift = { 0, 0.5 }
+						shift = { 0, -0.5 },
+						draw_as_light = true
 					}
 				}
 			}
