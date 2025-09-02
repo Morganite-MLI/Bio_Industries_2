@@ -219,8 +219,10 @@ data:extend({
 						priority = "high",
 						width = 800,
 						height = 800,
+						scale = 0.5,
 						frame_count = 1,
-						shift = { 1, -2 }
+						shift = { 1, -2 },
+						draw_as_light = true
 					}
 				}
 			}
