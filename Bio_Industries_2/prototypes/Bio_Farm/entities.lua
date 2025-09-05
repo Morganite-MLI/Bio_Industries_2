@@ -1,8 +1,8 @@
 local BioInd = require('common')('Bio_Industries_2')
-
 local ICONPATH = BioInd.modRoot .. "/graphics/icons/"
 local ICONPATH_E = BioInd.modRoot .. "/graphics/icons/entity/"
 local ENTITYPATH_BIO = BioInd.modRoot .. "/graphics/entities/"
+local REMNANTSPATH = BioInd.modRoot .. "/graphics/entities/remnants/"
 
 require("prototypes.Bio_Farm.pipeConnectors")
 require("util")
@@ -142,7 +142,6 @@ data:extend({
         },
     },
 
-
     ------- Bio Farm
     {
         type = "assembling-machine",
@@ -158,7 +157,7 @@ data:extend({
         flags = { "placeable-neutral", "placeable-player", "player-creation" },
         minable = { hardness = 0.2, mining_time = 0.5, result = "bi-bio-farm" },
         max_health = 250,
-        corpse = "big-remnants",
+        corpse = "bi-bio-farm-remnant",
         dying_explosion = "medium-explosion",
         resistances = { { type = "fire", percent = 70 } },
         fluid_boxes = {
@@ -246,13 +245,48 @@ data:extend({
         allowed_effects = { "consumption", "speed", "productivity", "pollution" },
     },
 
+	--- Corpse
+	{
+	 
+	 type = "corpse",
+	  name = "bi-bio-farm-remnant",
+	  localised_name = {"entity-name.bi-bio-farm-remnant"},
+	  icon = "__base__/graphics/icons/remnants.png",
+	  icon_size = 64,
+	  icon_mipmaps = 4,
+	  BI_add_icon = true,
+	  flags = {"placeable-neutral", "building-direction-8-way", "not-on-map"},
+	  subgroup = "remnants",
+	  order = "z-z-z",
+	  selection_box = {{-4.5, -4.5}, {4.5, 4.5}},
+	  tile_width = 9,
+	  tile_height = 9,
+	  selectable_in_game = false,
+	  time_before_removed = 60 * 60 * 15, -- 15 minutes
+	  final_render_layer = "remnants",
+	  remove_on_tile_placement = false,
+	  animation =
+	  {
+		{
+		  filename = REMNANTSPATH .. "bio_farm_remnant.png",
+		  line_length = 1,
+		  width = 728,
+		  height = 800,
+		  frame_count = 1,
+		  direction_count = 1,
+		  shift = {0, -1.5},
+		  scale = 0.5
+		}
+	  }
+	},
+
 })
 
 
 
 data:extend({
 
-    ------ Greenhouse
+    ------ Greenhouse / Nursary
     {
         type = "assembling-machine",
         name = "bi-bio-greenhouse",
@@ -269,7 +303,7 @@ data:extend({
         collision_box = { { -1.2, -1.2 }, { 1.2, 1.2 } },
         selection_box = { { -1.5, -1.5 }, { 1.5, 1.5 } },
         max_health = 250,
-        corpse = "medium-remnants",
+        corpse = "bi-bio-greenhouse-remnant",
         dying_explosion = "medium-explosion",
         crafting_categories = { "biofarm-mod-greenhouse" },
         crafting_speed = 1,
@@ -341,6 +375,40 @@ data:extend({
         close_sound = { filename = "__base__/sound/machine-close.ogg", volume = 0.75 }
     },
 
+	-- corpse	
+{
+  type = "corpse",
+  name = "bi-bio-greenhouse-remnant",
+  localised_name = {"entity-name.bi-bio-greenhouse-remnant"},
+  icon = "__base__/graphics/icons/remnants.png",
+  icon_size = 64,
+  icon_mipmaps = 4,
+  BI_add_icon = true,
+  flags = {"placeable-neutral", "building-direction-8-way", "not-on-map"},
+  subgroup = "remnants",
+  order = "z-z-z",
+  selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
+  tile_width = 3,
+  tile_height = 3,
+  selectable_in_game = false,
+  time_before_removed = 60 * 60 * 15, -- 15 minutes
+  final_render_layer = "remnants",
+  remove_on_tile_placement = false,
+  animation =
+  {
+    {
+      filename = REMNANTSPATH .. "bio_greenhouse_remnant.png",
+      line_length = 1,
+      width = 384,
+      height = 384,
+      frame_count = 1,
+      direction_count = 1,
+      shift = {0, -0.5},
+      scale = 0.5
+    }
+  }
+},
+
     -- COKERY
     {
         type = "assembling-machine",
@@ -360,7 +428,7 @@ data:extend({
         order = "a[cokery]",
         minable = { hardness = 0.2, mining_time = 0.5, result = "bi-cokery" },
         max_health = 200,
-        corpse = "medium-remnants",
+        corpse = "bi-cokery-remnant",
         resistances = { { type = "fire", percent = 95 } },
         collision_box = { { -1.2, -1.2 }, { 1.2, 1.2 } },
         selection_box = { { -1.5, -1.5 }, { 1.5, 1.5 } },
@@ -432,6 +500,41 @@ data:extend({
         crafting_speed = 2,
         ingredient_count = 1
     },
+	
+	--- corpse
+	
+	{
+	  type = "corpse",
+	  name = "bi-cokery-remnant",
+	  localised_name = {"entity-name.bi-cokery-remnant"},
+	  icon = "__base__/graphics/icons/remnants.png",
+	  icon_size = 64,
+	  icon_mipmaps = 4,
+	  BI_add_icon = true,
+	  flags = {"placeable-neutral", "building-direction-8-way", "not-on-map"},
+	  subgroup = "remnants",
+	  order = "z-z-z",
+	  selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
+	  tile_width = 3,
+	  tile_height = 3,
+	  selectable_in_game = false,
+	  time_before_removed = 60 * 60 * 15, -- 15 minutes
+	  final_render_layer = "remnants",
+	  remove_on_tile_placement = false,
+	  animation =
+	  {
+		{
+		  filename = REMNANTSPATH .. "cokery_remnant.png",
+		  line_length = 1,
+		  width = 256,
+		  height = 256,
+		  frame_count = 1,
+		  direction_count = 1,
+		  shift = {0.5, -0.5},
+		  scale = 0.5
+		}
+	  }
+	},
 
     -- STONECRUSHER
     {
@@ -445,7 +548,7 @@ data:extend({
         flags = { "placeable-neutral", "player-creation" },
         minable = { hardness = 0.2, mining_time = 0.5, result = "bi-stone-crusher" },
         max_health = 100,
-        corpse = "medium-remnants",
+        corpse = "bi-stone-crusher-remnant",
         module_slots = 1,
         resistances = { { type = "fire", percent = 70 } },
         working_sound = {
@@ -498,6 +601,41 @@ data:extend({
         },
         allowed_effects = { "consumption", "speed", "pollution" },
     },
+
+--- corpse
+	{
+	  type = "corpse",
+	  name = "bi-stone-crusher-remnant",
+	  localised_name = {"entity-name.bi-stone-crusher-remnant"},
+	  icon = "__base__/graphics/icons/remnants.png",
+	  icon_size = 64,
+	  icon_mipmaps = 4,
+	  BI_add_icon = true,
+	  flags = {"placeable-neutral", "building-direction-8-way", "not-on-map"},
+	  subgroup = "remnants",
+	  order = "z-z-z",
+	  selection_box = {{-1, -1}, {1, 1}},
+	  tile_width = 2,
+	  tile_height = 2,
+	  selectable_in_game = false,
+	  time_before_removed = 60 * 60 * 15, -- 15 minutes
+	  final_render_layer = "remnants",
+	  remove_on_tile_placement = false,
+	  animation =
+	  {
+		{
+		  filename = REMNANTSPATH .. "stone_crusher_remnant.png",
+		  line_length = 1,
+		  width = 130,
+		  height = 156,
+		  frame_count = 1,
+		  direction_count = 1,
+		  shift = {0, -0.2},
+		  scale = 0.5
+		}
+	  }
+	},
+
 
     --- Seed Bomb Projectile - 1
     {
@@ -865,7 +1003,7 @@ data:extend({
         placeable_by = { item = "bi-arboretum-area", count = 1 }, -- Fixes that entity couldn't be blueprinted
         minable = { hardness = 0.2, mining_time = 0.5, result = "bi-arboretum-area" },
         max_health = 250,
-        corpse = "big-remnants",
+        corpse = "bi-arboretum-area-remnant",
         dying_explosion = "medium-explosion",
         resistances = { { type = "fire", percent = 70 } },
         fluid_boxes = {
@@ -939,5 +1077,39 @@ data:extend({
         close_sound = { filename = "__base__/sound/machine-close.ogg", volume = 0.75 },
         module_specification = {},
     },
+	--- Corpse
+	{
+	  type = "corpse",
+	  name = "bi-arboretum-area-remnant",
+	  localised_name = {"entity-name.bi-arboretum-area-remnant"},
+	  icon = "__base__/graphics/icons/remnants.png",
+	  icon_size = 64,
+	  icon_mipmaps = 4,
+	  BI_add_icon = true,
+	  flags = {"placeable-neutral", "building-direction-8-way", "not-on-map"},
+	  subgroup = "remnants",
+	  order = "z-z-z",
+	  selection_box = {{-4.5, -4.5}, {4.5, 4.5}},
+	  tile_width = 9,
+	  tile_height = 9,
+	  selectable_in_game = false,
+	  time_before_removed = 60 * 60 * 15, -- 15 minutes
+	  final_render_layer = "remnants",
+	  remove_on_tile_placement = false,
+	  animation =
+	  {
+		{
+		  filename = REMNANTSPATH .. "arboretum_remnant.png",
+		  line_length = 1,
+		  width = 640,
+		  height = 640,
+		  frame_count = 1,
+		  direction_count = 1,
+		  shift = {0,0},
+		  scale = 0.5
+		}
+	  }
+	},
+	
 })
 
