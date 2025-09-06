@@ -21,7 +21,7 @@ local rail_segment_visualisation_endings =
   scale = 0.5,
   direction_count = 16,
   frame_count = 6,
-  tint = wood_tint,
+  -- tint = wood_tint,
   usage = "rail"
 }
 
@@ -41,7 +41,7 @@ local function make_new_rail_pictures_wood(keys, elems, max_variations)
       scale = 0.5;
       shift = util.by_pixel(key[4][1], key[4][2]),
       variation_count = variation_count,
-	  tint = wood_tint,
+	  -- tint = wood_tint,
       usage = "rail"
     }
   end
@@ -140,7 +140,7 @@ function new_rail_pictures_wood(rail_type)
   {
     { "metals",                       "__base__/graphics/entity/rails/rail/rail-metals.png",             mipmap = true },
     { "backplates",                   "__base__/graphics/entity/rails/rail/rail-backplates.png",         mipmap = true },
-    { "ties",                         "__base__/graphics/entity/rails/rail/rail-ties.png"                              },
+    { "ties",                         "__Bio_Industries_2__/graphics/entities/wood_products/rails/new_rail/rail-ties-wood.png"          },
     { "stone_path",                   "__base__/graphics/entity/rails/rail/rail-stone-path-inside.png"                 },
     { "stone_path_background",        "__base__/graphics/entity/rails/rail/rail-stone-path.png"                        },
     { "segment_visualisation_middle", "__base__/graphics/entity/rails/rail/rail-segment-visualisations-middle.png"     },
@@ -158,7 +158,7 @@ function new_rail_pictures_wood(rail_type)
         width = 256,
         height = 256,
         scale = 0.5,
-		tint = wood_tint,
+		-- tint = wood_tint,
         usage = "rail"
       },
       {
@@ -168,7 +168,7 @@ function new_rail_pictures_wood(rail_type)
         width = 256,
         height = 256,
         scale = 0.5,
-		tint = wood_tint,
+		-- tint = wood_tint,
         usage = "rail"
       }
     }
@@ -236,7 +236,7 @@ function new_rail_remnants_pictures(rail_type)
   {
     { "metals",                "__base__/graphics/entity/rails/rail/remnants/rail-remnants-metals.png",             mipmap = true, allow_forced_downscale = true },
     { "backplates",            "__base__/graphics/entity/rails/rail/remnants/rail-remnants-backplates.png",         mipmap = true, allow_forced_downscale = true },
-    { "ties",                  "__base__/graphics/entity/rails/rail/remnants/rail-remnants-ties.png"                             , allow_forced_downscale = true },
+    { "ties",                  "__Bio_Industries_2__/graphics/entities/wood_products/rails/new_rail/rail-remnants-ties-wood.png"      , allow_forced_downscale = true },
     { "stone_path",            "__base__/graphics/entity/rails/rail/remnants/rail-remnants-stone-path-inside.png"                , allow_forced_downscale = true },
     { "stone_path_background", "__base__/graphics/entity/rails/rail/remnants/rail-remnants-stone-path.png"                       , allow_forced_downscale = true }
   }
@@ -253,7 +253,7 @@ function new_rail_remnants_pictures(rail_type)
         width = 256,
         height = 256,
         scale = 0.5,
-		tint = wood_tint,
+		-- tint = wood_tint,
         usage = "rail"
       },
       {
@@ -263,7 +263,7 @@ function new_rail_remnants_pictures(rail_type)
         width = 256,
         height = 256,
         scale = 0.5,
-		tint = wood_tint,
+		-- tint = wood_tint,
         usage = "rail"
       }
     }
