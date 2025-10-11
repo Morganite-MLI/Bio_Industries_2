@@ -495,8 +495,8 @@ else
 
     -- Replace liquid air with oxygen (from Krastorio/K2) in recipes for Algae Biomass 2 and 3
     if data.raw.fluid.oxygen then
-        thxbob.lib.recipe.replace_ingredient("bi-biomass-2", "liquid-air", "oxygen")
-        thxbob.lib.recipe.replace_ingredient("bi-biomass-3", "liquid-air", "oxygen")
+        thxbob.lib.recipe.replace_ingredient("bi-biomass-2", "liquid-air", "kr-oxygen")
+        thxbob.lib.recipe.replace_ingredient("bi-biomass-3", "liquid-air", "kr-oxygen")
         BioInd.writeDebug("Replaced \"liquid-air\" with \"oxygen\" in recipes \"bi-biomass-2\" and \"bi-biomass-3\"")
         -- Perhaps there is no oxygen? But there's nitrogen for sure, so we fall back to that!
     elseif data.raw.fluid.nitrogen then

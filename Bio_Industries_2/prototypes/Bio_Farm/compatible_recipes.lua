@@ -242,8 +242,8 @@ end
 -- Krastorio2
 if mods["Krastorio2"] or mods["Krastorio2-spaced-out"] then
   -- Replace liquid air with oxygen in Algae Biomass conversion 2 and 3
-  thxbob.lib.recipe.replace_ingredient("bi-biomass-2", "liquid-air", "oxygen")
-  thxbob.lib.recipe.replace_ingredient("bi-biomass-3", "liquid-air", "oxygen")
+  thxbob.lib.recipe.replace_ingredient("bi-biomass-2", "liquid-air", "kr-oxygen")
+  thxbob.lib.recipe.replace_ingredient("bi-biomass-3", "liquid-air", "kr-oxygen")
 end
 
 
@@ -379,7 +379,7 @@ end
 
 -- Add recipe for sand from crushed stone if any other mod provides sand
 
-if data.raw.item["sand"] or
+if data.raw.item[mods["Krastorio2"] and "kr-sand" or "sand"] or
    data.raw.item["biotech-sand"] or
    data.raw.item["solid-sand"] then
 
@@ -401,7 +401,7 @@ if data.raw.item["sand"] or
       order = "a[bi]-a-z[bi-9-sand]",
       energy_required = 1,
       ingredients = {{type="item", name="stone-crushed", amount=2}},
-      results = {{type="item", name="sand", amount=5}},
+      results = {{type="item", name=mods["Krastorio2"] and "kr-sand" or "sand", amount=5}},
       main_product = "",
       enabled = false,
       allow_as_intermediate = true,     -- Changed for 0.18.34/1.1.4
