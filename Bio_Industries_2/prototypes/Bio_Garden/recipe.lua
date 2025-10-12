@@ -34,10 +34,17 @@ data:extend({
   --- Garden - Large(ENTITY)
   {
     type = "recipe",
-    name = "bi-bio-garden-lagre",
-    localised_name = {"entity-name.bi-bio-garden-lagre"},
-    localised_description = {"entity-description.bi-bio-garden-lagre"},
-	icons = { {icon = ICONPATH_E .. "bio_garden_large_icon.png", icon_size = 64, } },
+    name = "bi-bio-garden-large",
+    localised_name = {"entity-name.bi-bio-garden-large"},
+    localised_description = {"entity-description.bi-bio-garden-large"},
+    icon = ICONPATH_E .. "bio_garden_large_icon.png",
+    icon_size = 64,
+    icons = {
+      {
+        icon = ICONPATH_E .. "bio_garden_large_icon.png",
+        icon_size = 64,
+      }
+    },
     enabled = false,
     energy_required = 15,
     ingredients = {

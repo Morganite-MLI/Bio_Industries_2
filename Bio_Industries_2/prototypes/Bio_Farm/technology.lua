@@ -187,7 +187,7 @@ data:extend({
       },
       {
         type = "unlock-recipe",
-        recipe = "bi-bio-garden-lagre"
+        recipe = "bi-bio-garden-large"
       },
       {
         type = "unlock-recipe",
