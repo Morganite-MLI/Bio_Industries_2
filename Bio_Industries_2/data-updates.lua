@@ -429,7 +429,7 @@ end
 -- We only want to create nitrogen if it doesn't exist yet. We then also need to create
 -- liquid air.
 
-if not data.raw.fluid["nitrogen"] then
+if not data.raw.fluid["nitrogen"] and not data.raw.fluid["kr-nitrogen"] then
     data:extend({
         {
             type = "fluid",
@@ -488,6 +488,8 @@ if not data.raw.fluid["nitrogen"] then
 
     -- Recipes for "bi-liquid-air" and "bi-nitrogen" aren't needed!
 else
+    local nitrogen = mods["Krastorio2"] and "kr-nitrogen" or "nitrogen"
+
     -- Remove recipe unlocks
     thxbob.lib.tech.remove_recipe_unlock("bi-tech-fertilizer", "bi-liquid-air")
     thxbob.lib.tech.remove_recipe_unlock("bi-tech-fertilizer", "bi-nitrogen")
@@ -500,8 +502,8 @@ else
         BioInd.writeDebug("Replaced \"liquid-air\" with \"oxygen\" in recipes \"bi-biomass-2\" and \"bi-biomass-3\"")
         -- Perhaps there is no oxygen? But there's nitrogen for sure, so we fall back to that!
     elseif data.raw.fluid.nitrogen then
-        thxbob.lib.recipe.replace_ingredient("bi-biomass-2", "liquid-air", "nitrogen")
-        thxbob.lib.recipe.replace_ingredient("bi-biomass-3", "liquid-air", "nitrogen")
+        thxbob.lib.recipe.replace_ingredient("bi-biomass-2", "liquid-air", nitrogen)
+        thxbob.lib.recipe.replace_ingredient("bi-biomass-3", "liquid-air", nitrogen)
         BioInd.writeDebug("Replaced \"liquid-air\" with \"nitrogen\" in recipes \"bi-biomass-2\" and \"bi-biomass-3\"")
     end
 

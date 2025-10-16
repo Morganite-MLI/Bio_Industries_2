@@ -5,6 +5,8 @@ local ICONPATH_AAI = BioInd.modRoot .. "/graphics/icons/mod_aai/"
 local ICONPATH_KR = BioInd.modRoot .. "/graphics/icons/mod_krastorio/"
 local ICONPATHMIPS = BioInd.modRoot .. "/graphics/icons/mips/"
 
+local nitrogen = mods["Krastorio2"] and "kr-nitrogen" or "nitrogen"
+
 data:extend({
   {
     type = "recipe",
@@ -44,7 +46,7 @@ data:extend({
     category = "chemistry",
     energy_required = 5,
     ingredients = {
-      {type = "fluid", name = "nitrogen", amount = 10},
+      {type = "fluid", name = nitrogen, amount = 10},
       {type = "item", name = "bi-ash", amount = 10}
     },
     results = {
@@ -186,7 +188,7 @@ end
 --- Add fertilizer recipes if bob's or Angels
 if data.raw.item["solid-sodium-hydroxide"] and mods["angelspetrochem"] then
   thxbob.lib.recipe.add_new_ingredient("bi-fertilizer-2", {type = "item", name = "solid-sodium-hydroxide", amount = 10})
-  thxbob.lib.recipe.replace_ingredient("bi-fertilizer-2", "nitrogen", "gas-nitrogen")
+  thxbob.lib.recipe.replace_ingredient("bi-fertilizer-2", nitrogen, "gas-nitrogen")
   data.raw.recipe["bi-fertilizer-2"].icon = ICONPATH_BA .. "fertilizer_solid_sodium_hydroxide.png"
   data.raw.recipe["bi-fertilizer-2"].icon_size = 64
   thxbob.lib.tech.add_recipe_unlock("bi-tech-fertilizer", "bi-fertilizer-2")
@@ -202,8 +204,8 @@ end
 
 -- If Angels, replace liquid air + nitrogen and with Angel's ingredients in recipes
 if data.raw.fluid["gas-nitrogen"] and data.raw.fluid["gas-compressed-air"] and mods["angelspetrochem"] then
-  thxbob.lib.recipe.replace_ingredient("bi-fertilizer-1", "nitrogen", "gas-nitrogen")
-  thxbob.lib.recipe.replace_ingredient("bi-fertilizer-2", "nitrogen", "gas-nitrogen")
+  thxbob.lib.recipe.replace_ingredient("bi-fertilizer-1", nitrogen, "gas-nitrogen")
+  thxbob.lib.recipe.replace_ingredient("bi-fertilizer-2", nitrogen, "gas-nitrogen")
   thxbob.lib.recipe.replace_ingredient("bi-biomass-2", "liquid-air", "gas-compressed-air")
   thxbob.lib.recipe.replace_ingredient("bi-biomass-3", "liquid-air", "gas-compressed-air")
 end

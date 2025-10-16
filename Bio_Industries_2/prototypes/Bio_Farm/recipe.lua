@@ -2,11 +2,10 @@ local BioInd = require('common')('Bio_Industries_2')
 local ICONPATH = BioInd.modRoot .. "/graphics/icons/"
 local ICONPATH_W = BioInd.modRoot .. "/graphics/icons/weapons/"
 local ICONPATH_E = BioInd.modRoot .. "/graphics/icons/entity/"
-local ICONPATHMIPS = BioInd.modRoot .. "/graphics/icons/mips/"
+
+local nitrogen = mods["Krastorio2"] and "kr-nitrogen" or "nitrogen"
 
 data:extend({
-
-
 
     --- Seeds from Water (BASIC)
     {
@@ -1141,7 +1140,7 @@ data:extend({
             { type = "fluid", name = "liquid-air", amount = 20 }
         },
         results = {
-            { type = "fluid", name = "nitrogen", amount = 20 },
+            { type = "fluid", name = nitrogen, amount = 20 },
         },
 		crafting_machine_tint = {
         primary = { r = 0.0, g = 0.8, b = 0.0, a = 0.000 },
@@ -1173,7 +1172,7 @@ data:extend({
         energy_required = 5,
         ingredients = {
             { type = "item",  name = "sulfur",   amount = 1 },
-            { type = "fluid", name = "nitrogen", amount = 10 },
+            { type = "fluid", name = nitrogen, amount = 10 },
             { type = "item",  name = "bi-ash",   amount = 10 }
         },
         results = {
