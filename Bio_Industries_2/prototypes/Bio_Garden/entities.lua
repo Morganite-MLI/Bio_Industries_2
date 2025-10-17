@@ -71,7 +71,7 @@ data:extend({
         energy_source = {
             type = "electric",
             usage_priority = "secondary-input",
-            emissions_per_minute = { pollution = -45 }, -- Negative value: pollution is absorbed!
+            emissions_per_minute = { pollution = -1.5 * 60 }, -- Negative value: pollution is absorbed!
         },
         energy_usage = "200kW",
         ingredient_count = 1,
@@ -212,7 +212,7 @@ data:extend({
         energy_source = {
             type = "electric",
             usage_priority = "secondary-input",
-            emissions_per_minute = { pollution = -360 }, -- Negative value: pollution is absorbed!
+            emissions_per_minute = { pollution = -12 * 60 }, -- Negative value: pollution is absorbed!
         },
         energy_usage = "800kW",
         ingredient_count = 1,
@@ -394,7 +394,7 @@ data:extend({
         energy_source = {
             type = "electric",
             usage_priority = "secondary-input",
-            emissions_per_minute = { pollution = -2880 }, -- Negative value: pollution is absorbed!
+            emissions_per_minute = { pollution = -96 * 60 }, -- Negative value: pollution is absorbed!
         },
         energy_usage = "3200kW",
         ingredient_count = 1,
