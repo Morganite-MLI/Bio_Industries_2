@@ -692,12 +692,16 @@ return function(mod_name)
             compound_entity.hidden.pole and
             compound_entity.hidden.pole.name then
             local wire_reach = prototypes.entity[compound_entity.hidden.pole.name] and
-                prototypes.entity[compound_entity.hidden.pole.name].max_wire_distance
+                prototypes.entity[compound_entity.hidden.pole.name].get_max_wire_distance()
             if not wire_reach then
                 error("Prototype for hidden pole of Bio gardens doesn't exist!")
             end
 
-            pole.disconnect_neighbour()
+            local wire_connector
+            for _, connector in pairs(pole.get_wire_connectors()) do
+                wire_connector = connector
+                connector.disconnect_all()
+            end
 
             -- Each pole can only have 5 connections. Let's connect to other hidden
             -- poles first!
@@ -712,7 +716,7 @@ return function(mod_name)
 
             for n, neighbour in pairs(neighbours or {}) do
                 if pole ~= neighbour then
-                    connected = pole.connect_neighbour(neighbour)
+                    connected = wire_connector.connect_to(neighbour)
                     common.writeDebug("Connected pole %g to %s %g: %s",
                         { pole.unit_number, neighbour.name, neighbour.unit_number, connected })
                 end
@@ -728,7 +732,7 @@ return function(mod_name)
             })
             common.writeDebug("Pole %g has %s neighbours", { pole.unit_number, #neighbours })
             for n, neighbour in pairs(neighbours or {}) do
-                connected = pole.connect_neighbour(neighbour)
+                connected = wire_connector.connect_to(neighbour)
                 common.writeDebug("Connected pole %g to neighbour %s (%g): %s",
                     { pole.unit_number, neighbour.name, neighbour.unit_number, connected })
             end
