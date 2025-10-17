@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.0.23
+Date: 17.10.2025
+  Bug Fixes:
+    - Fixed crash when placing bio gardens
+    - Match bio garden pollution reduction by the amount of trees equivalent the description states
+    - Correct typo in internal recipe name to fix the localisation
+---------------------------------------------------------------------------------------------------
 Version: 2.0.22
 Date: 16.10.2025
   Bug Fixes:
