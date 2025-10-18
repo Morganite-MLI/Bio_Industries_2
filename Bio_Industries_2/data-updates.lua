@@ -488,6 +488,7 @@ if not data.raw.fluid["nitrogen"] and not data.raw.fluid["kr-nitrogen"] then
 
     -- Recipes for "bi-liquid-air" and "bi-nitrogen" aren't needed!
 else
+    local oxygen = mods["Krastorio2"] and "kr-oxygen" or "oxygen"
     local nitrogen = mods["Krastorio2"] and "kr-nitrogen" or "nitrogen"
 
     -- Remove recipe unlocks
@@ -496,12 +497,12 @@ else
     BioInd.writeDebug("Removed recipe unlocks for \"bi-liquid-air\" and \"bi-nitrogen\"")
 
     -- Replace liquid air with oxygen (from Krastorio/K2) in recipes for Algae Biomass 2 and 3
-    if data.raw.fluid.oxygen then
-        thxbob.lib.recipe.replace_ingredient("bi-biomass-2", "liquid-air", "kr-oxygen")
-        thxbob.lib.recipe.replace_ingredient("bi-biomass-3", "liquid-air", "kr-oxygen")
+    if data.raw.fluid[oxygen] then
+        thxbob.lib.recipe.replace_ingredient("bi-biomass-2", "liquid-air", oxygen)
+        thxbob.lib.recipe.replace_ingredient("bi-biomass-3", "liquid-air", oxygen)
         BioInd.writeDebug("Replaced \"liquid-air\" with \"oxygen\" in recipes \"bi-biomass-2\" and \"bi-biomass-3\"")
         -- Perhaps there is no oxygen? But there's nitrogen for sure, so we fall back to that!
-    elseif data.raw.fluid.nitrogen then
+    elseif data.raw.fluid[nitrogen] then
         thxbob.lib.recipe.replace_ingredient("bi-biomass-2", "liquid-air", nitrogen)
         thxbob.lib.recipe.replace_ingredient("bi-biomass-3", "liquid-air", nitrogen)
         BioInd.writeDebug("Replaced \"liquid-air\" with \"nitrogen\" in recipes \"bi-biomass-2\" and \"bi-biomass-3\"")
