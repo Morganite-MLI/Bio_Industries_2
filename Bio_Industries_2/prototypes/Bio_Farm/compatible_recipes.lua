@@ -5,7 +5,7 @@ local ICONPATH_AAI = BioInd.modRoot .. "/graphics/icons/mod_aai/"
 local ICONPATH_KR = BioInd.modRoot .. "/graphics/icons/mod_krastorio/"
 local ICONPATHMIPS = BioInd.modRoot .. "/graphics/icons/mips/"
 
-local nitrogen = mods["Krastorio2"] and "kr-nitrogen" or "nitrogen"
+local nitrogen = data.raw.fluid["kr-nitrogen"] and "kr-nitrogen" or "nitrogen"
 
 data:extend({
   {
@@ -381,7 +381,7 @@ end
 
 -- Add recipe for sand from crushed stone if any other mod provides sand
 
-if data.raw.item[mods["Krastorio2"] and "kr-sand" or "sand"] or
+if data.raw.item[data.raw.item["kr-sand"] and "kr-sand" or "sand"] or
    data.raw.item["biotech-sand"] or
    data.raw.item["solid-sand"] then
 
@@ -403,7 +403,7 @@ if data.raw.item[mods["Krastorio2"] and "kr-sand" or "sand"] or
       order = "a[bi]-a-z[bi-9-sand]",
       energy_required = 1,
       ingredients = {{type="item", name="stone-crushed", amount=2}},
-      results = {{type="item", name=mods["Krastorio2"] and "kr-sand" or "sand", amount=5}},
+      results = {{type="item", name=data.raw.item["kr-sand"] and "kr-sand" or "sand", amount=5}},
       main_product = "",
       enabled = false,
       allow_as_intermediate = true,     -- Changed for 0.18.34/1.1.4

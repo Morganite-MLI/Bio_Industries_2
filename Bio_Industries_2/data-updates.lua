@@ -488,8 +488,8 @@ if not data.raw.fluid["nitrogen"] and not data.raw.fluid["kr-nitrogen"] then
 
     -- Recipes for "bi-liquid-air" and "bi-nitrogen" aren't needed!
 else
-    local oxygen = mods["Krastorio2"] and "kr-oxygen" or "oxygen"
-    local nitrogen = mods["Krastorio2"] and "kr-nitrogen" or "nitrogen"
+    local oxygen = data.raw.fluid["kr-oxygen"] and "kr-oxygen" or "oxygen"
+    local nitrogen = data.raw.fluid["kr-nitrogen"] and "kr-nitrogen" or "nitrogen"
 
     -- Remove recipe unlocks
     thxbob.lib.tech.remove_recipe_unlock("bi-tech-fertilizer", "bi-liquid-air")
@@ -515,20 +515,18 @@ else
 end
 
 
-
-
  -- Replace nitrogen (BI) with bob-nitrogen (Bob's) in recipe "bi-nitrogen"
 if data.raw.fluid["bob-nitrogen"] then
-	 
-	  thxbob.lib.recipe.remove_result("bi-nitrogen", "nitrogen")
+	 local nitrogen = data.raw.fluid["kr-nitrogen"] and "kr-nitrogen" or "nitrogen"
+	  thxbob.lib.recipe.remove_result("bi-nitrogen", nitrogen)
 	  thxbob.lib.recipe.add_result("bi-nitrogen", {
 		type = "fluid",
 		name = "bob-nitrogen",
 		amount = 40
 	  })
 
-	  thxbob.lib.recipe.replace_ingredient("bi-fertilizer-1", "nitrogen", "bob-nitrogen")
-	  thxbob.lib.recipe.replace_ingredient("bi-fertilizer-2", "nitrogen", "bob-nitrogen")
+	  thxbob.lib.recipe.replace_ingredient("bi-fertilizer-1", nitrogen, "bob-nitrogen")
+	  thxbob.lib.recipe.replace_ingredient("bi-fertilizer-2", nitrogen, "bob-nitrogen")
 
 	BioInd.writeDebug("Update nitrogen compatibility for Bob's")
 	

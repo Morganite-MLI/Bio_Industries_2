@@ -3,7 +3,7 @@ local ICONPATH = BioInd.modRoot .. "/graphics/icons/"
 local ICONPATH_W = BioInd.modRoot .. "/graphics/icons/weapons/"
 local ICONPATH_E = BioInd.modRoot .. "/graphics/icons/entity/"
 
-local nitrogen = mods["Krastorio2"] and "kr-nitrogen" or "nitrogen"
+local nitrogen = data.raw.fluid["kr-nitrogen"] and "kr-nitrogen" or "nitrogen"
 
 data:extend({
 
