@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.0.27
+Date: 21.10.2025
+  Changes:
+    - Brazilian translation improvements (thanks Slondo)
+    - Upscaled graphics of the huge wooden power poles
+---------------------------------------------------------------------------------------------------
 Version: 2.0.26
 Date: 21.10.2025
   Changes:
