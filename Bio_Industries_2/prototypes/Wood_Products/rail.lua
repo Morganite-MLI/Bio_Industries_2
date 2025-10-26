@@ -117,7 +117,10 @@ local simulations = require("__base__.prototypes.factoriopedia-simulations")
     placeable_by = {item = "bi-rail-wood", count = 1},
     walking_sound = tile_sounds.walking.rails,
     extra_planner_goal_penalty = -4,
-    factoriopedia_alternative = "straight-rail"
+    factoriopedia_alternative = "straight-rail",
+    -- for upgrade planer (fast rail change wood/iron)
+    next_upgrade = "straight-rail",
+    fast_replaceable_group = "straight-rail",
   },
    
   {
@@ -166,7 +169,10 @@ local simulations = require("__base__.prototypes.factoriopedia-simulations")
     placeable_by = {item = "bi-rail-wood", count = 2},
     walking_sound = tile_sounds.walking.rails,
     extra_planner_penalty = 0,
-    factoriopedia_alternative = "straight-rail"
+    factoriopedia_alternative = "straight-rail",
+    -- for upgrade planer (fast rail change wood/iron)
+    next_upgrade = "half-diagonal-rail",
+    fast_replaceable_group = "half-diagonal-rail",
   },
   {
     type = "curved-rail-a",
@@ -213,7 +219,10 @@ local simulations = require("__base__.prototypes.factoriopedia-simulations")
     walking_sound = tile_sounds.walking.rails,
     extra_planner_penalty = 0.5,
     deconstruction_marker_positions = rail_8shifts_vector(-0.248, -0.533),
-    factoriopedia_alternative = "straight-rail"
+    factoriopedia_alternative = "straight-rail",
+    -- for upgrade planer (fast rail change wood/iron)
+    next_upgrade = "curved-rail-a",
+    fast_replaceable_group = "curved-rail-a",
   },
   {
     type = "curved-rail-b",
@@ -260,7 +269,10 @@ local simulations = require("__base__.prototypes.factoriopedia-simulations")
     walking_sound = tile_sounds.walking.rails,
     extra_planner_penalty = 0.5,
     deconstruction_marker_positions = rail_8shifts_vector(-0.309, -0.155),
-    factoriopedia_alternative = "straight-rail"
+    factoriopedia_alternative = "straight-rail",
+    -- for upgrade planer (fast rail change wood/iron)
+    next_upgrade = "curved-rail-b",
+    fast_replaceable_group = "curved-rail-b",
   },
 })  
    
