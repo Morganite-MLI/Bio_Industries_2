@@ -40,6 +40,33 @@ local simulations = require("__base__.prototypes.factoriopedia-simulations")
   },
 
 ---- Recipe
+     {
+    type = "recipe",
+    name = "bi-rail-wood",
+    localised_name = {"entity-name.bi-rail-wood"},
+    localised_description = {"entity-description.bi-rail-wood"},
+    icons = { { icon = ICONPATH_E .. "rail-wood.png", icon_size = 64, } },
+    enabled = false,
+    ingredients = { 
+        {type="item",name="wood",amount=6},
+        {type="item",name="stone",amount=1},
+        {type="item",name="steel-plate",amount=1},
+        {type="item",name="iron-stick",amount=1},
+      },
+    results={{type="item",name="bi-rail-wood",amount=2}},
+    main_product = "",
+    requester_paste_multiplier = 4,
+    --~ always_show_made_in = true,
+    --~ allow_decomposition = false,
+    allow_as_intermediate = false,      -- Added for 0.18.34/1.1.4
+    always_show_made_in = false,        -- Changed for 0.18.34/1.1.4
+    allow_decomposition = true,         -- Changed for 0.18.34/1.1.4
+    subgroup = "transport",
+    order = "a[train-system]-a[rail]",
+    -- This is a custom property for use by "Krastorio 2" (it will change
+    -- ingredients/results; used for wood/wood pulp)
+    mod = "Bio_Industries",
+     },
 	   {
 		type = "recipe",
 		name = "bi-rail-wood-to-concrete",
