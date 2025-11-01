@@ -40,6 +40,33 @@ local simulations = require("__base__.prototypes.factoriopedia-simulations")
   },
 
 ---- Recipe
+     {
+    type = "recipe",
+    name = "bi-rail-wood",
+    localised_name = {"entity-name.bi-rail-wood"},
+    localised_description = {"entity-description.bi-rail-wood"},
+    icons = { { icon = ICONPATH_E .. "rail-wood.png", icon_size = 64, } },
+    enabled = false,
+    ingredients = { 
+        {type="item",name="wood",amount=6},
+        {type="item",name="stone",amount=1},
+        {type="item",name="steel-plate",amount=1},
+        {type="item",name="iron-stick",amount=1},
+      },
+    results={{type="item",name="bi-rail-wood",amount=2}},
+    main_product = "",
+    requester_paste_multiplier = 4,
+    --~ always_show_made_in = true,
+    --~ allow_decomposition = false,
+    allow_as_intermediate = false,      -- Added for 0.18.34/1.1.4
+    always_show_made_in = false,        -- Changed for 0.18.34/1.1.4
+    allow_decomposition = true,         -- Changed for 0.18.34/1.1.4
+    subgroup = "transport",
+    order = "a[train-system]-a[rail]",
+    -- This is a custom property for use by "Krastorio 2" (it will change
+    -- ingredients/results; used for wood/wood pulp)
+    mod = "Bio_Industries",
+     },
 	   {
 		type = "recipe",
 		name = "bi-rail-wood-to-concrete",
@@ -90,7 +117,10 @@ local simulations = require("__base__.prototypes.factoriopedia-simulations")
     placeable_by = {item = "bi-rail-wood", count = 1},
     walking_sound = tile_sounds.walking.rails,
     extra_planner_goal_penalty = -4,
-    factoriopedia_alternative = "straight-rail"
+    factoriopedia_alternative = "straight-rail",
+    -- for upgrade planer (fast rail change wood/iron)
+    next_upgrade = "straight-rail",
+    fast_replaceable_group = "straight-rail",
   },
    
   {
@@ -139,7 +169,10 @@ local simulations = require("__base__.prototypes.factoriopedia-simulations")
     placeable_by = {item = "bi-rail-wood", count = 2},
     walking_sound = tile_sounds.walking.rails,
     extra_planner_penalty = 0,
-    factoriopedia_alternative = "straight-rail"
+    factoriopedia_alternative = "straight-rail",
+    -- for upgrade planer (fast rail change wood/iron)
+    next_upgrade = "half-diagonal-rail",
+    fast_replaceable_group = "half-diagonal-rail",
   },
   {
     type = "curved-rail-a",
@@ -186,7 +219,10 @@ local simulations = require("__base__.prototypes.factoriopedia-simulations")
     walking_sound = tile_sounds.walking.rails,
     extra_planner_penalty = 0.5,
     deconstruction_marker_positions = rail_8shifts_vector(-0.248, -0.533),
-    factoriopedia_alternative = "straight-rail"
+    factoriopedia_alternative = "straight-rail",
+    -- for upgrade planer (fast rail change wood/iron)
+    next_upgrade = "curved-rail-a",
+    fast_replaceable_group = "curved-rail-a",
   },
   {
     type = "curved-rail-b",
@@ -233,7 +269,10 @@ local simulations = require("__base__.prototypes.factoriopedia-simulations")
     walking_sound = tile_sounds.walking.rails,
     extra_planner_penalty = 0.5,
     deconstruction_marker_positions = rail_8shifts_vector(-0.309, -0.155),
-    factoriopedia_alternative = "straight-rail"
+    factoriopedia_alternative = "straight-rail",
+    -- for upgrade planer (fast rail change wood/iron)
+    next_upgrade = "curved-rail-b",
+    fast_replaceable_group = "curved-rail-b",
   },
 })  
    
