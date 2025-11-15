@@ -372,19 +372,19 @@ data:extend({
         percent = 10
       }
     },
-    collision_box = {{-0.3, -0.3}, {0.3, 0.3}},
-    selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
+    collision_box = {{-0.35, -0.35}, {0.25, 0.25}},
+    selection_box = {{-0.55, -0.55}, {0.45, 0.45}},
     drawing_box = {{-1, -7}, {1, 0.5}},
     maximum_wire_distance = 64, -- Factorio Max
     supply_area_distance = 2,   -- This is the radius, so the supply area is 4x4.
     pictures = {
       filename = WOODPATH .. "huge-wooden-pole.png",
       priority = "high",
-      width = 182,
-      height = 167,
+      width = 546,
+      height = 501,
       direction_count = 4,
       shift = {3, -3.45},
-      scale = 1.5,
+      scale = 0.5,
     },
     connection_points = {
       {
