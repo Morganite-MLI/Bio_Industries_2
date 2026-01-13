@@ -24,7 +24,7 @@ data:extend({
     order = "a[bi]-a-g[bi-coke-coal]-2",
     energy_required = 4,
     ingredients = {},
-    results = {{type="item", name="pellet-coke", amount=1}},
+    results = {{type="item", name="angels-pellet-coke", amount=1}},
     always_show_made_in = true,
     allow_decomposition = false,
     allow_as_intermediate = false,
@@ -172,15 +172,15 @@ end
 
 -- Update Wood Bricks icon to Angels
 if data.raw.item["wood-bricks"] and mods["angelsbioprocessing"] then
-  data.raw.recipe["bi-wood-fuel-brick"].icon = "__angelsbioprocessing__/graphics/icons/wood-bricks.png"
+  data.raw.recipe["bi-wood-fuel-brick"].icon = "__angelsbioprocessinggraphics__/graphics/icons/wood-bricks.png"
   data.raw.recipe["bi-wood-fuel-brick"].icon_size = 32
   data.raw.recipe["bi-wood-fuel-brick"].icons = {
       {
-        icon = "__angelsbioprocessing__/graphics/icons/wood-bricks.png",
+        icon = "__angelsbioprocessinggraphics__/graphics/icons/wood-bricks.png",
         icon_size = 32,
       }
     }
-  data.raw.item["wood-bricks"].icon = "__angelsbioprocessing__/graphics/icons/wood-bricks.png"
+  data.raw.item["wood-bricks"].icon = "__angelsbioprocessinggraphics__/graphics/icons/wood-bricks.png"
   data.raw.item["wood-bricks"].icon_size = 32
 end
 
@@ -224,13 +224,13 @@ if mods["angelspetrochem"] then
 
 end
 
--- If Angels, replace water with water-yellow-waste
-if data.raw.fluid["water-yellow-waste"] and mods["angelspetrochem"] then
-  -- Replace water with water-yellow-waste in Algae Biomass conversion 4
+-- If Angels, replace water with angels-water-yellow-waste
+if data.raw.fluid["angels-water-yellow-waste"] and mods["angelspetrochem"] then
+  -- Replace water with angels-water-yellow-waste in Algae Biomass conversion 4
   thxbob.lib.recipe.remove_result("bi-biomass-conversion-4", "water")
   thxbob.lib.recipe.add_result("bi-biomass-conversion-4", {
     type = "fluid",
-    name = "water-yellow-waste",
+    name = "angels-water-yellow-waste",
     amount = 40
   })
   -- Change recipe localizations
@@ -270,17 +270,17 @@ if mods["angelsrefining"] then
           icon_size = 64,
         }
       },
-      category = "liquifying",
-      subgroup = "water-treatment",
+      category = "angels-liquifying",
+      subgroup = "angels-water-treatment",
       energy_required = 2,
       ingredients = {
-        {type = "fluid", name = "water-purified", amount = 100},
+        {type = "fluid", name = "angels-water-purified", amount = 100},
         {type = "item", name = "stone-crushed", amount = 90},
         {type = "item", name = "wood-charcoal", amount = 30},
       },
       results= {
-        {type = "fluid", name = "water-yellow-waste", amount = 40},
-         {type = "fluid", name = "water-mineralized", amount = 60},
+        {type = "fluid", name = "angels-water-yellow-waste", amount = 40},
+         {type = "fluid", name = "angels-water-mineralized", amount = 60},
       },
       enabled = false,
       allow_as_intermediate = false,
@@ -301,16 +301,16 @@ if mods["angelsrefining"] then
           icon_size = 64,
         }
       },
-      category = "liquifying",
-      subgroup = "liquifying",
+      category = "angels-liquifying",
+      subgroup = "angels-liquifying",
       energy_required = 4,
       ingredients = {
-        {type = "fluid", name = "water-saline", amount = 50},
+        {type = "fluid", name = "angels-water-saline", amount = 50},
         {type = "item", name = "stone-crushed", amount = 90},
         {type = "item", name = "bi-ash", amount = 40},
       },
       results = {
-        {type = "fluid", name = "slag-slurry", amount = 100},
+        {type = "fluid", name = "angels-slag-slurry", amount = 100},
       },
       enabled = false,
       allow_as_intermediate = false,
@@ -319,7 +319,7 @@ if mods["angelsrefining"] then
       order = "i [slag-processing-dissolution]-2",
     },
   })
-  thxbob.lib.tech.add_recipe_unlock("water-treatment", "bi-mineralized-sulfuric-waste")
+  thxbob.lib.tech.add_recipe_unlock("angels-water-treatment", "bi-mineralized-sulfuric-waste")
   thxbob.lib.tech.add_recipe_unlock("slag-processing-1", "bi-slag-slurry")
 end
 

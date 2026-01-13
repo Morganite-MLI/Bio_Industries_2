@@ -340,9 +340,9 @@ if settings.startup["angels-use-angels-barreling"] and settings.startup["angels-
     data.raw.technology["bi-tech-fertilizer"].prerequisites = {
         "bi-tech-bio-farming",
         -- AND (
-        "water-treatment",    -- sulfur
+        "angels-water-treatment",    -- sulfur
         -- OR
-        "angels-fluid-barreling", -- barreling (needed 'water-treatment' as prerequisites)
+        "angels-fluid-barreling", -- barreling (needed 'angels-water-treatment' as prerequisites)
         -- )
     }
 end
@@ -350,12 +350,12 @@ end
 
 ----- Angels Merge ----
 if mods["angelspetrochem"] then
-    data.raw.item["pellet-coke"].icon = "__angelspetrochem__/graphics/icons/pellet-coke.png"
-    data.raw.item["pellet-coke"].icon_size = 32
-    data.raw.item["pellet-coke"].fuel_acceleration_multiplier = 1.1
-    data.raw.item["pellet-coke"].fuel_top_speed_multiplier = 1.2
+    data.raw.item["angels-pellet-coke"].icon = "__angelspetrochemgraphics__/graphics/icons/pellet-coke.png"
+    data.raw.item["angels-pellet-coke"].icon_size = 32
+    data.raw.item["angels-pellet-coke"].fuel_acceleration_multiplier = 1.1
+    data.raw.item["angels-pellet-coke"].fuel_top_speed_multiplier = 1.2
 
-    data.raw.recipe["pellet-coke"].category = "biofarm-mod-smelting"
+    data.raw.recipe["angels-pellet-coke"].category = "biofarm-mod-smelting"
     thxbob.lib.tech.remove_recipe_unlock("angels-coal-processing-2", "pellet-coke")
     thxbob.lib.tech.add_recipe_unlock("angels-coal-cracking", "pellet-coke")
 end
