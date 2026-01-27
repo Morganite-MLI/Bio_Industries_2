@@ -327,9 +327,7 @@ data:extend({
         ingredient_count = 3,
         open_sound = { filename = "__base__/sound/machine-open.ogg", volume = 0.85 },
         close_sound = { filename = "__base__/sound/machine-close.ogg", volume = 0.75 },
-        module_specification = {
-            module_slots = 3
-        },
+        module_slots = 3,
         allowed_effects = { "consumption", "speed", "productivity", "pollution" },
     },
 
@@ -412,7 +410,7 @@ data:extend({
                 pipe_connections = { { flow_direction = "input", direction = defines.direction.north, position = { 0, -1 } } }
             },
         },
-        module_specification = {module_slots = 2},
+        module_slots = 2,
         allowed_effects = { "consumption", "speed", "productivity", "pollution" },
 		graphics_set = {
 			animation = {
