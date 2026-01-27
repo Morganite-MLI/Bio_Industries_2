@@ -6,6 +6,7 @@ local ICONPATH_KR = BioInd.modRoot .. "/graphics/icons/mod_krastorio/"
 local ICONPATHMIPS = BioInd.modRoot .. "/graphics/icons/mips/"
 
 local nitrogen = data.raw.fluid["kr-nitrogen"] and "kr-nitrogen" or "nitrogen"
+local pellet_coke = data.raw.item["angels-pellet-coke"] and "angels-pellet-coke" or "pellet-coke"
 
 data:extend({
   {
@@ -24,7 +25,7 @@ data:extend({
     order = "a[bi]-a-g[bi-coke-coal]-2",
     energy_required = 4,
     ingredients = {},
-    results = {{type="item", name="angels-pellet-coke", amount=1}},
+    results = {{type="item", name=pellet_coke, amount=1}},
     always_show_made_in = true,
     allow_decomposition = false,
     allow_as_intermediate = false,
