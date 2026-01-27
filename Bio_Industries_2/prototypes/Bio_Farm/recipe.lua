@@ -161,6 +161,7 @@ data:extend({
         category = "biofarm-mod-greenhouse",
         energy_required = 400,
         ingredients = {
+            { type = "item",  name = "bi-seed", amount = 20 },
             { type = "fluid", name = "water",   amount = 100 },
         },
         results = {
