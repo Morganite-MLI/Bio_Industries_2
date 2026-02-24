@@ -753,54 +753,7 @@ if BI.Settings.BI_Game_Tweaks_Recipe then
     if data.raw.item["stone-crushed"] then
         thxbob.lib.recipe.remove_ingredient("rail", "stone")
         thxbob.lib.recipe.add_new_ingredient("rail", { type = "item", name = "stone-crushed", amount = 6 })
-        thxbob.lib.recipe.remove_ingredient("bi-rail-wood", "stone")
-        thxbob.lib.recipe.add_new_ingredient("bi-rail-wood", { type = "item", name = "stone-crushed", amount = 6 })
     end
-
-    -- vanilla rail update
-	--- Recipe
-    thxbob.lib.recipe.remove_ingredient("rail", "iron-stick")
-	thxbob.lib.recipe.add_new_ingredient("rail", { type = "item", name = "concrete", amount = 2 })
-	data.raw["legacy-straight-rail"]["legacy-straight-rail"].icon = ICONPATH_E .. "rail-concrete.png"
-	data.raw["straight-rail"]["straight-rail"].icon = ICONPATH_E .. "rail-concrete.png"
-
---- Wood Rail added to Tech
-	thxbob.lib.tech.add_recipe_unlock("railway", "bi-rail-wood")
-	thxbob.lib.tech.add_recipe_unlock("railway", "bi-rail-wood-to-concrete")
-	
-	--- Update Vanilla Images - Look more like concrete
-	require("prototypes.Wood_Products.rail-pictures-vanilla")
-	data.raw["straight-rail"]["straight-rail"].pictures = new_rail_pictures_vanilla("straight")
-	data.raw["half-diagonal-rail"]["half-diagonal-rail"].pictures = new_rail_pictures_vanilla("half-diagonal")
-	data.raw["curved-rail-a"]["curved-rail-a"].pictures = new_rail_pictures_vanilla("curved-a")
-	data.raw["curved-rail-b"]["curved-rail-b"].pictures = new_rail_pictures_vanilla("curved-b")
-	--- remnants
-	data.raw["rail-remnants"]["straight-rail-remnants"].pictures = new_rail_remnants_pictures_vanilla("straight")
-	data.raw["rail-remnants"]["half-diagonal-rail-remnants"].pictures = new_rail_remnants_pictures_vanilla("half-diagonal")
-	data.raw["rail-remnants"]["curved-rail-a-remnants"].pictures = new_rail_remnants_pictures_vanilla("curved-a")
-	data.raw["rail-remnants"]["curved-rail-b-remnants"].pictures = new_rail_remnants_pictures_vanilla("curved-b")
-	--- Let me try and remove decoratives at the same time 
-	data.raw["rail-planner"]["rail"].remove_decoratives = "true"
-	data.raw["straight-rail"]["straight-rail"].remove_decoratives = "true"
-	data.raw["half-diagonal-rail"]["half-diagonal-rail"].remove_decoratives = "true"
-	data.raw["curved-rail-a"]["curved-rail-a"].remove_decoratives = "true"
-	data.raw["curved-rail-b"]["curved-rail-b"].remove_decoratives = "true"
-	data.raw["rail-planner"]["rail"].removes_soft_decoratives = true
-	data.raw["straight-rail"]["straight-rail"].removes_soft_decoratives = true
-	data.raw["half-diagonal-rail"]["half-diagonal-rail"].removes_soft_decoratives = true
-	data.raw["curved-rail-a"]["curved-rail-a"].removes_soft_decoratives = true
-	data.raw["curved-rail-b"]["curved-rail-b"].removes_soft_decoratives = true
-	
-	data.raw["rail-planner"]["bi-rail-wood"].remove_decoratives = "true"
-	data.raw["straight-rail"]["bi-straight-rail-wood"].remove_decoratives = "true"
-	data.raw["half-diagonal-rail"]["bi-half-diagonal-rail-wood"].remove_decoratives = "true"
-	data.raw["curved-rail-a"]["bi-curved-rail-a-wood"].remove_decoratives = "true"
-	data.raw["curved-rail-b"]["bi-curved-rail-b-wood"].remove_decoratives = "true"
-	data.raw["rail-planner"]["bi-rail-wood"].removes_soft_decoratives = true
-	data.raw["straight-rail"]["bi-straight-rail-wood"].removes_soft_decoratives = true
-	data.raw["half-diagonal-rail"]["bi-half-diagonal-rail-wood"].removes_soft_decoratives = true
-	data.raw["curved-rail-a"]["bi-curved-rail-a-wood"].removes_soft_decoratives = true
-	data.raw["curved-rail-b"]["bi-curved-rail-b-wood"].removes_soft_decoratives = true	
 end
 
 
