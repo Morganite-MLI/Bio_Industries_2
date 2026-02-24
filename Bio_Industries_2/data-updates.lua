@@ -372,8 +372,8 @@ if data.raw.item["ash"] and mods["pycoalprocessing"] then
     thxbob.lib.recipe.replace_ingredient("bi-seedling-2", "bi-ash", "ash")
     thxbob.lib.recipe.replace_ingredient("bi-logs-2", "bi-ash", "ash")
 
-    data.raw.recipe["bi-ash-1"].result = "ash"
-    data.raw.recipe["bi-ash-2"].result = "ash"
+    data.raw.recipe["bi-ash-1"].results[1].name = "ash"
+    data.raw.recipe["bi-ash-2"].results[1].name = "ash"
 
     thxbob.lib.recipe.replace_ingredient("bi-stone-brick", "bi-ash", "ash")
     thxbob.lib.recipe.replace_ingredient("bi-fertilizer-1", "bi-ash", "ash")
