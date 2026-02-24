@@ -278,11 +278,12 @@ if BI.Settings.BI_Bio_Fuel then
       name = "bi-biomass-conversion-1",
     localised_name = {"recipe-name.bi-biomass-conversion-1"},
     localised_description = {"recipe-description.bi-biomass-conversion-1"},
-	icons = { {icon = ICONPATH .. "bio_conversion_1.png", icon_size = 64, } }, 
+	  icons = { {icon = ICONPATH .. "bio_conversion_1.png", icon_size = 64, } },
     category = "oil-processing",
     enabled = false,
     always_show_made_in = true,
     allow_decomposition = false,
+    allow_productivity = true,
     energy_required = 5,
     ingredients = {
       {type = "fluid", name = "bi-biomass", amount = 100},
@@ -294,7 +295,7 @@ if BI.Settings.BI_Bio_Fuel then
     },
     main_product = "",
     subgroup = "bio-bio-fuel-other",
-    order = "a[oil-processing]-b[advanced-oil-processing]-y[bi-Fuel_Conversion-1]",
+    order = "a[oil-processing]-b[advanced-oil-processing]-y[bi-Fuel_Conversion-1]"
     },
 
     ---- Biomass to PG
@@ -308,7 +309,7 @@ if BI.Settings.BI_Bio_Fuel then
     enabled = false,
     always_show_made_in = true,
     allow_decomposition = false,
-	allow_productivity = true,
+	  allow_productivity = true,
     energy_required = 5,
     ingredients = {
       {type = "fluid", name = "bi-biomass", amount = 10},
@@ -333,7 +334,7 @@ if BI.Settings.BI_Bio_Fuel then
     enabled = false,
     always_show_made_in = true,
     allow_decomposition = false,
-	allow_productivity = true,
+	  allow_productivity = true,
     energy_required = 2.5,
     ingredients = {
       {type = "fluid", name = "bi-biomass", amount = 10},
