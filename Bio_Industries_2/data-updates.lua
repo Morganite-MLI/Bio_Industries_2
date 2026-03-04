@@ -643,7 +643,7 @@ if data.raw.item["bob-resin"] then
 
 end
 
---- Updaet seeds to work with Space Age if present.
+--- Update seeds to work with Space Age if present.
 
 if data.raw.item["tree-seed"] then
 	 
@@ -911,9 +911,13 @@ if set then
     end
 end
 
--- Compatibility with Industrial Revolution
---require("prototypes.Industrial_Revolution")
-
+-- Add glass to the bio nursery
+local glass = data.raw.item["glass"] and "glass" or data.raw.item["kr-glass"] and "kr-glass" or nil
+if glass then
+  table.insert(data.raw.recipe["bi-bio-greenhouse"].ingredients, {
+    type = "item", name = glass, amount = 10
+  })
+end
 
 ------------------------------------------------------------------------------------
 -- Add icons to our prototypes
