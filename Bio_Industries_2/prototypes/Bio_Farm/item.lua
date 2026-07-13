@@ -81,7 +81,7 @@ data:extend(
     stack_size= 10,
     weight = 250 * kg,
   },
-
+  
   --- Cokery
   {
     type = "item",
@@ -385,3 +385,18 @@ data:extend(
     },
   })
 
+if settings.startup["BI_Add_Basic_Farm"].value then
+data:extend({
+   ---Basic Tree Farm
+  {
+        type = "item",
+        name = "bi-basic-farm",
+        icons = { { icon = ICONPATH_E .. "bio_basic_farm.png", icon_size = 64, } },
+        subgroup = "production-machine",
+        order = "x[bi]-aa[bi-bio-basic-farm]",
+        place_result = "bi-basic-farm",
+        stack_size = 10,
+        weight = 100 * kg
+    },
+    })
+end

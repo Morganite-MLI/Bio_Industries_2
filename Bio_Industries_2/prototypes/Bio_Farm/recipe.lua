@@ -5,6 +5,11 @@ local ICONPATH_E = BioInd.modRoot .. "/graphics/icons/entity/"
 
 local nitrogen = data.raw.fluid["kr-nitrogen"] and "kr-nitrogen" or "nitrogen"
 
+local recipe_speed = 1
+if mods["Krastorio2"] or mods["Krastorio2-spaced-out"] then
+    recipe_speed = settings.startup["BI_recipe_time_increase"].value
+end
+
 data:extend({
 
     --- Seeds from Water (BASIC)
@@ -20,7 +25,7 @@ data:extend({
             }
         },
         category = "biofarm-mod-greenhouse",
-        energy_required = 200,
+        energy_required = 75 * recipe_speed,
         ingredients = {
             { type = "fluid", name = "water", amount = 100 },
             { type = "item",  name = "wood",  amount = 20 },
@@ -54,7 +59,7 @@ data:extend({
             }
         },
         category = "biofarm-mod-greenhouse",
-        energy_required = 150,
+        energy_required = 75 * recipe_speed,
         ingredients = {
             { type = "fluid", name = "water",  amount = 40 },
             { type = "item",  name = "wood",   amount = 20 },
@@ -89,7 +94,7 @@ data:extend({
             }
         },
         category = "biofarm-mod-greenhouse",
-        energy_required = 100,
+        energy_required = 75 * recipe_speed,
         ingredients = {
             { type = "fluid", name = "water",      amount = 40 },
             { type = "item",  name = "wood",       amount = 20 },
@@ -124,7 +129,7 @@ data:extend({
             }
         },
         category = "biofarm-mod-greenhouse",
-        energy_required = 50,
+        energy_required = 50 * recipe_speed,
         ingredients = {
             { type = "item",  name = "wood",              amount = 20 },
             { type = "item",  name = "bi-adv-fertilizer", amount = 10 },
@@ -159,7 +164,7 @@ data:extend({
             }
         },
         category = "biofarm-mod-greenhouse",
-        energy_required = 400,
+        energy_required = 150 * recipe_speed,
         ingredients = {
             { type = "item",  name = "bi-seed", amount = 20 },
             { type = "fluid", name = "water",   amount = 100 },
@@ -193,7 +198,7 @@ data:extend({
             }
         },
         category = "biofarm-mod-greenhouse",
-        energy_required = 300,
+        energy_required = 150 * recipe_speed,
         ingredients = {
             { type = "item",  name = "bi-seed", amount = 25 },
             { type = "item",  name = "bi-ash",  amount = 10 },
@@ -228,7 +233,7 @@ data:extend({
             }
         },
         category = "biofarm-mod-greenhouse",
-        energy_required = 200,
+        energy_required = 150 * recipe_speed,
         ingredients = {
             { type = "item",  name = "bi-seed",    amount = 30 },
             { type = "item",  name = "fertilizer", amount = 10 },
@@ -262,7 +267,7 @@ data:extend({
             }
         },
         category = "biofarm-mod-greenhouse",
-        energy_required = 100,
+        energy_required = 100 * recipe_speed,
         ingredients = {
             { type = "item",  name = "bi-seed",           amount = 40 },
             { type = "fluid", name = "water",             amount = 100 },
@@ -301,7 +306,7 @@ data:extend({
 		allow_productivity = true,
         always_show_made_in = true,
         allow_decomposition = false,
-        energy_required = 400,
+        energy_required = 150 * recipe_speed,
         ingredients = {
             { type = "item",  name = "seedling", amount = 20 },
             { type = "fluid", name = "water",    amount = 100 },
@@ -336,7 +341,7 @@ data:extend({
 		allow_productivity = true,
         always_show_made_in = true,
         allow_decomposition = false,
-        energy_required = 360,
+        energy_required = 150 * recipe_speed,
         ingredients = {
             { type = "item",  name = "seedling", amount = 30 },
             { type = "item",  name = "bi-ash",   amount = 10 },
@@ -372,7 +377,7 @@ data:extend({
 		allow_productivity = true,
         always_show_made_in = true,
         allow_decomposition = false,
-        energy_required = 300,
+        energy_required = 150 * recipe_speed,
         ingredients = {
             { type = "item",  name = "seedling",   amount = 45 },
             { type = "item",  name = "fertilizer", amount = 10 },
@@ -408,7 +413,7 @@ data:extend({
 		allow_productivity = true,
         always_show_made_in = true,
         allow_decomposition = false,
-        energy_required = 100,
+        energy_required = 100 * recipe_speed,
         ingredients = {
             { type = "item",  name = "seedling",          amount = 40 },
             { type = "fluid", name = "water",             amount = 100 },
@@ -487,7 +492,7 @@ data:extend({
         subgroup = "bio-bio-farm-fluid-entity",
         order = "b[bi]",
     },
-
+    
 
     -- Woodpulp--
     {
@@ -1532,3 +1537,26 @@ data:extend({
         order = "a[bi]-ssw-a1[bi-arboretum-r5]",
     },
 })
+
+if settings.startup["BI_Add_Basic_Farm"].value then
+    data:extend({
+    -- Basic tree farm
+    {
+        type = "recipe",
+        name = "bi-basic-farm",
+        localised_name = { "entity-name.bi-basic-farm" },
+        category = "crafting",
+        energy_required = 5,
+        enabled = false,
+        ingredients = {
+            { type = "item", name = "wood", amount = 20 },
+            { type = "item", name = "iron-plate",        amount = 10 },
+            { type = "item", name = "stone-brick",   amount = 5 },
+        },
+        results = { { type = "item", name = "bi-basic-farm", amount = 1 } },
+        allow_as_intermediate = false, -- Added for 0.18.34/1.1.4
+        always_show_made_in = false, -- Added for 0.18.34/1.1.4
+        allow_decomposition = true,  -- Added for 0.18.34/1.1.4
+    },
+    })
+end

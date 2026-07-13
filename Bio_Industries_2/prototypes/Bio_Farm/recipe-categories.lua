@@ -27,6 +27,11 @@ data:extend(
 
   {
     type = "recipe-category",
+    name = "biofarm-mod-basic"
+  },
+  
+  {
+    type = "recipe-category",
     name = "bi-arboretum"
   },
 }

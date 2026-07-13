@@ -1,6 +1,9 @@
 local BioInd = require('common')('Bio_Industries_2')
 local coal_processing = require("prototypes.Bio_Farm.coal_processing")
 local ICONPATH = BioInd.modRoot .. "/graphics/technology/"
+local k2 = mods["Krastorio2"] or mods["Krastorio2-spaced-out"]
+local ICONPATH_E = BioInd.modRoot .. "/graphics/icons/entity/"
+local Technology = require('__kry_stdlib__/stdlib/data/technology')
 
 ---- Bio Farm
 data:extend({
@@ -16,18 +19,6 @@ data:extend({
       }
     },
     effects = {
-      {
-        type = "unlock-recipe",
-        recipe = "bi-seed-1"
-      },
-      {
-        type = "unlock-recipe",
-        recipe = "bi-seedling-1"
-      },
-      {
-        type = "unlock-recipe",
-        recipe = "bi-logs-1"
-      },
       {
         type = "unlock-recipe",
         recipe = "bi-bio-greenhouse"
@@ -228,3 +219,64 @@ data:extend({
     }
   }
 })
+
+
+local start_tech = (k2 and settings.startup["BI_Hide_K2_Recipes"].value) and "kr-greenhouse" or "bi-tech-bio-farming"
+Technology(start_tech):add_effect("bi-seed-1", "unlock-recipe")
+Technology(start_tech):add_effect("bi-seedling-1", "unlock-recipe")
+Technology(start_tech):add_effect("bi-logs-1", "unlock-recipe")
+
+local function hide_recipe(name)
+    if data.raw.recipe[name] then
+        data.raw.recipe[name].hidden = true
+    end
+end
+
+if k2 and settings.startup["BI_Hide_K2_Recipes"].value then
+    hide_recipe("wood")
+    hide_recipe("kr-grow-wood-with-sand")
+    hide_recipe("kr-wood-with-fertilizer")
+    
+    --Copied from ATOM for testing purposes
+    table.insert(data.raw["assembling-machine"]["kr-greenhouse"].crafting_categories, "biofarm-mod-farm")
+    table.insert(data.raw["assembling-machine"]["kr-greenhouse"].crafting_categories, "biofarm-mod-greenhouse")
+end
+
+if settings.startup["BI_Add_Basic_Farm"].value then
+    data:extend({
+  {
+    type = "technology",
+    name = "bi-tech-basic-farm",
+    icons = { { icon = ICONPATH_E .. "bio_basic_farm.png", icon_size = 64, } },
+    effects = {
+      {
+        type = "unlock-recipe",
+        recipe = "bi-basic-farm"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "bi-seedling-1-basic"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "bi-logs-1-basic"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "bi-seed-1-basic"
+      },
+    },
+    prerequisites = k2 and {"kr-automation-core"} or mods["aai-industry"] and {"automation-science-pack"} or {},
+    unit = {
+      count = 20,
+      ingredients = {
+        {k2 and "kr-basic-tech-card" or "automation-science-pack", 1}
+      },
+      time = 20
+    },
+  },
+  })
+  
+  Technology("bi-tech-bio-farming"):add_prereq("bi-tech-basic-farm")
+  
+end

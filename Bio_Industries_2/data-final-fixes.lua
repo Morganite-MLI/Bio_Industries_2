@@ -348,6 +348,40 @@ if mods["Krastorio2"] or mods["Krastorio2-spaced-out"] then
                 { recipe and recipe.name or "nil", recipe and recipe.results or "nil" })
         end
     end
+    
+    local multiply_energy = function(name)
+        local recipe = data.raw.recipe[name]
+        if recipe then
+            recipe.energy_required = recipe.energy_required * settings.startup["BI_recipe_time_increase"].value
+        end
+    end
+    
+    multiply_energy("kr-wood-with-fertilizer") --K2 recipe, hidden by ???
+    multiply_energy("kr-grow-wood-with-sand") --From AAI Industry
+    multiply_energy("wood") --Basic K2 recipe
+    multiply_energy("grow-wood-with-carbon-dioxide") --From ChemistryForYou
+end
+
+local Recipe = require('__kry_stdlib__/stdlib/data/recipe')
+local Data = require('__kry_stdlib__/stdlib/data/data')
+
+local function make_basic_recipe(name)
+    local recipe = Recipe(name):krycopy(name .. "-basic")
+    recipe:remove_ingredient("water")
+    recipe:copy_results(name, false)
+    recipe:remove_result("bi-woodpulp")
+    --recipe:change_category("biofarm-mod-basic") --Doesn't work?
+    data.raw.recipe[name .. "-basic"].category = "biofarm-mod-basic"
+    recipe:remove_main_product()
+    data.raw.recipe[name .. "-basic"].results = table.deepcopy(data.raw.recipe[name .. "-basic"].results) --Prevent ATOM from dividing everything by 16 instead of 4.
+end
+
+if settings.startup["BI_Add_Basic_Farm"].value then
+    make_basic_recipe("bi-seed-1")
+    make_basic_recipe("bi-seedling-1")
+    make_basic_recipe("bi-logs-1")
+    data.raw.recipe["bi-logs-1-basic"].icon = data.raw.item["wood"].icon
+    data.raw.recipe["bi-logs-1-basic"].icons = data.raw.item["wood"].icons
 end
 
 

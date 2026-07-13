@@ -120,6 +120,39 @@ if not (mods["IndustrialRevolution"] or mods["aai-industry"]) then
     }
 end
 
+if mods["Krastorio2"] or mods["Krastorio2-spaced-out"] then
+    setting_list.BI_Hide_K2_Recipes = {
+        type = "bool-setting",
+        name = "BI_Hide_K2_Recipes",
+        setting_type = "startup",
+        default_value = false,
+        order = "b[tweaks]-c2[Hide_Recipes]",
+    }
+
+        setting_list.BI_recipe_time_increase = {
+        type = "double-setting",
+        name = "BI_recipe_time_increase",
+        setting_type = "startup",
+        default_value = 2,
+        order = "b[tweaks]-c2[Hide_Recipes]",
+    }
+        setting_list.BI_greenhouse_speed_up = {
+        type = "double-setting",
+        name = "BI_greenhouse_speed_up",
+        setting_type = "startup",
+        default_value = 2,
+        order = "b[tweaks]-c2[Hide_Recipes]",
+    }
+end
+
+setting_list.BI_Add_Basic_Farm = {
+    type = "bool-setting",
+    name = "BI_Add_Basic_Farm",
+    setting_type = "startup",
+    default_value = false,
+    order = "b[tweaks]-c2[Hide_Recipes]",
+}
+
 
 -- Lua API global Variable Viewer (gvv)
 if mods["gvv"] then
