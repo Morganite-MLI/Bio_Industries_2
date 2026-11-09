@@ -35,7 +35,7 @@ data:extend({
     fluid_boxes = {
       {
         production_type = "input",
-        pipe_picture = assembler3pipepictures(),
+        pipe_picture = require("__base__.prototypes.entity.assembler-pictures")["assembler3pipepictures"],
         pipe_covers = pipecoverspictures(),
         volume = 1000,
         base_level = -1,

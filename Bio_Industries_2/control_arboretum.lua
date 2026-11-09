@@ -63,7 +63,7 @@ local function check_ingredients(arboretum)
         return true
     end
 
-    local inventory = arboretum.get_inventory(defines.inventory.assembling_machine_input)
+    local inventory = arboretum.get_inventory(defines.inventory.crafter_input)
     local inv_contents_raw = inventory and inventory.get_contents() or {}
 
     -- Check if inv_contents_raw is a map or list, convert if needed
@@ -101,7 +101,7 @@ end
 
 
 local function consume_ingredients(arboretum, need)
-    local inventory = arboretum.get_inventory(defines.inventory.assembling_machine_input)
+    local inventory = arboretum.get_inventory(defines.inventory.crafter_input)
     for item, i in pairs(need.items or {}) do
         inventory.remove({ name = item, count = i })
         BioInd.writeDebug("Removed %s (%s)", { item, i })
@@ -109,7 +109,14 @@ local function consume_ingredients(arboretum, need)
     BioInd.show("Inventory", inventory.get_contents() or "nil")
 
     for fluid, f in pairs(need.fluids or {}) do
-        arboretum.remove_fluid({ name = fluid, amount = f })
+        --arboretum.remove_fluid({ name = fluid, amount = f })
+--~         for i = 1,2 do --Is this necessary? Can there ever be two different fluids required? It appears not.
+--~             if arboretum.get_fluid(i) == fluid then
+--~                 arboretum.remove_fluid(i, f)
+--~                 break
+--~             end
+--~         end
+        arboretum.remove_fluid(1, f) --Checking for whether or not the fluid is available happens... somewhere.
         BioInd.writeDebug("Removed %s (%s)", { fluid, f })
     end
     BioInd.show("Fluid contents", arboretum.get_fluid_contents() or "nil")

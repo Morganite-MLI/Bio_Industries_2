@@ -320,18 +320,21 @@ if mods["Krastorio2"] or mods["Krastorio2-spaced-out"] then
         "wood", "bi-woodpulp",
         "bi-seed", "tree-seed","seedling", "water"
     }
+    
+    local multiplier = settings.startup["BI_Production_Multiplier"].value
+    
     local multiply = function(items)
         for _, item in pairs(items) do
             for _, updateItem in pairs(update) do
                 if item.name == updateItem then
                     if item.amount then
-                        item.amount = item.amount * 4
+                        item.amount = item.amount * multiplier
                     end
                     if item.amount_min then
-                        item.amount_min = item.amount_min * 4
+                        item.amount_min = item.amount_min * multiplier
                     end
                     if item.amount_max then
-                        item.amount_max = item.amount_max * 4
+                        item.amount_max = item.amount_max * multiplier
                     end
                 end
             end
@@ -348,6 +351,10 @@ if mods["Krastorio2"] or mods["Krastorio2-spaced-out"] then
                 { recipe and recipe.name or "nil", recipe and recipe.results or "nil" })
         end
     end
+    
+    -- Hide flaring recipes for unused fluids. (Deleting them breaks... something?)
+    data.raw.recipe["kr-burn-bi-liquid-air"].hidden = true
+    data.raw.recipe["kr-burn-bi-nitrogen"].hidden = true
 end
 
 

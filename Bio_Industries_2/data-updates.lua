@@ -355,7 +355,7 @@ if mods["angelspetrochem"] then
     data.raw.item["angels-pellet-coke"].fuel_acceleration_multiplier = 1.1
     data.raw.item["angels-pellet-coke"].fuel_top_speed_multiplier = 1.2
 
-    data.raw.recipe["angels-pellet-coke"].category = "biofarm-mod-smelting"
+    data.raw.recipe["angels-pellet-coke"].categories = {"biofarm-mod-smelting"}
     thxbob.lib.tech.remove_recipe_unlock("angels-coal-processing-2", "pellet-coke")
     thxbob.lib.tech.add_recipe_unlock("angels-coal-cracking", "pellet-coke")
 end
@@ -424,70 +424,10 @@ if mods["SimpleSilicon"] then
 end
 
 
--- We may need liquid air and nitrogen -- but not if any of the following mods is active!
+-- Liquid air and nitrogen are now created in data to fix compatibility with recycler. Remove them if not needed.
 
--- We only want to create nitrogen if it doesn't exist yet. We then also need to create
--- liquid air.
-
-if not data.raw.fluid["nitrogen"] and not data.raw.fluid["kr-nitrogen"] then
-    data:extend({
-        {
-            type = "fluid",
-            name = "nitrogen",
-            icon = ICONPATH .. "nitrogen.png",
-            icon_size = 64,
-            icons = {
-                {
-                    icon = ICONPATH .. "nitrogen.png",
-                    icon_size = 64,
-                    icon_mipmaps = 1,
-                }
-            },
-            default_temperature = 25,
-            gas_temperature = -210,
-            max_temperature = 100,
-            heat_capacity = "1kJ",
-            base_color = { r = 0.0, g = 0.0, b = 1.0 },
-            flow_color = { r = 0.0, g = 0.0, b = 1.0 },
-            pressure_to_speed_ratio = 0.4,
-            flow_to_energy_ratio = 0.59,
-            subgroup = "bio-bio-farm-intermediate-product",
-            order = "ab"
-        },
-    })
-    BioInd.writeDebug("Made recipe for \"nitrogen\".")
-
-    if not data.raw.fluid["liquid-air"] then
-        data:extend({
-            {
-                type = "fluid",
-                name = "liquid-air",
-                icon = ICONPATH .. "liquid-air.png",
-                icon_size = 64,
-                icons = {
-                    {
-                        icon = ICONPATH .. "liquid-air.png",
-                        icon_size = 64,
-                        icon_mipmaps = 1,
-                    }
-                },
-                default_temperature = 25,
-                gas_temperature = -100,
-                max_temperature = 100,
-                heat_capacity = "1kJ",
-                base_color = { r = 0, g = 0, b = 0 },
-                flow_color = { r = 0.5, g = 1.0, b = 1.0 },
-                pressure_to_speed_ratio = 0.4,
-                flow_to_energy_ratio = 0.59,
-                subgroup = "bio-bio-farm-intermediate-product",
-                order = "aa"
-            },
-        })
-        BioInd.writeDebug("Made recipe for \"liquid-air\".")
-    end
-
+if data.raw.fluid["nitrogen"] or data.raw.fluid["kr-nitrogen"] then
     -- Recipes for "bi-liquid-air" and "bi-nitrogen" aren't needed!
-else
     local oxygen = data.raw.fluid["kr-oxygen"] and "kr-oxygen" or "oxygen"
     local nitrogen = data.raw.fluid["kr-nitrogen"] and "kr-nitrogen" or "nitrogen"
 
@@ -498,26 +438,43 @@ else
 
     -- Replace liquid air with oxygen (from Krastorio/K2) in recipes for Algae Biomass 2 and 3
     if data.raw.fluid[oxygen] then
-        thxbob.lib.recipe.replace_ingredient("bi-biomass-2", "liquid-air", oxygen)
-        thxbob.lib.recipe.replace_ingredient("bi-biomass-3", "liquid-air", oxygen)
+        thxbob.lib.recipe.replace_ingredient("bi-biomass-2", "bi-liquid-air", oxygen)
+        thxbob.lib.recipe.replace_ingredient("bi-biomass-3", "bi-liquid-air", oxygen)
         BioInd.writeDebug("Replaced \"liquid-air\" with \"oxygen\" in recipes \"bi-biomass-2\" and \"bi-biomass-3\"")
         -- Perhaps there is no oxygen? But there's nitrogen for sure, so we fall back to that!
     elseif data.raw.fluid[nitrogen] then
-        thxbob.lib.recipe.replace_ingredient("bi-biomass-2", "liquid-air", nitrogen)
-        thxbob.lib.recipe.replace_ingredient("bi-biomass-3", "liquid-air", nitrogen)
+        thxbob.lib.recipe.replace_ingredient("bi-biomass-2", "bi-liquid-air", nitrogen)
+        thxbob.lib.recipe.replace_ingredient("bi-biomass-3", "bi-liquid-air", nitrogen)
         BioInd.writeDebug("Replaced \"liquid-air\" with \"nitrogen\" in recipes \"bi-biomass-2\" and \"bi-biomass-3\"")
+    end
+    
+    -- If "nitrogen" exists, replace "bi-nitrogen" with it.
+    if data.raw.fluid["nitrogen"] then
+        thxbob.lib.recipe.replace_ingredient("bi-fertilizer-1", "bi-nitrogen", nitrogen)
     end
 
     -- Remove recipes for these fluids
     data.raw.recipe["bi-liquid-air"] = nil
     data.raw.recipe["bi-nitrogen"] = nil
     BioInd.writeDebug("Removed recipes for \"nitrogen\" and \"liquid air\".")
+    
+    -- Hide unneeded fluids. Don't delete - causes other errors.
+    data.raw.fluid["bi-liquid-air"].hidden = true
+    data.raw.fluid["bi-nitrogen"].hidden = true
+    -- And hide the barrels.
+    data.raw.item["bi-liquid-air-barrel"].hidden = true
+    data.raw.item["bi-nitrogen-barrel"].hidden = true
+    --The recipes can go away.
+    data.raw.recipe["bi-liquid-air-barrel"].hidden = true
+    data.raw.recipe["bi-nitrogen-barrel"].hidden = true
+    data.raw.recipe["empty-bi-liquid-air-barrel"].hidden = true
+    data.raw.recipe["empty-bi-nitrogen-barrel"].hidden = true
 end
 
 
  -- Replace nitrogen (BI) with bob-nitrogen (Bob's) in recipe "bi-nitrogen"
 if data.raw.fluid["bob-nitrogen"] then
-	 local nitrogen = data.raw.fluid["kr-nitrogen"] and "kr-nitrogen" or "nitrogen"
+	 local nitrogen = data.raw.fluid["kr-nitrogen"] and "kr-nitrogen" or "bi-nitrogen"
 	  thxbob.lib.recipe.remove_result("bi-nitrogen", nitrogen)
 	  thxbob.lib.recipe.add_result("bi-nitrogen", {
 		type = "fluid",

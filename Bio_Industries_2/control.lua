@@ -726,7 +726,7 @@ local function place_musk_floor(force, position, surface)
     local created
     for n, name in ipairs({ "bi-musk-mat-hidden-pole", "bi-musk-mat-hidden-panel" }) do
         created = surface.create_entity({ name = name, position = { x + 0.5, y + 0.5 }, force = force })
-        created.minable = false
+        created.minable_flag = false
         created.destructible = false
         BioInd.writeDebug("Created %s: %s", { name, created.unit_number })
     end
@@ -978,26 +978,31 @@ Event.register(Event.tile_build_events, solar_mat_built)
 Event.register(Event.tile_remove_events, solar_mat_removed)
 
 
-Event.register(defines.events.on_entity_damaged, On_Damage, function(event)
-    -- A function is needed for event filtering with stdlib!
-    local entity = event.entity
+Event.register(defines.events.on_entity_damaged, On_Damage, {{filter = "name", name = "bi-arboretum"}, {filter = "final-damage-amount", comparison = "!=", value = 0, mode="and"}})
+Event.register(defines.events.on_entity_damaged, On_Damage, {{filter = "name", name = "bi-arboretum-hidden-radar"}, {filter = "final-damage-amount", comparison = "!=", value = 0, mode="and"}})
 
-    -- Ignore damage without effect (invulnerable/resistant entities)
-    if event.final_damage_amount ~= 0 and
-        -- Terraformer/Terraformer radar was damaged
-        (storage.bi_arboretum_table[entity.unit_number] or
-            storage.bi_arboretum_radar_table[entity.unit_number]) then
-        return true
-    end
-end)
+--~ function(event)
+--~     -- A function is needed for event filtering with stdlib!
+--~     local entity = event.entity
+
+--~     -- Ignore damage without effect (invulnerable/resistant entities)
+--~     if event.final_damage_amount ~= 0 and
+--~         -- Terraformer/Terraformer radar was damaged
+--~         (storage.bi_arboretum_table[entity.unit_number] or
+--~             storage.bi_arboretum_radar_table[entity.unit_number]) then
+--~         return true
+--~     end
+--~ end)
 
 -- Radar scan
-Event.register(defines.events.on_sector_scanned, On_Sector_Scanned, function(event)
-    -- A function is needed for event filtering with stdlib!
-    if event.radar.name == BioInd.compound_entities["bi-arboretum"].hidden.radar.name then
-        return true
-    end
-end)
+Event.register(defines.events.on_sector_scanned, On_Sector_Scanned, {{filter = "name", name = "bi-arboretum-hidden-radar"}})
+
+--~ function(event)
+--~     -- A function is needed for event filtering with stdlib!
+--~     if event.radar.name == BioInd.compound_entities["bi-arboretum"].hidden.radar.name then
+--~         return true
+--~     end
+--~ end)
 
 -- Tile changed
 Event.register(Event.tile_script_action, Tile_Changed)

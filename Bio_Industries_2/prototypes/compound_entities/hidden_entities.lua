@@ -85,20 +85,23 @@ BI.hidden_entities.misc = {
   active_picture = BI.hidden_entities.picture,
   circuit_wire_max_distance = 0,
   corpse = "",
-  created_effect = nil,
-  created_smoke = nil,
-  damaged_trigger_effect = nil,
   energy_source = {
     render_no_network_icon = false,
     render_no_power_icon = false,
   },
   fast_replaceable_group = "",
-  light = nil,
-  next_upgrade = "",
   remove_decoratives = "false",
   water_reflection = {pictures = BI.hidden_entities.picture},
 }
 
+--These properties are set to nil. Including them in misc does not work for lua reasons.
+BI.hidden_entities.remove_properties = {
+  created_effect = true,
+  created_smoke = true,
+  damaged_trigger_effect = true,
+  light = true,
+  next_upgrade = true,
+}
 
 ------------------------------------------------------------------------------------
 --          Apply the common properties to this hidden-entity prototype!          --
@@ -110,6 +113,10 @@ BI.set_common_properties = function(h_entity)
 
   for s, setting in pairs(BI.hidden_entities.misc) do
     h_entity[s] = setting
+  end
+  
+  for s, _ in pairs(BI.hidden_entities.remove_properties) do
+    h_entity[s] = nil
   end
 
   h_entity.icon = BI.hidden_entities.icon

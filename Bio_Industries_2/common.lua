@@ -554,7 +554,7 @@ return function(mod_name)
     local function make_unminable(entities)
         for e, entity in ipairs(entities or {}) do
             if entity.valid then
-                entity.minable = false
+                entity.minable_flag = false
                 entity.destructible = false
             end
         end

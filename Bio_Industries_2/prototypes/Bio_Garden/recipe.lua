@@ -87,7 +87,7 @@ data:extend({
     name = "bi-purified-air-1",
 	icons = { {icon = ICONPATH .. "clean-air_mk1.png", icon_size = 64, } },
     order = "zzz-clean-air",
-    category = "clean-air",
+    categories = {"clean-air"},
     subgroup = "bio-bio-gardens-fluid",
     order = "bi-purified-air-1",
     enabled = false,
@@ -99,7 +99,7 @@ data:extend({
       {type = "item", name = "fertilizer", amount = 1}
     },
     results = {
-      {type = "item", name = "bi-purified-air", amount = 1, probability = 0},
+      {type = "item", name = "bi-purified-air", amount = 1, independent_probability = 0},
     },
     main_product = "",
   },
@@ -111,7 +111,7 @@ data:extend({
     name = "bi-purified-air-2",
 	icons = { {icon = ICONPATH .. "clean-air_mk2.png", icon_size = 64, } },
     order = "zzz-clean-air2",
-    category = "clean-air",
+    categories = {"clean-air"},
     subgroup = "bio-bio-gardens-fluid",
     order = "bi-purified-air-2",
     enabled = false,
@@ -123,7 +123,7 @@ data:extend({
       {type = "item", name = "bi-adv-fertilizer", amount = 1},
     },
     results = {
-      {type = "item", name = "bi-purified-air", amount = 1, probability = 0},
+      {type = "item", name = "bi-purified-air", amount = 1, independent_probability = 0},
     },
     main_product = "",
   },

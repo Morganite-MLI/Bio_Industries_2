@@ -1,4 +1,31 @@
 ---------------------------------------------------------------------------------------------------
+Version: 3.0.5
+Date: 09.11.2026
+  Bug Fixes:
+    - Fixed load error for mods that add upgrade targets to entities that BI makes hidden copies of, for real this time
+---------------------------------------------------------------------------------------------------
+Version: 3.0.4
+Date: 30.10.2026
+  Bug Fixes:
+    - Quick and dirty fix for a BI building that was missed in 3.0.3
+---------------------------------------------------------------------------------------------------
+Version: 3.0.3
+Date: 30.10.2026
+  Bug Fixes:
+    - Quick and dirty fix for an unknown mod screwing up BI buildings with hidden solar panels.
+---------------------------------------------------------------------------------------------------
+Version: 3.0.2
+Date: 30.10.2026
+  Bug Fixes:
+    - Rearrange some of the fluids to deal with load failure when used with Recycler and not Krastorio 2.
+---------------------------------------------------------------------------------------------------
+Version: 3.0.1
+Date: 29.10.2026
+  Compatibility:
+    - Updated for 2.1
+  Changes:
+    - Added the "Wood production multiplier" setting. In previous versions, when used with Krastorio 2 recipe outputs (and inputs, mostly) would be multiplied by 4. Now, this behavior is adjustible according to user needs and preferences... And so ATOM can just set it to 1 instead of using a janky workaround.
+---------------------------------------------------------------------------------------------------
 Version: 2.0.34
 Date: 24.02.2026
   Changes:

@@ -5,7 +5,7 @@ local ICONPATH_AAI = BioInd.modRoot .. "/graphics/icons/mod_aai/"
 local ICONPATH_KR = BioInd.modRoot .. "/graphics/icons/mod_krastorio/"
 local ICONPATHMIPS = BioInd.modRoot .. "/graphics/icons/mips/"
 
-local nitrogen = data.raw.fluid["kr-nitrogen"] and "kr-nitrogen" or "nitrogen"
+local nitrogen = data.raw.fluid["kr-nitrogen"] and "kr-nitrogen" or "bi-nitrogen"
 local pellet_coke = data.raw.item["angels-pellet-coke"] and "angels-pellet-coke" or "pellet-coke"
 
 data:extend({
@@ -20,7 +20,7 @@ data:extend({
         icon_size = 64,
       }
     },
-    category = "biofarm-mod-smelting",
+    categories = {"biofarm-mod-smelting"},
     subgroup = "bio-bio-farm-raw",
     order = "a[bi]-a-g[bi-coke-coal]-2",
     energy_required = 4,
@@ -44,7 +44,7 @@ data:extend({
         icon_size = 64,
       }
     },
-    category = "chemistry",
+    categories = {"chemistry"},
     energy_required = 5,
     ingredients = {
       {type = "fluid", name = nitrogen, amount = 10},
@@ -271,7 +271,7 @@ if mods["angelsrefining"] then
           icon_size = 64,
         }
       },
-      category = "angels-liquifying",
+      categories = {"angels-liquifying"},
       subgroup = "angels-water-treatment",
       energy_required = 2,
       ingredients = {
@@ -302,7 +302,7 @@ if mods["angelsrefining"] then
           icon_size = 64,
         }
       },
-      category = "angels-liquifying",
+      categories = {"angels-liquifying"},
       subgroup = "angels-liquifying",
       energy_required = 4,
       ingredients = {
@@ -343,7 +343,7 @@ if data.raw.item["bob-wooden-board"] and mods["bobelectronics"] then
       },
       subgroup = "bob-boards",
       order = "c-a1[wooden-board]",
-      category = "electronics",
+      categories = {"electronics"},
       energy_required = 1,
       enabled = false,
       always_show_made_in = true,
@@ -372,7 +372,7 @@ end
 if data.raw.recipe["wood-charcoal"] then
   data.raw.recipe["wood-charcoal"].icon = ICONPATH_BA .. "charcoal_pellets.png"
   data.raw.recipe["wood-charcoal"].icon_size = 64
-  data.raw.recipe["wood-charcoal"].category = "biofarm-mod-smelting"
+  data.raw.recipe["wood-charcoal"].categories = {"biofarm-mod-smelting"}
   data.raw.item["wood-charcoal"].icon = ICONPATH .. "charcoal.png"
   data.raw.item["wood-charcoal"].icon_size = 64
   data.raw.item["wood-charcoal"].fuel_emissions_multiplier = 1.05
@@ -399,7 +399,7 @@ if data.raw.item[data.raw.item["kr-sand"] and "kr-sand" or "sand"] or
           mip_maps = 1,
         }
       },
-      category = "biofarm-mod-crushing",
+      categories = {"biofarm-mod-crushing"},
       subgroup = "bio-bio-farm-raw",
       order = "a[bi]-a-z[bi-9-sand]",
       energy_required = 1,

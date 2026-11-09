@@ -106,6 +106,14 @@ setting_list.BI_Game_Tweaks_Bot = {
     default_value = false,
     order = "b[tweaks]-f[Bot_tweaks]",
 }
+setting_list.BI_Production_Multiplier =  {
+      type = "int-setting",
+      name = "BI_Production_Multiplier",
+      setting_type = "startup",
+      default_value = mods["Krastorio2"] and 4 or 1,
+      minimum_value = 1,
+      maximum_value = 4,
+   }
 
 
 -- Compatibility with other mods (optional)
