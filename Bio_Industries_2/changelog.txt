@@ -1,5 +1,10 @@
 ---------------------------------------------------------------------------------------------------
 Version: 3.0.5
+Date: 19.11.2026
+  Bug Fixes:
+    - Fixed error when used with Angel's Refining
+---------------------------------------------------------------------------------------------------
+Version: 3.0.5
 Date: 09.11.2026
   Bug Fixes:
     - Fixed load error for mods that add upgrade targets to entities that BI makes hidden copies of, for real this time

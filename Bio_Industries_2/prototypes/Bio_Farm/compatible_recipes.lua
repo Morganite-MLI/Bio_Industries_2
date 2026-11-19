@@ -384,7 +384,7 @@ end
 
 if data.raw.item[data.raw.item["kr-sand"] and "kr-sand" or "sand"] or
    data.raw.item["biotech-sand"] or
-   data.raw.item["solid-sand"] then
+   data.raw.item["angels-solid-sand"] then
 
    BioInd.writeDebug("Generating recipe for sand from crushed stone!")
   -- General recipe for sand (will be adjusted later if necessary)
@@ -419,16 +419,22 @@ if data.raw.item[data.raw.item["kr-sand"] and "kr-sand" or "sand"] or
 BioInd.writeDebug("Adjusting result for \"BioTech\" …")
     recipe.results[1].name = "biotech-sand"
 
-  -- Adjust result for Angel's
-  elseif mods["angelsrefining"] then
-    -- Adjust result
-BioInd.writeDebug("Adjusting result for \"angelsrefining\" …")
-    recipe.results[1].name = "solid-sand"
-
+    --Order of K2 and Angel's have been swapped.
+    --When K2 used with Angel's Refining and no other Angel's mods, there's no use for angels-solid-sand.
+    --When K2 used with the mods that add a use to angels-solid-sand... the game won't load due to a cyclical tech dependency.
+    --(Not BI2's fault.)
+    --This may or may not need to be adjusted if compatibility is fixed in the future.
+    
   -- Adjust icon for Krastorio
   elseif mods["Krastorio2"] or mods["Krastorio2-spaced-out"] then
 BioInd.writeDebug("Using Krastorio icon …")
     recipe.icons[1].icon = ICONPATH_KR .. "sand-Krastorio.png"
+    
+  -- Adjust result for Angel's
+  elseif mods["angelsrefining"] then
+    -- Adjust result
+BioInd.writeDebug("Adjusting result for \"angelsrefining\" …")
+    recipe.results[1].name = "angels-solid-sand"
   end
 
   -- Add recipe to technology
